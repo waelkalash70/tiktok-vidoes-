@@ -1,0 +1,5 @@
+# Render-Ausgaben und Zwischenstände (Videos werden direkt an den User geschickt)
+*.mp4
+.hyperframes/
+videos/*/build/*.wav
+videos/*/build/check.json

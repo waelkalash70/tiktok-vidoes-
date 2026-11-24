@@ -1,0 +1,19 @@
+{
+  "titel": "Brutto vs. Netto – 4.000 € (Teil 1)",
+  "annahmen": "Steuerklasse 1, ohne Kinder, ohne Kirchensteuer, gesetzlich versichert, Werte 2026 gerundet (KV inkl. Ø-Zusatzbeitrag 2,9 %, PV inkl. Kinderlosenzuschlag)",
+  "saetze": [
+    { "id": "s1", "beat": "hook",      "tokens": [["Du","Du"],["verdienst","verdienst"],["4.000 €","viertausend Euro","gold"],["brutto.","brutto."]] },
+    { "id": "s2", "beat": "frage",     "tokens": [["Aber","Aber"],["wie","wie"],["viel","viel"],["davon","davon"],["gehört","gehört"],["wirklich","wirklich"],["DIR?","dir?","gold"]] },
+    { "id": "s3", "beat": "steuer",    "tokens": [["Zuerst","Zuerst"],["holt","holt"],["sich","sich"],["das","das"],["Finanzamt","Finanzamt","red"],["die","die"],["Lohnsteuer:","Lohnsteuer:","red"],["−525 €","fünfhundertfünfundzwanzig Euro.","red"]] },
+    { "id": "s4", "beat": "rente",     "tokens": [["Dann","Dann"],["die","die"],["Rente:","Rente:","red"],["−372 €","dreihundertzweiundsiebzig Euro.","red"]] },
+    { "id": "s5", "beat": "kranken",   "tokens": [["Die","Die"],["Krankenkasse:","Krankenkasse:","red"],["−350 €","dreihundertfünfzig.","red"]] },
+    { "id": "s6", "beat": "pflege",    "tokens": [["Pflege:","Pflege:","red"],["−96 €","sechsundneunzig.","red"]] },
+    { "id": "s7", "beat": "arbeitslos","tokens": [["Arbeitslosen-versicherung:","Arbeitslosenversicherung:","red"],["−52 €","zweiundfünfzig.","red"]] },
+    { "id": "s8", "beat": "netto",     "tokens": [["Übrig","Übrig"],["bleiben:","bleiben:"],["2.605 €","zweitausendsechshundertfünf Euro.","gold"]] },
+    { "id": "s9", "beat": "twist",     "tokens": [["Und","Und"],["jetzt","jetzt"],["kommt's:","kommt's:"]] },
+    { "id": "s10","beat": "chef",      "tokens": [["Dein","Dein"],["Chef","Chef","gold"],["zahlt","zahlt"],["für","für"],["dich","dich"],["nochmal","nochmal"],["über","über"],["850 €","achthundertfünfzig Euro","gold"],["obendrauf.","obendrauf."]] },
+    { "id": "s11","beat": "kosten",    "tokens": [["Dein","Dein"],["Job","Job"],["kostet","kostet"],["also","also"],["fast","fast"],["4.900 €.","viertausendneunhundert Euro.","gold"]] },
+    { "id": "s12","beat": "haelfte",   "tokens": [["Bei","Bei"],["dir","dir"],["kommt","kommt"],["kaum","kaum"],["mehr","mehr"],["als","als"],["die","die"],["HÄLFTE","Hälfte","red"],["an.","an."]] },
+    { "id": "s13","beat": "cta",       "tokens": [["Teil 2:","Teil zwei:","gold"],["Wo","Wo"],["dein","dein"],["Geld","Geld"],["wirklich","wirklich"],["landet.","landet."]] }
+  ]
+}

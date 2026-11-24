@@ -1,0 +1,96 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; pointer-events: none; }
+    .cap { position: absolute; left: 120px; width: 660px; top: 1010px; height: 190px; display: flex; align-items: center; justify-content: center; text-align: center; overflow: visible; }
+    .t { display: inline-block; font-family: "Montserrat"; font-weight: 900; font-size: 112px; line-height: 1.02; color: #fff;
+      -webkit-text-stroke: 7px #000; paint-order: stroke fill; text-shadow: 0 8px 22px rgba(0,0,0,.85); transform-origin: 50% 60%; overflow-wrap: anywhere; }
+    .t.gold { color: #ffd23f; text-shadow: 0 0 26px rgba(255,190,0,.95), 0 0 60px rgba(255,150,0,.6), 0 8px 22px rgba(0,0,0,.85); }
+    .t.red { color: #ff4545; text-shadow: 0 0 26px rgba(255,40,40,.95), 0 0 60px rgba(255,0,0,.55), 0 8px 22px rgba(0,0,0,.85); }
+  </style>
+  <div id="root" data-composition-id="captions" data-width="1080" data-height="1920">
+    <div id="cap0" class="cap clip" data-start="0.1" data-duration="0.08" data-track-index="0"><span id="capt0" class="t">Du</span></div>
+    <div id="cap1" class="cap clip" data-start="0.18" data-duration="0.39" data-track-index="0"><span id="capt1" class="t">verdienst</span></div>
+    <div id="cap2" class="cap clip" data-start="0.57" data-duration="1.03" data-track-index="0"><span id="capt2" class="t gold">4.000 €</span></div>
+    <div id="cap3" class="cap clip" data-start="1.6" data-duration="0.91" data-track-index="0"><span id="capt3" class="t">brutto.</span></div>
+    <div id="cap4" class="cap clip" data-start="2.51" data-duration="0.246" data-track-index="0"><span id="capt4" class="t">Aber</span></div>
+    <div id="cap5" class="cap clip" data-start="2.756" data-duration="0.206" data-track-index="0"><span id="capt5" class="t">wie</span></div>
+    <div id="cap6" class="cap clip" data-start="2.962" data-duration="0.246" data-track-index="0"><span id="capt6" class="t">viel</span></div>
+    <div id="cap7" class="cap clip" data-start="3.208" data-duration="0.288" data-track-index="0"><span id="capt7" class="t">davon</span></div>
+    <div id="cap8" class="cap clip" data-start="3.496" data-duration="0.328" data-track-index="0"><span id="capt8" class="t">gehört</span></div>
+    <div id="cap9" class="cap clip" data-start="3.824" data-duration="0.411" data-track-index="0"><span id="capt9" class="t">wirklich</span></div>
+    <div id="cap10" class="cap clip" data-start="4.235" data-duration="0.835" data-track-index="0"><span id="capt10" class="t gold">DIR?</span></div>
+    <div id="cap11" class="cap clip" data-start="5.11" data-duration="0.42" data-track-index="0"><span id="capt11" class="t">Zuerst</span></div>
+    <div id="cap12" class="cap clip" data-start="5.53" data-duration="0.36" data-track-index="0"><span id="capt12" class="t">holt</span></div>
+    <div id="cap13" class="cap clip" data-start="5.89" data-duration="0.33" data-track-index="0"><span id="capt13" class="t">sich</span></div>
+    <div id="cap14" class="cap clip" data-start="6.22" data-duration="0.26" data-track-index="0"><span id="capt14" class="t">das</span></div>
+    <div id="cap15" class="cap clip" data-start="6.48" data-duration="0.61" data-track-index="0"><span id="capt15" class="t red">Finanzamt</span></div>
+    <div id="cap16" class="cap clip" data-start="7.09" data-duration="0.48" data-track-index="0"><span id="capt16" class="t">die</span></div>
+    <div id="cap17" class="cap clip" data-start="7.57" data-duration="0.72" data-track-index="0"><span id="capt17" class="t red">Lohnsteuer:</span></div>
+    <div id="cap18" class="cap clip" data-start="8.29" data-duration="1.22" data-track-index="0"><span id="capt18" class="t red">−525 €</span></div>
+    <div id="cap19" class="cap clip" data-start="9.51" data-duration="0.7" data-track-index="0"><span id="capt19" class="t">Dann</span></div>
+    <div id="cap20" class="cap clip" data-start="10.21" data-duration="0.12" data-track-index="0"><span id="capt20" class="t">die</span></div>
+    <div id="cap21" class="cap clip" data-start="10.33" data-duration="0.51" data-track-index="0"><span id="capt21" class="t red">Rente:</span></div>
+    <div id="cap22" class="cap clip" data-start="10.84" data-duration="1.45" data-track-index="0"><span id="capt22" class="t red">−372 €</span></div>
+    <div id="cap23" class="cap clip" data-start="12.29" data-duration="0.319" data-track-index="0"><span id="capt23" class="t">Die</span></div>
+    <div id="cap24" class="cap clip" data-start="12.609" data-duration="0.894" data-track-index="0"><span id="capt24" class="t red">Krankenkasse:</span></div>
+    <div id="cap25" class="cap clip" data-start="13.503" data-duration="1.387" data-track-index="0"><span id="capt25" class="t red">−350 €</span></div>
+    <div id="cap26" class="cap clip" data-start="14.89" data-duration="0.89" data-track-index="0"><span id="capt26" class="t red">Pflege:</span></div>
+    <div id="cap27" class="cap clip" data-start="15.78" data-duration="2.52" data-track-index="0"><span id="capt27" class="t red">−96 €</span></div>
+    <div id="cap28" class="cap clip" data-start="18.3" data-duration="1.294" data-track-index="0"><span id="capt28" class="t red">Arbeitslosen-versicherung:</span></div>
+    <div id="cap29" class="cap clip" data-start="19.594" data-duration="1.026" data-track-index="0"><span id="capt29" class="t red">−52 €</span></div>
+    <div id="cap30" class="cap clip" data-start="20.62" data-duration="0.321" data-track-index="0"><span id="capt30" class="t">Übrig</span></div>
+    <div id="cap31" class="cap clip" data-start="20.941" data-duration="0.414" data-track-index="0"><span id="capt31" class="t">bleiben:</span></div>
+    <div id="cap32" class="cap clip" data-start="21.355" data-duration="1.725" data-track-index="0"><span id="capt32" class="t gold">2.605 €</span></div>
+    <div id="cap33" class="cap clip" data-start="23.08" data-duration="0.347" data-track-index="0"><span id="capt33" class="t">Und</span></div>
+    <div id="cap34" class="cap clip" data-start="23.427" data-duration="0.487" data-track-index="0"><span id="capt34" class="t">jetzt</span></div>
+    <div id="cap35" class="cap clip" data-start="23.914" data-duration="0.556" data-track-index="0"><span id="capt35" class="t">kommt&#x27;s:</span></div>
+    <div id="cap36" class="cap clip" data-start="24.47" data-duration="0.305" data-track-index="0"><span id="capt36" class="t">Dein</span></div>
+    <div id="cap37" class="cap clip" data-start="24.775" data-duration="0.304" data-track-index="0"><span id="capt37" class="t gold">Chef</span></div>
+    <div id="cap38" class="cap clip" data-start="25.079" data-duration="0.355" data-track-index="0"><span id="capt38" class="t">zahlt</span></div>
+    <div id="cap39" class="cap clip" data-start="25.434" data-duration="0.254" data-track-index="0"><span id="capt39" class="t">für</span></div>
+    <div id="cap40" class="cap clip" data-start="25.688" data-duration="0.305" data-track-index="0"><span id="capt40" class="t">dich</span></div>
+    <div id="cap41" class="cap clip" data-start="25.993" data-duration="0.456" data-track-index="0"><span id="capt41" class="t">nochmal</span></div>
+    <div id="cap42" class="cap clip" data-start="26.449" data-duration="0.305" data-track-index="0"><span id="capt42" class="t">über</span></div>
+    <div id="cap43" class="cap clip" data-start="26.754" data-duration="1.218" data-track-index="0"><span id="capt43" class="t gold">850 €</span></div>
+    <div id="cap44" class="cap clip" data-start="27.972" data-duration="0.738" data-track-index="0"><span id="capt44" class="t">obendrauf.</span></div>
+    <div id="cap45" class="cap clip" data-start="28.71" data-duration="0.18" data-track-index="0"><span id="capt45" class="t">Dein</span></div>
+    <div id="cap46" class="cap clip" data-start="28.89" data-duration="0.27" data-track-index="0"><span id="capt46" class="t">Job</span></div>
+    <div id="cap47" class="cap clip" data-start="29.16" data-duration="0.54" data-track-index="0"><span id="capt47" class="t">kostet</span></div>
+    <div id="cap48" class="cap clip" data-start="29.7" data-duration="0.36" data-track-index="0"><span id="capt48" class="t">also</span></div>
+    <div id="cap49" class="cap clip" data-start="30.06" data-duration="0.34" data-track-index="0"><span id="capt49" class="t">fast</span></div>
+    <div id="cap50" class="cap clip" data-start="30.4" data-duration="1.73" data-track-index="0"><span id="capt50" class="t gold">4.900 €.</span></div>
+    <div id="cap51" class="cap clip" data-start="32.13" data-duration="0.24" data-track-index="0"><span id="capt51" class="t">Bei</span></div>
+    <div id="cap52" class="cap clip" data-start="32.37" data-duration="0.12" data-track-index="0"><span id="capt52" class="t">dir</span></div>
+    <div id="cap53" class="cap clip" data-start="32.49" data-duration="0.3" data-track-index="0"><span id="capt53" class="t">kommt</span></div>
+    <div id="cap54" class="cap clip" data-start="32.79" data-duration="0.22" data-track-index="0"><span id="capt54" class="t">kaum</span></div>
+    <div id="cap55" class="cap clip" data-start="33.01" data-duration="0.31" data-track-index="0"><span id="capt55" class="t">mehr</span></div>
+    <div id="cap56" class="cap clip" data-start="33.32" data-duration="0.31" data-track-index="0"><span id="capt56" class="t">als</span></div>
+    <div id="cap57" class="cap clip" data-start="33.63" data-duration="0.03" data-track-index="0"><span id="capt57" class="t">die</span></div>
+    <div id="cap58" class="cap clip" data-start="33.66" data-duration="0.48" data-track-index="0"><span id="capt58" class="t red">HÄLFTE</span></div>
+    <div id="cap59" class="cap clip" data-start="34.14" data-duration="1.04" data-track-index="0"><span id="capt59" class="t">an.</span></div>
+    <div id="cap60" class="cap clip" data-start="35.18" data-duration="0.3" data-track-index="0"><span id="capt60" class="t gold">Teil 2:</span></div>
+    <div id="cap61" class="cap clip" data-start="35.48" data-duration="0.11" data-track-index="0"><span id="capt61" class="t">Wo</span></div>
+    <div id="cap62" class="cap clip" data-start="35.59" data-duration="0.24" data-track-index="0"><span id="capt62" class="t">dein</span></div>
+    <div id="cap63" class="cap clip" data-start="35.83" data-duration="0.23" data-track-index="0"><span id="capt63" class="t">Geld</span></div>
+    <div id="cap64" class="cap clip" data-start="36.06" data-duration="0.46" data-track-index="0"><span id="capt64" class="t">wirklich</span></div>
+    <div id="cap65" class="cap clip" data-start="36.52" data-duration="1.64" data-track-index="0"><span id="capt65" class="t">landet.</span></div>
+  </div>
+  <script>
+    (function () {
+      const W = [[0, 0.1, false], [1, 0.18, false], [2, 0.57, true], [3, 1.6, false], [4, 2.51, false], [5, 2.756, false], [6, 2.962, false], [7, 3.208, false], [8, 3.496, false], [9, 3.824, false], [10, 4.235, true], [11, 5.11, false], [12, 5.53, false], [13, 5.89, false], [14, 6.22, false], [15, 6.48, true], [16, 7.09, false], [17, 7.57, true], [18, 8.29, true], [19, 9.51, false], [20, 10.21, false], [21, 10.33, true], [22, 10.84, true], [23, 12.29, false], [24, 12.609, true], [25, 13.503, true], [26, 14.89, true], [27, 15.78, true], [28, 18.3, true], [29, 19.594, true], [30, 20.62, false], [31, 20.941, false], [32, 21.355, true], [33, 23.08, false], [34, 23.427, false], [35, 23.914, false], [36, 24.47, false], [37, 24.775, true], [38, 25.079, false], [39, 25.434, false], [40, 25.688, false], [41, 25.993, false], [42, 26.449, false], [43, 26.754, true], [44, 27.972, false], [45, 28.71, false], [46, 28.89, false], [47, 29.16, false], [48, 29.7, false], [49, 30.06, false], [50, 30.4, true], [51, 32.13, false], [52, 32.37, false], [53, 32.49, false], [54, 32.79, false], [55, 33.01, false], [56, 33.32, false], [57, 33.63, false], [58, 33.66, true], [59, 34.14, false], [60, 35.18, true], [61, 35.48, false], [62, 35.59, false], [63, 35.83, false], [64, 36.06, false], [65, 36.52, false]];
+      const fit = window.__hyperframes && window.__hyperframes.fitTextFontSize;
+      const tl = gsap.timeline({ paused: true });
+      for (const [i, st, hot] of W) {
+        const el = document.getElementById("capt" + i);
+        const txt = el.textContent;
+        let fs = 112;
+        if (fit) { try { fs = Math.min(112, fit(txt, { fontFamily: "Montserrat", fontWeight: 900, maxWidth: hot ? 560 : 610, baseFontSize: 112, minFontSize: 56 }).fontSize); } catch (e) {} }
+        else fs = Math.max(56, Math.min(112, Math.floor(610 / (txt.length * 0.68))));
+        el.style.fontSize = fs + "px";
+        if (hot) tl.fromTo(el, { scale: 0.55, y: 18 }, { scale: 1.08, y: 0, duration: 0.14, ease: "back.out(3)" }, st).to(el, { scale: 1, duration: 0.12, ease: "power2.out" }, st + 0.14);
+        else tl.fromTo(el, { scale: 0.8, y: 12 }, { scale: 1, y: 0, duration: 0.1, ease: "back.out(2.5)" }, st);
+      }
+      window.__timelines["captions"] = tl;
+    })();
+  </script>
+</template>

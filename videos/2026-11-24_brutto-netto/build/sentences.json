@@ -1,0 +1,83 @@
+{
+ "total": 37.625,
+ "saetze": [
+  {
+   "id": "s1",
+   "start": 0.15,
+   "end": 2.217,
+   "text": "Du verdienst viertausend Euro brutto."
+  },
+  {
+   "id": "s2",
+   "start": 2.467,
+   "end": 4.649,
+   "text": "Aber wie viel davon gehört wirklich dir?"
+  },
+  {
+   "id": "s3",
+   "start": 5.099,
+   "end": 9.174,
+   "text": "Zuerst holt sich das Finanzamt die Lohnsteuer: fünfhundertfünfundzwanzig Euro."
+  },
+  {
+   "id": "s4",
+   "start": 9.524,
+   "end": 12.032,
+   "text": "Dann die Rente: dreihundertzweiundsiebzig Euro."
+  },
+  {
+   "id": "s5",
+   "start": 12.332,
+   "end": 14.654,
+   "text": "Die Krankenkasse: dreihundertfünfzig."
+  },
+  {
+   "id": "s6",
+   "start": 14.954,
+   "end": 16.835,
+   "text": "Pflege: sechsundneunzig."
+  },
+  {
+   "id": "s7",
+   "start": 17.035,
+   "end": 19.682,
+   "text": "Arbeitslosenversicherung: zweiundfünfzig."
+  },
+  {
+   "id": "s8",
+   "start": 20.032,
+   "end": 22.691,
+   "text": "Übrig bleiben: zweitausendsechshundertfünf Euro."
+  },
+  {
+   "id": "s9",
+   "start": 23.241,
+   "end": 24.344,
+   "text": "Und jetzt kommt's:"
+  },
+  {
+   "id": "s10",
+   "start": 24.544,
+   "end": 28.468,
+   "text": "Dein Chef zahlt für dich nochmal über achthundertfünfzig Euro obendrauf."
+  },
+  {
+   "id": "s11",
+   "start": 28.818,
+   "end": 31.883,
+   "text": "Dein Job kostet also fast viertausendneunhundert Euro."
+  },
+  {
+   "id": "s12",
+   "start": 32.183,
+   "end": 34.296,
+   "text": "Bei dir kommt kaum mehr als die Hälfte an."
+  },
+  {
+   "id": "s13",
+   "start": 34.796,
+   "end": 37.025,
+   "text": "Teil zwei: Wo dein Geld wirklich landet."
+  }
+ ]
+}

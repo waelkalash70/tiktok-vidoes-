@@ -1,0 +1,440 @@
+[
+  {
+    "text": "Du",
+    "start": 0.11,
+    "end": 0.21,
+    "id": "w0"
+  },
+  {
+    "text": "verdienst",
+    "start": 0.21,
+    "end": 0.6,
+    "id": "w1"
+  },
+  {
+    "text": "4.000",
+    "start": 0.6,
+    "end": 1.36,
+    "id": "w2"
+  },
+  {
+    "text": "Euro",
+    "start": 1.43,
+    "end": 1.63,
+    "id": "w3"
+  },
+  {
+    "text": "brutto,",
+    "start": 1.63,
+    "end": 2.06,
+    "id": "w4"
+  },
+  {
+    "text": "aber",
+    "start": 2.54,
+    "end": 2.58,
+    "id": "w5"
+  },
+  {
+    "text": "wie",
+    "start": 2.58,
+    "end": 2.81,
+    "id": "w6"
+  },
+  {
+    "text": "viel",
+    "start": 2.81,
+    "end": 3.11,
+    "id": "w7"
+  },
+  {
+    "text": "davon",
+    "start": 3.11,
+    "end": 3.49,
+    "id": "w8"
+  },
+  {
+    "text": "gehört",
+    "start": 3.49,
+    "end": 3.95,
+    "id": "w9"
+  },
+  {
+    "text": "wirklich",
+    "start": 3.95,
+    "end": 4.47,
+    "id": "w10"
+  },
+  {
+    "text": "dir?",
+    "start": 4.79,
+    "end": 5.06,
+    "id": "w11"
+  },
+  {
+    "text": "Zuerst",
+    "start": 5.14,
+    "end": 5.48,
+    "id": "w12"
+  },
+  {
+    "text": "holt",
+    "start": 5.56,
+    "end": 5.89,
+    "id": "w13"
+  },
+  {
+    "text": "sich",
+    "start": 5.92,
+    "end": 6.25,
+    "id": "w14"
+  },
+  {
+    "text": "das",
+    "start": 6.25,
+    "end": 6.51,
+    "id": "w15"
+  },
+  {
+    "text": "Finanzamt",
+    "start": 6.51,
+    "end": 7.12,
+    "id": "w16"
+  },
+  {
+    "text": "die",
+    "start": 7.12,
+    "end": 7.6,
+    "id": "w17"
+  },
+  {
+    "text": "Lonsdeuer",
+    "start": 7.6,
+    "end": 8.32,
+    "id": "w18"
+  },
+  {
+    "text": "525",
+    "start": 8.32,
+    "end": 9.02,
+    "id": "w19"
+  },
+  {
+    "text": "Euro,",
+    "start": 9.1,
+    "end": 9.54,
+    "id": "w20"
+  },
+  {
+    "text": "dann",
+    "start": 9.54,
+    "end": 10.24,
+    "id": "w21"
+  },
+  {
+    "text": "die",
+    "start": 10.24,
+    "end": 10.36,
+    "id": "w22"
+  },
+  {
+    "text": "Rente",
+    "start": 10.36,
+    "end": 10.79,
+    "id": "w23"
+  },
+  {
+    "text": "372",
+    "start": 10.87,
+    "end": 11.65,
+    "id": "w24"
+  },
+  {
+    "text": "Euro,",
+    "start": 11.74,
+    "end": 12.32,
+    "id": "w25"
+  },
+  {
+    "text": "die",
+    "start": 12.32,
+    "end": 12.37,
+    "id": "w26"
+  },
+  {
+    "text": "Krankenkasse",
+    "start": 12.58,
+    "end": 13.14,
+    "id": "w27"
+  },
+  {
+    "text": "350,",
+    "start": 13.35,
+    "end": 14.31,
+    "id": "w28"
+  },
+  {
+    "text": "Pflege",
+    "start": 14.31,
+    "end": 14.81,
+    "id": "w29"
+  },
+  {
+    "text": "96,",
+    "start": 14.92,
+    "end": 15.79,
+    "id": "w30"
+  },
+  {
+    "text": "Arbeitslosenversicherung",
+    "start": 15.81,
+    "end": 18.33,
+    "id": "w31"
+  },
+  {
+    "text": "52,",
+    "start": 18.33,
+    "end": 19.18,
+    "id": "w32"
+  },
+  {
+    "text": "übrig",
+    "start": 19.18,
+    "end": 19.71,
+    "id": "w33"
+  },
+  {
+    "text": "bleiben",
+    "start": 19.71,
+    "end": 20.42,
+    "id": "w34"
+  },
+  {
+    "text": "2.605",
+    "start": 20.65,
+    "end": 22.06,
+    "id": "w35"
+  },
+  {
+    "text": "Euro.",
+    "start": 22.06,
+    "end": 22.9,
+    "id": "w36"
+  },
+  {
+    "text": "Und",
+    "start": 23.11,
+    "end": 23.13,
+    "id": "w37"
+  },
+  {
+    "text": "jetzt",
+    "start": 23.13,
+    "end": 23.51,
+    "id": "w38"
+  },
+  {
+    "text": "kommt's,",
+    "start": 23.51,
+    "end": 24.19,
+    "id": "w39"
+  },
+  {
+    "text": "dein",
+    "start": 24.19,
+    "end": 24.5,
+    "id": "w40"
+  },
+  {
+    "text": "Chef",
+    "start": 24.5,
+    "end": 24.81,
+    "id": "w41"
+  },
+  {
+    "text": "zahlt",
+    "start": 24.81,
+    "end": 24.96,
+    "id": "w42"
+  },
+  {
+    "text": "für",
+    "start": 24.96,
+    "end": 25.44,
+    "id": "w43"
+  },
+  {
+    "text": "dich",
+    "start": 25.44,
+    "end": 25.72,
+    "id": "w44"
+  },
+  {
+    "text": "nochmal",
+    "start": 25.72,
+    "end": 26.18,
+    "id": "w45"
+  },
+  {
+    "text": "über",
+    "start": 26.27,
+    "end": 26.57,
+    "id": "w46"
+  },
+  {
+    "text": "850",
+    "start": 26.57,
+    "end": 27.26,
+    "id": "w47"
+  },
+  {
+    "text": "Euro",
+    "start": 27.26,
+    "end": 27.38,
+    "id": "w48"
+  },
+  {
+    "text": "obendrauf.",
+    "start": 27.72,
+    "end": 28.56,
+    "id": "w49"
+  },
+  {
+    "text": "Dein",
+    "start": 28.74,
+    "end": 28.86,
+    "id": "w50"
+  },
+  {
+    "text": "Job",
+    "start": 28.92,
+    "end": 29.19,
+    "id": "w51"
+  },
+  {
+    "text": "kostet",
+    "start": 29.19,
+    "end": 29.73,
+    "id": "w52"
+  },
+  {
+    "text": "also",
+    "start": 29.73,
+    "end": 30.09,
+    "id": "w53"
+  },
+  {
+    "text": "fast",
+    "start": 30.09,
+    "end": 30.43,
+    "id": "w54"
+  },
+  {
+    "text": "4900",
+    "start": 30.43,
+    "end": 31.45,
+    "id": "w55"
+  },
+  {
+    "text": "Euro,",
+    "start": 31.56,
+    "end": 32.16,
+    "id": "w56"
+  },
+  {
+    "text": "bei",
+    "start": 32.16,
+    "end": 32.31,
+    "id": "w57"
+  },
+  {
+    "text": "dir",
+    "start": 32.4,
+    "end": 32.52,
+    "id": "w58"
+  },
+  {
+    "text": "kommt",
+    "start": 32.52,
+    "end": 32.68,
+    "id": "w59"
+  },
+  {
+    "text": "kaum",
+    "start": 32.82,
+    "end": 33.04,
+    "id": "w60"
+  },
+  {
+    "text": "mehr",
+    "start": 33.04,
+    "end": 33.35,
+    "id": "w61"
+  },
+  {
+    "text": "als",
+    "start": 33.35,
+    "end": 33.66,
+    "id": "w62"
+  },
+  {
+    "text": "die",
+    "start": 33.66,
+    "end": 33.69,
+    "id": "w63"
+  },
+  {
+    "text": "Hälfte",
+    "start": 33.69,
+    "end": 33.98,
+    "id": "w64"
+  },
+  {
+    "text": "an.",
+    "start": 34.17,
+    "end": 34.96,
+    "id": "w65"
+  },
+  {
+    "text": "Teil",
+    "start": 35.21,
+    "end": 35.23,
+    "id": "w66"
+  },
+  {
+    "text": "2,",
+    "start": 35.23,
+    "end": 35.42,
+    "id": "w67"
+  },
+  {
+    "text": "wo",
+    "start": 35.51,
+    "end": 35.62,
+    "id": "w68"
+  },
+  {
+    "text": "dein",
+    "start": 35.62,
+    "end": 35.66,
+    "id": "w69"
+  },
+  {
+    "text": "Geld",
+    "start": 35.86,
+    "end": 36.01,
+    "id": "w70"
+  },
+  {
+    "text": "wirklich",
+    "start": 36.09,
+    "end": 36.55,
+    "id": "w71"
+  },
+  {
+    "text": "landet.",
+    "start": 36.55,
+    "end": 36.96,
+    "id": "w72"
+  }
+]

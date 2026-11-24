@@ -104,6 +104,31 @@ Referenzen:
 - Safe-Zone laut HyperFrames (1080×1920): Inhalt zwischen y 288–1248 px und x 120–888 px
   (unter y 840 nur bis x 780). Zähler-Leiste daher bei ~y 300, Untertitel bei ~y 1040.
 - Gebündelte Fonts (ohne @font-face): Montserrat, Poppins, Archivo Black, Outfit, Inter u. a.
+- `transcribe` für Deutsch IMMER mit `--model small --language de` (Default `small.en` übersetzt ins Englische!).
+
+## 2c. Bewährte Pipeline „Schwarz-Gold-3D“ (Referenzprojekt: `videos/2026-11-24_brutto-netto/`)
+Neues Video = Projektordner kopieren, `script.json` neu schreiben, 3D-Szene in `tools/index.tpl.html` anpassen.
+- `script.json`: Sätze mit `beat`-Namen; jedes Token = `[Anzeige, gesprochen, Farbe?]`
+  (z. B. `["4.000 €","viertausend Euro","gold"]`) → Untertitel zeigen Ziffern, TTS liest Wörter.
+- `tools/tts.py <projekt> <piper.onnx>` → satzweise Piper-Stimme + exakte Satzgrenzen (`build/sentences.json`),
+  danach `transcribe` + `tools/align.py` → `build/captions.json`.
+- **Fremdes Voiceover (ElevenLabs):** Datei als `assets/voice.wav` (ffmpeg → wav), `transcribe --model small --language de`,
+  dann `python3 -I tools/align_global.py <projekt>`: globale difflib-Zuordnung Skript↔Whisper + Satzgrenzen per
+  DP auf echte Sprechpausen (silencedetect) mit Satzlängen-Prior. Getestet: alle Satzgrenzen ±0,25 s.
+  Whisper-Wortzeiten allein lagen bis 1,4 s daneben → nie ungeprüft übernehmen.
+- `tools/build.py <projekt>` erzeugt `index.html` (3D + Audio + SFX), `compositions/hud.html` (Zähler oben),
+  `compositions/captions.html` (Ein-Wort-Untertitel). Alle Zeiten kommen aus Beats → neues Audio = nur neu bauen.
+- 3D: Three.js 0.170 lokal in `assets/lib/three` (npm pack), Importmap im `<head>`, Modul-Script mit
+  `window.__hf.buildReady.world`-Promise **vor** `await document.fonts.load(...)` registrieren, Szene als reine
+  Funktion `render(t)` im `hf-seek`-Listener. WebGL läuft hier in Software (SwiftShader) – Snapshots ~15 s.
+- Look-Werte, die funktioniert haben: Exposure 0.92, Gold-Emissive 0.16 (höher = weiß ausgebrannt), Bloom
+  (0.55, 0.5, Schwelle 0.78), Skyline weit hinten (z ≈ −45) mit gedimmten Fenstern, Spiegelboden (Reflector)
+  + 74 % dunkle Abdeckung + Goldraster, Gitterkäfige mit `LineSegments2` (Linienbreite 2–2.6 px).
+- Fallstricke: `Object.assign(mesh, {position})` wirft (position ist read-only). 3D-Schilder nicht über y≈4.5
+  im Bild (kollidieren mit Zähler oben) → Kamera-Ziel höher legen, damit die Szene im Bild tiefer sitzt.
+  Untertitel-Clips dürfen sich nicht überlappen (Ende = Start des nächsten). Kamera-Keyframes können sich
+  zeitlich überholen → nach Landungen mit `Math.max` absichern. SFX `riser.mp3`: laut nur bei 1,5–4 s.
+- Bundled SFX (Pixabay-Lizenz, frei nutzbar): `.claude/skills/media-use/audio/assets/sfx/`.
 
 ## 2b. Skript-Tempo aus den Referenzen (Whisper-Transkripte)
 - Ref 3 (Hansetax), 9 s: „Reiche Unternehmer haben immer zwei Firmen. Die erste verdient das Geld
@@ -135,7 +160,8 @@ Wenn der User Feedback gibt – positiv oder negativ:
 - Videos immer auf **Deutsch**.
 - Videos werden mit **Claude Code** (programmatisch) erstellt – Render-Framework: **HyperFrames** (vom User gewünscht).
 - Visualisierung soll **sehr nah an den Referenzen** sein.
-- Nische: _noch offen_ – User hat noch kein Thema; Claude schlägt Themen vor (Geld/Reiche/Psychologie passt zum Leitstil).
+- Nische: **„Geld-Geheimnisse“** (Gehalt, Steuern, wie Reiche denken, Konsum-Psychologie) – von Claude vorgeschlagen, User hat zugestimmt.
+- Themen-Backlog: Zinseszins (100 €/Monat → Million), Milliardäre ohne Gehalt, Lottogewinner pleite, Supermarkt-Psychologie, 72er-Regel, Brutto-Netto Teil 2 (wo das Geld landet).
 - **Leitstil: Schwarz-Gold-3D-Infografik (Ref 3, Hansetax)** – vom User gewählt 2026-11-24.
 - **Voiceover:** User macht das finale Voiceover selbst mit **ElevenLabs**. Claude baut das Video mit einer
   Platzhalter-Stimme (Piper `de_DE-thorsten-high`, lokal, via Hugging Face) und timt Untertitel/Animationen
@@ -150,7 +176,9 @@ Wenn der User Feedback gibt – positiv oder negativ:
 - Die Original-Referenzvideos sind NICHT im Repo – nur Frame-Raster in `referenzen/`. Bei Bedarf User
   bitten, sie erneut hochzuladen.
 - **Offene Fragen an den User** (beim nächsten Start klären, Antworten hier eintragen):
-  1. Nische + erstes Thema? (2–4 beantwortet, siehe Feste Präferenzen)
+  1. (alle beantwortet)
+- Video 1 „Brutto vs. Netto (Teil 1)“: Entwurf mit Platzhalterstimme fertig (39 s). Wartet auf Feedback +
+  ElevenLabs-Voiceover des Users → dann `align_global.py` + `build.py` + `render --quality delivery`.
 - GitHub: Push auf `waelkalash70/tiktok-vidoes-` funktioniert (seit 2026-11-24). Lösung bei 403 war:
   Claude GitHub App auf das Repo installieren UND auf claude.ai neu verknüpfen
   (`https://claude.ai/customize/connectors?auth_start=github&auth_start_force=1`).

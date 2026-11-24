@@ -1,0 +1,464 @@
+[
+{
+"s": "s1",
+"text": "Du",
+"color": "",
+"start": 0.11,
+"end": 0.21
+},
+{
+"s": "s1",
+"text": "verdienst",
+"color": "",
+"start": 0.21,
+"end": 0.6
+},
+{
+"s": "s1",
+"text": "4.000 €",
+"color": "gold",
+"start": 0.6,
+"end": 1.63
+},
+{
+"s": "s1",
+"text": "brutto.",
+"color": "",
+"start": 1.63,
+"end": 2.54
+},
+{
+"s": "s2",
+"text": "Aber",
+"color": "",
+"start": 2.54,
+"end": 2.786
+},
+{
+"s": "s2",
+"text": "wie",
+"color": "",
+"start": 2.786,
+"end": 2.992
+},
+{
+"s": "s2",
+"text": "viel",
+"color": "",
+"start": 2.992,
+"end": 3.238
+},
+{
+"s": "s2",
+"text": "davon",
+"color": "",
+"start": 3.238,
+"end": 3.526
+},
+{
+"s": "s2",
+"text": "gehört",
+"color": "",
+"start": 3.526,
+"end": 3.854
+},
+{
+"s": "s2",
+"text": "wirklich",
+"color": "",
+"start": 3.854,
+"end": 4.265
+},
+{
+"s": "s2",
+"text": "DIR?",
+"color": "gold",
+"start": 4.265,
+"end": 5.07
+},
+{
+"s": "s3",
+"text": "Zuerst",
+"color": "",
+"start": 5.14,
+"end": 5.56
+},
+{
+"s": "s3",
+"text": "holt",
+"color": "",
+"start": 5.56,
+"end": 5.92
+},
+{
+"s": "s3",
+"text": "sich",
+"color": "",
+"start": 5.92,
+"end": 6.25
+},
+{
+"s": "s3",
+"text": "das",
+"color": "",
+"start": 6.25,
+"end": 6.51
+},
+{
+"s": "s3",
+"text": "Finanzamt",
+"color": "red",
+"start": 6.51,
+"end": 7.12
+},
+{
+"s": "s3",
+"text": "die",
+"color": "",
+"start": 7.12,
+"end": 7.6
+},
+{
+"s": "s3",
+"text": "Lohnsteuer:",
+"color": "red",
+"start": 7.6,
+"end": 8.32
+},
+{
+"s": "s3",
+"text": "−525 €",
+"color": "red",
+"start": 8.32,
+"end": 9.54
+},
+{
+"s": "s4",
+"text": "Dann",
+"color": "",
+"start": 9.54,
+"end": 10.24
+},
+{
+"s": "s4",
+"text": "die",
+"color": "",
+"start": 10.24,
+"end": 10.36
+},
+{
+"s": "s4",
+"text": "Rente:",
+"color": "red",
+"start": 10.36,
+"end": 10.87
+},
+{
+"s": "s4",
+"text": "−372 €",
+"color": "red",
+"start": 10.87,
+"end": 12.32
+},
+{
+"s": "s5",
+"text": "Die",
+"color": "",
+"start": 12.32,
+"end": 12.639
+},
+{
+"s": "s5",
+"text": "Krankenkasse:",
+"color": "red",
+"start": 12.639,
+"end": 13.533
+},
+{
+"s": "s5",
+"text": "−350 €",
+"color": "red",
+"start": 13.533,
+"end": 14.92
+},
+{
+"s": "s6",
+"text": "Pflege:",
+"color": "red",
+"start": 14.92,
+"end": 15.81
+},
+{
+"s": "s6",
+"text": "−96 €",
+"color": "red",
+"start": 15.81,
+"end": 18.33
+},
+{
+"s": "s7",
+"text": "Arbeitslosen-versicherung:",
+"color": "red",
+"start": 18.33,
+"end": 19.624
+},
+{
+"s": "s7",
+"text": "−52 €",
+"color": "red",
+"start": 19.624,
+"end": 20.65
+},
+{
+"s": "s8",
+"text": "Übrig",
+"color": "",
+"start": 20.65,
+"end": 20.971
+},
+{
+"s": "s8",
+"text": "bleiben:",
+"color": "",
+"start": 20.971,
+"end": 21.385
+},
+{
+"s": "s8",
+"text": "2.605 €",
+"color": "gold",
+"start": 21.385,
+"end": 23.11
+},
+{
+"s": "s9",
+"text": "Und",
+"color": "",
+"start": 23.11,
+"end": 23.457
+},
+{
+"s": "s9",
+"text": "jetzt",
+"color": "",
+"start": 23.457,
+"end": 23.944
+},
+{
+"s": "s9",
+"text": "kommt's:",
+"color": "",
+"start": 23.944,
+"end": 24.5
+},
+{
+"s": "s10",
+"text": "Dein",
+"color": "",
+"start": 24.5,
+"end": 24.805
+},
+{
+"s": "s10",
+"text": "Chef",
+"color": "gold",
+"start": 24.805,
+"end": 25.109
+},
+{
+"s": "s10",
+"text": "zahlt",
+"color": "",
+"start": 25.109,
+"end": 25.464
+},
+{
+"s": "s10",
+"text": "für",
+"color": "",
+"start": 25.464,
+"end": 25.718
+},
+{
+"s": "s10",
+"text": "dich",
+"color": "",
+"start": 25.718,
+"end": 26.023
+},
+{
+"s": "s10",
+"text": "nochmal",
+"color": "",
+"start": 26.023,
+"end": 26.479
+},
+{
+"s": "s10",
+"text": "über",
+"color": "",
+"start": 26.479,
+"end": 26.784
+},
+{
+"s": "s10",
+"text": "850 €",
+"color": "gold",
+"start": 26.784,
+"end": 28.002
+},
+{
+"s": "s10",
+"text": "obendrauf.",
+"color": "",
+"start": 28.002,
+"end": 28.74
+},
+{
+"s": "s11",
+"text": "Dein",
+"color": "",
+"start": 28.74,
+"end": 28.92
+},
+{
+"s": "s11",
+"text": "Job",
+"color": "",
+"start": 28.92,
+"end": 29.19
+},
+{
+"s": "s11",
+"text": "kostet",
+"color": "",
+"start": 29.19,
+"end": 29.73
+},
+{
+"s": "s11",
+"text": "also",
+"color": "",
+"start": 29.73,
+"end": 30.09
+},
+{
+"s": "s11",
+"text": "fast",
+"color": "",
+"start": 30.09,
+"end": 30.43
+},
+{
+"s": "s11",
+"text": "4.900 €.",
+"color": "gold",
+"start": 30.43,
+"end": 32.16
+},
+{
+"s": "s12",
+"text": "Bei",
+"color": "",
+"start": 32.16,
+"end": 32.4
+},
+{
+"s": "s12",
+"text": "dir",
+"color": "",
+"start": 32.4,
+"end": 32.52
+},
+{
+"s": "s12",
+"text": "kommt",
+"color": "",
+"start": 32.52,
+"end": 32.82
+},
+{
+"s": "s12",
+"text": "kaum",
+"color": "",
+"start": 32.82,
+"end": 33.04
+},
+{
+"s": "s12",
+"text": "mehr",
+"color": "",
+"start": 33.04,
+"end": 33.35
+},
+{
+"s": "s12",
+"text": "als",
+"color": "",
+"start": 33.35,
+"end": 33.66
+},
+{
+"s": "s12",
+"text": "die",
+"color": "",
+"start": 33.66,
+"end": 33.69
+},
+{
+"s": "s12",
+"text": "HÄLFTE",
+"color": "red",
+"start": 33.69,
+"end": 34.17
+},
+{
+"s": "s12",
+"text": "an.",
+"color": "",
+"start": 34.17,
+"end": 35.21
+},
+{
+"s": "s13",
+"text": "Teil 2:",
+"color": "gold",
+"start": 35.21,
+"end": 35.51
+},
+{
+"s": "s13",
+"text": "Wo",
+"color": "",
+"start": 35.51,
+"end": 35.62
+},
+{
+"s": "s13",
+"text": "dein",
+"color": "",
+"start": 35.62,
+"end": 35.86
+},
+{
+"s": "s13",
+"text": "Geld",
+"color": "",
+"start": 35.86,
+"end": 36.09
+},
+{
+"s": "s13",
+"text": "wirklich",
+"color": "",
+"start": 36.09,
+"end": 36.55
+},
+{
+"s": "s13",
+"text": "landet.",
+"color": "",
+"start": 36.55,
+"end": 38.16
+}
+]

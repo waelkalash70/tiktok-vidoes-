@@ -1,0 +1,412 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=1080, height=1920" />
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.15.0/dist/gsap.min.js"></script>
+    <script type="importmap">
+      { "imports": { "three": "./assets/lib/three/three.module.js", "three/addons/": "./assets/lib/three/addons/" } }
+    </script>
+    <style>
+      * { margin: 0; padding: 0; box-sizing: border-box; }
+      html, body { width: 1080px; height: 1920px; overflow: hidden; background: #030409; }
+      #root { position: relative; width: 100%; height: 100%; font-family: "Montserrat"; }
+      #world { position: absolute; inset: 0; width: 1080px; height: 1920px; display: block; }
+    </style>
+  </head>
+  <body>
+    <div id="root" data-composition-id="main" data-start="0" data-duration="39.06" data-width="1080" data-height="1920">
+      <canvas id="world" class="clip" data-start="0" data-duration="39.06" data-track-index="0" width="1080" height="1920"></canvas>
+      <div id="hud" data-composition-id="hud" data-composition-src="compositions/hud.html" data-start="0" data-duration="39.06"
+           data-track-index="1" data-track-kind="graphics" data-width="1080" data-height="1920"></div>
+      <div id="captions" data-composition-id="captions" data-composition-src="compositions/captions.html" data-start="0" data-duration="39.06"
+           data-track-index="2" data-track-kind="captions" data-width="1080" data-height="1920"></div>
+      <audio id="voice" src="assets/voice.wav" data-start="0" data-duration="39.06" data-track-index="3"></audio>
+      <audio id="sfx0" src="assets/sfx/whoosh-short.mp3" data-start="8.34" data-duration="0.57" data-volume="0.55" data-track-index="4"></audio>
+      <audio id="sfx1" src="assets/sfx/pop.mp3" data-start="9.52" data-duration="0.5" data-volume="0.45" data-track-index="4"></audio>
+      <audio id="sfx2" src="assets/sfx/whoosh-short.mp3" data-start="10.89" data-duration="0.57" data-volume="0.55" data-track-index="4"></audio>
+      <audio id="sfx3" src="assets/sfx/pop.mp3" data-start="12.07" data-duration="0.5" data-volume="0.45" data-track-index="4"></audio>
+      <audio id="sfx4" src="assets/sfx/whoosh-short.mp3" data-start="13.553" data-duration="0.57" data-volume="0.55" data-track-index="4"></audio>
+      <audio id="sfx5" src="assets/sfx/pop.mp3" data-start="14.733" data-duration="0.5" data-volume="0.45" data-track-index="4"></audio>
+      <audio id="sfx6" src="assets/sfx/whoosh-short.mp3" data-start="15.83" data-duration="0.57" data-volume="0.55" data-track-index="4"></audio>
+      <audio id="sfx7" src="assets/sfx/pop.mp3" data-start="17.01" data-duration="0.5" data-volume="0.45" data-track-index="4"></audio>
+      <audio id="sfx8" src="assets/sfx/whoosh-short.mp3" data-start="19.644" data-duration="0.57" data-volume="0.55" data-track-index="4"></audio>
+      <audio id="sfx9" src="assets/sfx/pop.mp3" data-start="20.824" data-duration="0.5" data-volume="0.45" data-track-index="4"></audio>
+      <audio id="sfx10" src="assets/sfx/sparkle.mp3" data-start="21.385" data-duration="1.8" data-volume="0.5" data-track-index="4"></audio>
+      <audio id="sfx11" src="assets/sfx/riser.mp3" data-start="21.51" data-duration="2.0" data-media-start="1.5" data-volume="0.3" data-track-index="5"></audio>
+      <audio id="sfx12" src="assets/sfx/impact-bass-2.mp3" data-start="27.534" data-duration="2.0" data-volume="0.55" data-track-index="4"></audio>
+      <audio id="sfx13" src="assets/sfx/impact-bass-1.mp3" data-start="33.69" data-duration="2.0" data-volume="0.6" data-track-index="4"></audio>
+      <audio id="sfx14" src="assets/sfx/whoosh-cinematic.mp3" data-start="35.21" data-duration="3.0" data-volume="0.4" data-track-index="5"></audio>
+    </div>
+    <script>
+      window.__timelines = window.__timelines || {};
+      const tl = gsap.timeline({ paused: true });
+      tl.to({ v: 0 }, { v: 1, duration: 39.06, ease: "none" }, 0);
+      window.__timelines["main"] = tl;
+    </script>
+    <script type="module">
+      import * as THREE from "three";
+      import { EffectComposer } from "three/addons/postprocessing/EffectComposer.js";
+      import { RenderPass } from "three/addons/postprocessing/RenderPass.js";
+      import { UnrealBloomPass } from "three/addons/postprocessing/UnrealBloomPass.js";
+      import { OutputPass } from "three/addons/postprocessing/OutputPass.js";
+      import { Reflector } from "three/addons/objects/Reflector.js";
+      import { RoomEnvironment } from "three/addons/environments/RoomEnvironment.js";
+      import { LineSegments2 } from "three/addons/lines/LineSegments2.js";
+      import { LineSegmentsGeometry } from "three/addons/lines/LineSegmentsGeometry.js";
+      import { LineMaterial } from "three/addons/lines/LineMaterial.js";
+
+      window.__hf = window.__hf || {}; window.__hf.buildReady = window.__hf.buildReady || {};
+      let resolveReady; window.__hf.buildReady.world = new Promise((r) => (resolveReady = r));
+      let ready = false, lastT = 0;
+      window.addEventListener("hf-seek", (e) => { lastT = e.detail.time; if (ready) render(lastT); });
+      await Promise.all([document.fonts.load("900 64px Montserrat"), document.fonts.load("900 220px Montserrat")]);
+
+      const B = {"hook": {"start": 0.11, "end": 2.54, "key": 0.6}, "frage": {"start": 2.54, "end": 5.07, "key": 4.265}, "steuer": {"start": 5.14, "end": 9.54, "key": 8.32}, "rente": {"start": 9.54, "end": 12.32, "key": 10.87}, "kranken": {"start": 12.32, "end": 14.92, "key": 13.533}, "pflege": {"start": 14.92, "end": 18.33, "key": 15.81}, "arbeitslos": {"start": 18.33, "end": 20.65, "key": 19.624}, "netto": {"start": 20.65, "end": 23.11, "key": 21.385}, "twist": {"start": 23.11, "end": 24.5, "key": 23.11}, "chef": {"start": 24.5, "end": 28.74, "key": 26.784}, "kosten": {"start": 28.74, "end": 32.16, "key": 30.43}, "haelfte": {"start": 32.16, "end": 35.21, "key": 33.69}, "cta": {"start": 35.21, "end": 38.16, "key": 35.21}, "T": 39.06};
+      const W = 1080, H = 1920;
+
+      // ---------- Hilfsfunktionen ----------
+      const clamp = (x, a = 0, b = 1) => Math.min(b, Math.max(a, x));
+      const seg = (t, a, b) => clamp((t - a) / (b - a));
+      const sm = (x) => x * x * (3 - 2 * x);
+      const smr = (x) => x * x * x * (x * (x * 6 - 15) + 10);
+      const eio = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+      const eout = (x) => 1 - Math.pow(1 - x, 3);
+      const lerp = (a, b, x) => a + (b - a) * x;
+      function mulberry32(a) { return function () { a |= 0; a = (a + 0x6d2b79f5) | 0; let t = Math.imul(a ^ (a >>> 15), 1 | a); t = (t + Math.imul(t ^ (t >>> 7), 61 | t)) ^ t; return ((t ^ (t >>> 14)) >>> 0) / 4294967296; }; }
+      const rnd = mulberry32(20261124);
+
+      // ---------- Renderer ----------
+      const canvas = document.getElementById("world");
+      const renderer = new THREE.WebGLRenderer({ canvas, antialias: true, preserveDrawingBuffer: true });
+      renderer.setPixelRatio(1);
+      renderer.setSize(W, H, false);
+      renderer.toneMapping = THREE.ACESFilmicToneMapping;
+      renderer.toneMappingExposure = 0.92;
+      renderer.outputColorSpace = THREE.SRGBColorSpace;
+
+      const scene = new THREE.Scene();
+      scene.background = new THREE.Color(0x030409);
+      scene.fog = new THREE.FogExp2(0x030409, 0.022);
+      const pmrem = new THREE.PMREMGenerator(renderer);
+      scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+      scene.environmentIntensity = 0.35;
+
+      const camera = new THREE.PerspectiveCamera(38, W / H, 0.1, 200);
+
+      scene.add(new THREE.HemisphereLight(0x22335a, 0x000000, 0.5));
+      const key = new THREE.DirectionalLight(0xffdcaa, 2.2); key.position.set(5, 9, 7); scene.add(key);
+      const rim = new THREE.DirectionalLight(0x5f7dff, 1.4); rim.position.set(-6, 5, -7); scene.add(rim);
+      const towerLight = new THREE.PointLight(0xffaa33, 7, 9, 2); towerLight.position.set(0.6, 5.5, 3.0); scene.add(towerLight);
+
+      // ---------- Materialien ----------
+      const GOLD = 0xffc23a;
+      const goldMat = () => new THREE.MeshStandardMaterial({ color: GOLD, emissive: 0xff8a10, emissiveIntensity: 0.16, metalness: 0.75, roughness: 0.34 });
+      const lineMat = (color, width, opacity) => {
+        const m = new LineMaterial({ color, linewidth: width, transparent: true, opacity, worldUnits: false });
+        m.resolution.set(W, H); return m;
+      };
+
+      // Gitter-Käfig (wie Referenz): Kanten, Ringe alle `step`, senkrechte Teilungen je Seite
+      function cagePositions(w, h, d, step = 0.5, div = 3) {
+        const p = [], x0 = -w / 2, x1 = w / 2, z0 = -d / 2, z1 = d / 2;
+        const L = (a, b) => p.push(...a, ...b);
+        const rings = Math.max(1, Math.round(h / step));
+        for (let i = 0; i <= rings; i++) { const y = (h * i) / rings; L([x0, y, z0], [x1, y, z0]); L([x1, y, z0], [x1, y, z1]); L([x1, y, z1], [x0, y, z1]); L([x0, y, z1], [x0, y, z0]); }
+        for (let i = 0; i <= div; i++) {
+          const fx = lerp(x0, x1, i / div), fz = lerp(z0, z1, i / div);
+          L([fx, 0, z0], [fx, h, z0]); L([fx, 0, z1], [fx, h, z1]); L([x0, 0, fz], [x0, h, fz]); L([x1, 0, fz], [x1, h, fz]);
+        }
+        return p;
+      }
+      function cage(w, h, d, color, width, opacity, step, div) {
+        const g = new LineSegmentsGeometry(); g.setPositions(cagePositions(w, h, d, step, div));
+        return new LineSegments2(g, lineMat(color, width, opacity));
+      }
+
+      // Text-Schild als Sprite (Badge wie „FIRMA 1“ in der Referenz)
+      function label(text, { color = "#ffd23f", border = color, size = 64, worldH = 0.42, bg = "rgba(5,6,10,0.82)", weight = 900, pad = 0.42 } = {}) {
+        const c = document.createElement("canvas"), x = c.getContext("2d");
+        const font = `${weight} ${size}px Montserrat`;
+        x.font = font; const tw = Math.ceil(x.measureText(text).width);
+        const ph = Math.round(size * pad), cw = tw + ph * 2 + 8, ch = Math.round(size * 1.5);
+        c.width = cw; c.height = ch;
+        x.font = font; x.textBaseline = "middle"; x.textAlign = "center";
+        const r = ch * 0.22;
+        x.beginPath(); x.roundRect(4, 4, cw - 8, ch - 8, r); x.fillStyle = bg; x.fill();
+        x.lineWidth = 6; x.strokeStyle = border; x.stroke();
+        x.fillStyle = color; x.shadowColor = color; x.shadowBlur = 18; x.fillText(text, cw / 2, ch / 2 + size * 0.04);
+        const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace; tex.anisotropy = 4;
+        const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false, fog: false }));
+        s.scale.set((worldH * cw) / ch, worldH, 1); s.userData.base = s.scale.clone();
+        return s;
+      }
+      function glyph(text, color, worldH) {
+        const c = document.createElement("canvas"), x = c.getContext("2d"); c.width = 256; c.height = 256;
+        x.font = "900 220px Montserrat"; x.textAlign = "center"; x.textBaseline = "middle";
+        x.fillStyle = color; x.shadowColor = color; x.shadowBlur = 30; x.fillText(text, 128, 140);
+        const tex = new THREE.CanvasTexture(c); tex.colorSpace = THREE.SRGBColorSpace;
+        const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: tex, transparent: true, depthWrite: false, fog: false }));
+        s.scale.set(worldH, worldH, 1); s.userData.base = s.scale.clone(); return s;
+      }
+
+      // ---------- Boden: Spiegelung + Goldraster ----------
+      const mirror = new Reflector(new THREE.PlaneGeometry(140, 140), { textureWidth: 540, textureHeight: 960, color: 0x8a8a8a, clipBias: 0.003 });
+      mirror.rotation.x = -Math.PI / 2; scene.add(mirror);
+      const dim = new THREE.Mesh(new THREE.PlaneGeometry(140, 140), new THREE.MeshBasicMaterial({ color: 0x030409, transparent: true, opacity: 0.74 }));
+      dim.rotation.x = -Math.PI / 2; dim.position.y = 0.004; scene.add(dim);
+      const grid = new THREE.GridHelper(80, 80, 0x5a4214, 0x2a1f0a); grid.position.y = 0.008;
+      grid.material.transparent = true; grid.material.opacity = 0.32; scene.add(grid);
+
+      // ---------- Skyline im Hintergrund ----------
+      const sky = new THREE.Group(); scene.add(sky);
+      const bMat = new THREE.MeshStandardMaterial({ color: 0x07080d, roughness: 0.8, metalness: 0.2 });
+      const winGeo = new THREE.PlaneGeometry(0.13, 0.17);
+      const winMat = new THREE.MeshBasicMaterial({ color: 0x9a6a22, fog: false });
+      const winList = [];
+      for (let i = 0; i < 34; i++) {
+        const w = 1.0 + rnd() * 1.6, d = 1.0 + rnd() * 1.2;
+        const cx = -24 + i * 1.45 + (rnd() - 0.5) * 0.6;
+        const center = 1 - Math.min(1, Math.abs(cx) / 24);
+        const h = 2.5 + rnd() * 6 + center * 6;
+        const z = -44 - rnd() * 8;
+        const m = new THREE.Mesh(new THREE.BoxGeometry(w, h, d), bMat); m.position.set(cx, h / 2, z); sky.add(m);
+        const e = cage(w, h, d, 0x9a7426, 1.4, 0.45, 100, 1); e.position.set(cx, 0, z); sky.add(e);
+        for (let fy = 0.6; fy < h - 0.4; fy += 0.5) for (let fx = -w / 2 + 0.3; fx < w / 2 - 0.2; fx += 0.34)
+          if (rnd() < 0.2) winList.push([cx + fx, fy, z + d / 2 + 0.01]);
+      }
+      // Wahrzeichen: generischer Fernsehturm
+      const spire = new THREE.Group(); spire.position.set(6, 0, -52); sky.add(spire);
+      const shaft = new THREE.Mesh(new THREE.CylinderGeometry(0.35, 0.7, 18, 12), bMat); shaft.position.y = 9; spire.add(shaft);
+      const pod = new THREE.Mesh(new THREE.SphereGeometry(1.4, 24, 16), bMat); pod.position.y = 15; spire.add(pod);
+      const podRing = new THREE.Mesh(new THREE.TorusGeometry(1.42, 0.05, 8, 48), new THREE.MeshBasicMaterial({ color: 0xffc85a, fog: false })); podRing.rotation.x = Math.PI / 2; podRing.position.y = 15; spire.add(podRing);
+      const tip = new THREE.Mesh(new THREE.SphereGeometry(0.12, 8, 8), new THREE.MeshBasicMaterial({ color: 0xff4040, fog: false })); tip.position.y = 21.5; spire.add(tip);
+      const antenna = new THREE.Mesh(new THREE.CylinderGeometry(0.06, 0.12, 3.5, 6), bMat); antenna.position.y = 19.8; spire.add(antenna);
+      const wins = new THREE.InstancedMesh(winGeo, winMat, winList.length);
+      const tmpM = new THREE.Matrix4();
+      winList.forEach((p, i) => { tmpM.makeTranslation(p[0], p[1], p[2]); wins.setMatrixAt(i, tmpM); });
+      sky.add(wins);
+
+      // ---------- Schwebender Goldstaub ----------
+      const NDust = 420, dustBase = [];
+      for (let i = 0; i < NDust; i++) dustBase.push([(rnd() - 0.5) * 26, rnd() * 9, -14 + rnd() * 22, 0.04 + rnd() * 0.12, rnd() * 6.28]);
+      const dustGeo = new THREE.BufferGeometry(); dustGeo.setAttribute("position", new THREE.BufferAttribute(new Float32Array(NDust * 3), 3));
+      const dust = new THREE.Points(dustGeo, new THREE.PointsMaterial({ color: 0xffcf66, size: 0.05, transparent: true, opacity: 0.75, depthWrite: false }));
+      scene.add(dust);
+
+      // ---------- Gehaltsturm ----------
+      const TX = -1.0, TZ = 0, TW = 1.5;
+      const tower = new THREE.Group(); tower.position.set(TX, 0, TZ); scene.add(tower);
+      const towerCage = cage(TW + 0.12, 4.0, TW + 0.12, 0xffc23a, 2.6, 0.95, 0.5, 4); tower.add(towerCage);
+      const NET = 2.605;
+      const boxGeo = new THREE.BoxGeometry(1, 1, 1); boxGeo.translate(0, 0.5, 0);
+      const netMesh = new THREE.Mesh(boxGeo, goldMat()); netMesh.scale.set(TW - 0.06, NET, TW - 0.06); tower.add(netMesh);
+      // Abzüge: von oben nach unten wird zuerst Steuer abgezogen → Stapelreihenfolge umgekehrt
+      const D = [
+        { beat: "arbeitslos", amt: 52, name: "ARBEITSLOSEN-VERS.", pos: [0.4, 0, -12.0] },
+        { beat: "pflege", amt: 96, name: "PFLEGE", pos: [-6.6, 0, -7.8] },
+        { beat: "kranken", amt: 350, name: "KRANKENKASSE", pos: [6.4, 0, -7.0] },
+        { beat: "rente", amt: 372, name: "RENTE", pos: [-4.4, 0, -2.6] },
+        { beat: "steuer", amt: 525, name: "FINANZAMT", pos: [3.4, 0, -2.4] },
+      ];
+      let y0 = NET;
+      const FL = 1.25; // Flugdauer
+      const CW = 1.3, CH = 1.5;
+      for (const d of D) {
+        d.h = d.amt / 1000; d.y = y0; y0 += d.h;
+        d.k = B[d.beat].key; // Zeitpunkt des Betrags im Voiceover
+        d.mat = goldMat();
+        d.mesh = new THREE.Mesh(boxGeo, d.mat); scene.add(d.mesh);
+        d.cage = new THREE.Group(); d.cage.position.set(...d.pos); scene.add(d.cage);
+        d.cage.add(cage(CW, CH, CW, 0xffb52e, 2.2, 0.85, 0.5, 3));
+        d.lab = label(d.name, { color: "#ff4b4b", border: "#ff4b4b", worldH: 0.36 }); d.lab.position.set(0, CH + 0.42, 0); d.cage.add(d.lab);
+        d.amtLab = label("−" + d.amt + " €", { color: "#ffd23f", border: "#ffd23f", worldH: 0.3 }); d.amtLab.position.set(0, CH + 0.88, 0); d.cage.add(d.amtLab);
+      }
+      // Münzen, die mit jedem Abzug mitfliegen
+      const NC = 16;
+      const coinGeo = new THREE.CylinderGeometry(0.11, 0.11, 0.03, 20); coinGeo.rotateX(Math.PI / 2);
+      const coins = new THREE.InstancedMesh(coinGeo, new THREE.MeshStandardMaterial({ color: 0xffcc44, emissive: 0xff9a1a, emissiveIntensity: 0.7, metalness: 0.8, roughness: 0.3 }), D.length * NC);
+      scene.add(coins);
+      const coinOff = []; for (let i = 0; i < D.length * NC; i++) coinOff.push([(rnd() - 0.5) * 1.1, (rnd() - 0.5) * 0.8, (rnd() - 0.5) * 1.1, rnd() * 0.32, rnd() * 6.28, 0.6 + rnd() * 0.8]);
+
+      const bruttoLab = label("BRUTTO", { worldH: 0.42 }); bruttoLab.position.set(0, 3.3, TW / 2 + 0.3); tower.add(bruttoLab);
+      const nettoLab = label("NETTO", { worldH: 0.42 }); nettoLab.position.set(0, NET - 0.5, TW / 2 + 0.3); tower.add(nettoLab);
+      const ring = new THREE.Mesh(new THREE.TorusGeometry(1.25, 0.035, 12, 96), new THREE.MeshBasicMaterial({ color: 0xffd23f, transparent: true }));
+      ring.rotation.x = Math.PI / 2; tower.add(ring);
+
+      // Chef-Aufschlag (+850 €) oben auf dem Turm
+      const EXT = 0.85;
+      const extMat = new THREE.MeshStandardMaterial({ color: 0xff8a1a, emissive: 0xff6a00, emissiveIntensity: 0.25, transparent: true, opacity: 0.55, metalness: 0.4, roughness: 0.4 });
+      const ext = new THREE.Mesh(boxGeo, extMat); ext.scale.set(TW - 0.06, EXT, TW - 0.06); tower.add(ext);
+      const extCage = cage(TW + 0.12, EXT, TW + 0.12, 0xff8a1a, 2.6, 0.95, 0.425, 4); extCage.position.y = 4.0; tower.add(extCage);
+      const extLab = label("+850 € VOM CHEF", { color: "#ffa640", border: "#ffa640", worldH: 0.34 }); extLab.position.set(0, 4.0 + EXT + 0.4, 0); tower.add(extLab);
+
+      // ---------- Figuren ----------
+      function figure(bodyColor, accent) {
+        const g = new THREE.Group();
+        const body = new THREE.Mesh(new THREE.CapsuleGeometry(0.42, 0.75, 8, 24), new THREE.MeshPhysicalMaterial({ color: bodyColor, metalness: 0.2, roughness: 0.25, clearcoat: 1, clearcoatRoughness: 0.15 }));
+        body.position.y = 0.82; g.add(body);
+        const head = new THREE.Mesh(new THREE.SphereGeometry(0.36, 32, 24), new THREE.MeshPhysicalMaterial({ color: 0xf2f2f2, roughness: 0.2, clearcoat: 1 }));
+        head.position.y = 1.72; g.add(head);
+        const stripe = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.32, 0.02), new THREE.MeshBasicMaterial({ color: accent }));
+        stripe.position.set(-0.08, 1.05, 0.415); g.add(stripe);
+        const tick = new THREE.Mesh(new THREE.BoxGeometry(0.12, 0.05, 0.02), new THREE.MeshBasicMaterial({ color: accent }));
+        tick.position.set(0.04, 1.18, 0.41); g.add(tick);
+        g.userData = { body, head }; return g;
+      }
+      const FX = 1.05, FZ = 0.9;
+      const hero = figure(0x1b2a6b, 0xffd23f); hero.position.set(FX, 0, FZ); scene.add(hero);
+      const qMark = glyph("?", "#ffd23f", 0.75); scene.add(qMark);
+      const chef = figure(0x15161b, 0xffd23f); chef.position.set(-3.2, 0, 1.4); scene.add(chef);
+      const tie = new THREE.Mesh(new THREE.ConeGeometry(0.07, 0.34, 4), new THREE.MeshStandardMaterial({ color: 0xffc23a, emissive: 0xff9a1a, emissiveIntensity: 0.6 }));
+      tie.rotation.x = Math.PI; tie.position.set(0.06, 1.12, 0.43); chef.add(tie);
+      const chefLab = label("CHEF", { worldH: 0.3 }); chefLab.position.set(0, 2.35, 0); chef.add(chefLab);
+      const bigQ = glyph("?", "#ffd23f", 2.6); bigQ.position.set(0.4, 4.2, -12.0); scene.add(bigQ);
+
+      // ---------- Kamera-Fahrten (Zeit, Position, Ziel) ----------
+      const K = [];
+      const k = (t, p, tg) => K.push({ t, p: new THREE.Vector3(...p), g: new THREE.Vector3(...tg) });
+      k(0.0, [0.5, 2.9, 11.8], [-0.2, 2.7, 0]);
+      k(B.hook.end + 0.1, [0.6, 2.8, 10.6], [-0.1, 2.6, 0]);
+      k(B.frage.end, [1.5, 2.5, 7.8], [0.8, 2.25, 0.6]);
+      k(B.steuer.key - 0.1, [1.2, 4.4, 12.5], [0.6, 3.0, -1.5]);
+      let lastLand = 0;
+      for (const d of [...D].reverse()) {
+        const [cx, , cz] = d.pos;
+        k(d.k + FL * 0.95, [cx * 0.8, 3.4, cz + 8.0], [cx * 0.97, 1.75, cz]);
+        k(d.k + FL + 0.35, [cx * 0.8, 3.5, cz + 7.7], [cx * 0.97, 1.75, cz]);
+        lastLand = Math.max(lastLand, d.k + FL + 0.35);
+      }
+      const tNet = Math.max(B.netto.key + 0.5, lastLand + 0.9);
+      k(tNet, [0.4, 10.5, 18.5], [-0.3, 2.6, -4.5]);
+      k(Math.max(tNet + 0.5, B.twist.start), [0.2, 9.6, 17.0], [-0.5, 2.6, -3.5]);
+      k(B.twist.end, [-0.4, 3.6, 10.4], [-1.0, 3.1, 0]);
+      k(B.chef.key - 0.2, [-2.8, 4.0, 11.6], [-2.4, 3.5, 0.4]);
+      k(B.chef.end, [-2.4, 4.3, 12.0], [-2.0, 3.7, 0.2]);
+      k(B.kosten.end, [-1.0, 4.1, 11.8], [-1.0, 3.6, 0]);
+      k(B.haelfte.key, [-0.2, 4.2, 11.6], [-0.9, 3.6, 0.2]);
+      k(B.haelfte.end + 0.2, [0.0, 4.3, 12.0], [-0.9, 3.6, 0.2]);
+      k(B.cta.start + 1.3, [0.3, 7.8, 12.5], [0.3, 3.4, -9]);
+      k(B.T, [0.3, 6.8, 8.0], [0.4, 4.4, -12.0]);
+      K.sort((a, b) => a.t - b.t);
+      const _p = new THREE.Vector3(), _g = new THREE.Vector3();
+      function camAt(t) {
+        if (t <= K[0].t) { _p.copy(K[0].p); _g.copy(K[0].g); }
+        else if (t >= K[K.length - 1].t) { _p.copy(K[K.length - 1].p); _g.copy(K[K.length - 1].g); }
+        else for (let i = 0; i < K.length - 1; i++) if (t >= K[i].t && t <= K[i + 1].t) {
+          const x = smr(seg(t, K[i].t, K[i + 1].t)); _p.lerpVectors(K[i].p, K[i + 1].p, x); _g.lerpVectors(K[i].g, K[i + 1].g, x); break;
+        }
+        // leichtes Handkamera-Schweben
+        _p.x += Math.sin(t * 0.7) * 0.05; _p.y += Math.sin(t * 0.53 + 1) * 0.04;
+        camera.position.copy(_p); camera.lookAt(_g);
+      }
+
+      // ---------- Post-Processing ----------
+      const composer = new EffectComposer(renderer);
+      composer.setPixelRatio(1); composer.setSize(W, H);
+      composer.addPass(new RenderPass(scene, camera));
+      composer.addPass(new UnrealBloomPass(new THREE.Vector2(W / 2, H / 2), 0.55, 0.5, 0.78));
+      composer.addPass(new OutputPass());
+
+      // ---------- Bild für Zeitpunkt t (rein funktional) ----------
+      const _a = new THREE.Vector3(), _b = new THREE.Vector3(), _q = new THREE.Quaternion(), _e = new THREE.Euler(), _s = new THREE.Vector3();
+      const red = new THREE.Color(0xff2a2a), orange = new THREE.Color(0xff9a1a);
+      function render(t) {
+        camAt(t);
+        // Staub
+        const pa = dustGeo.attributes.position.array;
+        dustBase.forEach((d, i) => { pa[i * 3] = d[0] + Math.sin(t * 0.3 + d[4]) * 0.3; pa[i * 3 + 1] = (d[1] + t * d[3]) % 9; pa[i * 3 + 2] = d[2]; });
+        dustGeo.attributes.position.needsUpdate = true;
+
+        // Abzüge
+        let look = null, lookW = 0;
+        D.forEach((d, di) => {
+          const lift = sm(seg(t, d.k - 0.35, d.k));                 // anheben + rot aufglühen
+          const fly = eio(seg(t, d.k, d.k + FL));                    // Flug in den Käfig
+          const start = _a.set(TX, d.y + 0.03 + lift * 0.35, TZ);
+          const end = _b.set(d.pos[0], 0.02, d.pos[2]);
+          const p = start.clone().lerp(end, fly); p.y += Math.sin(fly * Math.PI) * 2.6;
+          d.mesh.position.copy(p);
+          d.mesh.rotation.y = fly * Math.PI * 1.0;
+          const wsc = lerp(TW - 0.06, CW - 0.12, fly);
+          d.mesh.scale.set(wsc, d.h - 0.014, wsc);
+          const flash = Math.max(lift * (1 - fly), 0);
+          d.mat.emissive.copy(orange).lerp(red, flash); d.mat.emissiveIntensity = 0.16 + flash * 0.9;
+          // Nach der Landung: bei „Hälfte“ rot pulsieren
+          const hp = t > B.haelfte.key ? 0.5 + 0.5 * Math.sin((t - B.haelfte.key) * 6) : 0;
+          if (fly >= 1 && hp > 0) { d.mat.emissive.copy(orange).lerp(red, 0.8); d.mat.emissiveIntensity = 0.3 + hp * 0.7; }
+          // Käfig-Schilder poppen beim Eintreffen
+          const land = seg(t, d.k + FL - 0.1, d.k + FL + 0.25);
+          const pop = land > 0 ? 1 + Math.sin(land * Math.PI) * 0.35 : 1;
+          d.amtLab.visible = t > d.k + FL - 0.1; d.amtLab.scale.copy(d.amtLab.userData.base).multiplyScalar(pop * eout(land));
+          d.lab.scale.copy(d.lab.userData.base).multiplyScalar(t > d.k && t < d.k + FL + 0.6 ? 1.12 : 1);
+          // Münzen
+          for (let j = 0; j < NC; j++) {
+            const o = coinOff[di * NC + j], ci = di * NC + j;
+            const f = seg(t, d.k + o[3], d.k + o[3] + FL * 0.95);
+            if (f <= 0 || f >= 1) { tmpM.makeScale(0, 0, 0); coins.setMatrixAt(ci, tmpM); continue; }
+            const e = eio(f);
+            const cp = start.clone().lerp(end, e); cp.y += Math.sin(e * Math.PI) * (2.6 + o[1]) + 0.4; cp.x += o[0] * Math.sin(e * Math.PI); cp.z += o[2] * Math.sin(e * Math.PI);
+            _e.set(t * 6 * o[5] + o[4], t * 4 + o[4], 0); _q.setFromEuler(_e);
+            const sc = Math.sin(f * Math.PI) * 1.1; _s.set(sc, sc, sc);
+            tmpM.compose(cp, _q, _s); coins.setMatrixAt(ci, tmpM);
+          }
+          const w = sm(seg(t, d.k - 0.4, d.k)) * (1 - sm(seg(t, d.k + FL + 0.2, d.k + FL + 0.8)));
+          if (w > lookW) { lookW = w; look = p; }
+        });
+        coins.instanceMatrix.needsUpdate = true;
+
+        // Turm-Schilder, Ring
+        const showNet = sm(seg(t, B.netto.start, B.netto.start + 0.4));
+        bruttoLab.material.opacity = 1 - sm(seg(t, B.steuer.key - 0.3, B.steuer.key));
+        nettoLab.material.opacity = showNet;
+        nettoLab.scale.copy(nettoLab.userData.base).multiplyScalar(0.6 + 0.4 * eout(showNet) + (showNet > 0 && showNet < 1 ? 0.15 : 0));
+        const ringOn = Math.max(sm(seg(t, B.netto.key - 0.2, B.netto.key + 0.3)) * (1 - sm(seg(t, B.twist.start, B.twist.start + 0.4))),
+                                sm(seg(t, B.haelfte.key - 0.3, B.haelfte.key + 0.2)) * (1 - sm(seg(t, B.cta.start, B.cta.start + 0.5))));
+        ring.position.y = NET; ring.material.opacity = ringOn;
+        const rs = 1 + Math.sin(t * 7) * 0.04 * ringOn; ring.scale.set(rs, rs, rs); ring.visible = ringOn > 0.01;
+        ring.material.color.set(t > B.haelfte.start ? 0xff4040 : 0xffd23f);
+
+        // Chef + Aufschlag
+        const cIn = eout(seg(t, B.chef.start - 0.1, B.chef.start + 0.5));
+        chef.visible = cIn > 0; chef.position.y = lerp(-2.4, 0, cIn);
+        chef.rotation.y = Math.atan2(TX - chef.position.x, TZ - chef.position.z) * 0.5 + Math.sin(t * 2) * 0.05;
+        chefLab.material.opacity = cIn;
+        const drop = seg(t, B.chef.key, B.chef.key + 0.8);
+        const bounce = drop < 1 ? eout(drop) : 1;
+        ext.visible = drop > 0; ext.position.y = lerp(7.5, 4.0, bounce);
+        extCage.visible = drop > 0.85; extLab.visible = drop > 0.85;
+        extLab.scale.copy(extLab.userData.base).multiplyScalar(eout(seg(t, B.chef.key + 0.7, B.chef.key + 1.0)));
+        extLab.material.opacity = 1 - sm(seg(t, B.kosten.end, B.kosten.end + 0.4));
+        extMat.emissiveIntensity = 0.25 + (drop > 0.9 && drop < 1 ? 1.2 : 0);
+        towerLight.intensity = 7 + (drop > 0.95 ? 6 * (1 - seg(t, B.chef.key + 0.8, B.chef.key + 1.6)) : 0);
+
+        // Held: atmen, Fragezeichen, Blick zum Geld, am Ende geknickt
+        const breathe = Math.sin(t * 2.2) * 0.02;
+        hero.userData.body.scale.set(1, 1 + breathe, 1);
+        const slump = sm(seg(t, B.haelfte.key - 0.2, B.haelfte.key + 0.5)) * (1 - sm(seg(t, B.cta.start + 0.5, B.cta.start + 1.2)));
+        hero.rotation.x = slump * 0.16; hero.userData.head.position.y = 1.72 - slump * 0.08;
+        let yaw = -0.35 + Math.sin(t * 0.9) * 0.05;
+        if (look && lookW > 0) yaw = lerp(yaw, Math.atan2(look.x - FX, look.z - FZ), lookW);
+        if (t > B.chef.start && t < B.kosten.end) yaw = lerp(yaw, Math.atan2(TX - FX, TZ - FZ), sm(seg(t, B.chef.start, B.chef.start + 0.6)));
+        hero.rotation.y = yaw;
+        const qa = sm(seg(t, B.frage.start + 0.3, B.frage.start + 0.7)) * (1 - sm(seg(t, B.steuer.start, B.steuer.start + 0.3)));
+        qMark.visible = qa > 0.01; qMark.material.opacity = qa;
+        qMark.position.set(FX + 0.35, 2.55 + Math.sin(t * 3) * 0.06, FZ);
+        qMark.scale.copy(qMark.userData.base).multiplyScalar(0.5 + 0.5 * eout(qa));
+
+        // Teil-2-Fragezeichen
+        const bq = eout(seg(t, B.cta.start + 0.4, B.cta.start + 1.4));
+        bigQ.visible = bq > 0; bigQ.material.opacity = bq;
+        bigQ.position.y = 3.6 + bq * 0.8 + Math.sin(t * 2.5) * 0.12;
+        bigQ.scale.copy(bigQ.userData.base).multiplyScalar(0.4 + 0.6 * bq);
+
+        composer.render();
+      }
+
+      // ---------- Bereitschaft ----------
+      renderer.compile(scene, camera);
+      ready = true; render(lastT); resolveReady();
+    </script>
+  </body>
+</html>
