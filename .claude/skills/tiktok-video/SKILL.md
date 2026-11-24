@@ -6,7 +6,7 @@ description: Erstellt deutschsprachige, faceless TikTok-Videos (9:16) im Stil de
 # TikTok-Video-Skill (Deutsch, faceless)
 
 Du produzierst für einen deutschen TikTok-Creator (Faceless-Account) komplette Kurzvideos
-**mit Claude Code** – also programmatisch: Szenen/Animationen als Code, gerendert zu MP4.
+**mit Claude Code + HyperFrames** – Szenen/Animationen als HTML+GSAP, gerendert zu MP4.
 
 **Vor jedem Video:** Lies diese Datei komplett, besonders das **Feedback-Logbuch** unten.
 Die Regeln im Logbuch haben Vorrang vor den allgemeinen Stilregeln.
@@ -69,15 +69,48 @@ Referenzen:
 1. **Logbuch lesen** (Abschnitt 4) und offene Präferenzen beachten.
 2. **Skript** auf Deutsch schreiben → dem User zeigen, falls er nichts anderes gesagt hat.
 3. **Storyboard** als Tabelle: Satz | Zeit | Bild/Animation | Farbwörter | Leiste-Zustand.
-4. **Audio:** Voiceover vom User (bevorzugt) – Wort-Timestamps erzeugen (z. B. Whisper, falls
-   Netzwerk es erlaubt; sonst Timings manuell/aus Silben schätzen und mit dem User abstimmen).
-5. **Rendern mit Code** (Claude Code): Szene als HTML/Canvas/Three.js (oder Remotion), frame-genau
-   mit dem vorinstallierten Playwright/Chromium abfotografieren, mit ffmpeg zu MP4 + Audio muxen.
-   Wiederverwendbare Bausteine (Untertitel, Zähler-Leiste, Leuchtring, Münzen, Partikel) im Repo
-   unter `engine/` ablegen und bei jedem Video verbessern statt neu zu schreiben.
-6. **Selbst-QA vor Abgabe:** Kontrollframes als Bild ansehen – Untertitel lesbar? Safe-Zones frei?
-   Jeder Satz visualisiert? Schlüsselwörter eingefärbt? Leiste bewegt sich?
-7. Video in `videos/<datum>_<slug>/` speichern (MP4, Skript, Caption), dem User senden, committen & pushen.
+4. **Audio:** Voiceover vom User (bevorzugt) → `transcribe --language de` liefert Wort-Timestamps
+   (`transcript.json`) → daraus die Ein-Wort-Untertitel-Clips bauen. Ohne User-Audio: HeyGen
+   Voice Turbo über `/media-use` (braucht `auth login`). Lokales `tts` (Kokoro) kann **kein Deutsch**.
+5. **Rendern mit HyperFrames** (siehe Abschnitt 2a): Projekt in `videos/<datum>_<slug>/`,
+   Start aus `vorlage/index.html` (1080×1920, Zähler-Leiste, Farb-Untertitel, Pop-In).
+   Vor Eigenbau von Effekten (Glow, Partikel, Kamerafahrt, 3D) die Registry durchsuchen (`/hyperframes-registry`).
+   Wiederverwendbare Bausteine, die sich bewähren, nach `vorlage/` zurückführen.
+6. **Selbst-QA vor Abgabe:** `check --json` (Fehler fixen, `outside_safe_zone` ernst nehmen),
+   `snapshot` an jeder Satzgrenze ansehen – Untertitel lesbar? Jeder Satz visualisiert?
+   Schlüsselwörter eingefärbt? Leiste bewegt sich? Frame 0 ist schon der Hook (kein Schwarz)?
+7. Rendern (`render --quality delivery -o final.mp4`), mit ffprobe prüfen (1080×1920, Länge),
+   MP4 + Skript + TikTok-Caption dem User senden, committen & pushen.
+
+## 2a. Technik: HyperFrames in dieser Umgebung
+
+- HyperFrames-Skills liegen in `.claude/skills/` (`hyperframes`, `hyperframes-cli`, `media-use`,
+  `hyperframes-registry`, `reverse-any-video`, `style-sampling`). **Vor dem Bauen `/hyperframes` lesen**
+  (Render-Vertrag!) und `references/types/vertical.md`.
+- CLI immer über den Launcher, Version gepinnt, mit Proxy-Variablen für Node:
+  ```bash
+  export NODE_USE_ENV_PROXY=1 NODE_EXTRA_CA_CERTS=/root/.ccr/ca-bundle.crt NODE_NO_WARNINGS=1
+  HF="node /home/user/tiktok-vidoes-/.claude/skills/hyperframes/scripts/plugin-cli.mjs --cli-version 0.9.91"
+  $HF init videos/<slug> --skip-skills    # neues Projekt (danach index.html aus vorlage/ übernehmen)
+  $HF check --json | $HF snapshot --at 1,3,5 | $HF render --quality draft -o test.mp4
+  $HF transcribe voice.mp3 --language de --json
+  ```
+- Ohne `NODE_USE_ENV_PROXY=1` scheitern Downloads mit `ENOTFOUND`. Die Cloud-Umgebung
+  `tiktok-vidoes-` erlaubt Hugging Face (Whisper-Modelle). Fehlt ein Host → `update_environment`.
+- Getestet am 2026-11-24: Render 1080×1920 ok, Whisper-small Deutsch ok (Wort-Timestamps sauber).
+- Safe-Zone laut HyperFrames (1080×1920): Inhalt zwischen y 288–1248 px und x 120–888 px
+  (unter y 840 nur bis x 780). Zähler-Leiste daher bei ~y 300, Untertitel bei ~y 1040.
+- Gebündelte Fonts (ohne @font-face): Montserrat, Poppins, Archivo Black, Outfit, Inter u. a.
+
+## 2b. Skript-Tempo aus den Referenzen (Whisper-Transkripte)
+- Ref 3 (Hansetax), 9 s: „Reiche Unternehmer haben immer zwei Firmen. Die erste verdient das Geld
+  und die zweite versteckt es vor dem Finanzamt. …“ → ~2,6 Wörter/s, These + Auflösung in 8 s.
+- Ref 1 (Roblox, EN): „In this town, everybody goes out partying except me. Hush hush hush … You see,
+  every single night there's a party somewhere. Pool parties, pizza parties, even a birthday party
+  for the mayor's goldfish.“ → Aufzählung mit absurder Steigerung am Ende = Humor-Beat.
+- Ref 2 (Schlange): „Schlangen kriechen über eine Säge und schneiden sich. Nur ein winziger Schnitt.
+  Doch die Schlange denkt, sie wird angegriffen. Also beißt sie in die Säge und schneidet sich das Maul …“
+  → Lehrgeschichte/Metapher, jeder Satz eine Eskalationsstufe.
 
 ---
 
@@ -97,7 +130,7 @@ Wenn der User Feedback gibt – positiv oder negativ:
 
 ### Feste Präferenzen des Users
 - Videos immer auf **Deutsch**.
-- Videos werden mit **Claude Code** (programmatisch) erstellt.
+- Videos werden mit **Claude Code** (programmatisch) erstellt – Render-Framework: **HyperFrames** (vom User gewünscht).
 - Visualisierung soll **sehr nah an den Referenzen** sein.
 - Nische: _noch offen – beim User erfragen und hier eintragen._
 
@@ -105,3 +138,4 @@ Wenn der User Feedback gibt – positiv oder negativ:
 | Datum | Video | Feedback | Abgeleitete Regel |
 |---|---|---|---|
 | 2026-11-24 | – (Setup) | Skill angelegt nach Analyse von 3 Referenzen | Stil-DNA siehe Abschnitt 1 |
+| 2026-11-24 | – (Setup) | User will HyperFrames (HeyGen) als Werkzeug | Alle Videos mit HyperFrames bauen, siehe 2a |
