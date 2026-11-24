@@ -146,8 +146,9 @@ Wenn der User Feedback gibt – positiv oder negativ:
   2. Voiceover: spricht der User selbst ein (bevorzugt) oder HeyGen Voice Turbo (Login nötig)?
   3. Welche Referenz ist Leitstil: Schwarz-Gold-3D-Infografik (Hansetax) oder 2D-Cartoon (Schlange)?
   4. HyperFrames-Nutzungsmeldung (Telemetrie) erlaubt? Bis zur Antwort NICHT senden (`events` nicht ausführen).
-- GitHub: Altes Repo `waelkalash70/tiktok-vidoes-` hatte keine Claude-App → Push unmöglich. User zieht in ein
-  neues Repo um. Bei 403 beim Push: User zur Installation der Claude GitHub App auf das Repo anleiten.
+- GitHub: Push auf `waelkalash70/tiktok-vidoes-` funktioniert (seit 2026-11-24). Lösung bei 403 war:
+  Claude GitHub App auf das Repo installieren UND auf claude.ai neu verknüpfen
+  (`https://claude.ai/customize/connectors?auth_start=github&auth_start_force=1`).
 
 ### Einträge
 | Datum | Video | Feedback | Abgeleitete Regel |
