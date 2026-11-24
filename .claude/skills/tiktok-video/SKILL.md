@@ -72,6 +72,9 @@ Referenzen:
 4. **Audio:** Voiceover vom User (bevorzugt) → `transcribe --language de` liefert Wort-Timestamps
    (`transcript.json`) → daraus die Ein-Wort-Untertitel-Clips bauen. Ohne User-Audio: HeyGen
    Voice Turbo über `/media-use` (braucht `auth login`). Lokales `tts` (Kokoro) kann **kein Deutsch**.
+   Deutsche Platzhalter-Stimme (getestet): `pip install piper-tts`, Stimme laden von
+   `https://huggingface.co/rhasspy/piper-voices/resolve/main/de/de_DE/thorsten/high/de_DE-thorsten-high.onnx`
+   (+ `.onnx.json`), dann `echo "Text" | python3 -m piper -m de_DE-thorsten-high.onnx -f voice.wav`.
 5. **Rendern mit HyperFrames** (siehe Abschnitt 2a): Projekt in `videos/<datum>_<slug>/`,
    Start aus `vorlage/index.html` (1080×1920, Zähler-Leiste, Farb-Untertitel, Pop-In).
    Vor Eigenbau von Effekten (Glow, Partikel, Kamerafahrt, 3D) die Registry durchsuchen (`/hyperframes-registry`).
@@ -132,7 +135,12 @@ Wenn der User Feedback gibt – positiv oder negativ:
 - Videos immer auf **Deutsch**.
 - Videos werden mit **Claude Code** (programmatisch) erstellt – Render-Framework: **HyperFrames** (vom User gewünscht).
 - Visualisierung soll **sehr nah an den Referenzen** sein.
-- Nische: _noch offen – beim User erfragen und hier eintragen._
+- Nische: _noch offen_ – User hat noch kein Thema; Claude schlägt Themen vor (Geld/Reiche/Psychologie passt zum Leitstil).
+- **Leitstil: Schwarz-Gold-3D-Infografik (Ref 3, Hansetax)** – vom User gewählt 2026-11-24.
+- **Voiceover:** User macht das finale Voiceover selbst mit **ElevenLabs**. Claude baut das Video mit einer
+  Platzhalter-Stimme (Piper `de_DE-thorsten-high`, lokal, via Hugging Face) und timt Untertitel/Animationen
+  danach neu auf die ElevenLabs-Datei (`transcribe --language de`).
+- HyperFrames-Nutzung inkl. Nutzungsmeldung (Telemetrie): **erlaubt**.
 - User kommuniziert auf **Deutsch** – immer auf Deutsch antworten, Schritt-für-Schritt-Anleitungen mögen.
 
 ### Stand bei Übergabe (2026-11-24, erste Sitzung)
@@ -142,10 +150,7 @@ Wenn der User Feedback gibt – positiv oder negativ:
 - Die Original-Referenzvideos sind NICHT im Repo – nur Frame-Raster in `referenzen/`. Bei Bedarf User
   bitten, sie erneut hochzuladen.
 - **Offene Fragen an den User** (beim nächsten Start klären, Antworten hier eintragen):
-  1. Nische + erstes Thema?
-  2. Voiceover: spricht der User selbst ein (bevorzugt) oder HeyGen Voice Turbo (Login nötig)?
-  3. Welche Referenz ist Leitstil: Schwarz-Gold-3D-Infografik (Hansetax) oder 2D-Cartoon (Schlange)?
-  4. HyperFrames-Nutzungsmeldung (Telemetrie) erlaubt? Bis zur Antwort NICHT senden (`events` nicht ausführen).
+  1. Nische + erstes Thema? (2–4 beantwortet, siehe Feste Präferenzen)
 - GitHub: Push auf `waelkalash70/tiktok-vidoes-` funktioniert (seit 2026-11-24). Lösung bei 403 war:
   Claude GitHub App auf das Repo installieren UND auf claude.ai neu verknüpfen
   (`https://claude.ai/customize/connectors?auth_start=github&auth_start_force=1`).
