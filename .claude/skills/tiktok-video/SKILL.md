@@ -133,6 +133,21 @@ Wenn der User Feedback gibt – positiv oder negativ:
 - Videos werden mit **Claude Code** (programmatisch) erstellt – Render-Framework: **HyperFrames** (vom User gewünscht).
 - Visualisierung soll **sehr nah an den Referenzen** sein.
 - Nische: _noch offen – beim User erfragen und hier eintragen._
+- User kommuniziert auf **Deutsch** – immer auf Deutsch antworten, Schritt-für-Schritt-Anleitungen mögen.
+
+### Stand bei Übergabe (2026-11-24, erste Sitzung)
+- Erledigt: Referenzanalyse (3 Videos), dieser Skill, HyperFrames-Skills installiert und getestet
+  (Render 1080×1920 ok, deutsche Whisper-Transkription ok), Vorlage `vorlage/index.html`.
+- Cloud-Umgebung **`tiktok-vidoes-`** existiert (erlaubt Hugging Face für Whisper). Neue Sessions darin starten.
+- Die Original-Referenzvideos sind NICHT im Repo – nur Frame-Raster in `referenzen/`. Bei Bedarf User
+  bitten, sie erneut hochzuladen.
+- **Offene Fragen an den User** (beim nächsten Start klären, Antworten hier eintragen):
+  1. Nische + erstes Thema?
+  2. Voiceover: spricht der User selbst ein (bevorzugt) oder HeyGen Voice Turbo (Login nötig)?
+  3. Welche Referenz ist Leitstil: Schwarz-Gold-3D-Infografik (Hansetax) oder 2D-Cartoon (Schlange)?
+  4. HyperFrames-Nutzungsmeldung (Telemetrie) erlaubt? Bis zur Antwort NICHT senden (`events` nicht ausführen).
+- GitHub: Altes Repo `waelkalash70/tiktok-vidoes-` hatte keine Claude-App → Push unmöglich. User zieht in ein
+  neues Repo um. Bei 403 beim Push: User zur Installation der Claude GitHub App auf das Repo anleiten.
 
 ### Einträge
 | Datum | Video | Feedback | Abgeleitete Regel |
