@@ -8,6 +8,10 @@ description: Erstellt deutschsprachige, faceless TikTok-Videos (9:16) im Stil de
 Du produzierst für einen deutschen TikTok-Creator (Faceless-Account) komplette Kurzvideos
 **mit Claude Code + HyperFrames** – Szenen/Animationen als HTML+GSAP, gerendert zu MP4.
 
+> ⭐ **GOLDSTANDARD (vom User als „perfekt, sehr gutes Video“ bestätigt, 2026-11-24):**
+> `videos/2026-11-24_brutto-netto/` – jedes neue Video startet als Kopie dieses Projekts und behält
+> Aufbau, Look und Qualität bei. Nur Thema, Skript und 3D-Objekte ändern sich. Siehe Abschnitt 1.6.
+
 **Vor jedem Video:** Lies diese Datei komplett, besonders das **Feedback-Logbuch** unten.
 Die Regeln im Logbuch haben Vorrang vor den allgemeinen Stilregeln.
 Referenzbilder liegen in `referenzen/` – bei Unsicherheit über den Look ansehen.
@@ -63,6 +67,24 @@ Referenzen:
 - Caption-Text für TikTok mitliefern (1 Satz Hook + „👀 … Teil 2 kommt“ + 3–5 Hashtags).
 
 ---
+
+### 1.6 Bestätigtes Erfolgsrezept (Video 1, vom User gelobt) – IMMER so beibehalten
+- **Länge ~35–40 s**, 12–13 kurze Sätze, ein Satz = ein Bild/Kameraziel.
+- **Dramaturgie:** Hook mit konkreter Zahl („Du verdienst 4.000 € brutto.“) → Frage an den Zuschauer („…gehört wirklich DIR?“)
+  → Schritt-für-Schritt-Abzüge/Steigerungen mit je einer Zahl → Zwischenergebnis (Kamera-Totale) → „Und jetzt kommt's:“
+  Twist → Prozent-/Vergleichs-Punchline → Cliffhanger „Teil 2: …“ mit großem goldenem „?“.
+- **Bildsprache:** goldene Gitter-Türme = Geldmengen (1 Einheit Höhe = 1.000 €), Geldblöcke fliegen mit Münzen
+  in beschriftete Käfige (rote Badges für „Gegner“ wie Finanzamt, goldene für Beträge), Kamera fliegt mit,
+  Glanz-Figur (weißer Kopf, blauer Kapsel-Körper) reagiert (schaut dem Geld nach, Fragezeichen, lässt Kopf hängen),
+  zweite Figur für den Twist (Chef, schwarz mit Goldkrawatte). Nacht-Skyline, Spiegelboden, Goldstaub.
+- **Zähler oben** wechselt Label passend zur Story (DEIN GEHALT → NETTO → DEIN JOB KOSTET DEN CHEF → BEI DIR
+  KOMMEN AN → FOLGEN FÜR TEIL 2), zählt animiert, wackelt + blitzt rot bei Abzügen, rote/orange Delta-Zeile darunter.
+- **Untertitel** Wort für Wort, Beträge gold, Abzüge/Gegner rot, Pop-In; Annahmen klein als Quellenzeile in den ersten Sekunden.
+- **Sound:** Whoosh beim Abflug, Pop bei Landung, Sparkle beim Ergebnis, Riser vor dem Twist, Bass-Schlag bei Twist
+  und Punchline, Cinematic-Whoosh beim Cliffhanger. Musik macht der User in TikTok.
+- **Lieferumfang:** MP4-Entwurf (Platzhalterstimme) + `VOICEOVER_TEXT.md` (Zahlen ausgeschrieben, TikTok-Beschreibung
+  + Hashtags). Finale Version nach ElevenLabs-Datei des Users.
+- Zahlen immer real und nachvollziehbar, Annahmen nennen, User bitten, Schätzungen kurz gegenzuprüfen.
 
 ## 2. Arbeitsablauf pro Video
 
@@ -188,3 +210,4 @@ Wenn der User Feedback gibt – positiv oder negativ:
 |---|---|---|---|
 | 2026-11-24 | – (Setup) | Skill angelegt nach Analyse von 3 Referenzen | Stil-DNA siehe Abschnitt 1 |
 | 2026-11-24 | – (Setup) | User will HyperFrames (HeyGen) als Werkzeug | Alle Videos mit HyperFrames bauen, siehe 2a |
+| 2026-11-24 | Video 1 „Brutto vs. Netto“ (Entwurf) | „Perfekt, sehr gutes Video – mach weiter solche Arbeit für die nächsten Chats“ | Video 1 = Goldstandard; Erfolgsrezept in 1.6 festgeschrieben; neue Videos als Kopie dieses Projekts starten |
