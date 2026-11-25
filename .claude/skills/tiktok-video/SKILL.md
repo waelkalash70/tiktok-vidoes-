@@ -86,6 +86,18 @@ Referenzen:
   + Hashtags). Finale Version nach ElevenLabs-Datei des Users.
 - Zahlen immer real und nachvollziehbar, Annahmen nennen, User bitten, Schätzungen kurz gegenzuprüfen.
 
+### 1.7 Hook- und Retention-Regeln (User-Wunsch 2026-11-25: „richtig spannend, starke Hooks“)
+- **Themen-Filter:** Nur Themen mit (a) offener Frage, die erst am Ende aufgelöst wird, (b) einer kaum glaubbaren,
+  aber belegbaren Zahl, (c) sichtbarem Spektakel im Gold-Stil (Zähler rast, Turm explodiert/schmilzt).
+- **Hook (erste 2 s):** direkt „du“ + Entscheidung/Wette oder Schock-Zahl. Muster: „Würdest du X nehmen – oder Y?“,
+  „Dieser Mann hat für A bezahlt – heute wäre es B wert.“, „Du kaufst X. Am Ende zahlst du so viel.“
+- **Re-Hooks alle ~8 s:** Fake-out („Tag 20: erst 5.242 €. Die Million sieht gut aus, oder?“), „Und jetzt wird's
+  verrückt …“, „Aber das ist nicht das Schlimmste.“ Auflösung der Hook-Frage erst in den letzten ~8 s.
+- **Kommentar-Köder:** Frage, bei der sich jeder positioniert („Ich hätte die Million genommen“).
+- Themen-Pipeline (geprüft/zu prüfen): Cent-Wette (0,01 € × 2^29 = 5.368.709,12 € an Tag 30; Tag 20 = 5.242,88 €;
+  Tag 27 = 671.088,64 €; Tag 28 = 1.342.177,28 €), Bitcoin-Pizza 2010 (10.000 BTC – Kurs am Produktionstag prüfen),
+  Ratenkauf-Falle (reale DE-Zinssätze belegen), danach Inflation, Milliardäre ohne Gehalt, Brutto-Netto Teil 2.
+
 ## 2. Arbeitsablauf pro Video
 
 1. **Logbuch lesen** (Abschnitt 4) und offene Präferenzen beachten.
