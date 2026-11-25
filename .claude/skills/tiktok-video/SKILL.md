@@ -212,6 +212,8 @@ Wenn der User Feedback gibt – positiv oder negativ:
   1. (alle beantwortet)
 - Video 1 „Brutto vs. Netto (Teil 1)“: Entwurf mit Platzhalterstimme fertig (39 s). Wartet auf Feedback +
   ElevenLabs-Voiceover des Users → dann `align_global.py` + `build.py` + `render --quality delivery`.
+- Video 2 „Zinseszins: Anna vs. Ben (Teil 1)“ (`videos/2026-11-25_zinseszins/`): Entwurf fertig (42 s), wartet auf Feedback
+  + ElevenLabs-Voiceover. Gleiches Vorgehen wie Video 1.
 - GitHub: Push auf `waelkalash70/tiktok-vidoes-` funktioniert (seit 2026-11-24). Lösung bei 403 war:
   Claude GitHub App auf das Repo installieren UND auf claude.ai neu verknüpfen
   (`https://claude.ai/customize/connectors?auth_start=github&auth_start_force=1`).
