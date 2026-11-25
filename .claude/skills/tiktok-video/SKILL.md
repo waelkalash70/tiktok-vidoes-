@@ -98,6 +98,20 @@ Referenzen:
   Tag 27 = 671.088,64 €; Tag 28 = 1.342.177,28 €), Bitcoin-Pizza 2010 (10.000 BTC – Kurs am Produktionstag prüfen),
   Ratenkauf-Falle (reale DE-Zinssätze belegen), danach Inflation, Milliardäre ohne Gehalt, Brutto-Netto Teil 2.
 
+### 1.8 Trend-Recherche 25.11.2026 (Fakten geprüft, vor Produktion Stand erneut prüfen)
+- **GTA 6** (Launch 19.11.2026): laut Take-Two **3,79 Mrd. $ Day-One-Retail-Umsatz** (Firmenschätzung), 32,5 Mio.
+  Vorbestellungen. ≈ **43.900 $ pro Sekunde** (3,79 Mrd./86.400). GTA V 2013: ~800 Mio. $ am ersten Tag.
+  Avengers: Endgame (2019): 1,2 Mrd. $ am ganzen Startwochenende → GTA 6 an EINEM Tag ≈ 3×.
+  Quelle: take2games.com IR-Meldung; Fox Business.
+- **Black Friday 27.11.2026 / Cyber Monday 30.11.:** HDE-Prognose 6,2 Mrd. € (Umfrage IFH Köln, Kaufabsicht).
+  idealo-Analyse Black Friday 2025 (10.000 Produkte, 3.500 Shops): 79 % günstiger als im Oktober, **Ø nur 8 %
+  Ersparnis**, **52 % waren an einem anderen Novembertag noch billiger**; keine flächendeckenden Vorab-Preiserhöhungen.
+  Verbraucherzentrale: „Statt“-Preise oft UVP, die kaum ein Händler verlangt.
+- **Bitcoin** 25.11.2026: ~58.400 $ (−24 % im November). Pizza-Bitcoin (10.000 BTC, 2010) ≈ **584 Mio. $** →
+  NICHT „über eine Milliarde“ sagen (F2!).
+- **TikTok-Formate:** „In this town everybody goes out partying except me“ steigt gerade (= Referenz 1 des Users!),
+  Black-Friday-Content (182 Mio. Views in Europa/Woche), GTA-6-Loading-Screen-Intro.
+
 ## 2. Arbeitsablauf pro Video
 
 1. **Logbuch lesen** (Abschnitt 4) und offene Präferenzen beachten.
