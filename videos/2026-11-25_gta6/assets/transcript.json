@@ -1,0 +1,494 @@
+[
+  {
+    "text": "Dieses",
+    "start": 0.21,
+    "end": 0.37,
+    "id": "w0"
+  },
+  {
+    "text": "Spiel",
+    "start": 0.37,
+    "end": 0.68,
+    "id": "w1"
+  },
+  {
+    "text": "hat",
+    "start": 0.68,
+    "end": 0.86,
+    "id": "w2"
+  },
+  {
+    "text": "an",
+    "start": 0.86,
+    "end": 0.98,
+    "id": "w3"
+  },
+  {
+    "text": "einem",
+    "start": 0.98,
+    "end": 1.27,
+    "id": "w4"
+  },
+  {
+    "text": "Tag",
+    "start": 1.33,
+    "end": 1.43,
+    "id": "w5"
+  },
+  {
+    "text": "3,8",
+    "start": 1.56,
+    "end": 1.95,
+    "id": "w6"
+  },
+  {
+    "text": "Milliarden",
+    "start": 1.95,
+    "end": 2.57,
+    "id": "w7"
+  },
+  {
+    "text": "Dollar",
+    "start": 2.57,
+    "end": 2.93,
+    "id": "w8"
+  },
+  {
+    "text": "gemacht.",
+    "start": 2.93,
+    "end": 3.92,
+    "id": "w9"
+  },
+  {
+    "text": "Das",
+    "start": 3.92,
+    "end": 4.13,
+    "id": "w10"
+  },
+  {
+    "text": "sind",
+    "start": 4.13,
+    "end": 4.41,
+    "id": "w11"
+  },
+  {
+    "text": "fast",
+    "start": 4.41,
+    "end": 4.69,
+    "id": "w12"
+  },
+  {
+    "text": "44.000",
+    "start": 4.69,
+    "end": 5.95,
+    "id": "w13"
+  },
+  {
+    "text": "Dollar",
+    "start": 5.95,
+    "end": 6.37,
+    "id": "w14"
+  },
+  {
+    "text": "pro",
+    "start": 6.37,
+    "end": 6.58,
+    "id": "w15"
+  },
+  {
+    "text": "Sekunde.",
+    "start": 6.58,
+    "end": 7.27,
+    "id": "w16"
+  },
+  {
+    "text": "Schau",
+    "start": 7.52,
+    "end": 7.65,
+    "id": "w17"
+  },
+  {
+    "text": "nach",
+    "start": 7.65,
+    "end": 7.81,
+    "id": "w18"
+  },
+  {
+    "text": "oben,",
+    "start": 7.97,
+    "end": 8.32,
+    "id": "w19"
+  },
+  {
+    "text": "das",
+    "start": 8.32,
+    "end": 8.52,
+    "id": "w20"
+  },
+  {
+    "text": "verdient",
+    "start": 8.52,
+    "end": 9.06,
+    "id": "w21"
+  },
+  {
+    "text": "GTA",
+    "start": 9.06,
+    "end": 9.26,
+    "id": "w22"
+  },
+  {
+    "text": "6,",
+    "start": 9.26,
+    "end": 9.56,
+    "id": "w23"
+  },
+  {
+    "text": "während",
+    "start": 9.65,
+    "end": 10.06,
+    "id": "w24"
+  },
+  {
+    "text": "du",
+    "start": 10.07,
+    "end": 10.21,
+    "id": "w25"
+  },
+  {
+    "text": "zuschaust.",
+    "start": 10.21,
+    "end": 11.16,
+    "id": "w26"
+  },
+  {
+    "text": "GTA",
+    "start": 11.37,
+    "end": 11.42,
+    "id": "w27"
+  },
+  {
+    "text": "5",
+    "start": 11.42,
+    "end": 11.68,
+    "id": "w28"
+  },
+  {
+    "text": "machte",
+    "start": 11.68,
+    "end": 12.19,
+    "id": "w29"
+  },
+  {
+    "text": "2013",
+    "start": 12.19,
+    "end": 13.22,
+    "id": "w30"
+  },
+  {
+    "text": "am",
+    "start": 13.26,
+    "end": 13.4,
+    "id": "w31"
+  },
+  {
+    "text": "ersten",
+    "start": 13.49,
+    "end": 13.92,
+    "id": "w32"
+  },
+  {
+    "text": "Tag",
+    "start": 13.92,
+    "end": 14.18,
+    "id": "w33"
+  },
+  {
+    "text": "800",
+    "start": 14.18,
+    "end": 14.52,
+    "id": "w34"
+  },
+  {
+    "text": "Millionen.",
+    "start": 15.11,
+    "end": 15.76,
+    "id": "w35"
+  },
+  {
+    "text": "Damals",
+    "start": 15.97,
+    "end": 16.26,
+    "id": "w36"
+  },
+  {
+    "text": "ein",
+    "start": 16.26,
+    "end": 16.51,
+    "id": "w37"
+  },
+  {
+    "text": "Weltrekord.",
+    "start": 16.51,
+    "end": 17.61,
+    "id": "w38"
+  },
+  {
+    "text": "Aber",
+    "start": 17.85,
+    "end": 17.88,
+    "id": "w39"
+  },
+  {
+    "text": "jetzt",
+    "start": 17.88,
+    "end": 18.18,
+    "id": "w40"
+  },
+  {
+    "text": "wird's",
+    "start": 18.29,
+    "end": 18.53,
+    "id": "w41"
+  },
+  {
+    "text": "verrückt.",
+    "start": 18.61,
+    "end": 19.24,
+    "id": "w42"
+  },
+  {
+    "text": "Rekordkino",
+    "start": 19.3,
+    "end": 19.76,
+    "id": "w43"
+  },
+  {
+    "text": "statt",
+    "start": 19.89,
+    "end": 20.13,
+    "id": "w44"
+  },
+  {
+    "text": "Erwänges,",
+    "start": 20.21,
+    "end": 20.84,
+    "id": "w45"
+  },
+  {
+    "text": "Endgame,",
+    "start": 20.84,
+    "end": 21.47,
+    "id": "w46"
+  },
+  {
+    "text": "1,2",
+    "start": 21.57,
+    "end": 22.11,
+    "id": "w47"
+  },
+  {
+    "text": "Milliarden",
+    "start": 22.11,
+    "end": 22.59,
+    "id": "w48"
+  },
+  {
+    "text": "an",
+    "start": 22.59,
+    "end": 23.19,
+    "id": "w49"
+  },
+  {
+    "text": "ganzen",
+    "start": 23.19,
+    "end": 23.37,
+    "id": "w50"
+  },
+  {
+    "text": "Wochenende.",
+    "start": 23.41,
+    "end": 24.15,
+    "id": "w51"
+  },
+  {
+    "text": "GTA",
+    "start": 24.45,
+    "end": 24.48,
+    "id": "w52"
+  },
+  {
+    "text": "6",
+    "start": 24.48,
+    "end": 24.71,
+    "id": "w53"
+  },
+  {
+    "text": "macht",
+    "start": 24.72,
+    "end": 25.12,
+    "id": "w54"
+  },
+  {
+    "text": "das",
+    "start": 25.12,
+    "end": 25.36,
+    "id": "w55"
+  },
+  {
+    "text": "dreifache",
+    "start": 25.36,
+    "end": 26.07,
+    "id": "w56"
+  },
+  {
+    "text": "an",
+    "start": 26.08,
+    "end": 26.24,
+    "id": "w57"
+  },
+  {
+    "text": "einem",
+    "start": 26.24,
+    "end": 26.64,
+    "id": "w58"
+  },
+  {
+    "text": "einzigen",
+    "start": 26.64,
+    "end": 27.27,
+    "id": "w59"
+  },
+  {
+    "text": "Tag.",
+    "start": 27.27,
+    "end": 27.61,
+    "id": "w60"
+  },
+  {
+    "text": "Der",
+    "start": 28.01,
+    "end": 28.04,
+    "id": "w61"
+  },
+  {
+    "text": "Grund",
+    "start": 28.04,
+    "end": 28.32,
+    "id": "w62"
+  },
+  {
+    "text": "32,5",
+    "start": 28.45,
+    "end": 29.23,
+    "id": "w63"
+  },
+  {
+    "text": "Millionen",
+    "start": 29.36,
+    "end": 30.03,
+    "id": "w64"
+  },
+  {
+    "text": "Vorbestellungen.",
+    "start": 30.13,
+    "end": 31.4,
+    "id": "w65"
+  },
+  {
+    "text": "Bis",
+    "start": 31.61,
+    "end": 31.63,
+    "id": "w66"
+  },
+  {
+    "text": "dieses",
+    "start": 31.63,
+    "end": 32.1,
+    "id": "w67"
+  },
+  {
+    "text": "Video",
+    "start": 32.1,
+    "end": 32.49,
+    "id": "w68"
+  },
+  {
+    "text": "vorbei",
+    "start": 32.49,
+    "end": 32.83,
+    "id": "w69"
+  },
+  {
+    "text": "ist",
+    "start": 32.96,
+    "end": 33.18,
+    "id": "w70"
+  },
+  {
+    "text": "über",
+    "start": 33.23,
+    "end": 33.46,
+    "id": "w71"
+  },
+  {
+    "text": "1,7",
+    "start": 33.51,
+    "end": 34.11,
+    "id": "w72"
+  },
+  {
+    "text": "Millionen",
+    "start": 34.11,
+    "end": 34.66,
+    "id": "w73"
+  },
+  {
+    "text": "Dollar.",
+    "start": 35.35,
+    "end": 35.36,
+    "id": "w74"
+  },
+  {
+    "text": "Teil",
+    "start": 35.57,
+    "end": 35.59,
+    "id": "w75"
+  },
+  {
+    "text": "2,",
+    "start": 35.59,
+    "end": 35.87,
+    "id": "w76"
+  },
+  {
+    "text": "wer",
+    "start": 35.87,
+    "end": 36.04,
+    "id": "w77"
+  },
+  {
+    "text": "das",
+    "start": 36.04,
+    "end": 36.21,
+    "id": "w78"
+  },
+  {
+    "text": "Geld",
+    "start": 36.21,
+    "end": 36.44,
+    "id": "w79"
+  },
+  {
+    "text": "wirklich",
+    "start": 36.44,
+    "end": 36.79,
+    "id": "w80"
+  },
+  {
+    "text": "bekommt.",
+    "start": 36.92,
+    "end": 37.36,
+    "id": "w81"
+  }
+]

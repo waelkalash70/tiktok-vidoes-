@@ -1,0 +1,499 @@
+[
+{
+"s": "s1",
+"text": "Dieses",
+"color": "",
+"start": 0.187,
+"end": 0.325
+},
+{
+"s": "s1",
+"text": "Spiel",
+"color": "",
+"start": 0.325,
+"end": 0.591
+},
+{
+"s": "s1",
+"text": "hat",
+"color": "",
+"start": 0.591,
+"end": 0.746
+},
+{
+"s": "s1",
+"text": "an",
+"color": "",
+"start": 0.746,
+"end": 0.849
+},
+{
+"s": "s1",
+"text": "EINEM",
+"color": "gold",
+"start": 0.849,
+"end": 1.149
+},
+{
+"s": "s1",
+"text": "Tag",
+"color": "",
+"start": 1.149,
+"end": 1.347
+},
+{
+"s": "s1",
+"text": "3,8 Mrd. $",
+"color": "gold",
+"start": 1.347,
+"end": 2.524
+},
+{
+"s": "s1",
+"text": "gemacht.",
+"color": "",
+"start": 2.524,
+"end": 3.954
+},
+{
+"s": "s2",
+"text": "Das",
+"color": "",
+"start": 3.954,
+"end": 4.124
+},
+{
+"s": "s2",
+"text": "sind",
+"color": "",
+"start": 4.124,
+"end": 4.35
+},
+{
+"s": "s2",
+"text": "fast",
+"color": "",
+"start": 4.35,
+"end": 4.577
+},
+{
+"s": "s2",
+"text": "44.000 $",
+"color": "gold",
+"start": 4.577,
+"end": 5.938
+},
+{
+"s": "s2",
+"text": "pro",
+"color": "",
+"start": 5.938,
+"end": 6.108
+},
+{
+"s": "s2",
+"text": "SEKUNDE.",
+"color": "red",
+"start": 6.108,
+"end": 7.267
+},
+{
+"s": "s3",
+"text": "Schau",
+"color": "",
+"start": 7.349,
+"end": 7.461
+},
+{
+"s": "s3",
+"text": "nach",
+"color": "",
+"start": 7.461,
+"end": 7.737
+},
+{
+"s": "s3",
+"text": "oben:",
+"color": "gold",
+"start": 7.737,
+"end": 8.039
+},
+{
+"s": "s3",
+"text": "Das",
+"color": "",
+"start": 8.039,
+"end": 8.211
+},
+{
+"s": "s3",
+"text": "verdient",
+"color": "",
+"start": 8.211,
+"end": 8.677
+},
+{
+"s": "s3",
+"text": "GTA 6,",
+"color": "gold",
+"start": 8.677,
+"end": 9.185
+},
+{
+"s": "s3",
+"text": "während",
+"color": "",
+"start": 9.185,
+"end": 9.547
+},
+{
+"s": "s3",
+"text": "du",
+"color": "",
+"start": 9.547,
+"end": 9.668
+},
+{
+"s": "s3",
+"text": "zuschaust.",
+"color": "",
+"start": 9.668,
+"end": 11.087
+},
+{
+"s": "s4",
+"text": "GTA 5",
+"color": "",
+"start": 11.224,
+"end": 11.51
+},
+{
+"s": "s4",
+"text": "machte",
+"color": "",
+"start": 11.51,
+"end": 11.981
+},
+{
+"s": "s4",
+"text": "2013",
+"color": "",
+"start": 11.981,
+"end": 12.969
+},
+{
+"s": "s4",
+"text": "am",
+"color": "",
+"start": 12.969,
+"end": 13.181
+},
+{
+"s": "s4",
+"text": "ersten",
+"color": "",
+"start": 13.181,
+"end": 13.578
+},
+{
+"s": "s4",
+"text": "Tag",
+"color": "",
+"start": 13.578,
+"end": 13.818
+},
+{
+"s": "s4",
+"text": "800 Mio. $.",
+"color": "gold",
+"start": 13.818,
+"end": 15.817
+},
+{
+"s": "s5",
+"text": "Damals",
+"color": "",
+"start": 15.817,
+"end": 16.001
+},
+{
+"s": "s5",
+"text": "ein",
+"color": "",
+"start": 16.001,
+"end": 16.159
+},
+{
+"s": "s5",
+"text": "WELTREKORD.",
+"color": "gold",
+"start": 16.159,
+"end": 17.456
+},
+{
+"s": "s6",
+"text": "Aber",
+"color": "",
+"start": 17.698,
+"end": 17.72
+},
+{
+"s": "s6",
+"text": "jetzt",
+"color": "",
+"start": 17.72,
+"end": 18.024
+},
+{
+"s": "s6",
+"text": "wird's",
+"color": "",
+"start": 18.024,
+"end": 18.26
+},
+{
+"s": "s6",
+"text": "verrückt:",
+"color": "red",
+"start": 18.26,
+"end": 19.291
+},
+{
+"s": "s7",
+"text": "Rekord-Kinostart",
+"color": "",
+"start": 19.291,
+"end": 20.235
+},
+{
+"s": "s7",
+"text": "Avengers:",
+"color": "",
+"start": 20.235,
+"end": 20.739
+},
+{
+"s": "s7",
+"text": "Endgame:",
+"color": "",
+"start": 20.739,
+"end": 21.426
+},
+{
+"s": "s7",
+"text": "1,2 Mrd. $",
+"color": "gold",
+"start": 21.426,
+"end": 22.385
+},
+{
+"s": "s7",
+"text": "–",
+"color": "",
+"start": 22.385,
+"end": 22.573
+},
+{
+"s": "s7",
+"text": "am",
+"color": "",
+"start": 22.573,
+"end": 22.949
+},
+{
+"s": "s7",
+"text": "ganzen",
+"color": "",
+"start": 22.949,
+"end": 23.155
+},
+{
+"s": "s7",
+"text": "Wochenende.",
+"color": "",
+"start": 23.155,
+"end": 24.284
+},
+{
+"s": "s8",
+"text": "GTA 6",
+"color": "",
+"start": 24.284,
+"end": 24.519
+},
+{
+"s": "s8",
+"text": "macht",
+"color": "",
+"start": 24.519,
+"end": 24.867
+},
+{
+"s": "s8",
+"text": "das",
+"color": "",
+"start": 24.867,
+"end": 25.076
+},
+{
+"s": "s8",
+"text": "DREIFACHE",
+"color": "gold",
+"start": 25.076,
+"end": 25.695
+},
+{
+"s": "s8",
+"text": "–",
+"color": "",
+"start": 25.695,
+"end": 25.704
+},
+{
+"s": "s8",
+"text": "an",
+"color": "",
+"start": 25.704,
+"end": 25.843
+},
+{
+"s": "s8",
+"text": "einem",
+"color": "",
+"start": 25.843,
+"end": 26.191
+},
+{
+"s": "s8",
+"text": "einzigen",
+"color": "",
+"start": 26.191,
+"end": 26.74
+},
+{
+"s": "s8",
+"text": "Tag.",
+"color": "red",
+"start": 26.74,
+"end": 27.636
+},
+{
+"s": "s9",
+"text": "Der",
+"color": "",
+"start": 27.843,
+"end": 27.868
+},
+{
+"s": "s9",
+"text": "Grund:",
+"color": "",
+"start": 27.868,
+"end": 28.222
+},
+{
+"s": "s9",
+"text": "32,5 Mio.",
+"color": "gold",
+"start": 28.222,
+"end": 29.672
+},
+{
+"s": "s9",
+"text": "Vorbestellungen.",
+"color": "",
+"start": 29.672,
+"end": 31.368
+},
+{
+"s": "s10",
+"text": "Bis",
+"color": "",
+"start": 31.453,
+"end": 31.471
+},
+{
+"s": "s10",
+"text": "dieses",
+"color": "",
+"start": 31.471,
+"end": 31.875
+},
+{
+"s": "s10",
+"text": "Video",
+"color": "",
+"start": 31.875,
+"end": 32.21
+},
+{
+"s": "s10",
+"text": "vorbei",
+"color": "",
+"start": 32.21,
+"end": 32.614
+},
+{
+"s": "s10",
+"text": "ist:",
+"color": "",
+"start": 32.614,
+"end": 32.847
+},
+{
+"s": "s10",
+"text": "über",
+"color": "",
+"start": 32.847,
+"end": 33.087
+},
+{
+"s": "s10",
+"text": "1,7 Mio. $.",
+"color": "gold",
+"start": 33.087,
+"end": 35.278
+},
+{
+"s": "s11",
+"text": "Teil 2:",
+"color": "gold",
+"start": 35.424,
+"end": 35.747
+},
+{
+"s": "s11",
+"text": "Wer",
+"color": "",
+"start": 35.747,
+"end": 35.93
+},
+{
+"s": "s11",
+"text": "das",
+"color": "",
+"start": 35.93,
+"end": 36.114
+},
+{
+"s": "s11",
+"text": "Geld",
+"color": "",
+"start": 36.114,
+"end": 36.361
+},
+{
+"s": "s11",
+"text": "wirklich",
+"color": "",
+"start": 36.361,
+"end": 36.879
+},
+{
+"s": "s11",
+"text": "bekommt.",
+"color": "",
+"start": 36.879,
+"end": 38.553
+}
+]

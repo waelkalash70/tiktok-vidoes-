@@ -176,6 +176,9 @@ Neues Video = Projektordner kopieren, `script.json` neu schreiben, 3D-Szene in `
   im Bild (kollidieren mit Zähler oben) → Kamera-Ziel höher legen, damit die Szene im Bild tiefer sitzt.
   Untertitel-Clips dürfen sich nicht überlappen (Ende = Start des nächsten). Kamera-Keyframes können sich
   zeitlich überholen → nach Landungen mit `Math.max` absichern. SFX `riser.mp3`: laut nur bei 1,5–4 s.
+- **Live-Zähler-Prinzip (Video 3, GTA):** Zahl oben läuft die ganze Zeit mit Rate × Zeit („Während du zuschaust“) –
+  wie das ständig steigende NETTOVERMÖGEN in Referenz 3; Abschnitts-Fakten in der Delta-Zeile darunter.
+- `tools/tts.py` nutzt jetzt `GAP.get(beat, 0.35)` → neue Beat-Namen brechen nichts mehr.
 - Bundled SFX (Pixabay-Lizenz, frei nutzbar): `.claude/skills/media-use/audio/assets/sfx/`.
 - **ElevenLabs-Voiceover einbauen (erprobt bei Video 2, 2026-11-25):** 1) Datei transkribieren und am Text erkennen,
   zu welchem Video sie gehört. 2) Platzhalter sichern (`build/voice_platzhalter.wav`, `build/*_platzhalter.json`).
@@ -243,6 +246,11 @@ die Gegenmaßnahme **automatisieren** (Prüfskript, Vorlage, Checkliste) statt s
 | F15 | `cp -r` + `rm -rf` zum Projekt-Klonen blockiert | Sicherheitsprüfung für rm mit Wildcards | Nur benötigte Dateien kopieren (siehe 2c), nie mit rm aufräumen. |
 | F16 | Profilbild: Fallback-Serifenschrift, grauer Boden, Kopf überstrahlt | Font per DOM-Injection zu früh; glänzender Boden | Fonts per `FontFace`-API im Init-Script; Boden `MeshBasicMaterial` dunkel; Kopf grauweiß 0xc9cbd2; Rund-Vorschau prüfen. |
 | F17 | GitHub-Push 403 (lange Fehlersuche) | Claude-App nicht auf Repo + claude.ai nicht neu verknüpft | Sofort beide Schritte nennen: App installieren UND `claude.ai/customize/connectors?auth_start=github&auth_start_force=1`. |
+| F18 | Zähler über hellem 3D-Hintergrund schlecht lesbar (GTA, Turmspitze hinter HUD) | Kein Kontrast-Schutz | HUD hat jetzt dunklen weichen Radial-Hintergrund (`#hud-bar::before`, z-index 0, Kinder z-index 1) – in jede neue `hud.tpl.html` übernehmen. |
+| F19 | Punktlicht nah am Goldturm → weißer Hotspot | Licht zu nah/zu stark | Punktlicht seitlich-vorne (z. B. 3.2/2.4/5.0), Intensität ≤ 2,5. |
+| F20 | Wort doppelt (3D-Schild „WELTREKORD“ + Untertitel) | Gleiche Info zweimal | Kein 3D-Schild mit demselben Wort wie der gleichzeitige Untertitel. |
+| F21 | Skript 46 s zu lang (QA-Skript fing es) | Zu viele Füllwörter | Erst QA-Skript, dann kürzen: Nebensätze streichen, Zahlen behalten. |
+| F22 | Live-Aussage („bis Video vorbei: über 1,7 Mio.“) hängt von der Videolänge ab | Zahl = Rate × Dauer | Im VOICEOVER_TEXT Mindestlänge angeben; nach ElevenLabs-Einbau prüfen: Rate × T ≥ genannte Zahl. |
 
 ### 3b. Checkliste vor jeder Abgabe (aus 3a abgeleitet)
 1. `qa_skript.py` ohne FEHLER · 2. Zahlen nachgerechnet/Quelle geprüft · 3. `check --json`: keine Fehler, kein

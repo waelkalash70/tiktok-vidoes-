@@ -1,0 +1,371 @@
+{
+ "titel": "GTA 6 – 44.000 $ pro Sekunde (Teil 1)",
+ "annahmen": "Take-Two/Rockstar: 3,79 Mrd. $ weltweiter Retail-Umsatz am Launchtag (19.11.2026, Firmenschätzung inkl. Vorbestellungen), 32,5 Mio. vorab verkaufte Exemplare. 3,79 Mrd. $ / 86.400 s = 43.866 $/s. GTA V 2013: ~800 Mio. $ am ersten Tag (Reuters). Avengers: Endgame 2019: ~1,2 Mrd. $ weltweit am Startwochenende (Disney). Live-Zähler = Tempo von Tag 1, keine echten Live-Daten.",
+ "saetze": [
+  {
+   "id": "s1",
+   "beat": "hook",
+   "tokens": [
+    [
+     "Dieses",
+     "Dieses"
+    ],
+    [
+     "Spiel",
+     "Spiel"
+    ],
+    [
+     "hat",
+     "hat"
+    ],
+    [
+     "an",
+     "an"
+    ],
+    [
+     "EINEM",
+     "einem",
+     "gold"
+    ],
+    [
+     "Tag",
+     "Tag"
+    ],
+    [
+     "3,8 Mrd. $",
+     "drei Komma acht Milliarden Dollar",
+     "gold"
+    ],
+    [
+     "gemacht.",
+     "gemacht."
+    ]
+   ]
+  },
+  {
+   "id": "s2",
+   "beat": "sekunde",
+   "tokens": [
+    [
+     "Das",
+     "Das"
+    ],
+    [
+     "sind",
+     "sind"
+    ],
+    [
+     "fast",
+     "fast"
+    ],
+    [
+     "44.000 $",
+     "vierundvierzigtausend Dollar",
+     "gold"
+    ],
+    [
+     "pro",
+     "pro"
+    ],
+    [
+     "SEKUNDE.",
+     "Sekunde.",
+     "red"
+    ]
+   ]
+  },
+  {
+   "id": "s3",
+   "beat": "live",
+   "tokens": [
+    [
+     "Schau",
+     "Schau"
+    ],
+    [
+     "nach",
+     "nach"
+    ],
+    [
+     "oben:",
+     "oben:",
+     "gold"
+    ],
+    [
+     "Das",
+     "Das"
+    ],
+    [
+     "verdient",
+     "verdient"
+    ],
+    [
+     "GTA 6,",
+     "GTA sechs,",
+     "gold"
+    ],
+    [
+     "während",
+     "während"
+    ],
+    [
+     "du",
+     "du"
+    ],
+    [
+     "zuschaust.",
+     "zuschaust."
+    ]
+   ]
+  },
+  {
+   "id": "s4",
+   "beat": "gta5",
+   "tokens": [
+    [
+     "GTA 5",
+     "GTA fünf"
+    ],
+    [
+     "machte",
+     "machte"
+    ],
+    [
+     "2013",
+     "zweitausenddreizehn"
+    ],
+    [
+     "am",
+     "am"
+    ],
+    [
+     "ersten",
+     "ersten"
+    ],
+    [
+     "Tag",
+     "Tag"
+    ],
+    [
+     "800 Mio. $.",
+     "achthundert Millionen.",
+     "gold"
+    ]
+   ]
+  },
+  {
+   "id": "s5",
+   "beat": "rekord",
+   "tokens": [
+    [
+     "Damals",
+     "Damals"
+    ],
+    [
+     "ein",
+     "ein"
+    ],
+    [
+     "WELTREKORD.",
+     "Weltrekord.",
+     "gold"
+    ]
+   ]
+  },
+  {
+   "id": "s6",
+   "beat": "twist",
+   "tokens": [
+    [
+     "Aber",
+     "Aber"
+    ],
+    [
+     "jetzt",
+     "jetzt"
+    ],
+    [
+     "wird's",
+     "wird's"
+    ],
+    [
+     "verrückt:",
+     "verrückt:",
+     "red"
+    ]
+   ]
+  },
+  {
+   "id": "s7",
+   "beat": "endgame",
+   "tokens": [
+    [
+     "Rekord-Kinostart",
+     "Rekord-Kinostart"
+    ],
+    [
+     "Avengers:",
+     "Avengers:"
+    ],
+    [
+     "Endgame:",
+     "Endgame:"
+    ],
+    [
+     "1,2 Mrd. $",
+     "eins Komma zwei Milliarden",
+     "gold"
+    ],
+    [
+     "–",
+     "–"
+    ],
+    [
+     "am",
+     "am"
+    ],
+    [
+     "ganzen",
+     "ganzen"
+    ],
+    [
+     "Wochenende.",
+     "Wochenende."
+    ]
+   ]
+  },
+  {
+   "id": "s8",
+   "beat": "dreifach",
+   "tokens": [
+    [
+     "GTA 6",
+     "GTA sechs"
+    ],
+    [
+     "macht",
+     "macht"
+    ],
+    [
+     "das",
+     "das"
+    ],
+    [
+     "DREIFACHE",
+     "Dreifache",
+     "gold"
+    ],
+    [
+     "–",
+     "–"
+    ],
+    [
+     "an",
+     "an"
+    ],
+    [
+     "einem",
+     "einem"
+    ],
+    [
+     "einzigen",
+     "einzigen"
+    ],
+    [
+     "Tag.",
+     "Tag.",
+     "red"
+    ]
+   ]
+  },
+  {
+   "id": "s9",
+   "beat": "grund",
+   "tokens": [
+    [
+     "Der",
+     "Der"
+    ],
+    [
+     "Grund:",
+     "Grund:"
+    ],
+    [
+     "32,5 Mio.",
+     "zweiunddreißig Komma fünf Millionen",
+     "gold"
+    ],
+    [
+     "Vorbestellungen.",
+     "Vorbestellungen."
+    ]
+   ]
+  },
+  {
+   "id": "s10",
+   "beat": "punch",
+   "tokens": [
+    [
+     "Bis",
+     "Bis"
+    ],
+    [
+     "dieses",
+     "dieses"
+    ],
+    [
+     "Video",
+     "Video"
+    ],
+    [
+     "vorbei",
+     "vorbei"
+    ],
+    [
+     "ist:",
+     "ist:"
+    ],
+    [
+     "über",
+     "über"
+    ],
+    [
+     "1,7 Mio. $.",
+     "eins Komma sieben Millionen Dollar.",
+     "gold"
+    ]
+   ]
+  },
+  {
+   "id": "s11",
+   "beat": "cta",
+   "tokens": [
+    [
+     "Teil 2:",
+     "Teil zwei:",
+     "gold"
+    ],
+    [
+     "Wer",
+     "Wer"
+    ],
+    [
+     "das",
+     "das"
+    ],
+    [
+     "Geld",
+     "Geld"
+    ],
+    [
+     "wirklich",
+     "wirklich"
+    ],
+    [
+     "bekommt.",
+     "bekommt."
+    ]
+   ]
+  }
+ ]
+}
