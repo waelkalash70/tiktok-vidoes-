@@ -37,7 +37,7 @@
         text = usd(t < B.hook.key ? 1e7 + 3e8 * t : 3.1e8 + (3790000000 - 3.1e8) * eout(seg(t, B.hook.key, B.hook.key + 1.6)));
         pulse = Math.sin(seg(t, B.hook.key + 1.5, B.hook.key + 1.9) * Math.PI);
         if (t >= B.sekunde.start) {
-          label = "PRO SEKUNDE"; text = usd(Math.round(43866 * eout(seg(t, B.sekunde.key, B.sekunde.key + 0.7))));
+          label = "PRO SEKUNDE"; text = t < B.sekunde.key ? "? $" : usd(Math.round(43866 * eout(seg(t, B.sekunde.key - 0.05, B.sekunde.key + 0.6))));
           pulse = Math.sin(seg(t, B.sekunde.key + 0.6, B.sekunde.key + 1.0) * Math.PI); color = GOLD;
           delta = "3,79 Mrd. $ ÷ 86.400 Sekunden"; dA = seg(t, B.sekunde.key + 0.3, B.sekunde.key + 0.5);
         }
