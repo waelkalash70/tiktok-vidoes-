@@ -339,7 +339,7 @@ __SFX__
         watch.scale.setScalar(0.5 + 0.5 * Math.min(1, wa));
         const tick = Math.floor(t) + eout(seg(t % 1, 0, 0.12));
         hand.rotation.z = -tick * (Math.PI * 2 / 12);
-        watch.position.set(t > B.punch.start - 0.5 ? 1.95 : 1.95, t > B.punch.start - 0.5 ? 4.4 : 3.0, 1.1);
+        watch.position.set(t > B.punch.start - 0.5 ? 2.1 : 2.0, t > B.punch.start - 0.5 ? 5.7 : 4.1, 1.1);
         perSec.scale.copy(perSec.userData.base).multiplyScalar(1 + 0.12 * Math.max(0, 1 - (t % 1) * 4));
 
         // Menge der Vorbesteller läuft zum Turm

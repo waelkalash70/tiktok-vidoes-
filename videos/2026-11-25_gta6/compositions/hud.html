@@ -15,17 +15,17 @@
       color: rgba(255,255,255,.62); text-shadow: 0 2px 6px rgba(0,0,0,1); white-space: nowrap; }
   </style>
   <div id="root" data-composition-id="hud" data-width="1080" data-height="1920">
-    <div id="hud-bar" class="clip" data-start="0" data-duration="39.45" data-track-index="0">
+    <div id="hud-bar" class="clip" data-start="0" data-duration="42.33" data-track-index="0">
       <div id="hud-label">GTA 6 · TAG 1</div>
       <span id="hud-num">0 $</span>
       <span id="hud-delta">&nbsp;</span>
     </div>
-    <div id="hud-src" class="hud-src clip" data-start="0.2" data-duration="7.35" data-track-index="1">Quelle: Take-Two · Schätzung Tag 1</div>
-    <div id="hud-src2" class="hud-src clip" data-start="31.453" data-duration="3.97" data-track-index="1">Tempo von Tag 1 · keine Live-Daten</div>
+    <div id="hud-src" class="hud-src clip" data-start="0.2" data-duration="8.24" data-track-index="1">Quelle: Take-Two · Schätzung Tag 1</div>
+    <div id="hud-src2" class="hud-src clip" data-start="33.457" data-duration="4.21" data-track-index="1">Tempo von Tag 1 · keine Live-Daten</div>
   </div>
   <script>
     (function () {
-      const B = {"hook": {"start": 0.187, "end": 3.954, "key": 0.849}, "sekunde": {"start": 3.954, "end": 7.267, "key": 4.577}, "live": {"start": 7.349, "end": 11.087, "key": 7.737}, "gta5": {"start": 11.224, "end": 15.817, "key": 13.818}, "rekord": {"start": 15.817, "end": 17.456, "key": 16.159}, "twist": {"start": 17.698, "end": 19.291, "key": 18.26}, "endgame": {"start": 19.291, "end": 24.284, "key": 21.426}, "dreifach": {"start": 24.284, "end": 27.636, "key": 25.076}, "grund": {"start": 27.843, "end": 31.368, "key": 28.222}, "punch": {"start": 31.453, "end": 35.278, "key": 33.087}, "cta": {"start": 35.424, "end": 38.553, "key": 35.424}, "T": 39.45};
+      const B = {"hook": {"start": 0.0, "end": 4.69, "key": 1.223}, "sekunde": {"start": 4.69, "end": 8.241, "key": 5.369}, "live": {"start": 8.241, "end": 12.159, "key": 8.693}, "gta5": {"start": 12.159, "end": 16.723, "key": 14.986}, "rekord": {"start": 16.723, "end": 18.385, "key": 17.251}, "twist": {"start": 18.385, "end": 19.89, "key": 19.094}, "endgame": {"start": 19.89, "end": 25.872, "key": 22.301}, "dreifach": {"start": 25.872, "end": 29.698, "key": 26.962}, "grund": {"start": 29.698, "end": 33.457, "key": 30.647}, "punch": {"start": 33.457, "end": 37.667, "key": 35.407}, "cta": {"start": 37.667, "end": 41.429, "key": 37.667}, "T": 42.33};
       const RATE = 3790000000 / 86400; // 43.866 $ pro Sekunde
       const lab = document.getElementById("hud-label"), num = document.getElementById("hud-num"), del = document.getElementById("hud-delta");
       const clamp = (x) => Math.min(1, Math.max(0, x)), seg = (t, a, b) => clamp((t - a) / (b - a));
@@ -56,7 +56,7 @@
       }
       const tl = gsap.timeline({ paused: true });
       tl.to({ x: 0 }, {
-        x: 1, duration: 39.45, ease: "none",
+        x: 1, duration: 42.33, ease: "none",
         onUpdate: () => {
           const t = tl.time(), s = state(t);
           lab.textContent = s.label; num.textContent = s.text; num.style.color = s.color;

@@ -3,497 +3,497 @@
 "s": "s1",
 "text": "Dieses",
 "color": "",
-"start": 0.187,
-"end": 0.325
+"start": 0.0,
+"end": 0.483
 },
 {
 "s": "s1",
 "text": "Spiel",
 "color": "",
-"start": 0.325,
-"end": 0.591
+"start": 0.483,
+"end": 0.858
 },
 {
 "s": "s1",
 "text": "hat",
 "color": "",
-"start": 0.591,
-"end": 0.746
+"start": 0.858,
+"end": 1.105
 },
 {
 "s": "s1",
 "text": "an",
 "color": "",
-"start": 0.746,
-"end": 0.849
+"start": 1.105,
+"end": 1.223
 },
 {
 "s": "s1",
 "text": "EINEM",
 "color": "gold",
-"start": 0.849,
-"end": 1.149
+"start": 1.223,
+"end": 1.628
 },
 {
 "s": "s1",
 "text": "Tag",
 "color": "",
-"start": 1.149,
-"end": 1.347
+"start": 1.628,
+"end": 1.874
 },
 {
 "s": "s1",
 "text": "3,8 Mrd. $",
 "color": "gold",
-"start": 1.347,
-"end": 2.524
+"start": 1.874,
+"end": 3.788
 },
 {
 "s": "s1",
 "text": "gemacht.",
 "color": "",
-"start": 2.524,
-"end": 3.954
+"start": 3.788,
+"end": 4.69
 },
 {
 "s": "s2",
 "text": "Das",
 "color": "",
-"start": 3.954,
-"end": 4.124
+"start": 4.69,
+"end": 4.837
 },
 {
 "s": "s2",
 "text": "sind",
 "color": "",
-"start": 4.124,
-"end": 4.35
+"start": 4.837,
+"end": 5.14
 },
 {
 "s": "s2",
 "text": "fast",
 "color": "",
-"start": 4.35,
-"end": 4.577
+"start": 5.14,
+"end": 5.369
 },
 {
 "s": "s2",
 "text": "44.000 $",
 "color": "gold",
-"start": 4.577,
-"end": 5.938
+"start": 5.369,
+"end": 6.986
 },
 {
 "s": "s2",
 "text": "pro",
 "color": "",
-"start": 5.938,
-"end": 6.108
+"start": 6.986,
+"end": 7.188
 },
 {
 "s": "s2",
 "text": "SEKUNDE.",
 "color": "red",
-"start": 6.108,
-"end": 7.267
+"start": 7.188,
+"end": 8.241
 },
 {
 "s": "s3",
 "text": "Schau",
 "color": "",
-"start": 7.349,
-"end": 7.461
+"start": 8.241,
+"end": 8.462
 },
 {
 "s": "s3",
 "text": "nach",
 "color": "",
-"start": 7.461,
-"end": 7.737
+"start": 8.462,
+"end": 8.693
 },
 {
 "s": "s3",
 "text": "oben:",
 "color": "gold",
-"start": 7.737,
-"end": 8.039
+"start": 8.693,
+"end": 9.164
 },
 {
 "s": "s3",
 "text": "Das",
 "color": "",
-"start": 8.039,
-"end": 8.211
+"start": 9.164,
+"end": 9.321
 },
 {
 "s": "s3",
 "text": "verdient",
 "color": "",
-"start": 8.211,
-"end": 8.677
+"start": 9.321,
+"end": 9.875
 },
 {
 "s": "s3",
 "text": "GTA 6,",
 "color": "gold",
-"start": 8.677,
-"end": 9.185
+"start": 9.875,
+"end": 10.3
 },
 {
 "s": "s3",
 "text": "während",
 "color": "",
-"start": 9.185,
-"end": 9.547
+"start": 10.3,
+"end": 10.789
 },
 {
 "s": "s3",
 "text": "du",
 "color": "",
-"start": 9.547,
-"end": 9.668
+"start": 10.789,
+"end": 10.928
 },
 {
 "s": "s3",
 "text": "zuschaust.",
 "color": "",
-"start": 9.668,
-"end": 11.087
+"start": 10.928,
+"end": 12.159
 },
 {
 "s": "s4",
 "text": "GTA 5",
 "color": "",
-"start": 11.224,
-"end": 11.51
+"start": 12.159,
+"end": 12.627
 },
 {
 "s": "s4",
 "text": "machte",
 "color": "",
-"start": 11.51,
-"end": 11.981
+"start": 12.627,
+"end": 13.086
 },
 {
 "s": "s4",
 "text": "2013",
 "color": "",
-"start": 11.981,
-"end": 12.969
+"start": 13.086,
+"end": 14.079
 },
 {
 "s": "s4",
 "text": "am",
 "color": "",
-"start": 12.969,
-"end": 13.181
+"start": 14.079,
+"end": 14.299
 },
 {
 "s": "s4",
 "text": "ersten",
 "color": "",
-"start": 13.181,
-"end": 13.578
+"start": 14.299,
+"end": 14.738
 },
 {
 "s": "s4",
 "text": "Tag",
 "color": "",
-"start": 13.578,
-"end": 13.818
+"start": 14.738,
+"end": 14.986
 },
 {
 "s": "s4",
 "text": "800 Mio. $.",
 "color": "gold",
-"start": 13.818,
-"end": 15.817
+"start": 14.986,
+"end": 16.723
 },
 {
 "s": "s5",
 "text": "Damals",
 "color": "",
-"start": 15.817,
-"end": 16.001
+"start": 16.723,
+"end": 17.057
 },
 {
 "s": "s5",
 "text": "ein",
 "color": "",
-"start": 16.001,
-"end": 16.159
+"start": 17.057,
+"end": 17.251
 },
 {
 "s": "s5",
 "text": "WELTREKORD.",
 "color": "gold",
-"start": 16.159,
-"end": 17.456
+"start": 17.251,
+"end": 18.385
 },
 {
 "s": "s6",
 "text": "Aber",
 "color": "",
-"start": 17.698,
-"end": 17.72
+"start": 18.385,
+"end": 18.536
 },
 {
 "s": "s6",
 "text": "jetzt",
 "color": "",
-"start": 17.72,
-"end": 18.024
+"start": 18.536,
+"end": 18.82
 },
 {
 "s": "s6",
 "text": "wird's",
 "color": "",
-"start": 18.024,
-"end": 18.26
+"start": 18.82,
+"end": 19.094
 },
 {
 "s": "s6",
 "text": "verrückt:",
 "color": "red",
-"start": 18.26,
-"end": 19.291
+"start": 19.094,
+"end": 19.89
 },
 {
 "s": "s7",
 "text": "Rekord-Kinostart",
 "color": "",
-"start": 19.291,
-"end": 20.235
+"start": 19.89,
+"end": 21.018
 },
 {
 "s": "s7",
 "text": "Avengers:",
 "color": "",
-"start": 20.235,
-"end": 20.739
+"start": 21.018,
+"end": 21.737
 },
 {
 "s": "s7",
 "text": "Endgame:",
 "color": "",
-"start": 20.739,
-"end": 21.426
+"start": 21.737,
+"end": 22.301
 },
 {
 "s": "s7",
 "text": "1,2 Mrd. $",
 "color": "gold",
-"start": 21.426,
-"end": 22.385
+"start": 22.301,
+"end": 24.148
 },
 {
 "s": "s7",
 "text": "–",
 "color": "",
-"start": 22.385,
-"end": 22.573
+"start": 24.148,
+"end": 24.206
 },
 {
 "s": "s7",
 "text": "am",
 "color": "",
-"start": 22.573,
-"end": 22.949
+"start": 24.206,
+"end": 24.303
 },
 {
 "s": "s7",
 "text": "ganzen",
 "color": "",
-"start": 22.949,
-"end": 23.155
+"start": 24.303,
+"end": 24.789
 },
 {
 "s": "s7",
 "text": "Wochenende.",
 "color": "",
-"start": 23.155,
-"end": 24.284
+"start": 24.789,
+"end": 25.872
 },
 {
 "s": "s8",
 "text": "GTA 6",
 "color": "",
-"start": 24.284,
-"end": 24.519
+"start": 25.872,
+"end": 26.336
 },
 {
 "s": "s8",
 "text": "macht",
 "color": "",
-"start": 24.519,
-"end": 24.867
+"start": 26.336,
+"end": 26.715
 },
 {
 "s": "s8",
 "text": "das",
 "color": "",
-"start": 24.867,
-"end": 25.076
+"start": 26.715,
+"end": 26.962
 },
 {
 "s": "s8",
 "text": "DREIFACHE",
 "color": "gold",
-"start": 25.076,
-"end": 25.695
+"start": 26.962,
+"end": 27.711
 },
 {
 "s": "s8",
 "text": "–",
 "color": "",
-"start": 25.695,
-"end": 25.704
+"start": 27.711,
+"end": 27.768
 },
 {
 "s": "s8",
 "text": "an",
 "color": "",
-"start": 25.704,
-"end": 25.843
+"start": 27.768,
+"end": 27.872
 },
 {
 "s": "s8",
 "text": "einem",
 "color": "",
-"start": 25.843,
-"end": 26.191
+"start": 27.872,
+"end": 28.27
 },
 {
 "s": "s8",
 "text": "einzigen",
 "color": "",
-"start": 26.191,
-"end": 26.74
+"start": 28.27,
+"end": 28.915
 },
 {
 "s": "s8",
 "text": "Tag.",
 "color": "red",
-"start": 26.74,
-"end": 27.636
+"start": 28.915,
+"end": 29.698
 },
 {
 "s": "s9",
 "text": "Der",
 "color": "",
-"start": 27.843,
-"end": 27.868
+"start": 29.698,
+"end": 29.897
 },
 {
 "s": "s9",
 "text": "Grund:",
 "color": "",
-"start": 27.868,
-"end": 28.222
+"start": 29.897,
+"end": 30.647
 },
 {
 "s": "s9",
 "text": "32,5 Mio.",
 "color": "gold",
-"start": 28.222,
-"end": 29.672
+"start": 30.647,
+"end": 31.948
 },
 {
 "s": "s9",
 "text": "Vorbestellungen.",
 "color": "",
-"start": 29.672,
-"end": 31.368
+"start": 31.948,
+"end": 33.457
 },
 {
 "s": "s10",
 "text": "Bis",
 "color": "",
-"start": 31.453,
-"end": 31.471
+"start": 33.457,
+"end": 33.594
 },
 {
 "s": "s10",
 "text": "dieses",
 "color": "",
-"start": 31.471,
-"end": 31.875
+"start": 33.594,
+"end": 33.988
 },
 {
 "s": "s10",
 "text": "Video",
 "color": "",
-"start": 31.875,
-"end": 32.21
+"start": 33.988,
+"end": 34.317
 },
 {
 "s": "s10",
 "text": "vorbei",
 "color": "",
-"start": 32.21,
-"end": 32.614
+"start": 34.317,
+"end": 34.711
 },
 {
 "s": "s10",
 "text": "ist:",
 "color": "",
-"start": 32.614,
-"end": 32.847
+"start": 34.711,
+"end": 35.196
 },
 {
 "s": "s10",
 "text": "über",
 "color": "",
-"start": 32.847,
-"end": 33.087
+"start": 35.196,
+"end": 35.407
 },
 {
 "s": "s10",
 "text": "1,7 Mio. $.",
 "color": "gold",
-"start": 33.087,
-"end": 35.278
+"start": 35.407,
+"end": 37.667
 },
 {
 "s": "s11",
 "text": "Teil 2:",
 "color": "gold",
-"start": 35.424,
-"end": 35.747
+"start": 37.667,
+"end": 38.66
 },
 {
 "s": "s11",
 "text": "Wer",
 "color": "",
-"start": 35.747,
-"end": 35.93
+"start": 38.66,
+"end": 38.789
 },
 {
 "s": "s11",
 "text": "das",
 "color": "",
-"start": 35.93,
-"end": 36.114
+"start": 38.789,
+"end": 38.978
 },
 {
 "s": "s11",
 "text": "Geld",
 "color": "",
-"start": 36.114,
-"end": 36.361
+"start": 38.978,
+"end": 39.236
 },
 {
 "s": "s11",
 "text": "wirklich",
 "color": "",
-"start": 36.361,
-"end": 36.879
+"start": 39.236,
+"end": 39.772
 },
 {
 "s": "s11",
 "text": "bekommt.",
 "color": "",
-"start": 36.879,
-"end": 38.553
+"start": 39.772,
+"end": 41.429
 }
 ]
