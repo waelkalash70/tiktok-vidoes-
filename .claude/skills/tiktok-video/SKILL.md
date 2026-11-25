@@ -288,6 +288,8 @@ plausibel) · 5. Nach Render: ffprobe (1080×1920, Länge), `volumedetect` (mean
   ElevenLabs-Voiceover des Users → dann `align_global.py` + `build.py` + `render --quality delivery`.
 - Video 2 „Zinseszins: Anna vs. Ben (Teil 1)“ (`videos/2026-11-25_zinseszins/`): **FINAL geliefert** mit ElevenLabs-Stimme
   (43,6 s, delivery-Qualität, `zinseszins_FINAL_elevenlabs.mp4`). Video 1 wartet noch auf ElevenLabs-Datei.
+- Video 3 „GTA 6 – 44.000 $ pro Sekunde (Teil 1)“ (`videos/2026-11-25_gta6/`): **FINAL geliefert** mit ElevenLabs (42,3 s).
+  Teil 2 versprochen: „Wer das Geld wirklich bekommt“ (Aufteilung Plattform/Handel/Take-Two – vorher recherchieren).
 - GitHub: Push auf `waelkalash70/tiktok-vidoes-` funktioniert (seit 2026-11-24). Lösung bei 403 war:
   Claude GitHub App auf das Repo installieren UND auf claude.ai neu verknüpfen
   (`https://claude.ai/customize/connectors?auth_start=github&auth_start_force=1`).
