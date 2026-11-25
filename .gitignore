@@ -5,3 +5,4 @@ videos/*/build/*.wav
 videos/*/build/check.json
 videos/*/build/render.log
 videos/*/build/work-*/
+videos/*/build/.*-transaction-*/
