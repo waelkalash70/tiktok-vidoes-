@@ -151,6 +151,13 @@ Neues Video = Projektordner kopieren, `script.json` neu schreiben, 3D-Szene in `
   Untertitel-Clips dürfen sich nicht überlappen (Ende = Start des nächsten). Kamera-Keyframes können sich
   zeitlich überholen → nach Landungen mit `Math.max` absichern. SFX `riser.mp3`: laut nur bei 1,5–4 s.
 - Bundled SFX (Pixabay-Lizenz, frei nutzbar): `.claude/skills/media-use/audio/assets/sfx/`.
+- **ElevenLabs-Voiceover einbauen (erprobt bei Video 2, 2026-11-25):** 1) Datei transkribieren und am Text erkennen,
+  zu welchem Video sie gehört. 2) Platzhalter sichern (`build/voice_platzhalter.wav`, `build/*_platzhalter.json`).
+  3) `ffmpeg -i <el.mp3> -af loudnorm=I=-15:TP=-1.5:LRA=11 -ar 44100 assets/voice.wav` (ElevenLabs war ~5 dB leiser
+  als die Platzhalterstimme → ohne Normalisierung übertönen die SFX). 4) `transcribe --model small --language de`,
+  `align_global.py`, `build.py`, `check`, `snapshot`, dann `render --quality delivery -o build/final.mp4`.
+  Ergebnis Video 2: alle 14 Satzgrenzen lagen exakt auf den Sprechpausen. User-Stimme: „Rene Deutschmann –
+  Trustworthy and Calm“ (eleven v4).
 - **Neues Video starten (bewährt bei Video 2):** Projekt NICHT mit `cp -r` + `rm -rf` klonen (rm wird blockiert),
   sondern Ordner anlegen und nur `AGENTS.md CLAUDE.md hyperframes.json meta.json package.json tools/ assets/lib assets/sfx`
   kopieren; in `meta.json`/`package.json` Namen ersetzen. `tools/tts.py`: GAP-Tabelle auf neue Beat-Namen anpassen,

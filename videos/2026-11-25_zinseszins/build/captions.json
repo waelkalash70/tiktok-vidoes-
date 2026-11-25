@@ -3,532 +3,532 @@
 "s": "s1",
 "text": "Anna",
 "color": "",
-"start": 0.22,
-"end": 0.3
+"start": 0.0,
+"end": 0.287
 },
 {
 "s": "s1",
 "text": "spart",
 "color": "",
-"start": 0.3,
-"end": 0.67
+"start": 0.287,
+"end": 0.763
 },
 {
 "s": "s1",
 "text": "nur",
 "color": "",
-"start": 0.67,
-"end": 0.93
+"start": 0.763,
+"end": 0.96
 },
 {
 "s": "s1",
 "text": "10 Jahre.",
 "color": "gold",
-"start": 0.93,
-"end": 1.72
+"start": 0.96,
+"end": 1.965
 },
 {
 "s": "s1",
 "text": "Ben",
 "color": "",
-"start": 1.72,
-"end": 1.94
+"start": 1.965,
+"end": 2.19
 },
 {
 "s": "s1",
 "text": "30 Jahre.",
 "color": "gold",
-"start": 1.94,
-"end": 3.2
+"start": 2.19,
+"end": 3.507
 },
 {
 "s": "s2",
 "text": "Trotzdem",
 "color": "",
-"start": 3.2,
-"end": 3.63
+"start": 3.507,
+"end": 3.999
 },
 {
 "s": "s2",
 "text": "ist",
 "color": "",
-"start": 3.63,
-"end": 3.83
+"start": 3.999,
+"end": 4.178
 },
 {
 "s": "s2",
 "text": "ANNA",
 "color": "gold",
-"start": 3.83,
-"end": 4.11
+"start": 4.178,
+"end": 4.424
 },
 {
 "s": "s2",
 "text": "am",
 "color": "",
-"start": 4.11,
-"end": 4.25
+"start": 4.424,
+"end": 4.557
 },
 {
 "s": "s2",
 "text": "Ende",
 "color": "",
-"start": 4.25,
-"end": 4.67
+"start": 4.557,
+"end": 4.812
 },
 {
 "s": "s2",
 "text": "reicher.",
 "color": "gold",
-"start": 4.67,
-"end": 5.5
+"start": 4.812,
+"end": 5.763
 },
 {
 "s": "s3",
 "text": "Wie",
 "color": "",
-"start": 5.5,
-"end": 5.56
+"start": 5.763,
+"end": 5.874
 },
 {
 "s": "s3",
 "text": "geht",
 "color": "",
-"start": 5.56,
-"end": 5.94
+"start": 5.874,
+"end": 6.188
 },
 {
 "s": "s3",
 "text": "das?",
 "color": "gold",
-"start": 5.94,
-"end": 6.74
+"start": 6.188,
+"end": 6.912
 },
 {
 "s": "s4",
 "text": "Anna",
 "color": "",
-"start": 6.74,
-"end": 6.84
+"start": 6.912,
+"end": 7.121
 },
 {
 "s": "s4",
 "text": "legt",
 "color": "",
-"start": 6.84,
-"end": 7.27
+"start": 7.121,
+"end": 7.394
 },
 {
 "s": "s4",
 "text": "ab",
 "color": "",
-"start": 7.27,
-"end": 7.45
+"start": 7.394,
+"end": 7.557
 },
 {
 "s": "s4",
 "text": "25",
 "color": "",
-"start": 7.45,
-"end": 7.89
+"start": 7.557,
+"end": 8.048
 },
 {
 "s": "s4",
 "text": "jeden",
 "color": "",
-"start": 7.89,
-"end": 8.29
+"start": 8.048,
+"end": 8.475
 },
 {
 "s": "s4",
 "text": "Monat",
 "color": "",
-"start": 8.29,
-"end": 8.67
+"start": 8.475,
+"end": 8.866
 },
 {
 "s": "s4",
 "text": "300 €",
 "color": "gold",
-"start": 8.67,
-"end": 9.74
+"start": 8.866,
+"end": 9.92
 },
 {
 "s": "s4",
 "text": "an.",
 "color": "",
-"start": 9.74,
-"end": 10.42
+"start": 9.92,
+"end": 10.632
 },
 {
 "s": "s5",
 "text": "Mit",
 "color": "",
-"start": 10.42,
-"end": 10.46
+"start": 10.632,
+"end": 10.914
 },
 {
 "s": "s5",
 "text": "35",
 "color": "",
-"start": 10.46,
-"end": 10.99
+"start": 10.914,
+"end": 11.477
 },
 {
 "s": "s5",
 "text": "hört",
 "color": "",
-"start": 10.99,
-"end": 11.34
+"start": 11.477,
+"end": 11.853
 },
 {
 "s": "s5",
 "text": "sie",
 "color": "",
-"start": 11.34,
-"end": 11.6
+"start": 11.853,
+"end": 12.135
 },
 {
 "s": "s5",
 "text": "auf.",
 "color": "red",
-"start": 11.6,
-"end": 12.03
+"start": 12.135,
+"end": 12.783
 },
 {
 "s": "s5",
 "text": "Eingezahlt:",
 "color": "",
-"start": 12.03,
-"end": 13.23
+"start": 12.783,
+"end": 13.388
 },
 {
 "s": "s5",
 "text": "36.000 €",
 "color": "gold",
-"start": 13.23,
-"end": 14.7
+"start": 13.388,
+"end": 15.39
 },
 {
 "s": "s6",
 "text": "Ben",
 "color": "",
-"start": 14.7,
-"end": 14.71
+"start": 15.39,
+"end": 16.092
 },
 {
 "s": "s6",
 "text": "fängt",
 "color": "",
-"start": 14.71,
-"end": 15.09
+"start": 16.092,
+"end": 16.42
 },
 {
 "s": "s6",
 "text": "erst",
 "color": "",
-"start": 15.09,
-"end": 15.41
+"start": 16.42,
+"end": 16.626
 },
 {
 "s": "s6",
 "text": "mit",
 "color": "",
-"start": 15.41,
-"end": 15.62
+"start": 16.626,
+"end": 16.832
 },
 {
 "s": "s6",
 "text": "35",
 "color": "red",
-"start": 15.62,
-"end": 16.1
+"start": 16.832,
+"end": 17.215
 },
 {
 "s": "s6",
 "text": "an",
 "color": "",
-"start": 16.1,
-"end": 16.25
+"start": 17.215,
+"end": 17.356
 },
 {
 "s": "s6",
 "text": "und",
 "color": "",
-"start": 16.25,
-"end": 16.48
+"start": 17.356,
+"end": 17.543
 },
 {
 "s": "s6",
 "text": "zahlt",
 "color": "",
-"start": 16.48,
-"end": 16.86
+"start": 17.543,
+"end": 17.87
 },
 {
 "s": "s6",
 "text": "30 Jahre",
 "color": "",
-"start": 16.86,
-"end": 17.75
+"start": 17.87,
+"end": 18.591
 },
 {
 "s": "s6",
 "text": "lang",
 "color": "",
-"start": 17.75,
-"end": 18.03
+"start": 18.591,
+"end": 18.853
 },
 {
 "s": "s6",
 "text": "300 €.",
 "color": "gold",
-"start": 18.03,
-"end": 19.18
+"start": 18.853,
+"end": 20.248
 },
 {
 "s": "s7",
 "text": "Eingezahlt:",
 "color": "",
-"start": 19.18,
-"end": 19.76
+"start": 20.248,
+"end": 20.833
 },
 {
 "s": "s7",
 "text": "108.000 €",
 "color": "gold",
-"start": 19.76,
-"end": 21.77
+"start": 20.833,
+"end": 22.884
 },
 {
 "s": "s8",
 "text": "Beide",
 "color": "",
-"start": 21.77,
-"end": 22.098
+"start": 22.884,
+"end": 23.201
 },
 {
 "s": "s8",
 "text": "bekommen",
 "color": "",
-"start": 22.098,
-"end": 22.567
+"start": 23.201,
+"end": 23.534
 },
 {
 "s": "s8",
 "text": "7 %",
 "color": "gold",
-"start": 22.567,
-"end": 23.27
+"start": 23.534,
+"end": 24.207
 },
 {
 "s": "s8",
 "text": "Rendite",
 "color": "",
-"start": 23.27,
-"end": 23.691
+"start": 24.207,
+"end": 24.702
 },
 {
 "s": "s8",
 "text": "im",
 "color": "",
-"start": 23.691,
-"end": 23.879
+"start": 24.702,
+"end": 24.787
 },
 {
 "s": "s8",
 "text": "Jahr.",
 "color": "",
-"start": 23.879,
-"end": 24.38
+"start": 24.787,
+"end": 25.601
 },
 {
 "s": "s9",
 "text": "Und",
 "color": "",
-"start": 24.38,
-"end": 24.48
+"start": 25.601,
+"end": 25.904
 },
 {
 "s": "s9",
 "text": "jetzt",
 "color": "",
-"start": 24.48,
-"end": 25.01
+"start": 25.904,
+"end": 26.005
 },
 {
 "s": "s9",
 "text": "kommt's:",
 "color": "",
-"start": 25.01,
-"end": 26.3
+"start": 26.005,
+"end": 26.785
 },
 {
 "s": "s10",
 "text": "Ben",
 "color": "",
-"start": 26.3,
-"end": 26.36
+"start": 26.785,
+"end": 27.201
 },
 {
 "s": "s10",
 "text": "hat",
 "color": "",
-"start": 26.36,
-"end": 26.65
+"start": 27.201,
+"end": 27.293
 },
 {
 "s": "s10",
 "text": "mit",
 "color": "",
-"start": 26.65,
-"end": 26.92
+"start": 27.293,
+"end": 27.567
 },
 {
 "s": "s10",
 "text": "65:",
 "color": "",
-"start": 26.92,
-"end": 27.48
+"start": 27.567,
+"end": 28.303
 },
 {
 "s": "s10",
 "text": "366.000 €",
 "color": "gold",
-"start": 27.48,
-"end": 30.42
+"start": 28.303,
+"end": 31.023
 },
 {
 "s": "s11",
 "text": "Anna:",
 "color": "",
-"start": 30.42,
-"end": 30.59
+"start": 31.023,
+"end": 31.411
 },
 {
 "s": "s11",
 "text": "421.000 €",
 "color": "gold",
-"start": 30.59,
-"end": 33.32
+"start": 31.411,
+"end": 34.258
 },
 {
 "s": "s12",
 "text": "Mit",
 "color": "",
-"start": 33.32,
-"end": 33.54
+"start": 34.258,
+"end": 34.415
 },
 {
 "s": "s12",
 "text": "einem",
 "color": "",
-"start": 33.54,
-"end": 33.91
+"start": 34.415,
+"end": 34.842
 },
 {
 "s": "s12",
 "text": "DRITTEL",
 "color": "red",
-"start": 33.91,
-"end": 34.43
+"start": 34.842,
+"end": 35.221
 },
 {
 "s": "s12",
 "text": "des",
 "color": "",
-"start": 34.43,
-"end": 34.65
+"start": 35.221,
+"end": 35.401
 },
 {
 "s": "s12",
 "text": "Geldes.",
 "color": "",
-"start": 34.65,
-"end": 35.58
+"start": 35.401,
+"end": 36.277
 },
 {
 "s": "s13",
 "text": "Nicht",
 "color": "",
-"start": 35.58,
-"end": 35.64
+"start": 36.277,
+"end": 36.794
 },
 {
 "s": "s13",
 "text": "die",
 "color": "",
-"start": 35.64,
-"end": 35.8
+"start": 36.794,
+"end": 36.812
 },
 {
 "s": "s13",
 "text": "Summe",
 "color": "",
-"start": 35.8,
-"end": 36.12
+"start": 36.812,
+"end": 37.147
 },
 {
 "s": "s13",
 "text": "zählt.",
 "color": "",
-"start": 36.12,
-"end": 36.48
+"start": 37.147,
+"end": 37.619
 },
 {
 "s": "s13",
 "text": "Sondern",
 "color": "",
-"start": 36.48,
-"end": 37.13
+"start": 37.619,
+"end": 38.181
 },
 {
 "s": "s13",
 "text": "die",
 "color": "",
-"start": 37.13,
-"end": 37.47
+"start": 38.181,
+"end": 38.289
 },
 {
 "s": "s13",
 "text": "ZEIT.",
 "color": "gold",
-"start": 37.47,
-"end": 38.3
+"start": 38.289,
+"end": 39.15
 },
 {
 "s": "s14",
 "text": "Teil 2:",
 "color": "gold",
-"start": 38.3,
-"end": 38.89
+"start": 39.15,
+"end": 39.92
 },
 {
 "s": "s14",
 "text": "Wie",
 "color": "",
-"start": 38.89,
-"end": 39.07
+"start": 39.92,
+"end": 40.149
 },
 {
 "s": "s14",
 "text": "du",
 "color": "",
-"start": 39.07,
-"end": 39.12
+"start": 40.149,
+"end": 40.295
 },
 {
 "s": "s14",
 "text": "heute",
 "color": "",
-"start": 39.12,
-"end": 39.36
+"start": 40.295,
+"end": 40.712
 },
 {
 "s": "s14",
 "text": "startest.",
 "color": "",
-"start": 39.36,
-"end": 41.12
+"start": 40.712,
+"end": 42.703
 }
 ]

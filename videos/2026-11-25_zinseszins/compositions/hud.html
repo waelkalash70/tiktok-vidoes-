@@ -12,17 +12,17 @@
       color: rgba(255,255,255,.62); text-shadow: 0 2px 6px rgba(0,0,0,1); }
   </style>
   <div id="root" data-composition-id="hud" data-width="1080" data-height="1920">
-    <div id="hud-bar" class="clip" data-start="0" data-duration="42.02" data-track-index="0">
+    <div id="hud-bar" class="clip" data-start="0" data-duration="43.6" data-track-index="0">
       <div id="hud-label">WER HAT MIT 65 MEHR?</div>
       <span id="hud-num">ANNA vs. BEN</span>
       <span id="hud-delta">&nbsp;</span>
     </div>
-    <div id="hud-src" class="hud-src clip" data-start="0.2" data-duration="7.34" data-track-index="1">7 % p. a. · ohne Steuern · keine Garantie</div>
-    <div id="hud-src2" class="hud-src clip" data-start="21.77" data-duration="11.55" data-track-index="1">7 % p. a. · ohne Steuern · keine Garantie</div>
+    <div id="hud-src" class="hud-src clip" data-start="0.2" data-duration="7.51" data-track-index="1">7 % p. a. · ohne Steuern · keine Garantie</div>
+    <div id="hud-src2" class="hud-src clip" data-start="22.884" data-duration="11.37" data-track-index="1">7 % p. a. · ohne Steuern · keine Garantie</div>
   </div>
   <script>
     (function () {
-      const B = {"hook": {"start": 0.22, "end": 3.2, "key": 0.93}, "reicher": {"start": 3.2, "end": 5.5, "key": 3.83}, "frage": {"start": 5.5, "end": 6.74, "key": 5.94}, "anna": {"start": 6.74, "end": 10.42, "key": 8.67}, "annastop": {"start": 10.42, "end": 14.7, "key": 13.23}, "ben": {"start": 14.7, "end": 19.18, "key": 18.03}, "benpaid": {"start": 19.18, "end": 21.77, "key": 19.76}, "rendite": {"start": 21.77, "end": 24.38, "key": 22.567}, "twist": {"start": 24.38, "end": 26.3, "key": 24.38}, "benend": {"start": 26.3, "end": 30.42, "key": 27.48}, "annaend": {"start": 30.42, "end": 33.32, "key": 30.59}, "punch": {"start": 33.32, "end": 35.58, "key": 33.91}, "lehre": {"start": 35.58, "end": 38.3, "key": 37.47}, "cta": {"start": 38.3, "end": 41.12, "key": 38.3}, "T": 42.02};
+      const B = {"hook": {"start": 0.0, "end": 3.507, "key": 0.96}, "reicher": {"start": 3.507, "end": 5.763, "key": 4.178}, "frage": {"start": 5.763, "end": 6.912, "key": 6.188}, "anna": {"start": 6.912, "end": 10.632, "key": 8.866}, "annastop": {"start": 10.632, "end": 15.39, "key": 13.388}, "ben": {"start": 15.39, "end": 20.248, "key": 18.853}, "benpaid": {"start": 20.248, "end": 22.884, "key": 20.833}, "rendite": {"start": 22.884, "end": 25.601, "key": 23.534}, "twist": {"start": 25.601, "end": 26.785, "key": 25.601}, "benend": {"start": 26.785, "end": 31.023, "key": 28.303}, "annaend": {"start": 31.023, "end": 34.258, "key": 31.411}, "punch": {"start": 34.258, "end": 36.277, "key": 34.842}, "lehre": {"start": 36.277, "end": 39.15, "key": 38.289}, "cta": {"start": 39.15, "end": 42.703, "key": 39.15}, "T": 43.6};
       const lab = document.getElementById("hud-label"), num = document.getElementById("hud-num"), del = document.getElementById("hud-delta");
       const clamp = (x) => Math.min(1, Math.max(0, x)), seg = (t, a, b) => clamp((t - a) / (b - a));
       const eout = (x) => 1 - Math.pow(1 - x, 3), eio = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
@@ -78,7 +78,7 @@
       }
       const tl = gsap.timeline({ paused: true });
       tl.to({ x: 0 }, {
-        x: 1, duration: 42.02, ease: "none",
+        x: 1, duration: 43.6, ease: "none",
         onUpdate: () => {
           const t = tl.time(), s = state(t);
           lab.textContent = s.label; num.textContent = s.text; num.style.color = s.color;
