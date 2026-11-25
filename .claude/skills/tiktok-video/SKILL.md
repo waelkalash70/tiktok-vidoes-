@@ -89,7 +89,7 @@ Referenzen:
 ## 2. Arbeitsablauf pro Video
 
 1. **Logbuch lesen** (Abschnitt 4) und offene Präferenzen beachten.
-2. **Skript** auf Deutsch schreiben → dem User zeigen, falls er nichts anderes gesagt hat.
+2. **Skript** auf Deutsch schreiben (erst rechnen, dann Hook – F2), dann `python3 -I .claude/skills/tiktok-video/werkzeuge/qa_skript.py <projekt>/script.json` (muss „OK“ melden – F1).
 3. **Storyboard** als Tabelle: Satz | Zeit | Bild/Animation | Farbwörter | Leiste-Zustand.
 4. **Audio:** Voiceover vom User (bevorzugt) → `transcribe --language de` liefert Wort-Timestamps
    (`transcript.json`) → daraus die Ein-Wort-Untertitel-Clips bauen. Ohne User-Audio: HeyGen
@@ -192,6 +192,38 @@ Wenn der User Feedback gibt – positiv oder negativ:
 4. Wenn eine Regel mehrfach bestätigt wurde → in die Stil-DNA (Abschnitt 1) übernehmen.
 5. Änderung an dieser Datei committen und pushen (Container ist flüchtig – nur Gepushtes bleibt).
 
+**Auch aus eigenen Fehlern lernen (User-Wunsch, 2026-11-25 – PFLICHT):** Nach JEDER Aufgabe kurz prüfen:
+Was ging schief, was hat Zeit gekostet, was hätte der User fast falsch bekommen? Jeden solchen Fehler unten im
+**Fehler-Logbuch (3a)** eintragen – mit Ursache und einer Gegenmaßnahme, die ihn künftig verhindert. Wo möglich,
+die Gegenmaßnahme **automatisieren** (Prüfskript, Vorlage, Checkliste) statt sich nur vorzunehmen, aufzupassen.
+
+### 3a. Fehler-Logbuch (Fehler → Ursache → Gegenmaßnahme)
+| # | Fehler | Ursache | Gegenmaßnahme (verbindlich) |
+|---|---|---|---|
+| F1 | Gesprochen „neuntausend“ statt „viertausendneunhundert“ (Video 1) | Zahlen von Hand ausgeschrieben | **`werkzeuge/qa_skript.py script.json` vor jeder TTS ausführen** – prüft Ziffern ↔ ausgeschriebene Zahl, %/Prozent, Länge (4,0 Silben/s). Fängt F1 nachweislich. |
+| F2 | Hook „100 €/Monat → Millionär“ fast verwendet, stimmte nicht (nur ~262.000 €) | Viraler Hook vor der Rechnung | **Erst rechnen, dann Hook schreiben.** Jede Zahl mit Skript nachrechnen; Annahmen im Video + in `script.json` nennen. |
+| F3 | Lohnsteuer in Video 1 nur geschätzt | Kein offizieller Rechner offline | Steuer-/Rechtszahlen per WebSearch gegen offizielle Quelle (BMF-Rechner) prüfen oder dem User klar zum Gegencheck markieren. |
+| F4 | 3D-Szene schwarz: `Object.assign(mesh,{position})` | position ist read-only | Positionen nur per `.position.set()`; bei schwarzem Bild zuerst Playwright-Konsole lesen (`pageerror`). |
+| F5 | Gold weiß ausgebrannt, Fenster zu hell | Emissive/Bloom zu hoch | Werte aus 2c übernehmen (Emissive 0.16, Bloom 0.55/0.5/0.78, Exposure 0.92). |
+| F6 | 3D-Schilder überdecken den Zähler oben; Figuren angeschnitten | Kamera-Ziel zu tief, FOV zu eng | Kamera-Ziel höher legen; bei 2 Objekten FOV 48; Namensschilder an Figuren; Snapshot-Kontaktbogen VOR dem Render. |
+| F7 | Zwei Untertitel gleichzeitig sichtbar | Clip-Ende > Start des nächsten | In `build.py` Ende = min(Ende, nächster Start) – ist eingebaut, nicht entfernen. |
+| F8 | Kamera sprang (Keyframes überholten sich zeitlich) | Feste Zeiten + dynamische Landungen | Keyframe-Zeiten mit `Math.max(...)` an vorherige Ereignisse koppeln. |
+| F9 | Zähler zeigte kurz „0 €“ / falsche Farbe (Array statt CSS-Farbe) | Eigene Formel statt Szenen-Tabelle; Typfehler | Zähler mit derselben Tabelle wie die 3D-Szene; Farben immer als CSS-String. |
+| F10 | Riser-SFX stumm | Stille Stelle der Datei gewählt | Vor Nutzung Lautheit je Sekunde messen (`volumedetect` mit `-ss`). Riser: 1,5–4 s. |
+| F11 | Quellenzeile brach um → außerhalb Safe-Zone | Zu langer Text | ≤ 40 Zeichen, `nowrap`; `check --json` muss ohne `outside_safe_zone` sein (außer kurzem Pop-In). |
+| F12 | Whisper-Wortzeiten bis 1,4 s falsch | Whisper-small ungenau | Immer `align_global.py` (DP auf Sprechpausen) – nie rohe Whisper-Zeiten. |
+| F13 | ElevenLabs 5 dB leiser → SFX zu laut | Unterschiedliche Pegel | Fremde Stimme immer `loudnorm=I=-15:TP=-1.5`. |
+| F14 | Render-Zwischendateien committet | `build/work-*` nicht ignoriert | `.gitignore` enthält `videos/*/build/work-*/`; vor Commit `git status` lesen. |
+| F15 | `cp -r` + `rm -rf` zum Projekt-Klonen blockiert | Sicherheitsprüfung für rm mit Wildcards | Nur benötigte Dateien kopieren (siehe 2c), nie mit rm aufräumen. |
+| F16 | Profilbild: Fallback-Serifenschrift, grauer Boden, Kopf überstrahlt | Font per DOM-Injection zu früh; glänzender Boden | Fonts per `FontFace`-API im Init-Script; Boden `MeshBasicMaterial` dunkel; Kopf grauweiß 0xc9cbd2; Rund-Vorschau prüfen. |
+| F17 | GitHub-Push 403 (lange Fehlersuche) | Claude-App nicht auf Repo + claude.ai nicht neu verknüpft | Sofort beide Schritte nennen: App installieren UND `claude.ai/customize/connectors?auth_start=github&auth_start_force=1`. |
+
+### 3b. Checkliste vor jeder Abgabe (aus 3a abgeleitet)
+1. `qa_skript.py` ohne FEHLER · 2. Zahlen nachgerechnet/Quelle geprüft · 3. `check --json`: keine Fehler, kein
+`outside_safe_zone` · 4. Snapshot-Kontaktbogen an jeder Satzgrenze angesehen (Text lesbar, nichts verdeckt, Zähler
+plausibel) · 5. Nach Render: ffprobe (1080×1920, Länge), `volumedetect` (mean ≈ −15 dB), Kontaktbogen aus dem MP4 ·
+6. `git status` sauber, gepusht · 7. Neue Fehler in 3a eintragen.
+
 ---
 
 ## 4. Feedback-Logbuch
@@ -231,3 +263,4 @@ Wenn der User Feedback gibt – positiv oder negativ:
 | 2026-11-24 | – (Setup) | Skill angelegt nach Analyse von 3 Referenzen | Stil-DNA siehe Abschnitt 1 |
 | 2026-11-24 | – (Setup) | User will HyperFrames (HeyGen) als Werkzeug | Alle Videos mit HyperFrames bauen, siehe 2a |
 | 2026-11-24 | Video 1 „Brutto vs. Netto“ (Entwurf) | „Perfekt, sehr gutes Video – mach weiter solche Arbeit für die nächsten Chats“ | Video 1 = Goldstandard; Erfolgsrezept in 1.6 festgeschrieben; neue Videos als Kopie dieses Projekts starten |
+| 2026-11-25 | Video 2 + Profilbild | „Vergiss nicht, dich zu verbessern, indem du aus all deinen Fehlern lernst“ | Fehler-Logbuch 3a + Abgabe-Checkliste 3b eingeführt; QA-Skript automatisiert die Zahlenprüfung; nach jeder Aufgabe neue Fehler eintragen |
