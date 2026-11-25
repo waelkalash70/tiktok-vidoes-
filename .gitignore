@@ -3,3 +3,4 @@
 .hyperframes/
 videos/*/build/*.wav
 videos/*/build/check.json
+videos/*/build/render.log

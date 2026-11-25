@@ -1,0 +1,518 @@
+[
+  {
+    "text": "Anna",
+    "start": 0.22,
+    "end": 0.3,
+    "id": "w0"
+  },
+  {
+    "text": "spart",
+    "start": 0.3,
+    "end": 0.67,
+    "id": "w1"
+  },
+  {
+    "text": "nur",
+    "start": 0.67,
+    "end": 0.87,
+    "id": "w2"
+  },
+  {
+    "text": "zehn",
+    "start": 0.93,
+    "end": 1.19,
+    "id": "w3"
+  },
+  {
+    "text": "Jahre,",
+    "start": 1.19,
+    "end": 1.72,
+    "id": "w4"
+  },
+  {
+    "text": "wen",
+    "start": 1.72,
+    "end": 1.94,
+    "id": "w5"
+  },
+  {
+    "text": "30",
+    "start": 1.94,
+    "end": 2.39,
+    "id": "w6"
+  },
+  {
+    "text": "Jahre.",
+    "start": 2.39,
+    "end": 3.06,
+    "id": "w7"
+  },
+  {
+    "text": "Trotzdem",
+    "start": 3.2,
+    "end": 3.54,
+    "id": "w8"
+  },
+  {
+    "text": "ist",
+    "start": 3.63,
+    "end": 3.83,
+    "id": "w9"
+  },
+  {
+    "text": "Anna",
+    "start": 3.83,
+    "end": 4.11,
+    "id": "w10"
+  },
+  {
+    "text": "am",
+    "start": 4.11,
+    "end": 4.25,
+    "id": "w11"
+  },
+  {
+    "text": "Ende",
+    "start": 4.25,
+    "end": 4.48,
+    "id": "w12"
+  },
+  {
+    "text": "reicher.",
+    "start": 4.67,
+    "end": 5.25,
+    "id": "w13"
+  },
+  {
+    "text": "Wie",
+    "start": 5.5,
+    "end": 5.56,
+    "id": "w14"
+  },
+  {
+    "text": "geht",
+    "start": 5.56,
+    "end": 5.94,
+    "id": "w15"
+  },
+  {
+    "text": "das?",
+    "start": 5.94,
+    "end": 6.52,
+    "id": "w16"
+  },
+  {
+    "text": "Anna",
+    "start": 6.74,
+    "end": 6.84,
+    "id": "w17"
+  },
+  {
+    "text": "liegt",
+    "start": 6.84,
+    "end": 7.2,
+    "id": "w18"
+  },
+  {
+    "text": "ab",
+    "start": 7.27,
+    "end": 7.39,
+    "id": "w19"
+  },
+  {
+    "text": "25",
+    "start": 7.45,
+    "end": 7.85,
+    "id": "w20"
+  },
+  {
+    "text": "jeden",
+    "start": 7.89,
+    "end": 8.29,
+    "id": "w21"
+  },
+  {
+    "text": "Monat",
+    "start": 8.29,
+    "end": 8.67,
+    "id": "w22"
+  },
+  {
+    "text": "300",
+    "start": 8.67,
+    "end": 9.05,
+    "id": "w23"
+  },
+  {
+    "text": "Euro",
+    "start": 9.72,
+    "end": 9.74,
+    "id": "w24"
+  },
+  {
+    "text": "an.",
+    "start": 9.74,
+    "end": 10.2,
+    "id": "w25"
+  },
+  {
+    "text": "Mit",
+    "start": 10.42,
+    "end": 10.46,
+    "id": "w26"
+  },
+  {
+    "text": "35",
+    "start": 10.46,
+    "end": 10.99,
+    "id": "w27"
+  },
+  {
+    "text": "hört",
+    "start": 10.99,
+    "end": 11.34,
+    "id": "w28"
+  },
+  {
+    "text": "sie",
+    "start": 11.34,
+    "end": 11.59,
+    "id": "w29"
+  },
+  {
+    "text": "auf,",
+    "start": 11.6,
+    "end": 12.03,
+    "id": "w30"
+  },
+  {
+    "text": "eingezahlt",
+    "start": 12.03,
+    "end": 12.72,
+    "id": "w31"
+  },
+  {
+    "text": "36.000",
+    "start": 13.23,
+    "end": 14.01,
+    "id": "w32"
+  },
+  {
+    "text": "Euro.",
+    "start": 14.17,
+    "end": 14.48,
+    "id": "w33"
+  },
+  {
+    "text": "Wen",
+    "start": 14.7,
+    "end": 14.71,
+    "id": "w34"
+  },
+  {
+    "text": "fängt",
+    "start": 14.71,
+    "end": 15.09,
+    "id": "w35"
+  },
+  {
+    "text": "erst",
+    "start": 15.09,
+    "end": 15.35,
+    "id": "w36"
+  },
+  {
+    "text": "mit",
+    "start": 15.41,
+    "end": 15.62,
+    "id": "w37"
+  },
+  {
+    "text": "35",
+    "start": 15.62,
+    "end": 15.89,
+    "id": "w38"
+  },
+  {
+    "text": "an",
+    "start": 16.1,
+    "end": 16.25,
+    "id": "w39"
+  },
+  {
+    "text": "und",
+    "start": 16.25,
+    "end": 16.48,
+    "id": "w40"
+  },
+  {
+    "text": "zahlt",
+    "start": 16.48,
+    "end": 16.86,
+    "id": "w41"
+  },
+  {
+    "text": "30",
+    "start": 16.86,
+    "end": 17.01,
+    "id": "w42"
+  },
+  {
+    "text": "Jahre",
+    "start": 17.68,
+    "end": 17.72,
+    "id": "w43"
+  },
+  {
+    "text": "lang",
+    "start": 17.75,
+    "end": 18.03,
+    "id": "w44"
+  },
+  {
+    "text": "300",
+    "start": 18.03,
+    "end": 18.72,
+    "id": "w45"
+  },
+  {
+    "text": "Euro.",
+    "start": 18.73,
+    "end": 19.12,
+    "id": "w46"
+  },
+  {
+    "text": "Eingezahlt",
+    "start": 19.18,
+    "end": 19.76,
+    "id": "w47"
+  },
+  {
+    "text": "108.000",
+    "start": 19.76,
+    "end": 21.11,
+    "id": "w48"
+  },
+  {
+    "text": "Euro.",
+    "start": 21.11,
+    "end": 21.59,
+    "id": "w49"
+  },
+  {
+    "text": "Beide",
+    "start": 21.77,
+    "end": 22.02,
+    "id": "w50"
+  },
+  {
+    "text": "bekommen",
+    "start": 22.02,
+    "end": 22.7,
+    "id": "w51"
+  },
+  {
+    "text": "7%",
+    "start": 22.7,
+    "end": 23.03,
+    "id": "w52"
+  },
+  {
+    "text": "Rendite",
+    "start": 23.22,
+    "end": 23.62,
+    "id": "w53"
+  },
+  {
+    "text": "im",
+    "start": 23.62,
+    "end": 23.75,
+    "id": "w54"
+  },
+  {
+    "text": "Jahr.",
+    "start": 23.78,
+    "end": 24.16,
+    "id": "w55"
+  },
+  {
+    "text": "Und",
+    "start": 24.38,
+    "end": 24.48,
+    "id": "w56"
+  },
+  {
+    "text": "jetzt",
+    "start": 24.48,
+    "end": 25.01,
+    "id": "w57"
+  },
+  {
+    "text": "kommt's.",
+    "start": 25.01,
+    "end": 26.08,
+    "id": "w58"
+  },
+  {
+    "text": "Wen",
+    "start": 26.3,
+    "end": 26.36,
+    "id": "w59"
+  },
+  {
+    "text": "hat",
+    "start": 26.36,
+    "end": 26.53,
+    "id": "w60"
+  },
+  {
+    "text": "mit",
+    "start": 26.65,
+    "end": 26.92,
+    "id": "w61"
+  },
+  {
+    "text": "65",
+    "start": 26.92,
+    "end": 27.48,
+    "id": "w62"
+  },
+  {
+    "text": "366.000",
+    "start": 27.48,
+    "end": 29.48,
+    "id": "w63"
+  },
+  {
+    "text": "Euro.",
+    "start": 29.6,
+    "end": 30.2,
+    "id": "w64"
+  },
+  {
+    "text": "Anna",
+    "start": 30.42,
+    "end": 30.59,
+    "id": "w65"
+  },
+  {
+    "text": "421.000",
+    "start": 30.59,
+    "end": 32.62,
+    "id": "w66"
+  },
+  {
+    "text": "Euro.",
+    "start": 32.62,
+    "end": 33.32,
+    "id": "w67"
+  },
+  {
+    "text": "Mit",
+    "start": 33.32,
+    "end": 33.54,
+    "id": "w68"
+  },
+  {
+    "text": "einem",
+    "start": 33.54,
+    "end": 33.91,
+    "id": "w69"
+  },
+  {
+    "text": "Drittel",
+    "start": 33.91,
+    "end": 34.43,
+    "id": "w70"
+  },
+  {
+    "text": "des",
+    "start": 34.43,
+    "end": 34.65,
+    "id": "w71"
+  },
+  {
+    "text": "Geldes.",
+    "start": 34.65,
+    "end": 35.34,
+    "id": "w72"
+  },
+  {
+    "text": "Nicht",
+    "start": 35.58,
+    "end": 35.64,
+    "id": "w73"
+  },
+  {
+    "text": "die",
+    "start": 35.64,
+    "end": 35.8,
+    "id": "w74"
+  },
+  {
+    "text": "Summe",
+    "start": 35.8,
+    "end": 36.04,
+    "id": "w75"
+  },
+  {
+    "text": "zählt,",
+    "start": 36.12,
+    "end": 36.48,
+    "id": "w76"
+  },
+  {
+    "text": "sondern",
+    "start": 36.48,
+    "end": 37.13,
+    "id": "w77"
+  },
+  {
+    "text": "die",
+    "start": 37.13,
+    "end": 37.38,
+    "id": "w78"
+  },
+  {
+    "text": "Zeit.",
+    "start": 37.47,
+    "end": 37.89,
+    "id": "w79"
+  },
+  {
+    "text": "Teil",
+    "start": 38.3,
+    "end": 38.49,
+    "id": "w80"
+  },
+  {
+    "text": "2,",
+    "start": 38.49,
+    "end": 38.89,
+    "id": "w81"
+  },
+  {
+    "text": "wie",
+    "start": 38.89,
+    "end": 39.03,
+    "id": "w82"
+  },
+  {
+    "text": "du",
+    "start": 39.07,
+    "end": 39.12,
+    "id": "w83"
+  },
+  {
+    "text": "heute",
+    "start": 39.12,
+    "end": 39.36,
+    "id": "w84"
+  },
+  {
+    "text": "startest.",
+    "start": 39.36,
+    "end": 39.92,
+    "id": "w85"
+  }
+]

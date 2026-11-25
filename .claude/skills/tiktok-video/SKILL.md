@@ -151,6 +151,17 @@ Neues Video = Projektordner kopieren, `script.json` neu schreiben, 3D-Szene in `
   Untertitel-Clips dürfen sich nicht überlappen (Ende = Start des nächsten). Kamera-Keyframes können sich
   zeitlich überholen → nach Landungen mit `Math.max` absichern. SFX `riser.mp3`: laut nur bei 1,5–4 s.
 - Bundled SFX (Pixabay-Lizenz, frei nutzbar): `.claude/skills/media-use/audio/assets/sfx/`.
+- **Neues Video starten (bewährt bei Video 2):** Projekt NICHT mit `cp -r` + `rm -rf` klonen (rm wird blockiert),
+  sondern Ordner anlegen und nur `AGENTS.md CLAUDE.md hyperframes.json meta.json package.json tools/ assets/lib assets/sfx`
+  kopieren; in `meta.json`/`package.json` Namen ersetzen. `tools/tts.py`: GAP-Tabelle auf neue Beat-Namen anpassen,
+  `--length-scale 0.86` ergibt ~40 s. In `build.py` die SFX-Liste pro Video neu setzen, HUD (`hud.tpl.html`) und
+  3D-Mitte/`render(t)` in `index.tpl.html` neu schreiben, Rest (Renderer, Boden, Skyline, Staub, Labels, Kamera-System,
+  Bloom) unverändert übernehmen.
+- **Zwei Objekte nebeneinander (Vergleich) im Hochformat:** Kamera-FOV 48 statt 38, sonst sind Figuren angeschnitten.
+  Namensschilder an die Figuren hängen (nicht oben auf Türme → kollidiert mit Zähler).
+- Beträge nicht dreifach zeigen (3D-Schild + Untertitel + Zähler) → 3D-Ergebnisschild weglassen.
+- Quellenzeile unten max. ~40 Zeichen, `white-space: nowrap`, sonst bricht sie aus der Safe-Zone.
+- Zähler, der einen Wert aus der 3D-Szene zeigt, mit derselben Formel/Tabelle wie die 3D-Szene rechnen (sonst springt er).
 
 ## 2b. Skript-Tempo aus den Referenzen (Whisper-Transkripte)
 - Ref 3 (Hansetax), 9 s: „Reiche Unternehmer haben immer zwei Firmen. Die erste verdient das Geld
@@ -183,7 +194,7 @@ Wenn der User Feedback gibt – positiv oder negativ:
 - Videos werden mit **Claude Code** (programmatisch) erstellt – Render-Framework: **HyperFrames** (vom User gewünscht).
 - Visualisierung soll **sehr nah an den Referenzen** sein.
 - Nische: **„Geld-Geheimnisse“** (Gehalt, Steuern, wie Reiche denken, Konsum-Psychologie) – von Claude vorgeschlagen, User hat zugestimmt.
-- Themen-Backlog: Zinseszins (100 €/Monat → Million), Milliardäre ohne Gehalt, Lottogewinner pleite, Supermarkt-Psychologie, 72er-Regel, Brutto-Netto Teil 2 (wo das Geld landet).
+- Themen-Backlog: Milliardäre ohne Gehalt, Lottogewinner pleite, Supermarkt-Psychologie, 72er-Regel, Brutto-Netto Teil 2 (wo das Geld landet).
 - **Leitstil: Schwarz-Gold-3D-Infografik (Ref 3, Hansetax)** – vom User gewählt 2026-11-24.
 - **Voiceover:** User macht das finale Voiceover selbst mit **ElevenLabs**. Claude baut das Video mit einer
   Platzhalter-Stimme (Piper `de_DE-thorsten-high`, lokal, via Hugging Face) und timt Untertitel/Animationen

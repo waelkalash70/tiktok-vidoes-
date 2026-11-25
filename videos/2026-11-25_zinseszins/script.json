@@ -1,0 +1,20 @@
+{
+  "titel": "Zinseszins – Anna vs. Ben (Teil 1)",
+  "annahmen": "7 % Rendite pro Jahr (historischer Schnitt breiter Aktienmärkte, keine Garantie), monatlich verzinst, ohne Steuern, Kosten und Inflation. Anna: 300 €/Monat von 25 bis 35 (36.000 €) → 421.453 € mit 65. Ben: 300 €/Monat von 35 bis 65 (108.000 €) → 365.991 € mit 65.",
+  "saetze": [
+    { "id": "s1",  "beat": "hook",     "tokens": [["Anna","Anna"],["spart","spart"],["nur","nur"],["10 Jahre.","zehn Jahre.","gold"],["Ben","Ben"],["30 Jahre.","dreißig Jahre.","gold"]] },
+    { "id": "s2",  "beat": "reicher",  "tokens": [["Trotzdem","Trotzdem"],["ist","ist"],["ANNA","Anna","gold"],["am","am"],["Ende","Ende"],["reicher.","reicher.","gold"]] },
+    { "id": "s3",  "beat": "frage",    "tokens": [["Wie","Wie"],["geht","geht"],["das?","das?","gold"]] },
+    { "id": "s4",  "beat": "anna",     "tokens": [["Anna","Anna"],["legt","legt"],["ab","ab"],["25","fünfundzwanzig"],["jeden","jeden"],["Monat","Monat"],["300 €","dreihundert Euro","gold"],["an.","an."]] },
+    { "id": "s5",  "beat": "annastop", "tokens": [["Mit","Mit"],["35","fünfunddreißig"],["hört","hört"],["sie","sie"],["auf.","auf.","red"],["Eingezahlt:","Eingezahlt:"],["36.000 €","sechsunddreißigtausend Euro.","gold"]] },
+    { "id": "s6",  "beat": "ben",      "tokens": [["Ben","Ben"],["fängt","fängt"],["erst","erst"],["mit","mit"],["35","fünfunddreißig","red"],["an","an"],["und","und"],["zahlt","zahlt"],["30 Jahre","dreißig Jahre"],["lang","lang"],["300 €.","dreihundert Euro.","gold"]] },
+    { "id": "s7",  "beat": "benpaid",  "tokens": [["Eingezahlt:","Eingezahlt:"],["108.000 €","hundertachttausend Euro.","gold"]] },
+    { "id": "s8",  "beat": "rendite",  "tokens": [["Beide","Beide"],["bekommen","bekommen"],["7 %","sieben Prozent","gold"],["Rendite","Rendite"],["im","im"],["Jahr.","Jahr."]] },
+    { "id": "s9",  "beat": "twist",    "tokens": [["Und","Und"],["jetzt","jetzt"],["kommt's:","kommt's:"]] },
+    { "id": "s10", "beat": "benend",   "tokens": [["Ben","Ben"],["hat","hat"],["mit","mit"],["65:","fünfundsechzig:"],["366.000 €","dreihundertsechsundsechzigtausend Euro.","gold"]] },
+    { "id": "s11", "beat": "annaend",  "tokens": [["Anna:","Anna:"],["421.000 €","vierhunderteinundzwanzigtausend Euro!","gold"]] },
+    { "id": "s12", "beat": "punch",    "tokens": [["Mit","Mit"],["einem","einem"],["DRITTEL","Drittel","red"],["des","des"],["Geldes.","Geldes."]] },
+    { "id": "s13", "beat": "lehre",    "tokens": [["Nicht","Nicht"],["die","die"],["Summe","Summe"],["zählt.","zählt."],["Sondern","Sondern"],["die","die"],["ZEIT.","Zeit.","gold"]] },
+    { "id": "s14", "beat": "cta",      "tokens": [["Teil 2:","Teil zwei:","gold"],["Wie","Wie"],["du","du"],["heute","heute"],["startest.","startest."]] }
+  ]
+}
