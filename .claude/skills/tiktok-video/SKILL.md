@@ -307,6 +307,8 @@ plausibel) · 5. Nach Render: ffprobe (1080×1920, Länge), `volumedetect` (mean
   (43,6 s, delivery-Qualität, `zinseszins_FINAL_elevenlabs.mp4`). Video 1 wartet noch auf ElevenLabs-Datei.
 - Video 3 „GTA 6 – 44.000 $ pro Sekunde (Teil 1)“ (`videos/2026-11-25_gta6/`): **FINAL geliefert** mit ElevenLabs (42,3 s).
   Teil 2 versprochen: „Wer das Geld wirklich bekommt“ (Aufteilung Plattform/Handel/Take-Two – vorher recherchieren).
+- Video 4 „GTA 6 – Wer bekommt das Geld? (Teil 2)“ (`videos/2026-11-26_gta6-teil2/`): **FINAL geliefert** (42,8 s).
+  79,99 € → −12,77 € MwSt → −20,17 € Store → 47,05 € Rockstar (−41 %); Live-Zähler Sony/MS 13.160 $/s. CTA = Kommentar-Frage statt Teil 3.
 - GitHub: Push auf `waelkalash70/tiktok-vidoes-` funktioniert (seit 2026-11-24). Lösung bei 403 war:
   Claude GitHub App auf das Repo installieren UND auf claude.ai neu verknüpfen
   (`https://claude.ai/customize/connectors?auth_start=github&auth_start_force=1`).
