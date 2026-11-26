@@ -57,9 +57,9 @@ open(f"{root}/compositions/hud.html", "w").write(hud)
 # Untertitel: ein Wort zur Zeit
 items, tw = [], []
 for i, c in enumerate(caps):
-    st = max(0.1, c["start"] - 0.03)
-    nxt = max(0.1, caps[i + 1]["start"] - 0.03) if i + 1 < len(caps) else c["end"]
-    du = round(min(c["end"], nxt) - st, 3)
+    st = max(0.0, c["start"] - 0.03)
+    nxt = max(0.0, caps[i + 1]["start"] - 0.03) if i + 1 < len(caps) else c["end"]
+    du = round(max(0.08, min(c["end"], nxt) - st), 3)  # nie 0 – ein Clip mit Dauer 0 bleibt sonst bis zum Ende stehen (F28)
     cls = f' {c["color"]}' if c["color"] else ""
     items.append(f'    <div id="cap{i}" class="cap clip" data-start="{round(st,3)}" data-duration="{du}" data-track-index="0"><span id="capt{i}" class="t{cls}">{html.escape(c["text"])}</span></div>')
     tw.append([i, round(st, 3), bool(c["color"])])

@@ -180,110 +180,105 @@ __SFX__
       const dust = new THREE.Points(dustGeo, new THREE.PointsMaterial({ color: 0xffcf66, size: 0.05, transparent: true, opacity: 0.75, depthWrite: false }));
       scene.add(dust);
 
-      // ---------- Daten ----------
-      const RATE = 6.2e9 / (4 * 86400);           // ≈ 17.940 € pro Sekunde
-      const TH = 5.5, TW = 1.5;
+      // ---------- Stationen: A = Verfolgung (x≈0), B = Instagram (x=14), C = Eisberg (x=28) ----------
+      const XB = 14, XC = 28;
       const boxGeo = new THREE.BoxGeometry(1, 1, 1); boxGeo.translate(0, 0.5, 0);
-      const tower = new THREE.Group(); scene.add(tower);
-      tower.add(cage(TW + 0.12, TH, TW + 0.12, 0xffc23a, 2.6, 0.95, 0.5, 4));
-      const fill = new THREE.Mesh(boxGeo, goldMat()); fill.scale.set(TW - 0.06, 0.001, TW - 0.06); tower.add(fill);
-      const baseLab = label("BLACK FRIDAY → CYBER MONDAY", { worldH: 0.26 }); baseLab.position.set(0, 0.35, TW / 2 + 0.3); tower.add(baseLab);
-      // Münzen
-      const NC = 70;
-      const coinGeo = new THREE.CylinderGeometry(0.12, 0.12, 0.03, 20); coinGeo.rotateX(Math.PI / 2);
-      const coinMat = new THREE.MeshStandardMaterial({ color: 0xffcc44, emissive: 0xff9a1a, emissiveIntensity: 0.5, metalness: 0.8, roughness: 0.3 });
-      const coins = new THREE.InstancedMesh(coinGeo, coinMat, NC); scene.add(coins);
-      const coinOff = []; for (let i = 0; i < NC; i++) coinOff.push([rnd() * 6.28, 1.2 + rnd() * 2.6, 2 + rnd() * 3.5, rnd() * 6.28, 0.6 + rnd() * 0.9, rnd()]);
-      // Stoppuhr
-      const watch = new THREE.Group(); watch.position.set(2.0, 4.2, 1.1); scene.add(watch);
-      const wMat = new THREE.MeshBasicMaterial({ color: 0xffd23f, transparent: true });
-      watch.add(new THREE.Mesh(new THREE.TorusGeometry(0.7, 0.055, 16, 80), wMat));
-      const crown = new THREE.Mesh(new THREE.BoxGeometry(0.16, 0.2, 0.07), wMat); crown.position.y = 0.86; watch.add(crown);
-      for (let i = 0; i < 12; i++) { const m = new THREE.Mesh(new THREE.BoxGeometry(0.04, i % 3 ? 0.09 : 0.16, 0.03), wMat); const a = i / 12 * Math.PI * 2; m.position.set(Math.sin(a) * 0.56, Math.cos(a) * 0.56, 0); m.rotation.z = -a; watch.add(m); }
-      const hand = new THREE.Mesh(new THREE.BoxGeometry(0.045, 0.52, 0.04), new THREE.MeshBasicMaterial({ color: 0xff4040, transparent: true })); hand.geometry.translate(0, 0.24, 0); watch.add(hand);
-      const perSec = label("+17.940 € / Sek.", { worldH: 0.26 }); perSec.position.set(0, -0.98, 0); watch.add(perSec);
-      // Preisschild (−50 % → −8 %)
-      function tagTex(txt, col) {
-        const c = document.createElement("canvas"); c.width = 512; c.height = 300; const x = c.getContext("2d");
-        x.fillStyle = "#14100a"; x.fillRect(0, 0, 512, 300);
-        x.font = "900 170px Montserrat"; x.textAlign = "center"; x.textBaseline = "middle"; x.fillStyle = col; x.shadowColor = col; x.shadowBlur = 24; x.fillText(txt, 270, 160);
-        const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
-      }
-      const tag = new THREE.Group(); tag.position.set(2.5, 2.6, 1.0); scene.add(tag);
-      const tagBody = new THREE.Mesh(new THREE.BoxGeometry(2.0, 1.15, 0.08), new THREE.MeshStandardMaterial({ color: 0xffc23a, emissive: 0xff8a10, emissiveIntensity: 0.2, metalness: 0.7, roughness: 0.35 })); tag.add(tagBody);
-      const tex50 = tagTex("−50 %", "#ff3b3b"), tex8 = tagTex("−8 %", "#ffd23f"), texUVP = tagTex("UVP", "#ffd23f");
-      const face = new THREE.Mesh(new THREE.PlaneGeometry(1.8, 1.05), new THREE.MeshBasicMaterial({ map: tex50 })); face.position.z = 0.045; tag.add(face);
-      const hole = new THREE.Mesh(new THREE.TorusGeometry(0.09, 0.025, 8, 24), new THREE.MeshBasicMaterial({ color: 0x14100a })); hole.position.set(-0.85, 0.42, 0.05); tag.add(hole);
-      const frags = []; for (let i = 0; i < 14; i++) { const m = new THREE.Mesh(new THREE.BoxGeometry(0.18 + rnd() * 0.2, 0.12 + rnd() * 0.18, 0.06), tagBody.material); m.userData = [(rnd() - 0.5) * 2, rnd() * 1.6, (rnd() - 0.5) * 1.2 + 0.8, rnd() * 6]; scene.add(m); frags.push(m); }
-      // UVP-Durchstreichung
-      const uvpLab = label("UVP", { color: "#ffd23f", worldH: 0.6 }); scene.add(uvpLab);
-      const strike = new THREE.Mesh(new THREE.BoxGeometry(1.6, 0.1, 0.04), new THREE.MeshBasicMaterial({ color: 0xff3030, transparent: true })); scene.add(strike);
-      // November-Kalender (1.11.2026 = Sonntag) – 52 % der Tage leuchten „billiger“
-      const cal = new THREE.Group(); cal.position.set(-2.6, 1.55, 0.6); cal.rotation.y = 0.25; scene.add(cal);
-      const calTiles = [];
-      const offDays = [2, 4, 5, 8, 10, 11, 13, 15, 16, 19, 20, 22, 23, 25, 29, 30]; // 16 von 30 Tagen ≈ 52 %
-      for (let d = 1; d <= 30; d++) {
-        const idx = d - 1 + 6, col = idx % 7, row = Math.floor(idx / 7); // Montag-Start, 1.11. = Sonntag
-        const c = document.createElement("canvas"); c.width = c.height = 96; const x = c.getContext("2d");
-        x.font = "800 54px Montserrat"; x.textAlign = "center"; x.textBaseline = "middle"; x.fillStyle = "#fff"; x.fillText(String(d), 48, 52);
-        const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
-        const m = new THREE.Mesh(new THREE.PlaneGeometry(0.34, 0.34), new THREE.MeshBasicMaterial({ map: t, color: 0x333333, transparent: true }));
-        m.position.set((col - 3) * 0.4, (2 - row) * 0.4, 0); cal.add(m);
-        const bg = new THREE.Mesh(new THREE.PlaneGeometry(0.36, 0.36), new THREE.MeshBasicMaterial({ color: 0x14161c, transparent: true })); bg.position.set(m.position.x, m.position.y, -0.01); cal.add(bg);
-        calTiles.push({ d, m, bg, hot: offDays.includes(d), bf: d === 27 });
-      }
-      const calLab = label("NOVEMBER", { worldH: 0.3 }); calLab.position.set(0, 1.55, 0); cal.add(calLab);
-      // 100 Münzen, nur 8 gespart
-      const wall = new THREE.Group(); wall.position.set(0, 1.45, 2.4); scene.add(wall);
-      const wcGeo = new THREE.CylinderGeometry(0.1, 0.1, 0.03, 18); wcGeo.rotateX(Math.PI / 2);
-      const grey = new THREE.MeshStandardMaterial({ color: 0x3a3d46, metalness: 0.6, roughness: 0.5, transparent: true });
-      const wallCoins = []; for (let i = 0; i < 100; i++) { const r = Math.floor(i / 10), c = i % 10; const m = new THREE.Mesh(wcGeo, i < 8 ? coinMat : grey); m.position.set((c - 4.5) * 0.21, (4.5 - r) * 0.21, 0); wall.add(m); wallCoins.push(m); }
-      // Lupe (Tipp)
-      const lupe = new THREE.Group(); scene.add(lupe);
-      const lMat = new THREE.MeshStandardMaterial({ color: 0xffc23a, emissive: 0xff8a10, emissiveIntensity: 0.3, metalness: 0.8, roughness: 0.3, transparent: true });
-      lupe.add(new THREE.Mesh(new THREE.TorusGeometry(0.55, 0.07, 16, 64), lMat));
-      const glass = new THREE.Mesh(new THREE.CircleGeometry(0.52, 48), new THREE.MeshBasicMaterial({ color: 0x9fc4ff, transparent: true, opacity: 0.12 })); lupe.add(glass);
-      const handle = new THREE.Mesh(new THREE.CylinderGeometry(0.07, 0.09, 0.8, 16), lMat); handle.position.set(0.58, -0.58, 0); handle.rotation.z = Math.PI / 4; lupe.add(handle);
-      // Figur mit Einkaufstüten
-      function figure(bodyColor) {
+      function figure(bodyColor, s = 1) {
         const g = new THREE.Group();
         const body = new THREE.Mesh(new THREE.CapsuleGeometry(0.42, 0.75, 8, 24), new THREE.MeshPhysicalMaterial({ color: bodyColor, metalness: 0.2, roughness: 0.25, clearcoat: 1, clearcoatRoughness: 0.15 }));
         body.position.y = 0.82; g.add(body);
         const head = new THREE.Group(); head.position.y = 1.72; g.add(head);
         head.add(new THREE.Mesh(new THREE.SphereGeometry(0.36, 32, 24), new THREE.MeshPhysicalMaterial({ color: 0xc9cbd2, roughness: 0.32, clearcoat: 1 })));
-        const bags = new THREE.Group(); g.add(bags);
-        for (const [sx, col] of [[-0.55, 0xff8a1a], [0.55, 0xffc23a]]) {
-          const b = new THREE.Group(); b.position.set(sx, 0.55, 0.12); bags.add(b);
-          b.add(new THREE.Mesh(new THREE.BoxGeometry(0.4, 0.46, 0.16), new THREE.MeshStandardMaterial({ color: col, emissive: col, emissiveIntensity: 0.12, metalness: 0.3, roughness: 0.5 })));
-          const hnd = new THREE.Mesh(new THREE.TorusGeometry(0.11, 0.018, 8, 24, Math.PI), new THREE.MeshStandardMaterial({ color: 0x111111 })); hnd.position.y = 0.23; b.add(hnd);
-        }
-        g.userData = { body, head, bags }; return g;
+        g.scale.setScalar(s); g.userData = { body, head }; return g;
       }
-      const FX = -1.5, FZ = 2.0;
-      const hero = figure(0x1b2a6b); hero.position.set(FX, 0, FZ); scene.add(hero);
-      const bigQ = glyph("?", "#ffd23f", 1.8); scene.add(bigQ);
+      // Goldmünze (groß, „€“)
+      function bigCoin(r) {
+        const g = new THREE.Group();
+        const rimM = goldMat(); rimM.emissiveIntensity = 0.35;
+        const body = new THREE.Mesh(new THREE.CylinderGeometry(r, r, r * 0.18, 64), rimM); body.rotation.x = Math.PI / 2; g.add(body);
+        const c = document.createElement("canvas"); c.width = c.height = 256; const x = c.getContext("2d");
+        x.fillStyle = "#e0a52a"; x.beginPath(); x.arc(128, 128, 128, 0, 7); x.fill();
+        x.font = "900 170px Montserrat"; x.textAlign = "center"; x.textBaseline = "middle"; x.fillStyle = "#fff1b8"; x.fillText("€", 128, 140);
+        const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace;
+        for (const z of [1, -1]) { const f = new THREE.Mesh(new THREE.CircleGeometry(r * 0.92, 64), new THREE.MeshStandardMaterial({ map: t, emissive: 0xffa020, emissiveMap: t, emissiveIntensity: 0.35, metalness: 0.5, roughness: 0.4 })); f.position.z = z * r * 0.091; if (z < 0) f.rotation.y = Math.PI; g.add(f); }
+        return g;
+      }
+      const hero = figure(0x1b2a6b); scene.add(hero);
+      const coin = bigCoin(0.45); scene.add(coin);
+      // Speed-Lines (Station A)
+      const NSL = 36, slPos = [];
+      for (let i = 0; i < NSL; i++) slPos.push([rnd() * 14 - 7, 0.3 + rnd() * 3.2, -1.5 + rnd() * 2.5, 0.8 + rnd() * 2.2]);
+      const slGeo = new LineSegmentsGeometry(); slGeo.setPositions(new Float32Array(NSL * 6));
+      const slMat = lineMat(0xffe39a, 2.2, 0.0); const speed = new LineSegments2(slGeo, slMat); scene.add(speed);
+      // Schatten-Scheibe (dunkle Münze am Boden)
+      const shadow = new THREE.Mesh(new THREE.CircleGeometry(0.5, 48), new THREE.MeshBasicMaterial({ color: 0x000000, transparent: true, opacity: 0 })); shadow.rotation.x = -Math.PI / 2; scene.add(shadow);
+      // Gedanken: „MEHR?“ und Glühbirne „PROBLEM LÖSEN“
+      const mehrLab = label("MEHR? MEHR? MEHR?", { color: "#ff4b4b", border: "#ff4b4b", worldH: 0.42 }); scene.add(mehrLab);
+      const bulb = new THREE.Group(); scene.add(bulb);
+      const bulbMat = lineMat(0xffd23f, 2.6, 1);
+      const bGeo = new LineSegmentsGeometry(); bGeo.fromEdgesGeometry(new THREE.EdgesGeometry(new THREE.IcosahedronGeometry(0.55, 1))); bulb.add(new LineSegments2(bGeo, bulbMat));
+      const bulbCore = new THREE.Mesh(new THREE.SphereGeometry(0.32, 24, 16), new THREE.MeshBasicMaterial({ color: 0xffe08a, transparent: true })); bulb.add(bulbCore);
+      const bBase = new THREE.Mesh(new THREE.CylinderGeometry(0.2, 0.17, 0.3, 16), goldMat()); bBase.position.y = -0.62; bulb.add(bBase);
+      const loesLab = label("PROBLEM LÖSEN", { worldH: 0.36 }); loesLab.position.y = -1.15; bulb.add(loesLab);
+      // Station B: 13 Mitarbeiter, Umsatz 0, Milliarden-Turm, Herzen
+      const team = []; for (let i = 0; i < 13; i++) { const f = figure(i % 3 ? 0x2a3f9a : 0x1b2a6b, 0.42); f.position.set(XB - 2.6 + i * 0.43, 0, 1.2 + (i % 2) * 0.25); scene.add(f); team.push(f); }
+      const zeroLab = label("UMSATZ: 0 €", { color: "#ff4b4b", border: "#ff4b4b", worldH: 0.4 }); zeroLab.position.set(XB, 1.65, 1.3); scene.add(zeroLab);
+      const mTower = new THREE.Group(); mTower.position.set(XB, 0, -1.6); scene.add(mTower);
+      mTower.add(cage(1.6, 6.0, 1.6, 0xffc23a, 2.6, 0.95, 0.5, 4));
+      const mFill = new THREE.Mesh(boxGeo, goldMat()); mFill.scale.set(1.5, 0.001, 1.5); mTower.add(mFill);
+      const NC = 60;
+      const coinGeo = new THREE.CylinderGeometry(0.12, 0.12, 0.03, 20); coinGeo.rotateX(Math.PI / 2);
+      const coins = new THREE.InstancedMesh(coinGeo, new THREE.MeshStandardMaterial({ color: 0xffcc44, emissive: 0xff9a1a, emissiveIntensity: 0.5, metalness: 0.8, roughness: 0.3 }), NC); coins.frustumCulled = false; scene.add(coins);
+      const coinOff = []; for (let i = 0; i < NC; i++) coinOff.push([rnd() * 6.28, 1.2 + rnd() * 2.6, 2 + rnd() * 3.5, rnd() * 6.28, 0.6 + rnd() * 0.9]);
+      // Herzen (Nutzer)
+      const hc = document.createElement("canvas"); hc.width = hc.height = 128; { const x = hc.getContext("2d"); x.fillStyle = "#ff4d6d"; x.shadowColor = "#ff4d6d"; x.shadowBlur = 18; x.beginPath(); x.moveTo(64, 110); x.bezierCurveTo(10, 70, 10, 20, 44, 20); x.bezierCurveTo(56, 20, 64, 30, 64, 40); x.bezierCurveTo(64, 30, 72, 20, 84, 20); x.bezierCurveTo(118, 20, 118, 70, 64, 110); x.fill(); }
+      const hTex = new THREE.CanvasTexture(hc); hTex.colorSpace = THREE.SRGBColorSpace;
+      const NH = 140, hearts = [];
+      for (let i = 0; i < NH; i++) { const s = new THREE.Sprite(new THREE.SpriteMaterial({ map: hTex, transparent: true, depthWrite: false })); s.userData = [XB + (rnd() - 0.5) * 9, rnd() * 1.2, -4 + rnd() * 6, 0.6 + rnd() * 0.8, rnd()]; scene.add(s); hearts.push(s); }
+      const fansLab = label("30 MIO. MENSCHEN", { color: "#ff7a8a", border: "#ff7a8a", worldH: 0.42 }); fansLab.position.set(XB, 3.6, 1.0); scene.add(fansLab);
+      // Station C: Eisberg (Gold-Line-Art), Wasserlinie
+      const ice = new THREE.Group(); ice.position.set(XC, 2.6, 0); scene.add(ice);
+      const iceGeo = new THREE.IcosahedronGeometry(1.0, 1); iceGeo.scale(1.6, 2.2, 1.4);
+      const iGeo = new LineSegmentsGeometry(); iGeo.fromEdgesGeometry(new THREE.EdgesGeometry(iceGeo)); const iceLines = new LineSegments2(iGeo, lineMat(0xffd23f, 2.2, 0.9)); ice.add(iceLines);
+      const iceFill = new THREE.Mesh(iceGeo, new THREE.MeshStandardMaterial({ color: 0xffc23a, emissive: 0xff8a10, emissiveIntensity: 0.12, transparent: true, opacity: 0.18, metalness: 0.5, roughness: 0.5, depthWrite: false })); ice.add(iceFill);
+      const water = new THREE.Mesh(new THREE.PlaneGeometry(9, 5), new THREE.MeshBasicMaterial({ color: 0x1a3a6a, transparent: true, opacity: 0.35, side: THREE.DoubleSide, depthWrite: false })); water.rotation.x = -Math.PI / 2; water.position.y = 1.55; ice.add(water);
+      const wLine = cage(9, 0.001, 0.001, 0x9fc4ff, 2.4, 0.9, 1, 1); wLine.position.y = 1.55; ice.add(wLine);
+      const geldTop = label("GELD", { worldH: 0.4 }); geldTop.position.set(0, 2.45, 0.6); ice.add(geldTop);
+      const wertLab = label("WERT", { worldH: 0.8 }); wertLab.position.set(0, -1.0, 1.6); ice.add(wertLab);
+      // CTA
+      const jagLab = label("GELD JAGEN", { color: "#ff4b4b", border: "#ff4b4b", worldH: 0.3 }); scene.add(jagLab);
+      const bauLab = label("WERT BAUEN", { worldH: 0.3 }); scene.add(bauLab);
+      const bigQ = glyph("?", "#ffd23f", 1.4); scene.add(bigQ);
 
-      // ---------- Kamera ----------
+      // ---------- Kamera: harte Schnitte zwischen Szenen ----------
       const K = [];
       const k = (t, p, tg) => K.push({ t, p: new THREE.Vector3(...p), g: new THREE.Vector3(...tg) });
-      k(0.0, [-0.4, 3.0, 11.0], [0, 2.7, 0]);
-      k(B.hook.key, [-0.4, 2.9, 10.6], [0, 2.8, 0]);
-      k(B.hook.key + 1.7, [0.2, 4.2, 13.0], [0, 4.0, 0]);
-      k(B.sekunde.key, [2.2, 4.6, 8.8], [1.4, 4.2, 0.6]);
-      k(B.sekunde.end, [2.4, 4.6, 8.2], [1.6, 4.1, 0.8]);
-      k(B.live.key, [1.2, 2.4, 9.4], [0.2, 5.4, 0]);
-      k(B.live.end, [1.0, 2.6, 10.0], [0.2, 5.5, 0]);
-      k(B.acht.start, [2.3, 3.4, 7.2], [2.5, 3.3, 1.0]);
-      k(B.acht.end, [2.4, 3.4, 6.9], [2.5, 3.3, 1.0]);
-      k(B.billiger.key, [-2.0, 3.4, 7.2], [-2.5, 3.1, 0.6]);
-      k(B.billiger.end, [-2.1, 3.5, 7.0], [-2.5, 3.1, 0.6]);
-      k(B.uvp.key, [2.3, 3.4, 7.2], [2.5, 3.4, 1.0]);
-      k(B.uvp.end, [2.4, 3.5, 7.0], [2.5, 3.4, 1.0]);
-      k(B.punch.key, [0, 3.0, 7.6], [0, 2.9, 2.4]);
-      k(B.punch.end, [0, 3.1, 7.3], [0, 2.9, 2.4]);
-      k(B.tipp.key, [2.0, 3.4, 7.4], [2.4, 3.3, 1.0]);
-      k(B.tipp.end, [2.0, 3.5, 7.6], [2.3, 3.4, 1.0]);
-      k(B.T, [0, 4.6, 13.0], [0, 3.9, -1]);
+      const cut = (t, p, tg) => { k(t - 0.001, K.length ? [K[K.length - 1].p.x, K[K.length - 1].p.y, K[K.length - 1].p.z] : p, K.length ? [K[K.length - 1].g.x, K[K.length - 1].g.y, K[K.length - 1].g.z] : tg); k(t, p, tg); };
+      // A1 Verfolgung (Kamera fährt seitlich mit)
+      k(0.0, [-2.6, 3.4, 8.6], [-1.6, 3.1, 0]);
+      k(B.hook.end, [1.6, 3.5, 8.6], [2.6, 3.1, 0]);
+      cut(B.schatten.start, [1.8, 4.6, 8.4], [3.0, 3.1, 0]);
+      k(B.schatten.end, [2.2, 4.7, 8.2], [3.4, 3.1, 0]);
+      cut(B.meisten.start, [3.4, 3.4, 7.2], [3.4, 3.2, 0]);
+      k(B.meisten.end, [3.4, 3.4, 6.9], [3.4, 3.2, 0]);
+      cut(B.reiche.start, [3.0, 3.5, 7.4], [3.4, 3.3, 0]);
+      k(B.reiche.end, [3.1, 3.5, 7.0], [3.4, 3.3, 0]);
+      cut(B.twist.start, [3.4, 4.6, 10.5], [3.4, 3.4, 0]);
+      // B Instagram
+      cut(B.insta.start, [XB, 3.2, 7.6], [XB, 2.9, 0.8]);
+      k(B.insta.end, [XB, 3.2, 7.0], [XB, 2.9, 0.8]);
+      cut(B.milliarde.start, [XB + 0.6, 3.2, 10.8], [XB, 3.6, -0.5]);
+      k(B.milliarde.end, [XB + 0.4, 4.0, 11.6], [XB, 4.2, -0.5]);
+      cut(B.wert.start, [XB, 5.2, 11.0], [XB, 2.6, -0.8]);
+      k(B.wert.end, [XB, 5.6, 11.6], [XB, 2.8, -0.8]);
+      // C Eisberg
+      cut(B.eisberg.start, [XC, 3.2, 10.2], [XC, 2.9, 0]);
+      k(B.eisberg.end, [XC + 0.5, 3.0, 9.4], [XC, 2.7, 0]);
+      // A2 Umkehr: Geld jagt dich
+      cut(B.punch.start, [2.6, 3.5, 8.6], [3.6, 3.1, 0]);
+      k(B.punch.end, [5.4, 3.5, 8.6], [6.4, 3.1, 0]);
+      cut(B.cta.start, [6.4, 3.6, 9.5], [6.4, 3.4, 0]);
+      k(B.T, [6.4, 3.7, 9.0], [6.4, 3.5, 0]);
       K.sort((a, b) => a.t - b.t);
       const _p = new THREE.Vector3(), _g = new THREE.Vector3();
       function camAt(t) {
@@ -307,76 +302,82 @@ __SFX__
       // ---------- Bild für Zeitpunkt t (rein funktional) ----------
       const _q = new THREE.Quaternion(), _e = new THREE.Euler(), _s = new THREE.Vector3(), _c = new THREE.Vector3();
       const M2 = new THREE.Matrix4();
-      const vis = (o, a) => { o.visible = a > 0.01; return a; };
+      const vis = (o, a) => { o.visible = a > 0.01; if (o.material) o.material.opacity = a; return a; };
+      const between = (t, a, b) => t >= a && t < b;
       function render(t) {
         camAt(t);
         const pa = dustGeo.attributes.position.array;
         dustBase.forEach((d, i) => { pa[i * 3] = d[0] + Math.sin(t * 0.3 + d[4]) * 0.3; pa[i * 3 + 1] = (d[1] + t * d[3]) % 9; pa[i * 3 + 2] = d[2]; });
         dustGeo.attributes.position.needsUpdate = true;
 
-        // Turm wächst beim Hook
-        const g = eout(seg(t, B.hook.key, B.hook.key + 1.6));
-        fill.scale.y = Math.max(0.001, TH * g); fill.visible = g > 0;
-        // Münzen: Explosion + Regen bis zum Twist
+        // --- Held + Münze ---
+        let hx = 2.0, cx = 4.2, cy = 1.6, run = 0, coinVis = 1;
+        if (t < B.hook.end) { const f = seg(t, 0, B.hook.end); hx = lerp(-3.0, 2.0, f); cx = hx + 1.6 + f * 1.6; run = 1; }
+        else if (t < B.schatten.end) { const f = seg(t, B.schatten.start, B.schatten.end); const st = Math.floor(f * 3), fr = (f * 3) % 1; hx = 2.0 + (st + eout(fr)) * 0.5; cx = hx + 1.8 + Math.max(0, Math.sin(fr * Math.PI)) * 0.4; run = 0.5; }
+        else if (t < B.twist.start) { hx = 3.4; coinVis = 0; }
+        else if (t >= B.punch.start) { const f = seg(t, B.punch.start, B.punch.end); hx = lerp(3.2, 6.4, eout(f)); cx = hx - 1.7 + Math.sin(t * 5) * 0.1; run = t < B.punch.end ? 1 : 0; }
+        else coinVis = 0;
+        const atA = t < B.twist.start + 0.6 || t >= B.punch.start;
+        hero.visible = atA;
+        hero.position.set(hx, Math.abs(Math.sin(t * 12)) * 0.12 * run, 0);
+        hero.rotation.y = t >= B.punch.start && t < B.cta.start ? Math.PI / 2 - 0.3 : (t < B.schatten.end ? Math.PI / 2 - 0.25 : 0.2);
+        hero.rotation.z = -0.12 * run * (t >= B.punch.start ? -1 : 1);
+        coin.visible = atA && coinVis > 0;
+        coin.position.set(cx, cy + Math.sin(t * 6) * 0.12, 0); coin.rotation.y = t * 4;
+        // Schatten: Münze wird dunkel/flach
+        const sh = sm(seg(t, B.schatten.start, B.schatten.start + 0.5)) * (1 - sm(seg(t, B.schatten.end - 0.2, B.schatten.end)));
+        shadow.visible = sh > 0.01; shadow.material.opacity = 0.85 * sh; shadow.position.set(cx, 0.02, 0.4); shadow.scale.set(1.6, 1, 0.8);
+        coin.children.forEach((m) => { if (m.material) m.material.emissiveIntensity = 0.35 * (1 - 0.8 * sh); });
+        // Speed-Lines
+        const slA = between(t, 0, B.hook.end) || between(t, B.punch.start, B.punch.end) ? 0.85 : 0;
+        const arr = slGeo.attributes.instanceStart ? null : null;
+        const sp = []; slPos.forEach((p, i) => { const x0 = hero.position.x + ((p[0] - t * 9 * (t >= B.punch.start ? -1 : 1)) % 14 + 14) % 14 - 7; sp.push(x0, p[1], p[2], x0 + p[3], p[1], p[2]); });
+        slGeo.setPositions(sp); slMat.opacity = slA; speed.visible = slA > 0;
+
+        // --- Gedanken ---
+        mehrLab.visible = false; const ma = ( eout(seg(t, B.meisten.start, B.meisten.start + 0.3)) * (1 - sm(seg(t, B.meisten.end, B.meisten.end + 0.2))));
+        
+        const ba = eout(seg(t, B.reiche.start, B.reiche.start + 0.4)) * (1 - sm(seg(t, B.twist.start, B.twist.start + 0.2)));
+        bulb.visible = ba > 0.01; bulb.position.set(3.4, 4.15, 0.2); bulb.scale.setScalar(0.5 + 0.5 * ba); bulb.rotation.y = t * 0.8;
+        bulbCore.material.opacity = ba * (0.6 + 0.4 * sm(seg(t, B.reiche.key, B.reiche.key + 0.3))); loesLab.visible = false; bulbMat.opacity = ba;
+
+        // --- Station B ---
+        const inB = between(t, B.insta.start - 0.1, B.eisberg.start);
+        team.forEach((f, i) => { f.visible = inB; const pop = eout(seg(t, B.insta.start + i * 0.06, B.insta.start + i * 0.06 + 0.3)); f.scale.setScalar(0.42 * pop); f.position.y = Math.abs(Math.sin(t * 6 + i)) * 0.03; });
+        zeroLab.visible = false; const za = ( eout(seg(t, B.insta.key - 0.2, B.insta.key + 0.2)) * (1 - sm(seg(t, B.milliarde.start, B.milliarde.start + 0.3))));
+        
+        mTower.visible = between(t, B.milliarde.start - 0.1, B.eisberg.start);
+        const g = eout(seg(t, B.milliarde.key, B.milliarde.key + 1.4)); mFill.scale.y = Math.max(0.001, 6.0 * g);
         for (let i = 0; i < NC; i++) {
-          const o = coinOff[i]; let p = null;
-          const f = seg(t, B.hook.key + 0.1, B.hook.key + 2.2);
-          if (f > 0 && f < 1) { const tt = f * 2.1; p = _c.set(Math.cos(o[0]) * o[1] * tt * 0.9, TH * g + o[2] * tt - 2.7 * tt * tt, Math.sin(o[0]) * o[1] * tt * 0.5 + 0.4); if (p.y < 0.05) p = null; }
-          else if (t > B.sekunde.key && t < B.twist.start) { const cyc = 0.9, s0 = B.sekunde.key + o[5] * cyc, ph = ((t - s0) % cyc + cyc) % cyc / cyc; if (t > s0) p = _c.set((o[5] - 0.5) * 1.0, TH + 2.4 * (1 - ph * ph), Math.sin(o[0]) * 0.4); }
+          const o = coinOff[i], f = seg(t, B.milliarde.key + 0.1, B.milliarde.key + 2.2); let p = null;
+          if (f > 0 && f < 1) { const tt = f * 2.1; p = _c.set(XB + Math.cos(o[0]) * o[1] * tt * 0.9, 6.0 * g + o[2] * tt - 2.7 * tt * tt, -1.6 + Math.sin(o[0]) * o[1] * tt * 0.5 + 0.4); if (p.y < 0.05) p = null; }
           if (!p) { M2.makeScale(0, 0, 0); coins.setMatrixAt(i, M2); continue; }
           _e.set(t * 5 * o[4] + o[3], t * 3 + o[3], 0); _q.setFromEuler(_e); _s.setScalar(1); M2.compose(p, _q, _s); coins.setMatrixAt(i, M2);
         }
         coins.instanceMatrix.needsUpdate = true;
-        // Stoppuhr
-        const wa = vis(watch, eout(seg(t, B.sekunde.start, B.sekunde.start + 0.4)) * (1 - sm(seg(t, B.twist.start, B.twist.start + 0.3))));
-        wMat.opacity = wa; hand.material.opacity = wa; perSec.material.opacity = wa; watch.scale.setScalar(0.5 + 0.5 * wa);
-        hand.rotation.z = -(Math.floor(t) + eout(seg(t % 1, 0, 0.12))) * (Math.PI * 2 / 12);
-        perSec.scale.copy(perSec.userData.base).multiplyScalar(1 + 0.12 * Math.max(0, 1 - (t % 1) * 4));
+        if (between(t, B.meisten.start, B.reiche.start)) {
+          for (let i = 0; i < 10; i++) { const a = t * 3 + i * 0.628, rr = 0.85 + 0.1 * Math.sin(t * 5 + i);
+            _c.set(3.4 + Math.cos(a) * rr, 2.25 + Math.sin(t * 4 + i) * 0.15, Math.sin(a) * rr * 0.6); _e.set(t * 4 + i, t * 3, 0); _q.setFromEuler(_e); _s.setScalar(1.1);
+            M2.compose(_c, _q, _s); coins.setMatrixAt(i, M2); }
+          coins.instanceMatrix.needsUpdate = true;
+        }
+        const ha = between(t, B.wert.start, B.eisberg.start);
+        hearts.forEach((h, i) => { const [x, y0, z, sp2, ph] = h.userData; const a = eout(seg(t, B.wert.start + ph * 0.8, B.wert.start + ph * 0.8 + 0.3)); h.visible = ha && a > 0;
+          h.position.set(x + Math.sin(t * 2 + i) * 0.1, y0 + ((t - B.wert.start) * sp2) % 4.5, z); h.scale.setScalar(0.32 * a); h.material.opacity = a; });
+        fansLab.visible = false; const fa = ( eout(seg(t, B.wert.key - 0.2, B.wert.key + 0.2)) * (ha ? 1 : 0));
 
-        // Preisschild: erscheint beim Twist, zerbricht bei „8 %“
-        const ta = eout(seg(t, B.twist.start, B.twist.start + 0.4));
-        const crack = seg(t, B.acht.key - 0.15, B.acht.key + 0.9);
-        tag.visible = ta > 0.01 && t < B.cta.start + 0.4;
-        tag.scale.setScalar((0.4 + 0.6 * ta) * (crack > 0 && crack < 0.25 ? 0.9 : 1));
-        face.material.map = t < B.acht.key ? tex50 : (t >= B.uvp.key - 0.2 && t < B.punch.start ? texUVP : tex8); face.material.needsUpdate = true;
-        tag.rotation.z = (t < B.acht.key ? Math.sin(t * 2) * 0.04 : 0) + (crack > 0 && crack < 0.3 ? Math.sin(t * 70) * 0.08 : 0);
-        tag.position.y = 2.0 + Math.sin(t * 1.8) * 0.05;
-        frags.forEach((m) => { const [vx, vy, vz, rs] = m.userData; const f = seg(t, B.acht.key, B.acht.key + 1.2); m.visible = f > 0 && f < 1;
-          if (m.visible) { m.position.set(2.5 + vx * f * 1.5, 2.0 + vy * f * 1.6 - 3 * f * f, 1.0 + vz * f); m.rotation.set(rs * f * 3, rs * f * 2, 0); } });
-        // UVP
-        const ua = vis(uvpLab, sm(seg(t, B.uvp.key - 0.3, B.uvp.key)) * (1 - sm(seg(t, B.punch.start, B.punch.start + 0.3))));
-        uvpLab.visible = false;
-        const sa = vis(strike, eout(seg(t, B.uvp.key + 0.4, B.uvp.key + 0.7)) * (1 - sm(seg(t, B.punch.start, B.punch.start + 0.3))));
-        strike.material.opacity = sa; strike.scale.x = Math.max(0.001, sa); strike.position.set(2.55, 2.0, 1.1); strike.rotation.z = -0.18; strike.scale.y = 1.4;
-        // Kalender
-        const ca = eout(seg(t, B.billiger.start - 0.2, B.billiger.start + 0.4)) * (1 - sm(seg(t, B.uvp.start, B.uvp.start + 0.4)));
-        cal.visible = ca > 0.01; cal.scale.setScalar(0.6 + 0.4 * ca);
-        calTiles.forEach((c, i) => {
-          const on = c.hot ? eout(seg(t, B.billiger.key + 0.05 * i, B.billiger.key + 0.05 * i + 0.25)) : 0;
-          c.bg.material.color.setHex(c.bf ? 0x7a1212 : 0x14161c).lerp(new THREE.Color(0xffc23a), on);
-          c.m.material.color.setHex(c.bf ? 0xffaaaa : 0x999999).lerp(new THREE.Color(0x14100a), on);
-          c.bg.material.opacity = c.m.material.opacity = ca;
-        });
-        calLab.material.opacity = ca;
-        // 100 Münzen – nur 8 gold
-        const wa2 = eout(seg(t, B.punch.start, B.punch.start + 0.5)) * (1 - sm(seg(t, B.tipp.start, B.tipp.start + 0.4)));
-        wall.visible = wa2 > 0.01; wall.scale.setScalar(0.6 + 0.4 * wa2); grey.opacity = wa2;
-        wallCoins.forEach((m, i) => { const pop = i < 8 ? eout(seg(t, B.punch.key + i * 0.06, B.punch.key + i * 0.06 + 0.2)) : 1; const s = i < 8 ? 0.7 + 0.6 * pop : 1; m.scale.set(s, s, s); m.rotation.y = i < 8 ? t * 2 + i : 0; });
-        coinMat.emissiveIntensity = 0.5 + (t > B.punch.key && t < B.tipp.start ? 0.3 * Math.sin(t * 8) : 0);
-        // Lupe über dem Preisschild
-        const la = vis(lupe, eout(seg(t, B.tipp.start, B.tipp.start + 0.5)) * (1 - sm(seg(t, B.cta.start + 0.3, B.cta.start + 0.8))));
-        lMat.opacity = la; glass.material.opacity = 0.12 * la;
-        lupe.position.set(2.5 + Math.sin(t * 1.6) * 0.35, 2.1 + Math.cos(t * 1.3) * 0.15, 1.6); lupe.scale.setScalar(0.5 + 0.5 * la);
-        // Figur
-        hero.userData.body.scale.set(1, 1 + Math.sin(t * 2.2) * 0.02, 1);
-        const lookUp = sm(seg(t, B.hook.key + 0.2, B.hook.key + 0.8)) * (1 - sm(seg(t, B.sekunde.start, B.sekunde.start + 0.5)));
-        hero.userData.head.rotation.x = -0.5 * lookUp;
-        hero.rotation.y = 0.3 + Math.sin(t * 0.8) * 0.06;
-        const sad = sm(seg(t, B.punch.key, B.punch.key + 0.5)) * (1 - sm(seg(t, B.tipp.start, B.tipp.start + 0.5)));
-        hero.rotation.x = sad * 0.15; hero.userData.bags.position.y = -sad * 0.08;
-        // CTA
-        const q = eout(seg(t, B.cta.start + 0.2, B.cta.start + 1.0));
-        bigQ.visible = q > 0.01; bigQ.material.opacity = q; bigQ.position.set(0, 4.4 + Math.sin(t * 2.5) * 0.1, 1.6); bigQ.scale.copy(bigQ.userData.base).multiplyScalar(0.4 + 0.6 * q);
+        // --- Station C: Eisberg ---
+        const ia = eout(seg(t, B.eisberg.start, B.eisberg.start + 0.5));
+        ice.visible = between(t, B.eisberg.start - 0.1, B.punch.start); iceLines.rotation.y = iceFill.rotation.y = t * 0.25;
+        geldTop.material.opacity = ia; ice.position.y = 1.9 + Math.sin(t * 1.2) * 0.06;
+        const wa = sm(seg(t, B.eisberg.key - 0.1, B.eisberg.key + 0.5));
+        wertLab.visible = wa > 0.01; wertLab.material.opacity = wa; wertLab.scale.copy(wertLab.userData.base).multiplyScalar(0.5 + 0.5 * eout(wa));
+        iceFill.material.emissiveIntensity = 0.12 + 0.25 * wa;
+
+        // --- CTA ---
+        const ca = eout(seg(t, B.cta.start + 0.1, B.cta.start + 0.6));
+        for (const [L, dx, d0] of [[jagLab, -1.0, 0], [bauLab, 1.0, 0.2]]) { const a = eout(seg(t, B.cta.start + d0, B.cta.start + d0 + 0.4)); L.visible = a > 0.01; L.material.opacity = a; L.position.set(6.4 + dx, 4.05 + Math.sin(t * 2 + dx) * 0.06, 0.5); L.scale.copy(L.userData.base).multiplyScalar(0.5 + 0.5 * a); }
+        bigQ.visible = ca > 0.01; bigQ.material.opacity = ca; bigQ.position.set(6.4, 4.7, 0.5); bigQ.scale.copy(bigQ.userData.base).multiplyScalar(0.4 + 0.6 * ca);
 
         composer.render();
       }

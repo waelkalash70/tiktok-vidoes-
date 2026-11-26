@@ -1,0 +1,688 @@
+[
+{
+"s": "s1",
+"text": "Hör",
+"color": "",
+"start": 0.0,
+"end": 0.11
+},
+{
+"s": "s1",
+"text": "auf,",
+"color": "",
+"start": 0.11,
+"end": 0.28
+},
+{
+"s": "s1",
+"text": "dem",
+"color": "",
+"start": 0.28,
+"end": 0.539
+},
+{
+"s": "s1",
+"text": "Geld",
+"color": "gold",
+"start": 0.539,
+"end": 0.679
+},
+{
+"s": "s1",
+"text": "hinterherzurennen.",
+"color": "red",
+"start": 0.679,
+"end": 2.008
+},
+{
+"s": "s1",
+"text": "GENAU",
+"color": "red",
+"start": 2.008,
+"end": 2.197
+},
+{
+"s": "s1",
+"text": "deshalb",
+"color": "",
+"start": 2.197,
+"end": 2.597
+},
+{
+"s": "s1",
+"text": "bist",
+"color": "",
+"start": 2.597,
+"end": 2.846
+},
+{
+"s": "s1",
+"text": "du",
+"color": "",
+"start": 2.846,
+"end": 2.956
+},
+{
+"s": "s1",
+"text": "nicht",
+"color": "",
+"start": 2.956,
+"end": 3.256
+},
+{
+"s": "s1",
+"text": "reich.",
+"color": "gold",
+"start": 3.256,
+"end": 3.869
+},
+{
+"s": "s2",
+"text": "Geld",
+"color": "gold",
+"start": 3.869,
+"end": 4.058
+},
+{
+"s": "s2",
+"text": "ist",
+"color": "",
+"start": 4.058,
+"end": 4.336
+},
+{
+"s": "s2",
+"text": "wie",
+"color": "",
+"start": 4.336,
+"end": 4.445
+},
+{
+"s": "s2",
+"text": "ein",
+"color": "",
+"start": 4.445,
+"end": 4.654
+},
+{
+"s": "s2",
+"text": "Schatten:",
+"color": "",
+"start": 4.654,
+"end": 5.489
+},
+{
+"s": "s2",
+"text": "Rennst",
+"color": "",
+"start": 5.489,
+"end": 5.836
+},
+{
+"s": "s2",
+"text": "du",
+"color": "",
+"start": 5.836,
+"end": 6.005
+},
+{
+"s": "s2",
+"text": "ihm",
+"color": "",
+"start": 6.005,
+"end": 6.204
+},
+{
+"s": "s2",
+"text": "nach,",
+"color": "",
+"start": 6.204,
+"end": 6.601
+},
+{
+"s": "s2",
+"text": "rennt",
+"color": "",
+"start": 6.601,
+"end": 6.949
+},
+{
+"s": "s2",
+"text": "es",
+"color": "",
+"start": 6.949,
+"end": 7.088
+},
+{
+"s": "s2",
+"text": "weg.",
+"color": "red",
+"start": 7.088,
+"end": 7.726
+},
+{
+"s": "s3",
+"text": "Die",
+"color": "",
+"start": 7.726,
+"end": 7.798
+},
+{
+"s": "s3",
+"text": "meisten",
+"color": "",
+"start": 7.798,
+"end": 8.212
+},
+{
+"s": "s3",
+"text": "fragen:",
+"color": "",
+"start": 8.212,
+"end": 8.699
+},
+{
+"s": "s3",
+"text": "Wie",
+"color": "",
+"start": 8.699,
+"end": 8.906
+},
+{
+"s": "s3",
+"text": "verdiene",
+"color": "",
+"start": 8.906,
+"end": 9.438
+},
+{
+"s": "s3",
+"text": "ich",
+"color": "",
+"start": 9.438,
+"end": 9.546
+},
+{
+"s": "s3",
+"text": "MEHR?",
+"color": "red",
+"start": 9.546,
+"end": 10.364
+},
+{
+"s": "s4",
+"text": "Reiche",
+"color": "",
+"start": 10.364,
+"end": 10.64
+},
+{
+"s": "s4",
+"text": "fragen:",
+"color": "",
+"start": 10.64,
+"end": 11.252
+},
+{
+"s": "s4",
+"text": "Welches",
+"color": "",
+"start": 11.252,
+"end": 11.656
+},
+{
+"s": "s4",
+"text": "PROBLEM",
+"color": "gold",
+"start": 11.656,
+"end": 12.237
+},
+{
+"s": "s4",
+"text": "kann",
+"color": "",
+"start": 12.237,
+"end": 12.375
+},
+{
+"s": "s4",
+"text": "ich",
+"color": "",
+"start": 12.375,
+"end": 12.572
+},
+{
+"s": "s4",
+"text": "lösen?",
+"color": "gold",
+"start": 12.572,
+"end": 13.314
+},
+{
+"s": "s5",
+"text": "Und",
+"color": "",
+"start": 13.314,
+"end": 13.352
+},
+{
+"s": "s5",
+"text": "jetzt",
+"color": "",
+"start": 13.352,
+"end": 13.611
+},
+{
+"s": "s5",
+"text": "kommt's:",
+"color": "red",
+"start": 13.611,
+"end": 14.263
+},
+{
+"s": "s6",
+"text": "Instagram",
+"color": "gold",
+"start": 14.263,
+"end": 14.794
+},
+{
+"s": "s6",
+"text": "hatte",
+"color": "",
+"start": 14.794,
+"end": 15.147
+},
+{
+"s": "s6",
+"text": "2012",
+"color": "",
+"start": 15.147,
+"end": 16.005
+},
+{
+"s": "s6",
+"text": "13",
+"color": "",
+"start": 16.005,
+"end": 16.463
+},
+{
+"s": "s6",
+"text": "Mitarbeiter",
+"color": "",
+"start": 16.463,
+"end": 17.249
+},
+{
+"s": "s6",
+"text": "und",
+"color": "",
+"start": 17.249,
+"end": 17.465
+},
+{
+"s": "s6",
+"text": "verdiente",
+"color": "",
+"start": 17.465,
+"end": 18.123
+},
+{
+"s": "s6",
+"text": "keinen",
+"color": "",
+"start": 18.123,
+"end": 18.604
+},
+{
+"s": "s6",
+"text": "CENT.",
+"color": "red",
+"start": 18.604,
+"end": 19.35
+},
+{
+"s": "s7",
+"text": "Trotzdem",
+"color": "",
+"start": 19.35,
+"end": 19.811
+},
+{
+"s": "s7",
+"text": "bot",
+"color": "",
+"start": 19.811,
+"end": 19.958
+},
+{
+"s": "s7",
+"text": "Facebook",
+"color": "",
+"start": 19.958,
+"end": 20.488
+},
+{
+"s": "s7",
+"text": "dafür",
+"color": "",
+"start": 20.488,
+"end": 20.821
+},
+{
+"s": "s7",
+"text": "1 Mrd. $.",
+"color": "gold",
+"start": 20.821,
+"end": 22.496
+},
+{
+"s": "s8",
+"text": "Nicht",
+"color": "",
+"start": 22.496,
+"end": 22.715
+},
+{
+"s": "s8",
+"text": "für",
+"color": "",
+"start": 22.715,
+"end": 22.964
+},
+{
+"s": "s8",
+"text": "Geld",
+"color": "",
+"start": 22.964,
+"end": 23.303
+},
+{
+"s": "s8",
+"text": "–",
+"color": "",
+"start": 23.303,
+"end": 23.393
+},
+{
+"s": "s8",
+"text": "für",
+"color": "",
+"start": 23.393,
+"end": 23.552
+},
+{
+"s": "s8",
+"text": "WERT:",
+"color": "gold",
+"start": 23.552,
+"end": 24.01
+},
+{
+"s": "s8",
+"text": "30 Mio.",
+"color": "gold",
+"start": 24.01,
+"end": 24.936
+},
+{
+"s": "s8",
+"text": "Menschen,",
+"color": "",
+"start": 24.936,
+"end": 25.563
+},
+{
+"s": "s8",
+"text": "die",
+"color": "",
+"start": 25.563,
+"end": 25.763
+},
+{
+"s": "s8",
+"text": "es",
+"color": "",
+"start": 25.763,
+"end": 25.892
+},
+{
+"s": "s8",
+"text": "liebten.",
+"color": "",
+"start": 25.892,
+"end": 26.698
+},
+{
+"s": "s9",
+"text": "Geld",
+"color": "gold",
+"start": 26.698,
+"end": 26.882
+},
+{
+"s": "s9",
+"text": "ist",
+"color": "",
+"start": 26.882,
+"end": 27.153
+},
+{
+"s": "s9",
+"text": "nur",
+"color": "",
+"start": 27.153,
+"end": 27.299
+},
+{
+"s": "s9",
+"text": "die",
+"color": "",
+"start": 27.299,
+"end": 27.57
+},
+{
+"s": "s9",
+"text": "Spitze.",
+"color": "",
+"start": 27.57,
+"end": 28.326
+},
+{
+"s": "s9",
+"text": "Darunter",
+"color": "",
+"start": 28.326,
+"end": 28.781
+},
+{
+"s": "s9",
+"text": "liegt,",
+"color": "",
+"start": 28.781,
+"end": 29.256
+},
+{
+"s": "s9",
+"text": "was",
+"color": "",
+"start": 29.256,
+"end": 29.469
+},
+{
+"s": "s9",
+"text": "zählt.",
+"color": "gold",
+"start": 29.469,
+"end": 30.294
+},
+{
+"s": "s10",
+"text": "Löse",
+"color": "",
+"start": 30.294,
+"end": 30.476
+},
+{
+"s": "s10",
+"text": "ein",
+"color": "",
+"start": 30.476,
+"end": 30.746
+},
+{
+"s": "s10",
+"text": "Problem",
+"color": "gold",
+"start": 30.746,
+"end": 31.159
+},
+{
+"s": "s10",
+"text": "für",
+"color": "",
+"start": 31.159,
+"end": 31.332
+},
+{
+"s": "s10",
+"text": "viele",
+"color": "",
+"start": 31.332,
+"end": 31.717
+},
+{
+"s": "s10",
+"text": "–",
+"color": "",
+"start": 31.717,
+"end": 31.717
+},
+{
+"s": "s10",
+"text": "und",
+"color": "",
+"start": 31.717,
+"end": 31.862
+},
+{
+"s": "s10",
+"text": "das",
+"color": "",
+"start": 31.862,
+"end": 32.121
+},
+{
+"s": "s10",
+"text": "Geld",
+"color": "gold",
+"start": 32.121,
+"end": 32.198
+},
+{
+"s": "s10",
+"text": "rennt",
+"color": "",
+"start": 32.198,
+"end": 32.448
+},
+{
+"s": "s10",
+"text": "DIR",
+"color": "gold",
+"start": 32.448,
+"end": 32.583
+},
+{
+"s": "s10",
+"text": "hinterher.",
+"color": "",
+"start": 32.583,
+"end": 33.395
+},
+{
+"s": "s11",
+"text": "Jagst",
+"color": "",
+"start": 33.395,
+"end": 33.636
+},
+{
+"s": "s11",
+"text": "du",
+"color": "",
+"start": 33.636,
+"end": 33.867
+},
+{
+"s": "s11",
+"text": "Geld",
+"color": "",
+"start": 33.867,
+"end": 34.018
+},
+{
+"s": "s11",
+"text": "–",
+"color": "",
+"start": 34.018,
+"end": 34.068
+},
+{
+"s": "s11",
+"text": "oder",
+"color": "",
+"start": 34.068,
+"end": 34.359
+},
+{
+"s": "s11",
+"text": "baust",
+"color": "",
+"start": 34.359,
+"end": 34.731
+},
+{
+"s": "s11",
+"text": "du",
+"color": "",
+"start": 34.731,
+"end": 34.852
+},
+{
+"s": "s11",
+"text": "Wert?",
+"color": "gold",
+"start": 34.852,
+"end": 35.565
+},
+{
+"s": "s11",
+"text": "Schreib's",
+"color": "",
+"start": 35.565,
+"end": 36.037
+},
+{
+"s": "s11",
+"text": "in",
+"color": "",
+"start": 36.037,
+"end": 36.128
+},
+{
+"s": "s11",
+"text": "die",
+"color": "",
+"start": 36.128,
+"end": 36.318
+},
+{
+"s": "s11",
+"text": "Kommentare.",
+"color": "",
+"start": 36.318,
+"end": 38.171
+}
+]

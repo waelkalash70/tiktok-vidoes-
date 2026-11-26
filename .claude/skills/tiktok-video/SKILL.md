@@ -311,6 +311,10 @@ die Gegenmaßnahme **automatisieren** (Prüfskript, Vorlage, Checkliste) statt s
 | F25 | Käfig-Schilder (Name/Betrag/Zusatz) auf Untertitel-Höhe | Kamera-Ziel zu tief | Bei Nahaufnahmen von Käfigen Kamera-Ziel ≈ 4,6 (Schilder rutschen unter den Untertitel); Zusatz-Objekte (Uhr) darüber. HUD-Labels ≤ 26 Zeichen, sonst Umbruch. |
 | F26 | HUD blieb das ganze Video auf dem Startwert stehen (Black Friday) | `const RATE` doppelt deklariert (alte Konstante aus kopierter HUD-Vorlage) → Script-Abbruch | Beim Kopieren der HUD-Vorlage eigene Konstanten mit Video-Präfix benennen (`BF_RATE`); nach jedem Build sofort Snapshot – „Zähler ändert sich nie“ = Script-Fehler. |
 | F27 | 3D-Objekte (Preisschild, Kalender, UVP) auf Untertitel-Höhe | Objekt-y ≈ Kamera-Ziel-y | Faustregel: Hauptobjekt ≈ 1,0–1,4 Einheiten UNTER dem Kamera-Ziel; Text/Label lieber aufs Objekt (Textur) als als eigenes Schild darüber. |
+| F28 | Erstes Wort („Hör“) erschien am Ende wieder | Voiceover beginnt bei 0,0 s; Untertitel-Start auf ≥ 0,1 s geklemmt → Clip-Dauer 0 → HyperFrames zeigt ihn bis zum Ende | `build.py`: Start ≥ 0,0 und Dauer ≥ 0,08 s (in allen Projekten gefixt). Snapshot immer auch in den letzten 2 s prüfen. |
+| F29 | InstancedMesh-Münzen unsichtbar an neuer Position | Frustum-Culling nutzt alte Bounding-Sphere | Bei InstancedMesh, die über Stationen wandern: `frustumCulled = false`. |
+| F30 | Schilder drehten sich mit Objekt aus dem Bild (Eisberg) | Labels Kind der rotierenden Gruppe | Nur Geometrie rotieren, Schilder in nicht-rotierender Gruppe. |
+| F31 | Text dreifach (3D-Schild + Untertitel + HUD), erneut | F20 bei neuem Szenen-Stil vergessen | Bei Schlüsselwort-HUD (Referenz-4-Stil) KEINE Text-Schilder in 3D – nur Bild-Metaphern (Münzen, Glühbirne, Herzen). |
 
 ### 3b. Checkliste vor jeder Abgabe (aus 3a abgeleitet)
 1. `qa_skript.py` ohne FEHLER · 2. Zahlen nachgerechnet/Quelle geprüft · 3. `check --json`: keine Fehler, kein

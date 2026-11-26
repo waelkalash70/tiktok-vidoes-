@@ -24,17 +24,19 @@ def add(src, start, dur, vol, media_start=None):
     ms = f' data-media-start="{media_start}"' if media_start is not None else ""
     sfx.append(f'      <audio id="sfx{len(sfx)}" src="assets/sfx/{src}" data-start="{round(max(0,start),3)}" data-duration="{dur}"{ms} data-volume="{vol}" data-track-index="4"></audio>')
 K = lambda b: beats[b]["key"]
-add("whoosh-cinematic.mp3", K("hook") - 0.1, 2.0, 0.45)
-add("impact-bass-2.mp3", K("hook") + 1.5, 2.0, 0.45)
-for i in range(3): add("click-soft.mp3", K("sekunde") + 0.2 + i * 1.0, 0.36, 0.55)
-add("sparkle.mp3", K("live"), 1.8, 0.45)
-add("riser.mp3", beats["twist"]["start"] - 1.4, 2.0, 0.3, media_start=1.5)
-add("glitch-1.mp3", K("acht"), 1.2, 0.45)
-add("pop.mp3", K("billiger"), 0.7, 0.5)
-add("pop.mp3", K("uvp") + 0.4, 0.7, 0.5)
-add("impact-bass-1.mp3", K("punch"), 2.0, 0.6)
-add("chime.mp3", K("tipp"), 2.5, 0.35)
-add("whoosh-cinematic.mp3", beats["cta"]["start"], 3.0, 0.4)
+add("whoosh-short.mp3", 0.15, 0.57, 0.5)
+add("whoosh-short.mp3", beats["schatten"]["start"], 0.57, 0.4)
+add("pop.mp3", K("meisten"), 0.7, 0.45)
+add("chime.mp3", K("reiche"), 2.5, 0.35)
+add("impact-bass-2.mp3", beats["twist"]["start"], 2.0, 0.45)
+add("pop.mp3", K("insta"), 0.7, 0.5)
+add("whoosh-cinematic.mp3", K("milliarde") - 0.1, 2.0, 0.45)
+add("impact-bass-1.mp3", K("milliarde") + 1.3, 2.0, 0.5)
+add("sparkle.mp3", K("wert"), 1.8, 0.45)
+add("riser.mp3", beats["eisberg"]["start"] - 0.2, 2.0, 0.25, media_start=1.5)
+add("whoosh-short.mp3", beats["punch"]["start"], 0.57, 0.5)
+add("sparkle.mp3", K("punch"), 1.8, 0.4)
+add("whoosh-cinematic.mp3", beats["cta"]["start"], 3.0, 0.35)
 # Überlappende SFX auf eigene Spur verschieben
 ends = {}
 out = []
@@ -51,15 +53,15 @@ idx = idx.replace("__D__", str(T)).replace("__BEATS__", B).replace("__SFX__", "\
 open(f"{root}/index.html", "w").write(idx)
 
 hud = open(f"{root}/tools/hud.tpl.html").read()
-hud = hud.replace("__D__", str(T)).replace("__BEATS__", B).replace("__SRCDUR__", str(round(beats["sekunde"]["end"], 2))).replace("__SRC2START__", str(beats["acht"]["start"])).replace("__SRC2DUR__", str(round(beats["uvp"]["end"] - beats["acht"]["start"], 2)))
+hud = hud.replace("__D__", str(T)).replace("__BEATS__", B).replace("__SRCDUR__", str(round(beats["reiche"]["end"], 2))).replace("__SRC2START__", str(beats["insta"]["start"])).replace("__SRC2DUR__", str(round(beats["wert"]["end"] - beats["insta"]["start"], 2)))
 open(f"{root}/compositions/hud.html", "w").write(hud)
 
 # Untertitel: ein Wort zur Zeit
 items, tw = [], []
 for i, c in enumerate(caps):
-    st = max(0.1, c["start"] - 0.03)
-    nxt = max(0.1, caps[i + 1]["start"] - 0.03) if i + 1 < len(caps) else c["end"]
-    du = round(min(c["end"], nxt) - st, 3)
+    st = max(0.0, c["start"] - 0.03)
+    nxt = max(0.0, caps[i + 1]["start"] - 0.03) if i + 1 < len(caps) else c["end"]
+    du = round(max(0.08, min(c["end"], nxt) - st), 3)  # nie 0 – ein Clip mit Dauer 0 bleibt sonst bis zum Ende stehen (F28)
     cls = f' {c["color"]}' if c["color"] else ""
     items.append(f'    <div id="cap{i}" class="cap clip" data-start="{round(st,3)}" data-duration="{du}" data-track-index="0"><span id="capt{i}" class="t{cls}">{html.escape(c["text"])}</span></div>')
     tw.append([i, round(st, 3), bool(c["color"])])

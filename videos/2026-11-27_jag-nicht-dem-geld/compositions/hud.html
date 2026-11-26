@@ -1,0 +1,74 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: "Montserrat"; pointer-events: none; }
+    #hud-bar { position: absolute; left: 120px; width: 768px; top: 292px; height: 230px; text-align: center; }
+    #hud-bar::before { content: ""; position: absolute; left: -60px; right: -60px; top: -40px; bottom: -10px; z-index: 0;
+      background: radial-gradient(ellipse at 50% 45%, rgba(3,4,9,.78) 0%, rgba(3,4,9,.55) 45%, rgba(3,4,9,0) 72%); }
+    #hud-label, #hud-num, #hud-delta { position: relative; z-index: 1; }
+    #hud-label { color: #fff; font-weight: 800; font-size: 28px; letter-spacing: 0.26em; text-shadow: 0 2px 10px rgba(0,0,0,.9); }
+    #hud-num { display: block; margin-top: 2px; font-weight: 900; font-size: 96px; line-height: 1.05; color: #ffd23f; white-space: nowrap;
+      font-variant-numeric: tabular-nums; -webkit-text-stroke: 3px rgba(60,30,0,.9); paint-order: stroke fill;
+      text-shadow: 0 0 22px rgba(255,200,40,.85), 0 0 60px rgba(255,150,0,.55); transform-origin: 50% 60%; }
+    #hud-delta { display: block; margin-top: 4px; font-weight: 900; font-size: 40px; color: #ffa640; white-space: nowrap;
+      text-shadow: 0 0 18px rgba(255,140,40,.8), 0 2px 8px rgba(0,0,0,.9); }
+    #hud-live { display: block; position: relative; z-index: 1; margin-top: 2px; font-weight: 800; font-size: 30px; color: rgba(255,210,63,.9); white-space: nowrap; font-variant-numeric: tabular-nums; text-shadow: 0 2px 8px rgba(0,0,0,.9); }
+    .hud-src { position: absolute; left: 120px; width: 660px; top: 1186px; text-align: center; font-weight: 700; font-size: 28px;
+      color: rgba(255,255,255,.62); text-shadow: 0 2px 6px rgba(0,0,0,1); white-space: nowrap; }
+  </style>
+  <div id="root" data-composition-id="hud" data-width="1080" data-height="1920">
+    <div id="hud-bar" class="clip" data-start="0" data-duration="39.07" data-track-index="0">
+      <div id="hud-label">DU JAGST</div>
+      <span id="hud-num">GELD?</span>
+      <span id="hud-delta">&nbsp;</span>
+      <span id="hud-live">&nbsp;</span>
+    </div>
+    <div id="hud-src" class="hud-src clip" data-start="0.2" data-duration="13.31" data-track-index="1"></div>
+    <div id="hud-src2" class="hud-src clip" data-start="14.263" data-duration="12.44" data-track-index="1">Quelle: Facebook-Meldung 9.4.2012</div>
+  </div>
+  <script>
+    (function () {
+      const B = {"hook": {"start": 0.0, "end": 3.869, "key": 0.539}, "schatten": {"start": 3.869, "end": 7.726, "key": 3.869}, "meisten": {"start": 7.726, "end": 10.364, "key": 9.546}, "reiche": {"start": 10.364, "end": 13.314, "key": 11.656}, "twist": {"start": 13.314, "end": 14.263, "key": 13.611}, "insta": {"start": 14.263, "end": 19.35, "key": 14.263}, "milliarde": {"start": 19.35, "end": 22.496, "key": 20.821}, "wert": {"start": 22.496, "end": 26.698, "key": 23.552}, "eisberg": {"start": 26.698, "end": 30.294, "key": 26.698}, "punch": {"start": 30.294, "end": 33.395, "key": 30.746}, "cta": {"start": 33.395, "end": 38.171, "key": 34.852}, "T": 39.07};
+      const RATE = 3790000000 / 86400; // 43.866 $ pro Sekunde
+      const lab = document.getElementById("hud-label"), num = document.getElementById("hud-num"), del = document.getElementById("hud-delta");
+      const clamp = (x) => Math.min(1, Math.max(0, x)), seg = (t, a, b) => clamp((t - a) / (b - a));
+      const eout = (x) => 1 - Math.pow(1 - x, 3);
+      const usd = (v) => Math.round(v).toLocaleString("de-DE") + " $";
+      const GOLD = "rgb(255,210,63)", RED = "rgb(255,72,72)", ORANGE = "rgb(255,166,64)";
+      const eur = (v) => v.toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+      const RED2 = "rgb(255,72,72)";
+      const mix = (a, b, x) => { const p = (c) => c.match(/\d+/g).map(Number); const A = p(a), Bc = p(b); return `rgb(${A.map((v, i) => Math.round(v + (Bc[i] - v) * x)).join(",")})`; };
+      const BF_RATE = 6.2e9 / (4 * 86400);
+      const eurI = (v) => Math.round(v).toLocaleString("de-DE") + " €";
+      function state(t) {
+        let label = "DU JAGST", text = "GELD?", color = GOLD, pulse = 0, delta = "", dA = 0, dColor = ORANGE, live = "";
+        const pz = (k) => Math.sin(seg(t, k, k + 0.4) * Math.PI);
+        pulse = pz(B.hook.key);
+        if (t >= B.hook.key + 0.6) { delta = "…und es rennt weg"; dA = seg(t, B.hook.key + 0.6, B.hook.key + 0.8); dColor = RED; }
+        if (t >= B.schatten.start) { label = "GELD IST WIE EIN"; text = "SCHATTEN"; delta = ""; pulse = pz(B.schatten.key); }
+        if (t >= B.meisten.start) { label = "DIE MEISTEN FRAGEN"; text = "WIE MEHR?"; color = RED; pulse = pz(B.meisten.key); }
+        if (t >= B.reiche.start) { label = "REICHE FRAGEN"; text = "WELCHES PROBLEM?"; color = GOLD; pulse = pz(B.reiche.key); }
+        if (t >= B.twist.start) { label = "UND JETZT"; text = "KOMMT'S"; color = RED; pulse = pz(B.twist.start); }
+        if (t >= B.insta.start) { label = "INSTAGRAM · 2012"; text = t < B.insta.key ? "13 LEUTE" : "0 € UMSATZ"; color = t < B.insta.key ? GOLD : RED; pulse = pz(B.insta.key); }
+        if (t >= B.milliarde.start) { label = "FACEBOOK BOT"; text = t < B.milliarde.key ? "? $" : Math.round(1e9 * eout(seg(t, B.milliarde.key, B.milliarde.key + 1.4))).toLocaleString("de-DE") + " $"; color = GOLD; pulse = pz(B.milliarde.key + 1.3); }
+        if (t >= B.wert.start) { label = "NICHT FÜR GELD – FÜR"; text = "WERT"; color = GOLD; delta = t >= B.wert.key ? "30 Mio. Menschen liebten es" : ""; dA = 1; dColor = ORANGE; pulse = pz(B.wert.key); }
+        if (t >= B.eisberg.start) { label = "GELD IST NUR"; text = "DIE SPITZE"; delta = ""; color = GOLD; pulse = pz(B.eisberg.start); if (t >= B.eisberg.key) { label = "DARUNTER LIEGT"; text = "WERT"; pulse = pz(B.eisberg.key); } }
+        if (t >= B.punch.start) { label = "LÖSE PROBLEME"; text = "GELD JAGT DICH"; color = GOLD; pulse = pz(B.punch.key); }
+        if (t >= B.cta.start) { label = "UND DU?"; text = "JAGEN ODER BAUEN?"; color = GOLD; delta = "Schreib's in die Kommentare"; dA = 1; dColor = ORANGE; pulse = 0; }
+        return { label, text, color, pulse, delta, dA, dColor, live };
+      }
+      const tl = gsap.timeline({ paused: true });
+      tl.to({ x: 0 }, {
+        x: 1, duration: 39.07, ease: "none",
+        onUpdate: () => {
+          const t = tl.time(), s = state(t);
+          lab.textContent = s.label; num.textContent = s.text; num.style.color = s.color;
+          num.style.fontSize = s.text.length > 16 ? "60px" : s.text.length > 13 ? "68px" : s.text.length > 10 ? "84px" : "96px";
+          num.style.transform = `scale(${1 + 0.1 * s.pulse})`;
+          del.textContent = s.delta || " "; del.style.opacity = s.dA; del.style.color = s.dColor;
+          document.getElementById("hud-live").textContent = s.live || "\u00a0";
+        },
+      }, 0);
+      window.__timelines["hud"] = tl;
+    })();
+  </script>
+</template>

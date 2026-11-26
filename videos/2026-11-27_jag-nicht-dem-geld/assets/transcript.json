@@ -1,0 +1,602 @@
+[
+  {
+    "text": "Hör",
+    "start": 0.05,
+    "end": 0.16,
+    "id": "w0"
+  },
+  {
+    "text": "auf",
+    "start": 0.16,
+    "end": 0.33,
+    "id": "w1"
+  },
+  {
+    "text": "dem",
+    "start": 0.33,
+    "end": 0.47,
+    "id": "w2"
+  },
+  {
+    "text": "Geld",
+    "start": 0.59,
+    "end": 0.73,
+    "id": "w3"
+  },
+  {
+    "text": "hinterher",
+    "start": 0.73,
+    "end": 1.25,
+    "id": "w4"
+  },
+  {
+    "text": "zu",
+    "start": 1.25,
+    "end": 1.36,
+    "id": "w5"
+  },
+  {
+    "text": "rennen.",
+    "start": 1.36,
+    "end": 1.85,
+    "id": "w6"
+  },
+  {
+    "text": "Genau",
+    "start": 2.06,
+    "end": 2.18,
+    "id": "w7"
+  },
+  {
+    "text": "deshalb",
+    "start": 2.25,
+    "end": 2.65,
+    "id": "w8"
+  },
+  {
+    "text": "bist",
+    "start": 2.65,
+    "end": 2.87,
+    "id": "w9"
+  },
+  {
+    "text": "du",
+    "start": 2.9,
+    "end": 3.01,
+    "id": "w10"
+  },
+  {
+    "text": "nicht",
+    "start": 3.01,
+    "end": 3.31,
+    "id": "w11"
+  },
+  {
+    "text": "reich.",
+    "start": 3.31,
+    "end": 3.79,
+    "id": "w12"
+  },
+  {
+    "text": "Geld",
+    "start": 3.92,
+    "end": 4.04,
+    "id": "w13"
+  },
+  {
+    "text": "ist",
+    "start": 4.11,
+    "end": 4.27,
+    "id": "w14"
+  },
+  {
+    "text": "wie",
+    "start": 4.39,
+    "end": 4.5,
+    "id": "w15"
+  },
+  {
+    "text": "ein",
+    "start": 4.5,
+    "end": 4.71,
+    "id": "w16"
+  },
+  {
+    "text": "Schatten.",
+    "start": 4.71,
+    "end": 5.48,
+    "id": "w17"
+  },
+  {
+    "text": "Rennst",
+    "start": 5.55,
+    "end": 5.9,
+    "id": "w18"
+  },
+  {
+    "text": "du",
+    "start": 5.9,
+    "end": 5.95,
+    "id": "w19"
+  },
+  {
+    "text": "ihm",
+    "start": 6.07,
+    "end": 6.23,
+    "id": "w20"
+  },
+  {
+    "text": "nach,",
+    "start": 6.27,
+    "end": 6.67,
+    "id": "w21"
+  },
+  {
+    "text": "rennt",
+    "start": 6.67,
+    "end": 7.02,
+    "id": "w22"
+  },
+  {
+    "text": "es",
+    "start": 7.02,
+    "end": 7.16,
+    "id": "w23"
+  },
+  {
+    "text": "weg.",
+    "start": 7.16,
+    "end": 7.6,
+    "id": "w24"
+  },
+  {
+    "text": "Die",
+    "start": 7.72,
+    "end": 7.8,
+    "id": "w25"
+  },
+  {
+    "text": "meisten",
+    "start": 7.8,
+    "end": 8.26,
+    "id": "w26"
+  },
+  {
+    "text": "Fragen,",
+    "start": 8.26,
+    "end": 8.8,
+    "id": "w27"
+  },
+  {
+    "text": "wie",
+    "start": 8.8,
+    "end": 8.97,
+    "id": "w28"
+  },
+  {
+    "text": "verdiene",
+    "start": 9.03,
+    "end": 9.45,
+    "id": "w29"
+  },
+  {
+    "text": "ich",
+    "start": 9.62,
+    "end": 9.74,
+    "id": "w30"
+  },
+  {
+    "text": "mehr?",
+    "start": 9.74,
+    "end": 10.24,
+    "id": "w31"
+  },
+  {
+    "text": "Reiche",
+    "start": 10.36,
+    "end": 10.64,
+    "id": "w32"
+  },
+  {
+    "text": "Fragen,",
+    "start": 10.64,
+    "end": 11.17,
+    "id": "w33"
+  },
+  {
+    "text": "welches",
+    "start": 11.26,
+    "end": 11.61,
+    "id": "w34"
+  },
+  {
+    "text": "Problem",
+    "start": 11.67,
+    "end": 12.09,
+    "id": "w35"
+  },
+  {
+    "text": "kann",
+    "start": 12.26,
+    "end": 12.4,
+    "id": "w36"
+  },
+  {
+    "text": "ich",
+    "start": 12.4,
+    "end": 12.56,
+    "id": "w37"
+  },
+  {
+    "text": "lösen?",
+    "start": 12.6,
+    "end": 13.16,
+    "id": "w38"
+  },
+  {
+    "text": "Und",
+    "start": 13.32,
+    "end": 13.36,
+    "id": "w39"
+  },
+  {
+    "text": "jetzt",
+    "start": 13.36,
+    "end": 13.63,
+    "id": "w40"
+  },
+  {
+    "text": "kommt's.",
+    "start": 13.63,
+    "end": 14.17,
+    "id": "w41"
+  },
+  {
+    "text": "Instagram",
+    "start": 14.32,
+    "end": 14.86,
+    "id": "w42"
+  },
+  {
+    "text": "hatte",
+    "start": 14.86,
+    "end": 15.17,
+    "id": "w43"
+  },
+  {
+    "text": "2012",
+    "start": 15.22,
+    "end": 16.05,
+    "id": "w44"
+  },
+  {
+    "text": "13",
+    "start": 16.22,
+    "end": 16.53,
+    "id": "w45"
+  },
+  {
+    "text": "Mitarbeiter",
+    "start": 16.56,
+    "end": 17.36,
+    "id": "w46"
+  },
+  {
+    "text": "und",
+    "start": 17.36,
+    "end": 17.58,
+    "id": "w47"
+  },
+  {
+    "text": "verdiente",
+    "start": 17.58,
+    "end": 18.25,
+    "id": "w48"
+  },
+  {
+    "text": "keinen",
+    "start": 18.25,
+    "end": 18.65,
+    "id": "w49"
+  },
+  {
+    "text": "Cent.",
+    "start": 18.74,
+    "end": 19.23,
+    "id": "w50"
+  },
+  {
+    "text": "Trotzdem",
+    "start": 19.36,
+    "end": 19.71,
+    "id": "w51"
+  },
+  {
+    "text": "bot",
+    "start": 19.83,
+    "end": 19.98,
+    "id": "w52"
+  },
+  {
+    "text": "Facebook",
+    "start": 19.98,
+    "end": 20.52,
+    "id": "w53"
+  },
+  {
+    "text": "dafür",
+    "start": 20.52,
+    "end": 20.86,
+    "id": "w54"
+  },
+  {
+    "text": "eine",
+    "start": 20.86,
+    "end": 21.09,
+    "id": "w55"
+  },
+  {
+    "text": "Milliarde",
+    "start": 21.26,
+    "end": 21.73,
+    "id": "w56"
+  },
+  {
+    "text": "Dollar.",
+    "start": 21.74,
+    "end": 22.4,
+    "id": "w57"
+  },
+  {
+    "text": "Nicht",
+    "start": 22.52,
+    "end": 22.74,
+    "id": "w58"
+  },
+  {
+    "text": "für",
+    "start": 22.74,
+    "end": 22.87,
+    "id": "w59"
+  },
+  {
+    "text": "Geld,",
+    "start": 22.99,
+    "end": 23.33,
+    "id": "w60"
+  },
+  {
+    "text": "für",
+    "start": 23.42,
+    "end": 23.58,
+    "id": "w61"
+  },
+  {
+    "text": "Wert,",
+    "start": 23.58,
+    "end": 24.04,
+    "id": "w62"
+  },
+  {
+    "text": "30",
+    "start": 24.04,
+    "end": 24.25,
+    "id": "w63"
+  },
+  {
+    "text": "Millionen",
+    "start": 24.42,
+    "end": 24.94,
+    "id": "w64"
+  },
+  {
+    "text": "Menschen,",
+    "start": 24.97,
+    "end": 25.6,
+    "id": "w65"
+  },
+  {
+    "text": "die",
+    "start": 25.6,
+    "end": 25.8,
+    "id": "w66"
+  },
+  {
+    "text": "es",
+    "start": 25.8,
+    "end": 25.93,
+    "id": "w67"
+  },
+  {
+    "text": "liebten.",
+    "start": 25.93,
+    "end": 26.55,
+    "id": "w68"
+  },
+  {
+    "text": "Geld",
+    "start": 26.72,
+    "end": 26.84,
+    "id": "w69"
+  },
+  {
+    "text": "ist",
+    "start": 26.91,
+    "end": 27.07,
+    "id": "w70"
+  },
+  {
+    "text": "nur",
+    "start": 27.19,
+    "end": 27.34,
+    "id": "w71"
+  },
+  {
+    "text": "die",
+    "start": 27.34,
+    "end": 27.53,
+    "id": "w72"
+  },
+  {
+    "text": "Spitze.",
+    "start": 27.62,
+    "end": 28.28,
+    "id": "w73"
+  },
+  {
+    "text": "Darunter",
+    "start": 28.4,
+    "end": 28.75,
+    "id": "w74"
+  },
+  {
+    "text": "liegt,",
+    "start": 28.87,
+    "end": 29.36,
+    "id": "w75"
+  },
+  {
+    "text": "was",
+    "start": 29.36,
+    "end": 29.58,
+    "id": "w76"
+  },
+  {
+    "text": "zählt.",
+    "start": 29.58,
+    "end": 30.13,
+    "id": "w77"
+  },
+  {
+    "text": "Löse",
+    "start": 30.32,
+    "end": 30.44,
+    "id": "w78"
+  },
+  {
+    "text": "ein",
+    "start": 30.51,
+    "end": 30.67,
+    "id": "w79"
+  },
+  {
+    "text": "Problem",
+    "start": 30.79,
+    "end": 31.17,
+    "id": "w80"
+  },
+  {
+    "text": "für",
+    "start": 31.22,
+    "end": 31.4,
+    "id": "w81"
+  },
+  {
+    "text": "viele",
+    "start": 31.4,
+    "end": 31.8,
+    "id": "w82"
+  },
+  {
+    "text": "und",
+    "start": 31.8,
+    "end": 31.95,
+    "id": "w83"
+  },
+  {
+    "text": "das",
+    "start": 31.95,
+    "end": 32.05,
+    "id": "w84"
+  },
+  {
+    "text": "Geld",
+    "start": 32.22,
+    "end": 32.3,
+    "id": "w85"
+  },
+  {
+    "text": "rennt",
+    "start": 32.3,
+    "end": 32.53,
+    "id": "w86"
+  },
+  {
+    "text": "dir",
+    "start": 32.56,
+    "end": 32.69,
+    "id": "w87"
+  },
+  {
+    "text": "hinterher.",
+    "start": 32.7,
+    "end": 33.32,
+    "id": "w88"
+  },
+  {
+    "text": "Jagst",
+    "start": 33.44,
+    "end": 33.68,
+    "id": "w89"
+  },
+  {
+    "text": "du",
+    "start": 33.68,
+    "end": 33.79,
+    "id": "w90"
+  },
+  {
+    "text": "Geld",
+    "start": 33.91,
+    "end": 34.06,
+    "id": "w91"
+  },
+  {
+    "text": "oder",
+    "start": 34.11,
+    "end": 34.4,
+    "id": "w92"
+  },
+  {
+    "text": "baust",
+    "start": 34.4,
+    "end": 34.69,
+    "id": "w93"
+  },
+  {
+    "text": "du",
+    "start": 34.77,
+    "end": 34.87,
+    "id": "w94"
+  },
+  {
+    "text": "Wert?",
+    "start": 34.89,
+    "end": 35.48,
+    "id": "w95"
+  },
+  {
+    "text": "Schreib's",
+    "start": 35.6,
+    "end": 35.95,
+    "id": "w96"
+  },
+  {
+    "text": "in",
+    "start": 36.07,
+    "end": 36.16,
+    "id": "w97"
+  },
+  {
+    "text": "die",
+    "start": 36.16,
+    "end": 36.35,
+    "id": "w98"
+  },
+  {
+    "text": "Kommentare.",
+    "start": 36.35,
+    "end": 37,
+    "id": "w99"
+  }
+]
