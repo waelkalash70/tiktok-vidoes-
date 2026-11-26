@@ -1,0 +1,16 @@
+{
+  "titel": "Black Friday – 18.000 € pro Sekunde, aber nur 8 % gespart",
+  "annahmen": "HDE-Prognose 2026 (16.11.2026, Umfrage IFH Köln): 6,2 Mrd. € Umsatz zu Black Friday (27.11.) und Cyber Monday (30.11.). Rechnung im Video: verteilt auf 4 Tage (Fr–Mo) = 6,2 Mrd. / 345.600 s ≈ 17.940 €/s – eigene Rechnung, nicht HDE. idealo-Analyse Black Friday 2025 (10.000 Produkte, ~3.500 Shops): Black-Friday-Preise im Schnitt 8 % unter Oktober; 52 % der Produkte waren an einem anderen Novembertag noch günstiger. Verbraucherzentrale: Streichpreise beziehen sich oft auf die UVP, die kaum ein Händler verlangt; Rat: Preise vorher vergleichen.",
+  "saetze": [
+    { "id": "s1",  "beat": "hook",    "tokens": [["Rund","Rund"],["um","um"],["Black","Black"],["Friday","Friday"],["geben","geben"],["die","die"],["Deutschen","Deutschen"],["6,2 Mrd. €","sechs Komma zwei Milliarden Euro","gold"],["aus.","aus."]] },
+    { "id": "s2",  "beat": "sekunde", "tokens": [["Verteilt","Verteilt"],["auf","auf"],["4 Tage","vier Tage"],["sind","sind"],["das","das"],["fast","fast"],["18.000 €","achtzehntausend Euro","gold"],["–","–"],["pro","pro"],["SEKUNDE.","Sekunde.","red"]] },
+    { "id": "s3",  "beat": "live",    "tokens": [["Schau","Schau"],["nach","nach"],["oben:","oben:","gold"],["So","So"],["viel","viel"],["ist","ist"],["weg,","weg,"],["seit","seit"],["du","du"],["zuschaust.","zuschaust."]] },
+    { "id": "s4",  "beat": "twist",   "tokens": [["Aber","Aber"],["jetzt","jetzt"],["kommt's:","kommt's:","red"]] },
+    { "id": "s5",  "beat": "acht",    "tokens": [["Letztes","Letztes"],["Jahr","Jahr"],["waren","waren"],["die","die"],["Preise","Preise"],["im","im"],["Schnitt","Schnitt"],["nur","nur"],["8 %","acht Prozent","red"],["günstiger","günstiger"],["als","als"],["im","im"],["Oktober.","Oktober."]] },
+    { "id": "s6",  "beat": "billiger","tokens": [["Und","Und"],["jedes","jedes"],["ZWEITE","zweite","red"],["Produkt","Produkt"],["war","war"],["an","an"],["einem","einem"],["anderen","anderen"],["Novembertag","Novembertag"],["noch","noch"],["billiger.","billiger.","gold"]] },
+    { "id": "s7",  "beat": "uvp",     "tokens": [["Der","Der"],["rote","rote"],["Streichpreis?","Streichpreis?","red"],["Oft","Oft"],["die","die"],["UVP","U V P","gold"],["–","–"],["die","die"],["fast","fast"],["niemand","niemand"],["verlangt.","verlangt."]] },
+    { "id": "s8",  "beat": "punch",   "tokens": [["Bei","Bei"],["100 €","hundert Euro"],["Einkauf","Einkauf"],["sparst","sparst"],["du","du"],["also","also"],["rund","rund"],["8 €.","acht Euro.","red"]] },
+    { "id": "s9",  "beat": "tipp",    "tokens": [["Mein","Mein"],["Tipp:","Tipp:","gold"],["Preis","Preis"],["vorher","vorher"],["im","im"],["Vergleichsportal","Vergleichsportal"],["checken.","checken.","gold"]] },
+    { "id": "s10", "beat": "cta",     "tokens": [["Kaufst","Kaufst"],["du","du"],["morgen","morgen"],["was?","was?","gold"],["Schreib's","Schreib's"],["in","in"],["die","die"],["Kommentare.","Kommentare."]] }
+  ]
+}
