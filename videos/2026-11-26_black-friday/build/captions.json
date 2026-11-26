@@ -1,0 +1,632 @@
+[
+{
+"s": "s1",
+"text": "Rund",
+"color": "",
+"start": 0.0,
+"end": 0.272
+},
+{
+"s": "s1",
+"text": "um",
+"color": "",
+"start": 0.272,
+"end": 0.398
+},
+{
+"s": "s1",
+"text": "Black",
+"color": "",
+"start": 0.398,
+"end": 0.787
+},
+{
+"s": "s1",
+"text": "Friday",
+"color": "",
+"start": 0.787,
+"end": 1.244
+},
+{
+"s": "s1",
+"text": "geben",
+"color": "",
+"start": 1.244,
+"end": 1.633
+},
+{
+"s": "s1",
+"text": "die",
+"color": "",
+"start": 1.633,
+"end": 1.866
+},
+{
+"s": "s1",
+"text": "Deutschen",
+"color": "",
+"start": 1.866,
+"end": 2.556
+},
+{
+"s": "s1",
+"text": "6,2 Mrd. €",
+"color": "gold",
+"start": 2.556,
+"end": 4.238
+},
+{
+"s": "s1",
+"text": "aus.",
+"color": "",
+"start": 4.238,
+"end": 4.818
+},
+{
+"s": "s2",
+"text": "Verteilt",
+"color": "",
+"start": 4.818,
+"end": 5.256
+},
+{
+"s": "s2",
+"text": "auf",
+"color": "",
+"start": 5.256,
+"end": 5.509
+},
+{
+"s": "s2",
+"text": "4 Tage",
+"color": "",
+"start": 5.509,
+"end": 5.882
+},
+{
+"s": "s2",
+"text": "sind",
+"color": "",
+"start": 5.882,
+"end": 6.134
+},
+{
+"s": "s2",
+"text": "das",
+"color": "",
+"start": 6.134,
+"end": 6.331
+},
+{
+"s": "s2",
+"text": "fast",
+"color": "",
+"start": 6.331,
+"end": 6.573
+},
+{
+"s": "s2",
+"text": "18.000 €",
+"color": "gold",
+"start": 6.573,
+"end": 8.198
+},
+{
+"s": "s2",
+"text": "–",
+"color": "",
+"start": 8.198,
+"end": 8.254
+},
+{
+"s": "s2",
+"text": "pro",
+"color": "",
+"start": 8.254,
+"end": 8.553
+},
+{
+"s": "s2",
+"text": "SEKUNDE.",
+"color": "red",
+"start": 8.553,
+"end": 9.805
+},
+{
+"s": "s3",
+"text": "Schau",
+"color": "",
+"start": 9.805,
+"end": 10.062
+},
+{
+"s": "s3",
+"text": "nach",
+"color": "",
+"start": 10.062,
+"end": 10.265
+},
+{
+"s": "s3",
+"text": "oben:",
+"color": "gold",
+"start": 10.265,
+"end": 10.633
+},
+{
+"s": "s3",
+"text": "So",
+"color": "",
+"start": 10.633,
+"end": 10.762
+},
+{
+"s": "s3",
+"text": "viel",
+"color": "",
+"start": 10.762,
+"end": 11.028
+},
+{
+"s": "s3",
+"text": "ist",
+"color": "",
+"start": 11.028,
+"end": 11.231
+},
+{
+"s": "s3",
+"text": "weg,",
+"color": "",
+"start": 11.231,
+"end": 11.424
+},
+{
+"s": "s3",
+"text": "seit",
+"color": "",
+"start": 11.424,
+"end": 11.7
+},
+{
+"s": "s3",
+"text": "du",
+"color": "",
+"start": 11.7,
+"end": 11.875
+},
+{
+"s": "s3",
+"text": "zuschaust.",
+"color": "",
+"start": 11.875,
+"end": 12.961
+},
+{
+"s": "s4",
+"text": "Aber",
+"color": "",
+"start": 12.961,
+"end": 13.105
+},
+{
+"s": "s4",
+"text": "jetzt",
+"color": "",
+"start": 13.105,
+"end": 13.35
+},
+{
+"s": "s4",
+"text": "kommt's:",
+"color": "red",
+"start": 13.35,
+"end": 14.077
+},
+{
+"s": "s5",
+"text": "Letztes",
+"color": "",
+"start": 14.077,
+"end": 14.487
+},
+{
+"s": "s5",
+"text": "Jahr",
+"color": "",
+"start": 14.487,
+"end": 14.782
+},
+{
+"s": "s5",
+"text": "waren",
+"color": "",
+"start": 14.782,
+"end": 15.106
+},
+{
+"s": "s5",
+"text": "die",
+"color": "",
+"start": 15.106,
+"end": 15.306
+},
+{
+"s": "s5",
+"text": "Preise",
+"color": "",
+"start": 15.306,
+"end": 15.706
+},
+{
+"s": "s5",
+"text": "im",
+"color": "",
+"start": 15.706,
+"end": 15.839
+},
+{
+"s": "s5",
+"text": "Schnitt",
+"color": "",
+"start": 15.839,
+"end": 16.363
+},
+{
+"s": "s5",
+"text": "nur",
+"color": "",
+"start": 16.363,
+"end": 16.516
+},
+{
+"s": "s5",
+"text": "8 %",
+"color": "red",
+"start": 16.516,
+"end": 16.783
+},
+{
+"s": "s5",
+"text": "günstiger",
+"color": "",
+"start": 16.783,
+"end": 17.392
+},
+{
+"s": "s5",
+"text": "als",
+"color": "",
+"start": 17.392,
+"end": 17.592
+},
+{
+"s": "s5",
+"text": "im",
+"color": "",
+"start": 17.592,
+"end": 17.726
+},
+{
+"s": "s5",
+"text": "Oktober.",
+"color": "",
+"start": 17.726,
+"end": 18.596
+},
+{
+"s": "s6",
+"text": "Und",
+"color": "",
+"start": 18.596,
+"end": 18.717
+},
+{
+"s": "s6",
+"text": "jedes",
+"color": "",
+"start": 18.717,
+"end": 19.006
+},
+{
+"s": "s6",
+"text": "ZWEITE",
+"color": "red",
+"start": 19.006,
+"end": 19.378
+},
+{
+"s": "s6",
+"text": "Produkt",
+"color": "",
+"start": 19.378,
+"end": 19.807
+},
+{
+"s": "s6",
+"text": "war",
+"color": "",
+"start": 19.807,
+"end": 19.984
+},
+{
+"s": "s6",
+"text": "an",
+"color": "",
+"start": 19.984,
+"end": 20.105
+},
+{
+"s": "s6",
+"text": "einem",
+"color": "",
+"start": 20.105,
+"end": 20.403
+},
+{
+"s": "s6",
+"text": "anderen",
+"color": "",
+"start": 20.403,
+"end": 20.831
+},
+{
+"s": "s6",
+"text": "Novembertag",
+"color": "",
+"start": 20.831,
+"end": 21.548
+},
+{
+"s": "s6",
+"text": "noch",
+"color": "",
+"start": 21.548,
+"end": 21.79
+},
+{
+"s": "s6",
+"text": "billiger.",
+"color": "gold",
+"start": 21.79,
+"end": 22.881
+},
+{
+"s": "s7",
+"text": "Der",
+"color": "",
+"start": 22.881,
+"end": 22.996
+},
+{
+"s": "s7",
+"text": "rote",
+"color": "",
+"start": 22.996,
+"end": 23.224
+},
+{
+"s": "s7",
+"text": "Streichpreis?",
+"color": "red",
+"start": 23.224,
+"end": 24.177
+},
+{
+"s": "s7",
+"text": "Oft",
+"color": "",
+"start": 24.177,
+"end": 24.444
+},
+{
+"s": "s7",
+"text": "die",
+"color": "",
+"start": 24.444,
+"end": 24.615
+},
+{
+"s": "s7",
+"text": "UVP",
+"color": "gold",
+"start": 24.615,
+"end": 24.915
+},
+{
+"s": "s7",
+"text": "–",
+"color": "",
+"start": 24.915,
+"end": 25.015
+},
+{
+"s": "s7",
+"text": "die",
+"color": "",
+"start": 25.015,
+"end": 25.263
+},
+{
+"s": "s7",
+"text": "fast",
+"color": "",
+"start": 25.263,
+"end": 25.597
+},
+{
+"s": "s7",
+"text": "niemand",
+"color": "",
+"start": 25.597,
+"end": 26.187
+},
+{
+"s": "s7",
+"text": "verlangt.",
+"color": "",
+"start": 26.187,
+"end": 27.447
+},
+{
+"s": "s8",
+"text": "Bei",
+"color": "",
+"start": 27.447,
+"end": 27.572
+},
+{
+"s": "s8",
+"text": "100 €",
+"color": "",
+"start": 27.572,
+"end": 28.395
+},
+{
+"s": "s8",
+"text": "Einkauf",
+"color": "",
+"start": 28.395,
+"end": 28.817
+},
+{
+"s": "s8",
+"text": "sparst",
+"color": "",
+"start": 28.817,
+"end": 29.191
+},
+{
+"s": "s8",
+"text": "du",
+"color": "",
+"start": 29.191,
+"end": 29.315
+},
+{
+"s": "s8",
+"text": "also",
+"color": "",
+"start": 29.315,
+"end": 29.612
+},
+{
+"s": "s8",
+"text": "rund",
+"color": "",
+"start": 29.612,
+"end": 29.813
+},
+{
+"s": "s8",
+"text": "8 €.",
+"color": "red",
+"start": 29.813,
+"end": 30.793
+},
+{
+"s": "s9",
+"text": "Mein",
+"color": "",
+"start": 30.793,
+"end": 31.065
+},
+{
+"s": "s9",
+"text": "Tipp:",
+"color": "gold",
+"start": 31.065,
+"end": 31.701
+},
+{
+"s": "s9",
+"text": "Preis",
+"color": "",
+"start": 31.701,
+"end": 31.928
+},
+{
+"s": "s9",
+"text": "vorher",
+"color": "",
+"start": 31.928,
+"end": 32.228
+},
+{
+"s": "s9",
+"text": "im",
+"color": "",
+"start": 32.228,
+"end": 32.401
+},
+{
+"s": "s9",
+"text": "Vergleichsportal",
+"color": "",
+"start": 32.401,
+"end": 33.155
+},
+{
+"s": "s9",
+"text": "checken.",
+"color": "gold",
+"start": 33.155,
+"end": 33.983
+},
+{
+"s": "s10",
+"text": "Kaufst",
+"color": "",
+"start": 33.983,
+"end": 34.261
+},
+{
+"s": "s10",
+"text": "du",
+"color": "",
+"start": 34.261,
+"end": 34.37
+},
+{
+"s": "s10",
+"text": "morgen",
+"color": "",
+"start": 34.37,
+"end": 34.718
+},
+{
+"s": "s10",
+"text": "was?",
+"color": "gold",
+"start": 34.718,
+"end": 35.135
+},
+{
+"s": "s10",
+"text": "Schreib's",
+"color": "",
+"start": 35.135,
+"end": 35.492
+},
+{
+"s": "s10",
+"text": "in",
+"color": "",
+"start": 35.492,
+"end": 35.572
+},
+{
+"s": "s10",
+"text": "die",
+"color": "",
+"start": 35.572,
+"end": 35.78
+},
+{
+"s": "s10",
+"text": "Kommentare.",
+"color": "",
+"start": 35.78,
+"end": 37.427
+}
+]

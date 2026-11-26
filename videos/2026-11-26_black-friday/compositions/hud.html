@@ -1,0 +1,73 @@
+<template>
+  <style>
+    #root { position: absolute; inset: 0; font-family: "Montserrat"; pointer-events: none; }
+    #hud-bar { position: absolute; left: 120px; width: 768px; top: 292px; height: 230px; text-align: center; }
+    #hud-bar::before { content: ""; position: absolute; left: -60px; right: -60px; top: -40px; bottom: -10px; z-index: 0;
+      background: radial-gradient(ellipse at 50% 45%, rgba(3,4,9,.78) 0%, rgba(3,4,9,.55) 45%, rgba(3,4,9,0) 72%); }
+    #hud-label, #hud-num, #hud-delta { position: relative; z-index: 1; }
+    #hud-label { color: #fff; font-weight: 800; font-size: 28px; letter-spacing: 0.26em; text-shadow: 0 2px 10px rgba(0,0,0,.9); }
+    #hud-num { display: block; margin-top: 2px; font-weight: 900; font-size: 96px; line-height: 1.05; color: #ffd23f; white-space: nowrap;
+      font-variant-numeric: tabular-nums; -webkit-text-stroke: 3px rgba(60,30,0,.9); paint-order: stroke fill;
+      text-shadow: 0 0 22px rgba(255,200,40,.85), 0 0 60px rgba(255,150,0,.55); transform-origin: 50% 60%; }
+    #hud-delta { display: block; margin-top: 4px; font-weight: 900; font-size: 40px; color: #ffa640; white-space: nowrap;
+      text-shadow: 0 0 18px rgba(255,140,40,.8), 0 2px 8px rgba(0,0,0,.9); }
+    #hud-live { display: block; position: relative; z-index: 1; margin-top: 2px; font-weight: 800; font-size: 30px; color: rgba(255,210,63,.9); white-space: nowrap; font-variant-numeric: tabular-nums; text-shadow: 0 2px 8px rgba(0,0,0,.9); }
+    .hud-src { position: absolute; left: 120px; width: 660px; top: 1186px; text-align: center; font-weight: 700; font-size: 28px;
+      color: rgba(255,255,255,.62); text-shadow: 0 2px 6px rgba(0,0,0,1); white-space: nowrap; }
+  </style>
+  <div id="root" data-composition-id="hud" data-width="1080" data-height="1920">
+    <div id="hud-bar" class="clip" data-start="0" data-duration="38.33" data-track-index="0">
+      <div id="hud-label">BLACK-FRIDAY-UMSATZ</div>
+      <span id="hud-num">10.000.000 €</span>
+      <span id="hud-delta">&nbsp;</span>
+      <span id="hud-live">&nbsp;</span>
+    </div>
+    <div id="hud-src" class="hud-src clip" data-start="0.2" data-duration="9.8" data-track-index="1">HDE-Prognose · Umfrage IFH Köln</div>
+    <div id="hud-src2" class="hud-src clip" data-start="14.077" data-duration="13.37" data-track-index="1">idealo-Analyse Black Friday 2025</div>
+  </div>
+  <script>
+    (function () {
+      const B = {"hook": {"start": 0.0, "end": 4.818, "key": 2.556}, "sekunde": {"start": 4.818, "end": 9.805, "key": 6.573}, "live": {"start": 9.805, "end": 12.961, "key": 10.265}, "twist": {"start": 12.961, "end": 14.077, "key": 13.35}, "acht": {"start": 14.077, "end": 18.596, "key": 16.516}, "billiger": {"start": 18.596, "end": 22.881, "key": 19.006}, "uvp": {"start": 22.881, "end": 27.447, "key": 23.224}, "punch": {"start": 27.447, "end": 30.793, "key": 29.813}, "tipp": {"start": 30.793, "end": 33.983, "key": 31.065}, "cta": {"start": 33.983, "end": 37.427, "key": 34.718}, "T": 38.33};
+      const RATE = 3790000000 / 86400; // 43.866 $ pro Sekunde
+      const lab = document.getElementById("hud-label"), num = document.getElementById("hud-num"), del = document.getElementById("hud-delta");
+      const clamp = (x) => Math.min(1, Math.max(0, x)), seg = (t, a, b) => clamp((t - a) / (b - a));
+      const eout = (x) => 1 - Math.pow(1 - x, 3);
+      const usd = (v) => Math.round(v).toLocaleString("de-DE") + " $";
+      const GOLD = "rgb(255,210,63)", RED = "rgb(255,72,72)", ORANGE = "rgb(255,166,64)";
+      const eur = (v) => v.toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
+      const RED2 = "rgb(255,72,72)";
+      const mix = (a, b, x) => { const p = (c) => c.match(/\d+/g).map(Number); const A = p(a), Bc = p(b); return `rgb(${A.map((v, i) => Math.round(v + (Bc[i] - v) * x)).join(",")})`; };
+      const BF_RATE = 6.2e9 / (4 * 86400);
+      const eurI = (v) => Math.round(v).toLocaleString("de-DE") + " €";
+      function state(t) {
+        let label = "BLACK-FRIDAY-UMSATZ", text, color = GOLD, pulse = 0, delta = "", dA = 0, dColor = ORANGE, live = "";
+        text = eurI(t < B.hook.key ? 2e8 * t + 1e7 : 3e8 + (6.2e9 - 3e8) * eout(seg(t, B.hook.key, B.hook.key + 1.6)));
+        pulse = Math.sin(seg(t, B.hook.key + 1.5, B.hook.key + 1.9) * Math.PI);
+        if (t >= B.hook.key + 1.6) { delta = "HDE-Prognose 2026"; dA = 1; }
+        if (t >= B.sekunde.start) { label = "PRO SEKUNDE"; text = t < B.sekunde.key ? "? €" : eurI(17940 * eout(seg(t, B.sekunde.key - 0.05, B.sekunde.key + 0.6))); delta = "6,2 Mrd. € ÷ 4 Tage"; dA = seg(t, B.sekunde.key + 0.3, B.sekunde.key + 0.5); pulse = Math.sin(seg(t, B.sekunde.key + 0.5, B.sekunde.key + 0.9) * Math.PI); }
+        if (t >= B.live.start) { label = "SEIT DU ZUSCHAUST"; text = eurI(BF_RATE * t); delta = "ausgegeben"; dA = 1; pulse = Math.sin(seg(t, B.live.key, B.live.key + 0.4) * Math.PI) * 1.2; }
+        if (t >= B.twist.start) live = "seit du zuschaust: " + eurI(BF_RATE * t);
+        if (t >= B.acht.start) { label = "ECHTE ERSPARNIS (Ø)"; text = t < B.acht.key ? "? %" : "−" + Math.round(8 * eout(seg(t, B.acht.key, B.acht.key + 0.5))) + " %"; color = RED; delta = "vs. Oktober · idealo 2025"; dA = seg(t, B.acht.key, B.acht.key + 0.2); dColor = ORANGE; pulse = Math.sin(seg(t, B.acht.key + 0.4, B.acht.key + 0.8) * Math.PI); }
+        if (t >= B.billiger.start) { label = "JEDES 2. PRODUKT"; text = t < B.billiger.key ? "? %" : "52 %"; color = GOLD; delta = "an anderem Novembertag billiger"; dA = seg(t, B.billiger.key, B.billiger.key + 0.2); pulse = Math.sin(seg(t, B.billiger.key, B.billiger.key + 0.4) * Math.PI); }
+        if (t >= B.uvp.start) { label = "STREICHPREIS"; text = t < B.uvp.key ? "? €" : "= UVP"; color = GOLD; delta = "verlangt fast niemand"; dA = seg(t, B.uvp.key + 0.3, B.uvp.key + 0.5); dColor = RED; pulse = Math.sin(seg(t, B.uvp.key, B.uvp.key + 0.4) * Math.PI); }
+        if (t >= B.punch.start) { label = "BEI 100 € EINKAUF"; text = t < B.punch.key ? "? €" : Math.round(8 * eout(seg(t, B.punch.key, B.punch.key + 0.5))) + " €"; color = RED; delta = "gespart (Ø)"; dA = seg(t, B.punch.key + 0.3, B.punch.key + 0.5); dColor = ORANGE; pulse = Math.sin(seg(t, B.punch.key + 0.4, B.punch.key + 0.8) * Math.PI); }
+        if (t >= B.tipp.start) { label = "MEIN TIPP"; text = "VERGLEICHEN"; color = GOLD; delta = "Preis vorher checken"; dA = 1; dColor = ORANGE; pulse = Math.sin(seg(t, B.tipp.key, B.tipp.key + 0.4) * Math.PI); }
+        if (t >= B.cta.start) { label = "UND DU?"; text = "KAUFST DU WAS?"; color = GOLD; delta = "Schreib's in die Kommentare"; dA = 1; pulse = 0; }
+        return { label, text, color, pulse, delta, dA, dColor, live };
+      }
+      const tl = gsap.timeline({ paused: true });
+      tl.to({ x: 0 }, {
+        x: 1, duration: 38.33, ease: "none",
+        onUpdate: () => {
+          const t = tl.time(), s = state(t);
+          lab.textContent = s.label; num.textContent = s.text; num.style.color = s.color;
+          num.style.fontSize = s.text.length > 16 ? "60px" : s.text.length > 13 ? "68px" : s.text.length > 10 ? "84px" : "96px";
+          num.style.transform = `scale(${1 + 0.1 * s.pulse})`;
+          del.textContent = s.delta || " "; del.style.opacity = s.dA; del.style.color = s.dColor;
+          document.getElementById("hud-live").textContent = s.live || "\u00a0";
+        },
+      }, 0);
+      window.__timelines["hud"] = tl;
+    })();
+  </script>
+</template>

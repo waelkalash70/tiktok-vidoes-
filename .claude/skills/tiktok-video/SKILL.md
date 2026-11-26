@@ -269,6 +269,8 @@ die Gegenmaßnahme **automatisieren** (Prüfskript, Vorlage, Checkliste) statt s
 | F23 | Zähler zeigte „0 $“ zwischen Satzanfang und Betrag (GTA, erst im finalen MP4 bemerkt → 15 min Neu-Render) | Zählt erst ab `key`, davor Startwert 0 | Vor dem `key` Platzhalter „? $“ statt 0; Snapshots auch zwischen Satzanfang und Betrag setzen (nicht nur auf Satzmitte). |
 | F24 | Kamera flog bei Käfig-zu-Käfig-Wechsel dicht an der Figur vorbei (Teil 2) | Direkter Weg zwischen zwei Käfigen kreuzt die Figur | Vor jedem Abflug eine Totale-Keyframe (`k(d.k - 0.15, Totale)`) einfügen – zeigt zugleich den Abflug. |
 | F25 | Käfig-Schilder (Name/Betrag/Zusatz) auf Untertitel-Höhe | Kamera-Ziel zu tief | Bei Nahaufnahmen von Käfigen Kamera-Ziel ≈ 4,6 (Schilder rutschen unter den Untertitel); Zusatz-Objekte (Uhr) darüber. HUD-Labels ≤ 26 Zeichen, sonst Umbruch. |
+| F26 | HUD blieb das ganze Video auf dem Startwert stehen (Black Friday) | `const RATE` doppelt deklariert (alte Konstante aus kopierter HUD-Vorlage) → Script-Abbruch | Beim Kopieren der HUD-Vorlage eigene Konstanten mit Video-Präfix benennen (`BF_RATE`); nach jedem Build sofort Snapshot – „Zähler ändert sich nie“ = Script-Fehler. |
+| F27 | 3D-Objekte (Preisschild, Kalender, UVP) auf Untertitel-Höhe | Objekt-y ≈ Kamera-Ziel-y | Faustregel: Hauptobjekt ≈ 1,0–1,4 Einheiten UNTER dem Kamera-Ziel; Text/Label lieber aufs Objekt (Textur) als als eigenes Schild darüber. |
 
 ### 3b. Checkliste vor jeder Abgabe (aus 3a abgeleitet)
 1. `qa_skript.py` ohne FEHLER · 2. Zahlen nachgerechnet/Quelle geprüft · 3. `check --json`: keine Fehler, kein
