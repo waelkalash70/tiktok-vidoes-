@@ -1,0 +1,17 @@
+{
+  "titel": "Jag nicht dem Geld hinterher (Mindset)",
+  "annahmen": "Mindset-Aussagen sind Meinung. Fakten: Facebook kündigte am 9.4.2012 an, Instagram für rund 1 Mrd. $ (Cash + Aktien) zu kaufen – daher „bot“; bei Abschluss ~715 Mio. $ wegen gefallener Facebook-Aktie. Instagram hatte damals 13 Vollzeit-Mitarbeiter, keinen Umsatz und ~30 Mio. Nutzer (Facebook-Newsroom, Fortune 2016, Yahoo Finance).",
+  "saetze": [
+    { "id": "s1",  "beat": "hook",     "tokens": [["Hör","Hör"],["auf,","auf,"],["dem","dem"],["Geld","Geld","gold"],["hinterherzurennen.","hinterherzurennen.","red"],["GENAU","Genau","red"],["deshalb","deshalb"],["bist","bist"],["du","du"],["nicht","nicht"],["reich.","reich.","gold"]] },
+    { "id": "s2",  "beat": "schatten", "tokens": [["Geld","Geld","gold"],["ist","ist"],["wie","wie"],["ein","ein"],["Schatten:","Schatten:"],["Rennst","Rennst"],["du","du"],["ihm","ihm"],["nach,","nach,"],["rennt","rennt"],["es","es"],["weg.","weg.","red"]] },
+    { "id": "s3",  "beat": "meisten",  "tokens": [["Die","Die"],["meisten","meisten"],["fragen:","fragen:"],["Wie","Wie"],["verdiene","verdiene"],["ich","ich"],["MEHR?","mehr?","red"]] },
+    { "id": "s4",  "beat": "reiche",   "tokens": [["Reiche","Reiche"],["fragen:","fragen:"],["Welches","Welches"],["PROBLEM","Problem","gold"],["kann","kann"],["ich","ich"],["lösen?","lösen?","gold"]] },
+    { "id": "s5",  "beat": "twist",    "tokens": [["Und","Und"],["jetzt","jetzt"],["kommt's:","kommt's:","red"]] },
+    { "id": "s6",  "beat": "insta",    "tokens": [["Instagram","Instagram","gold"],["hatte","hatte"],["2012","zweitausendzwölf"],["13","dreizehn"],["Mitarbeiter","Mitarbeiter"],["und","und"],["verdiente","verdiente"],["keinen","keinen"],["CENT.","Cent.","red"]] },
+    { "id": "s7",  "beat": "milliarde","tokens": [["Trotzdem","Trotzdem"],["bot","bot"],["Facebook","Facebook"],["dafür","dafür"],["1 Mrd. $.","eine Milliarde Dollar.","gold"]] },
+    { "id": "s8",  "beat": "wert",     "tokens": [["Nicht","Nicht"],["für","für"],["Geld","Geld"],["–","–"],["für","für"],["WERT:","Wert:","gold"],["30 Mio.","dreißig Millionen","gold"],["Menschen,","Menschen,"],["die","die"],["es","es"],["liebten.","liebten."]] },
+    { "id": "s9",  "beat": "eisberg",  "tokens": [["Geld","Geld","gold"],["ist","ist"],["nur","nur"],["die","die"],["Spitze.","Spitze."],["Darunter","Darunter"],["liegt,","liegt,"],["was","was"],["zählt.","zählt.","gold"]] },
+    { "id": "s10", "beat": "punch",    "tokens": [["Löse","Löse"],["ein","ein"],["Problem","Problem","gold"],["für","für"],["viele","viele"],["–","–"],["und","und"],["das","das"],["Geld","Geld","gold"],["rennt","rennt"],["DIR","dir","gold"],["hinterher.","hinterher."]] },
+    { "id": "s11", "beat": "cta",      "tokens": [["Jagst","Jagst"],["du","du"],["Geld","Geld"],["–","–"],["oder","oder"],["baust","baust"],["du","du"],["Wert?","Wert?","gold"],["Schreib's","Schreib's"],["in","in"],["die","die"],["Kommentare.","Kommentare."]] }
+  ]
+}
