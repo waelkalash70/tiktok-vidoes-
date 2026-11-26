@@ -117,6 +117,15 @@ Versprechen. Kontrovers gegenüber Ideen/Systemen/Gewohnheiten – nicht gegenü
 **Zusätzlich:** Die Provokation am Ende als Kommentar-Frage zurückspiegeln („Hättest du die Million genommen?“).
 Re-Hook alle ~8 s bleibt Pflicht (1.7).
 
+### 1.7c Zielgruppe junge Leute / „schnell reich“ (User-Wunsch 2026-11-26)
+- User will Geld-Themen mit **viel Dopamin** für junge Zuschauer, die schnell reich werden wollen.
+- Umsetzung: Dopamin im **Bild und Tempo** (explodierende Zahlen, rasende Zähler, Gold-Explosionen, Fake-out-Re-Hooks),
+  aber **ehrliche Auflösung**: keine Trading-/Krypto-/Glücksspiel-Versprechen, keine konkreten Anlagetipps, keine
+  „passives Einkommen in 30 Tagen“-Mythen. Die Provokation („Nimm nicht die Million“) zahlt auf eine echte Lehre ein
+  (Zinseszins, Zeit, Abzock-Fallen erkennen). So bleibt der Kanal glaubwürdig und TikTok-richtlinienkonform.
+- Gute Themenfelder: Mathe-Wetten, Abzock-Fallen (Raten, Abos, Fake-Rabatte), krasse echte Geldgeschichten,
+  „Was reiche Leute anders machen“ (belegt), Gaming/Pop-Kultur + Geld (GTA-Rezept).
+
 ### 1.8 Trend-Recherche 25.11.2026 (Fakten geprüft, vor Produktion Stand erneut prüfen)
 - **GTA 6** (Launch 19.11.2026): laut Take-Two **3,79 Mrd. $ Day-One-Retail-Umsatz** (Firmenschätzung), 32,5 Mio.
   Vorbestellungen. ≈ **43.900 $ pro Sekunde** (3,79 Mrd./86.400). GTA V 2013: ~800 Mio. $ am ersten Tag.

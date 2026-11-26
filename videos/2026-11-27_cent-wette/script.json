@@ -1,0 +1,18 @@
+{
+  "titel": "Die Cent-Wette – 1 Million oder 1 Cent?",
+  "annahmen": "Reine Mathematik: Tag n = 0,01 € × 2^(n−1). Tag 10: 5,12 €; Tag 20: 5.242,88 €; Tag 27: 671.088,64 €; Tag 28: 1.342.177,28 € (erstmals über 1 Mio.); Tag 30: 5.368.709,12 €. Anteil Tag 28–30 am Endbetrag: 87,5 %. Bildlicher Vergleich mit Zinseszins – echte Renditen sind viel langsamer, keine Anlageberatung.",
+  "saetze": [
+    { "id": "s1",  "beat": "hook",    "tokens": [["Du","Du"],["willst","willst"],["schnell","schnell"],["reich","reich"],["werden?","werden?","gold"],["Dann","Dann"],["nimm","nimm"],["bloß","bloß"],["NICHT","nicht","red"],["die","die"],["Million.","Million.","gold"]] },
+    { "id": "s2",  "beat": "wette",   "tokens": [["1 Mio. €","Eine Million Euro","gold"],["sofort","sofort"],["–","–"],["oder","oder"],["1 Cent,","ein Cent,","gold"],["der","der"],["sich","sich"],["30 Tage","dreißig Tage"],["lang","lang"],["jeden","jeden"],["Tag","Tag"],["verdoppelt.","verdoppelt."]] },
+    { "id": "s3",  "beat": "mehrheit","tokens": [["Fast","Fast"],["jeder","jeder"],["nimmt","nimmt"],["die","die"],["Million.","Million."],["Fehler.","Fehler.","red"]] },
+    { "id": "s4",  "beat": "tag10",   "tokens": [["Tag 10:","Tag zehn:"],["5,12 €.","fünf Euro zwölf.","gold"],["Lachhaft.","Lachhaft.","red"]] },
+    { "id": "s5",  "beat": "tag20",   "tokens": [["Tag 20:","Tag zwanzig:"],["5.242 €.","fünftausendzweihundertzweiundvierzig Euro.","gold"],["Die","Die"],["Million","Million"],["sieht","sieht"],["gut","gut"],["aus,","aus,"],["oder?","oder?","red"]] },
+    { "id": "s6",  "beat": "twist",   "tokens": [["Aber","Aber"],["jetzt","jetzt"],["wird's","wird's"],["VERRÜCKT:","verrückt:","red"]] },
+    { "id": "s7",  "beat": "tag27",   "tokens": [["Tag 27:","Tag siebenundzwanzig:"],["671.000 €.","sechshunderteinundsiebzigtausend Euro.","gold"]] },
+    { "id": "s8",  "beat": "tag28",   "tokens": [["Tag 28:","Tag achtundzwanzig:"],["1,3 Mio.","eins Komma drei Millionen.","gold"]] },
+    { "id": "s9",  "beat": "tag30",   "tokens": [["Und","Und"],["an","an"],["Tag 30:","Tag dreißig:"],["über","über"],["5,3 Mio. €!","fünf Komma drei Millionen Euro!","gold"]] },
+    { "id": "s10", "beat": "punch",   "tokens": [["Fast","Fast"],["90 %","neunzig Prozent","red"],["davon","davon"],["kommen","kommen"],["in","in"],["den","den"],["LETZTEN","letzten","gold"],["drei","drei"],["Tagen.","Tagen."]] },
+    { "id": "s11", "beat": "lehre",   "tokens": [["Reich","Reich"],["wird","wird"],["nicht,","nicht,"],["wer","wer"],["schnell","schnell"],["ist.","ist.","red"],["Sondern","Sondern"],["wer","wer"],["durchhält.","durchhält.","gold"]] },
+    { "id": "s12", "beat": "cta",     "tokens": [["Ehrlich:","Ehrlich:"],["Hättest","Hättest"],["du","du"],["die","die"],["Million","Million"],["genommen?","genommen?","gold"]] }
+  ]
+}
