@@ -8,6 +8,9 @@ description: Erstellt deutschsprachige, faceless TikTok-Videos (9:16) im Stil de
 Du produzierst für einen deutschen TikTok-Creator (Faceless-Account) komplette Kurzvideos
 **mit Claude Code + HyperFrames** – Szenen/Animationen als HTML+GSAP, gerendert zu MP4.
 
+> 🔥 **BESTES VIDEO BISHER (geht viral, User: „gefällt mir richtig richtig gut“, 2026-11-26):**
+> `videos/2026-11-25_gta6/` – „GTA 6: 44.000 $ pro Sekunde“. Rezept in Abschnitt 1.9 – bei Themenwahl IMMER zuerst prüfen.
+>
 > ⭐ **GOLDSTANDARD (vom User als „perfekt, sehr gutes Video“ bestätigt, 2026-11-24):**
 > `videos/2026-11-24_brutto-netto/` – jedes neue Video startet als Kopie dieses Projekts und behält
 > Aufbau, Look und Qualität bei. Nur Thema, Skript und 3D-Objekte ändern sich. Siehe Abschnitt 1.6.
@@ -111,6 +114,18 @@ Referenzen:
   NICHT „über eine Milliarde“ sagen (F2!).
 - **TikTok-Formate:** „In this town everybody goes out partying except me“ steigt gerade (= Referenz 1 des Users!),
   Black-Friday-Content (182 Mio. Views in Europa/Woche), GTA-6-Loading-Screen-Intro.
+
+### 1.9 Viral-Rezept aus Video 3 (GTA 6) – höchste Priorität bei Themenwahl
+Was den Unterschied gemacht hat (gegenüber Video 1/2, die „nur“ gut waren):
+1. **Trend-Jacking:** Thema war DAS Gesprächsthema der Woche (Launch 6 Tage vorher) → Publikum sucht danach.
+   → Vor jedem Video Trend-Recherche (WebSearch, „extended“) und Thema mit aktuellem Hype bevorzugen; schnell liefern.
+2. **Unvorstellbare Zahl greifbar gemacht:** 3,79 Mrd. → „44.000 $ pro SEKUNDE“ (Zahl pro Zeiteinheit).
+3. **Live-Zähler „Während du zuschaust“:** der Zuschauer ist Teil der Rechnung → bleibt bis zum Ende, um die Endzahl zu sehen.
+4. **Vergleich mit bekanntem Rekord:** GTA 5, Avengers: Endgame → „das Dreifache an einem Tag“.
+5. **Fan-Community-Thema** (Gamer) + Geld-Winkel → breites Publikum, das kommentiert und teilt.
+6. Gleicher Gold-3D-Stil + ElevenLabs-Stimme „Rene Deutschmann – Trustworthy and Calm“.
+→ Ideale nächste Themen kombinieren: aktueller Hype + Riesenzahl pro Sekunde/Minute + Live-Zähler + Rekord-Vergleich.
+→ Teil 2 eines viralen Videos zeitnah liefern (Zuschauer warten darauf).
 
 ## 2. Arbeitsablauf pro Video
 
@@ -301,3 +316,4 @@ plausibel) · 5. Nach Render: ffprobe (1080×1920, Länge), `volumedetect` (mean
 | 2026-11-24 | – (Setup) | User will HyperFrames (HeyGen) als Werkzeug | Alle Videos mit HyperFrames bauen, siehe 2a |
 | 2026-11-24 | Video 1 „Brutto vs. Netto“ (Entwurf) | „Perfekt, sehr gutes Video – mach weiter solche Arbeit für die nächsten Chats“ | Video 1 = Goldstandard; Erfolgsrezept in 1.6 festgeschrieben; neue Videos als Kopie dieses Projekts starten |
 | 2026-11-25 | Video 2 + Profilbild | „Vergiss nicht, dich zu verbessern, indem du aus all deinen Fehlern lernst“ | Fehler-Logbuch 3a + Abgabe-Checkliste 3b eingeführt; QA-Skript automatisiert die Zahlenprüfung; nach jeder Aufgabe neue Fehler eintragen |
+| 2026-11-26 | Video 3 „GTA 6“ (gepostet) | „Scheint das beste zu sein, geht etwas viral, Thema sehr interessant – gefällt mir richtig richtig gut“ | GTA-Video = neues Top-Vorbild; Viral-Rezept 1.9 (Trend-Jacking + Zahl pro Sekunde + Live-Zähler + Rekord-Vergleich) bei jeder Themenwahl zuerst anwenden |
