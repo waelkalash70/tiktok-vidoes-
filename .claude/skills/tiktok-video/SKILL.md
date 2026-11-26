@@ -267,6 +267,8 @@ die Gegenmaßnahme **automatisieren** (Prüfskript, Vorlage, Checkliste) statt s
 | F21 | Skript 46 s zu lang (QA-Skript fing es) | Zu viele Füllwörter | Erst QA-Skript, dann kürzen: Nebensätze streichen, Zahlen behalten. |
 | F22 | Live-Aussage („bis Video vorbei: über 1,7 Mio.“) hängt von der Videolänge ab | Zahl = Rate × Dauer | Im VOICEOVER_TEXT Mindestlänge angeben; nach ElevenLabs-Einbau prüfen: Rate × T ≥ genannte Zahl. |
 | F23 | Zähler zeigte „0 $“ zwischen Satzanfang und Betrag (GTA, erst im finalen MP4 bemerkt → 15 min Neu-Render) | Zählt erst ab `key`, davor Startwert 0 | Vor dem `key` Platzhalter „? $“ statt 0; Snapshots auch zwischen Satzanfang und Betrag setzen (nicht nur auf Satzmitte). |
+| F24 | Kamera flog bei Käfig-zu-Käfig-Wechsel dicht an der Figur vorbei (Teil 2) | Direkter Weg zwischen zwei Käfigen kreuzt die Figur | Vor jedem Abflug eine Totale-Keyframe (`k(d.k - 0.15, Totale)`) einfügen – zeigt zugleich den Abflug. |
+| F25 | Käfig-Schilder (Name/Betrag/Zusatz) auf Untertitel-Höhe | Kamera-Ziel zu tief | Bei Nahaufnahmen von Käfigen Kamera-Ziel ≈ 4,6 (Schilder rutschen unter den Untertitel); Zusatz-Objekte (Uhr) darüber. HUD-Labels ≤ 26 Zeichen, sonst Umbruch. |
 
 ### 3b. Checkliste vor jeder Abgabe (aus 3a abgeleitet)
 1. `qa_skript.py` ohne FEHLER · 2. Zahlen nachgerechnet/Quelle geprüft · 3. `check --json`: keine Fehler, kein

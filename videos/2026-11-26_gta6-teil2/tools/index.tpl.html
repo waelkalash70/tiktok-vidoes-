@@ -78,7 +78,7 @@ __SFX__
       scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
       scene.environmentIntensity = 0.35;
 
-      const camera = new THREE.PerspectiveCamera(48, W / H, 0.1, 200);
+      const camera = new THREE.PerspectiveCamera(44, W / H, 0.1, 200);
 
       scene.add(new THREE.HemisphereLight(0x22335a, 0x000000, 0.5));
       const key = new THREE.DirectionalLight(0xffdcaa, 2.2); key.position.set(5, 9, 7); scene.add(key);
@@ -180,45 +180,54 @@ __SFX__
       const dust = new THREE.Points(dustGeo, new THREE.PointsMaterial({ color: 0xffcf66, size: 0.05, transparent: true, opacity: 0.75, depthWrite: false }));
       scene.add(dust);
 
-      // ---------- Daten ----------
-      const U = 1 / 500e6; // 1 Höheneinheit = 500 Mio. $
-      const H6 = 3.79e9 * U, H5 = 0.8e9 * U, HE = 1.2e9 * U;
+      // ---------- Daten: 79,99 € digital in Deutschland ----------
+      const SC = 1 / 20;                       // 1 Höheneinheit = 20 €
+      const NET = 47.05 * SC, TOTAL = 79.99 * SC;
+      const TX = 0, TZ = 0, TW = 1.5;
       const boxGeo = new THREE.BoxGeometry(1, 1, 1); boxGeo.translate(0, 0.5, 0);
-      const TW = 1.3;
-      function tower(x, name, color, mat) {
-        const g = new THREE.Group(); g.position.set(x, 0, 0); scene.add(g);
-        const fill = new THREE.Mesh(boxGeo, mat); fill.scale.set(TW - 0.06, 0.001, TW - 0.06); g.add(fill);
-        const lab = label(name, { color, border: color, worldH: 0.3 }); lab.position.set(0, 0.4, TW / 2 + 0.3); g.add(lab);
-        return { g, fill, lab, cage: null };
+      const tower = new THREE.Group(); tower.position.set(TX, 0, TZ); scene.add(tower);
+      const towerCage = cage(TW + 0.12, TOTAL, TW + 0.12, 0xffc23a, 2.6, 0.95, 0.4, 4); tower.add(towerCage);
+      const netMesh = new THREE.Mesh(boxGeo, goldMat()); netMesh.scale.set(TW - 0.06, NET, TW - 0.06); tower.add(netMesh);
+      const priceLab = label("GTA 6 · 79,99 €", { worldH: 0.4 }); priceLab.position.set(0, TOTAL + 0.5, 0); tower.add(priceLab);
+      const rockLab = label("ROCKSTAR", { worldH: 0.34 }); rockLab.position.set(0, NET * 0.5, TW / 2 + 0.3); tower.add(rockLab);
+      const ring = new THREE.Mesh(new THREE.TorusGeometry(1.25, 0.04, 12, 96), new THREE.MeshBasicMaterial({ color: 0xffd23f, transparent: true }));
+      ring.rotation.x = Math.PI / 2; ring.position.y = NET; tower.add(ring);
+      // „Weg“-Bereich beim Punch (rot, durchsichtig)
+      const goneMat = new THREE.MeshBasicMaterial({ color: 0xff3030, transparent: true, opacity: 0, depthWrite: false });
+      const gone = new THREE.Mesh(boxGeo, goneMat); gone.scale.set(TW - 0.04, TOTAL - NET, TW - 0.04); gone.position.y = NET; tower.add(gone);
+      const goneLab = label("−41 %", { color: "#ff4b4b", border: "#ff4b4b", worldH: 0.55 }); goneLab.position.set(0, NET + (TOTAL - NET) / 2, TW / 2 + 0.35); tower.add(goneLab);
+      // Abzüge (oben zuerst): Stapel von unten: NET, Plattform, Steuer
+      const D = [
+        { beat: "plattform", amt: 20.17, name: "SONY / MICROSOFT", pos: [3.7, 0, -2.6] },
+        { beat: "steuer", amt: 12.77, name: "STAAT", pos: [-3.9, 0, -2.8] },
+      ];
+      let y0 = NET; const FL = 1.25, CW = 1.4, CH = 1.6;
+      for (const d of D) {
+        d.h = d.amt * SC; d.y = y0; y0 += d.h; d.k = B[d.beat].key;
+        d.mat = goldMat(); d.mesh = new THREE.Mesh(boxGeo, d.mat); scene.add(d.mesh);
+        d.cage = new THREE.Group(); d.cage.position.set(...d.pos); scene.add(d.cage);
+        d.cage.add(cage(CW, CH, CW, 0xffb52e, 2.2, 0.85, 0.4, 3));
+        d.lab = label(d.name, { color: "#ff4b4b", border: "#ff4b4b", worldH: 0.34 }); d.lab.position.set(0, CH + 0.42, 0); d.cage.add(d.lab);
+        d.amtLab = label("−" + d.amt.toFixed(2).replace(".", ",") + " €", { worldH: 0.3 }); d.amtLab.position.set(0, CH + 0.88, 0); d.cage.add(d.amtLab);
       }
-      const silverMat = new THREE.MeshStandardMaterial({ color: 0xc8d0e0, emissive: 0x506080, emissiveIntensity: 0.18, metalness: 0.85, roughness: 0.3 });
-      const T6 = tower(0, "GTA 6 · TAG 1", "#ffd23f", goldMat());
-      const T5 = tower(-2.4, "GTA 5 · 2013", "#ffa640", goldMat());
-      const TE = tower(2.4, "KINO-REKORD", "#c8d0ff", silverMat);
-      T6.cage = cage(TW + 0.12, 8.0, TW + 0.12, 0xffc23a, 2.6, 0.95, 0.5, 4); T6.g.add(T6.cage);
-      T5.cage = cage(TW + 0.12, H5, TW + 0.12, 0xffa640, 2.2, 0.9, 0.4, 3); T5.g.add(T5.cage);
-      TE.cage = cage(TW + 0.12, HE, TW + 0.12, 0xaab8ff, 2.2, 0.9, 0.4, 3); TE.g.add(TE.cage);
-      // 3× Endgame-Stapel (Geister-Kopien)
-      const ghostMat = new THREE.MeshStandardMaterial({ color: 0xc8d0e0, emissive: 0x6070a0, emissiveIntensity: 0.25, transparent: true, opacity: 0.45, metalness: 0.6, roughness: 0.35, depthWrite: false });
-      const ghosts = [1, 2].map(() => { const m = new THREE.Mesh(boxGeo, ghostMat); m.scale.set(TW - 0.06, HE - 0.02, TW - 0.06); TE.g.add(m); return m; });
-      const x3 = glyph("×3", "#ffd23f", 1.2); scene.add(x3);
-      const rec = label("WELTREKORD", { color: "#ffd23f", border: "#ffd23f", worldH: 0.32 }); rec.position.set(0, H5 + 0.45, 0); T5.g.add(rec);
-      // Münzen (Explosion beim Hook + Regen)
-      const NC = 70;
-      const coinGeo = new THREE.CylinderGeometry(0.12, 0.12, 0.03, 20); coinGeo.rotateX(Math.PI / 2);
-      const coins = new THREE.InstancedMesh(coinGeo, new THREE.MeshStandardMaterial({ color: 0xffcc44, emissive: 0xff9a1a, emissiveIntensity: 0.5, metalness: 0.8, roughness: 0.3 }), NC);
+      const P = D[0]; // Plattform
+      const codeLab = label("0 ZEILEN CODE", { color: "#ff4b4b", border: "#ff4b4b", worldH: 0.36 }); codeLab.position.set(0, CH + 1.4, 0); P.cage.add(codeLab);
+      // Münzen: Abflug-Schwarm + Dauerstrom zur Plattform
+      const NC = 16, NS = 40;
+      const coinGeo = new THREE.CylinderGeometry(0.11, 0.11, 0.03, 20); coinGeo.rotateX(Math.PI / 2);
+      const coins = new THREE.InstancedMesh(coinGeo, new THREE.MeshStandardMaterial({ color: 0xffcc44, emissive: 0xff9a1a, emissiveIntensity: 0.5, metalness: 0.8, roughness: 0.3 }), D.length * NC + NS);
       scene.add(coins);
-      const coinOff = []; for (let i = 0; i < NC; i++) coinOff.push([rnd() * 6.28, 1.2 + rnd() * 2.6, 2 + rnd() * 3.5, rnd() * 6.28, 0.6 + rnd() * 0.9, rnd()]);
-      // Stoppuhr
-      const watch = new THREE.Group(); watch.position.set(1.95, 3.0, 1.1); scene.add(watch);
+      const coinOff = []; for (let i = 0; i < D.length * NC + NS; i++) coinOff.push([(rnd() - 0.5) * 1.1, (rnd() - 0.5) * 0.8, (rnd() - 0.5) * 1.1, rnd() * 0.32, rnd() * 6.28, 0.6 + rnd() * 0.8, rnd()]);
+      // Stoppuhr über der Plattform
+      const watch = new THREE.Group(); scene.add(watch);
       const wMat = new THREE.MeshBasicMaterial({ color: 0xffd23f, transparent: true });
-      watch.add(new THREE.Mesh(new THREE.TorusGeometry(0.75, 0.06, 16, 80), wMat));
-      const crown = new THREE.Mesh(new THREE.BoxGeometry(0.18, 0.22, 0.08), wMat); crown.position.y = 0.92; watch.add(crown);
-      for (let i = 0; i < 12; i++) { const m = new THREE.Mesh(new THREE.BoxGeometry(0.04, i % 3 ? 0.1 : 0.18, 0.03), wMat); const a = i / 12 * Math.PI * 2; m.position.set(Math.sin(a) * 0.6, Math.cos(a) * 0.6, 0); m.rotation.z = -a; watch.add(m); }
-      const hand = new THREE.Mesh(new THREE.BoxGeometry(0.05, 0.56, 0.04), new THREE.MeshBasicMaterial({ color: 0xff4040, transparent: true })); hand.geometry.translate(0, 0.26, 0); watch.add(hand);
-      const perSec = label("+43.866 $ / Sek.", { worldH: 0.26 }); perSec.position.set(0, -1.05, 0); watch.add(perSec);
+      watch.add(new THREE.Mesh(new THREE.TorusGeometry(0.6, 0.05, 16, 80), wMat));
+      const crown = new THREE.Mesh(new THREE.BoxGeometry(0.15, 0.18, 0.06), wMat); crown.position.y = 0.74; watch.add(crown);
+      for (let i = 0; i < 12; i++) { const m = new THREE.Mesh(new THREE.BoxGeometry(0.035, i % 3 ? 0.08 : 0.15, 0.03), wMat); const a = i / 12 * Math.PI * 2; m.position.set(Math.sin(a) * 0.48, Math.cos(a) * 0.48, 0); m.rotation.z = -a; watch.add(m); }
+      const hand = new THREE.Mesh(new THREE.BoxGeometry(0.04, 0.45, 0.03), new THREE.MeshBasicMaterial({ color: 0xff4040, transparent: true })); hand.geometry.translate(0, 0.21, 0); watch.add(hand);
+      const perSec = label("+13.000 $ / Sek.", { worldH: 0.24 }); perSec.position.set(0, -0.85, 0); watch.add(perSec);
       // Figur mit Gamepad
-      function figure(bodyColor, accent) {
+      function figure(bodyColor) {
         const g = new THREE.Group();
         const body = new THREE.Mesh(new THREE.CapsuleGeometry(0.42, 0.75, 8, 24), new THREE.MeshPhysicalMaterial({ color: bodyColor, metalness: 0.2, roughness: 0.25, clearcoat: 1, clearcoatRoughness: 0.15 }));
         body.position.y = 0.82; g.add(body);
@@ -226,44 +235,40 @@ __SFX__
         head.add(new THREE.Mesh(new THREE.SphereGeometry(0.36, 32, 24), new THREE.MeshPhysicalMaterial({ color: 0xc9cbd2, roughness: 0.32, clearcoat: 1 })));
         const pad = new THREE.Group(); pad.position.set(0, 0.95, 0.5); g.add(pad);
         const pm = new THREE.MeshPhysicalMaterial({ color: 0x111318, roughness: 0.35, clearcoat: 1 });
-        const core = new THREE.Mesh(new THREE.BoxGeometry(0.52, 0.18, 0.14), pm); pad.add(core);
+        pad.add(new THREE.Mesh(new THREE.BoxGeometry(0.52, 0.18, 0.14), pm));
         for (const sx of [-1, 1]) { const gr = new THREE.Mesh(new THREE.CapsuleGeometry(0.08, 0.14, 6, 12), pm); gr.position.set(sx * 0.24, -0.1, 0); gr.rotation.z = sx * 0.5; pad.add(gr); }
         for (const [bx, by, c] of [[0.13, 0.03, 0xffd23f], [0.18, -0.02, 0xff4040], [-0.15, 0.0, 0x5f7dff]]) { const b = new THREE.Mesh(new THREE.SphereGeometry(0.03, 10, 8), new THREE.MeshBasicMaterial({ color: c })); b.position.set(bx, by, 0.075); pad.add(b); }
         g.userData = { body, head, pad }; return g;
       }
-      const hero = figure(0x1b2a6b, 0xffd23f); hero.position.set(1.5, 0, 2.3); scene.add(hero);
-      // Vorbesteller-Menge (1 Figur ≈ 100.000 Käufer → 325)
-      const NCR = 325;
-      const crowdGeo = new THREE.CapsuleGeometry(0.07, 0.12, 4, 8); crowdGeo.translate(0, 0.14, 0);
-      const crowd = new THREE.InstancedMesh(crowdGeo, new THREE.MeshStandardMaterial({ color: 0x2a3f9a, emissive: 0x101a50, emissiveIntensity: 0.4, metalness: 0.3, roughness: 0.4 }), NCR);
-      scene.add(crowd);
-      const crowdHead = new THREE.InstancedMesh(new THREE.SphereGeometry(0.06, 10, 8), new THREE.MeshStandardMaterial({ color: 0xd8d8d8, roughness: 0.4 }), NCR); scene.add(crowdHead);
-      const crowdData = []; for (let i = 0; i < NCR; i++) { const a = -Math.PI * 0.95 + rnd() * Math.PI * 0.9; const r = 3.2 + rnd() * 5.5; crowdData.push([Math.cos(a) * r, Math.sin(a) * r * 0.9 - 1.2, rnd() * 0.9, 10 + rnd() * 8]); }
-      const crowdLab = label("32,5 MIO. VORBESTELLUNGEN", { worldH: 0.34 }); crowdLab.position.set(0, 0.6, -5.5); scene.add(crowdLab);
-      const bigQ = glyph("?", "#ffd23f", 2.6); bigQ.position.set(0, 9.5, -2); scene.add(bigQ);
+      const FX = 1.55, FZ = 1.9;
+      const hero = figure(0x1b2a6b); hero.position.set(FX, 0, FZ); scene.add(hero);
+      const qMark = glyph("?", "#ffd23f", 0.75); scene.add(qMark);
+      // CTA: digital oder Laden
+      const digLab = label("DIGITAL", { worldH: 0.5 }); scene.add(digLab);
+      const shopLab = label("IM LADEN", { worldH: 0.5 }); scene.add(shopLab);
+      const bigQ = glyph("?", "#ffd23f", 1.8); scene.add(bigQ);
 
       // ---------- Kamera ----------
       const K = [];
       const k = (t, p, tg) => K.push({ t, p: new THREE.Vector3(...p), g: new THREE.Vector3(...tg) });
-      k(0.0, [1.8, 1.3, 7.8], [0.2, 2.6, 0]);
-      k(B.hook.key, [1.8, 1.4, 7.6], [0.2, 2.8, 0]);
-      k(B.hook.key + 1.7, [1.9, 3.4, 12.5], [0.2, 5.2, 0]);
-      k(B.sekunde.start + 0.2, [2.2, 3.4, 9.5], [1.4, 3.4, 0.6]);
-      k(B.sekunde.end, [2.6, 3.0, 7.2], [1.7, 2.7, 0.9]);
-      k(B.live.key, [1.8, 2.0, 8.5], [0.6, 4.8, 0]);
-      k(B.live.end, [1.6, 2.2, 9.0], [0.5, 5.2, 0]);
-      k(B.gta5.key, [-1.2, 2.6, 8.4], [-1.9, 2.2, 0]);
-      k(B.rekord.end, [-1.6, 2.6, 7.6], [-2.2, 2.0, 0]);
-      k(B.twist.end, [0, 4.6, 15.5], [0, 4.0, 0]);
-      k(B.endgame.key + 0.3, [2.0, 2.8, 8.6], [2.3, 2.1, 0]);
-      k(B.endgame.end, [2.2, 3.0, 9.0], [2.3, 2.3, 0]);
-      k(B.dreifach.key + 0.2, [1.3, 4.8, 14.0], [1.2, 4.4, 0]);
-      k(B.dreifach.end, [1.2, 5.0, 14.6], [1.2, 4.6, 0]);
-      k(B.grund.key, [0, 6.8, 13.0], [0, 1.6, -3.0]);
-      k(B.grund.end, [0, 7.2, 13.6], [0, 1.8, -3.0]);
-      k(B.punch.key, [1.3, 3.8, 11.5], [0.5, 4.2, 0]);
-      k(B.punch.end, [1.2, 4.0, 12.0], [0.4, 4.4, 0]);
-      k(B.T, [0, 9.0, 14.5], [0, 8.4, -2]);
+      k(0.0, [0.9, 2.6, 10.5], [0.2, 2.5, 0]);
+      k(B.hook.end, [1.2, 2.5, 8.6], [0.6, 2.2, 0.6]);
+      k(B.recap.end, [0.6, 3.6, 12.5], [0.0, 2.8, -1]);
+      for (const d of [...D].reverse()) {
+        const [cx, , cz] = d.pos;
+        k(d.k - 0.15, [0.3, 4.6, 12.5], [0, 2.6, -1.2]);
+        k(d.k + FL * 0.95, [cx * 0.8, 3.4, cz + 8.0], [cx * 0.97, 1.75, cz]);
+        k(d.k + FL + 0.35, [cx * 0.8, 3.5, cz + 7.7], [cx * 0.97, 1.75, cz]);
+      }
+      k(Math.max(B.twist.start, P.k + FL + 0.6), [3.1, 5.3, 7.6], [3.6, 4.7, -2.6]);
+      k(B.code.end, [3.1, 5.3, 7.4], [3.6, 4.6, -2.6]);
+      k(B.tempo.key, [3.0, 5.0, 7.8], [3.6, 4.3, -2.6]);
+      k(B.tempo.end, [2.9, 5.1, 8.2], [3.5, 4.4, -2.6]);
+      k(B.rest.key, [0.6, 2.6, 8.4], [0.0, 2.2, 0]);
+      k(B.rest.end, [0.7, 2.7, 8.8], [0.0, 2.3, 0]);
+      k(B.punch.key, [0.4, 3.4, 10.4], [0.0, 2.9, 0]);
+      k(B.punch.end, [0.4, 3.5, 10.8], [0.0, 3.0, 0]);
+      k(B.T, [0, 4.6, 13.5], [0, 3.8, -1]);
       K.sort((a, b) => a.t - b.t);
       const _p = new THREE.Vector3(), _g = new THREE.Vector3();
       function camAt(t) {
@@ -285,92 +290,85 @@ __SFX__
       composer.addPass(new OutputPass());
 
       // ---------- Bild für Zeitpunkt t (rein funktional) ----------
-      const _q = new THREE.Quaternion(), _e = new THREE.Euler(), _s = new THREE.Vector3(), _c = new THREE.Vector3();
+      const _a = new THREE.Vector3(), _b = new THREE.Vector3(), _q = new THREE.Quaternion(), _e = new THREE.Euler(), _s = new THREE.Vector3(), _c = new THREE.Vector3();
       const M2 = new THREE.Matrix4();
-      const grow = (T, h, k0, dur) => { const x = eout(seg(t0, k0, k0 + dur)); T.fill.scale.y = Math.max(0.001, h * x); T.fill.visible = x > 0; return x; };
-      let t0 = 0;
+      const red = new THREE.Color(0xff2a2a), orange = new THREE.Color(0xff8a10);
       function render(t) {
-        t0 = t; camAt(t);
+        camAt(t);
         const pa = dustGeo.attributes.position.array;
         dustBase.forEach((d, i) => { pa[i * 3] = d[0] + Math.sin(t * 0.3 + d[4]) * 0.3; pa[i * 3 + 1] = (d[1] + t * d[3]) % 9; pa[i * 3 + 2] = d[2]; });
         dustGeo.attributes.position.needsUpdate = true;
 
-        // Türme
-        const g6 = grow(T6, H6, B.hook.key, 1.6);
-        const g5 = grow(T5, H5, B.gta5.key, 0.8);
-        const gE = grow(TE, HE, B.endgame.key, 0.8);
-        T5.g.visible = t > B.gta5.start - 0.3; TE.g.visible = t > B.endgame.start - 0.3;
-        T5.cage.material.opacity = 0.9 * sm(seg(t, B.gta5.start - 0.3, B.gta5.start));
-        TE.cage.material.opacity = 0.9 * sm(seg(t, B.endgame.start - 0.3, B.endgame.start));
-        T6.fill.material.emissiveIntensity = 0.16 + (t > B.punch.key ? 0.1 + 0.08 * Math.sin(t * 8) : 0);
-        const recA = sm(seg(t, B.rekord.key - 0.1, B.rekord.key + 0.3)) * (1 - sm(seg(t, B.twist.start, B.twist.start + 0.4)));
-        rec.visible = false; rec.material.opacity = recA; rec.scale.copy(rec.userData.base).multiplyScalar(0.6 + 0.4 * eout(recA));
-        // 3× stapeln
-        ghosts.forEach((m, i) => {
-          const k0 = B.dreifach.key - 0.3 + i * 0.35; const x = eout(seg(t, k0, k0 + 0.45));
-          m.visible = x > 0; m.position.y = HE * (i + 1) + (1 - x) * 3;
-          ghostMat.opacity = 0.45 * (1 - sm(seg(t, B.cta.start, B.cta.start + 0.6)));
-        });
-        const xa = eout(seg(t, B.dreifach.key + 0.5, B.dreifach.key + 0.9)) * (1 - sm(seg(t, B.grund.start, B.grund.start + 0.4)));
-        x3.visible = xa > 0.01; x3.material.opacity = xa; x3.position.set(1.2, HE * 3 + 0.9, 0.3); x3.scale.copy(x3.userData.base).multiplyScalar(0.5 + 0.5 * xa);
-
-        // Münz-Explosion beim Hook, danach Regen auf GTA-6-Turm
-        for (let i = 0; i < NC; i++) {
-          const o = coinOff[i];
-          let p = null;
-          const f = seg(t, B.hook.key + 0.1, B.hook.key + 2.2);
-          if (f > 0 && f < 1) {
-            const tt = f * 2.1; p = _c.set(Math.cos(o[0]) * o[1] * tt * 0.9, H6 * g6 + o[2] * tt - 4.9 * tt * tt * 0.55, Math.sin(o[0]) * o[1] * tt * 0.5 + 0.4);
-            if (p.y < 0.05) p = null;
-          } else if (t > B.sekunde.key && t < B.live.end) {
-            const cyc = 0.9, s0 = B.sekunde.key + o[5] * cyc, ph = ((t - s0) % cyc + cyc) % cyc / cyc;
-            if (t > s0) p = _c.set((o[5] - 0.5) * 1.0, H6 + 2.4 * (1 - ph * ph), (Math.sin(o[0]) - 0) * 0.4);
+        let look = null, lookW = 0;
+        D.forEach((d, di) => {
+          const lift = sm(seg(t, d.k - 0.35, d.k)), fly = eio(seg(t, d.k, d.k + FL));
+          const start = _a.set(TX, d.y + 0.03 + lift * 0.35, TZ), end = _b.set(d.pos[0], 0.02, d.pos[2]);
+          const p = start.clone().lerp(end, fly); p.y += Math.sin(fly * Math.PI) * 2.4;
+          d.mesh.position.copy(p); d.mesh.rotation.y = fly * Math.PI;
+          const wsc = lerp(TW - 0.06, CW - 0.12, fly); d.mesh.scale.set(wsc, d.h - 0.014, wsc);
+          const flash = Math.max(lift * (1 - fly), 0);
+          d.mat.emissive.copy(orange).lerp(red, flash); d.mat.emissiveIntensity = 0.16 + flash * 0.9;
+          const land = seg(t, d.k + FL - 0.1, d.k + FL + 0.25);
+          d.amtLab.visible = t > d.k + FL - 0.1; d.amtLab.scale.copy(d.amtLab.userData.base).multiplyScalar(eout(land) * (1 + Math.sin(land * Math.PI) * 0.35));
+          for (let j = 0; j < NC; j++) {
+            const o = coinOff[di * NC + j], ci = di * NC + j, f = seg(t, d.k + o[3], d.k + o[3] + FL * 0.95);
+            if (f <= 0 || f >= 1) { M2.makeScale(0, 0, 0); coins.setMatrixAt(ci, M2); continue; }
+            const e = eio(f), cp = start.clone().lerp(end, e);
+            cp.y += Math.sin(e * Math.PI) * (2.4 + o[1]) + 0.4; cp.x += o[0] * Math.sin(e * Math.PI); cp.z += o[2] * Math.sin(e * Math.PI);
+            _e.set(t * 6 * o[5] + o[4], t * 4 + o[4], 0); _q.setFromEuler(_e); const sc = Math.sin(f * Math.PI) * 1.1; _s.set(sc, sc, sc);
+            M2.compose(cp, _q, _s); coins.setMatrixAt(ci, M2);
           }
-          if (!p) { M2.makeScale(0, 0, 0); coins.setMatrixAt(i, M2); continue; }
-          _e.set(t * 5 * o[4] + o[3], t * 3 + o[3], 0); _q.setFromEuler(_e); _s.setScalar(1);
-          M2.compose(p, _q, _s); coins.setMatrixAt(i, M2);
+          const w = sm(seg(t, d.k - 0.4, d.k)) * (1 - sm(seg(t, d.k + FL + 0.2, d.k + FL + 0.8)));
+          if (w > lookW) { lookW = w; look = p; }
+        });
+        // Dauerstrom „pro Sekunde“ in den Plattform-Käfig
+        const s0 = B.code.start, s1 = B.rest.start;
+        for (let j = 0; j < NS; j++) {
+          const o = coinOff[D.length * NC + j], idx = D.length * NC + j, cyc = 1.1;
+          let st = s0 + o[6] * cyc; if (t > st) st += Math.floor((t - st) / cyc) * cyc;
+          const f = (t - st) / 0.9;
+          if (t < s0 || t > s1 || f < 0 || f >= 1) { M2.makeScale(0, 0, 0); coins.setMatrixAt(idx, M2); continue; }
+          _c.set(P.pos[0] + o[0] * 0.5, 0.25 + P.h + 3.2 * (1 - f * f), P.pos[2] + o[2] * 0.5);
+          _e.set(t * 5 * o[5] + o[4], t * 3, 0); _q.setFromEuler(_e); _s.setScalar(1);
+          M2.compose(_c, _q, _s); coins.setMatrixAt(idx, M2);
         }
         coins.instanceMatrix.needsUpdate = true;
 
-        // Stoppuhr: tickt jede Sekunde
-        const wa = eout(seg(t, B.sekunde.start, B.sekunde.start + 0.4)) * (1 - sm(seg(t, B.gta5.start - 0.2, B.gta5.start + 0.2)))
-                 + eout(seg(t, B.punch.start, B.punch.start + 0.4)) * (1 - sm(seg(t, B.cta.start, B.cta.start + 0.4)));
-        watch.visible = wa > 0.01; wMat.opacity = Math.min(1, wa); hand.material.opacity = Math.min(1, wa); perSec.material.opacity = Math.min(1, wa);
-        watch.scale.setScalar(0.5 + 0.5 * Math.min(1, wa));
-        const tick = Math.floor(t) + eout(seg(t % 1, 0, 0.12));
-        hand.rotation.z = -tick * (Math.PI * 2 / 12);
-        watch.position.set(t > B.punch.start - 0.5 ? 2.1 : 2.0, t > B.punch.start - 0.5 ? 5.7 : 4.1, 1.1);
+        // Schilder
+        priceLab.visible = false;
+        const codeA = sm(seg(t, B.code.key - 0.2, B.code.key + 0.2)) * (1 - sm(seg(t, B.rest.start, B.rest.start + 0.3)));
+        codeLab.visible = codeA > 0.01; codeLab.material.opacity = codeA; codeLab.scale.copy(codeLab.userData.base).multiplyScalar(0.6 + 0.4 * eout(codeA));
+        const wa = eout(seg(t, B.tempo.start, B.tempo.start + 0.4)) * (1 - sm(seg(t, B.rest.start, B.rest.start + 0.3)));
+        watch.visible = wa > 0.01; wMat.opacity = wa; hand.material.opacity = wa; perSec.material.opacity = wa;
+        watch.position.set(P.pos[0], 5.0, P.pos[2] + 0.2); watch.scale.setScalar(0.5 + 0.5 * wa);
+        hand.rotation.z = -(Math.floor(t) + eout(seg(t % 1, 0, 0.12))) * (Math.PI * 2 / 12);
         perSec.scale.copy(perSec.userData.base).multiplyScalar(1 + 0.12 * Math.max(0, 1 - (t % 1) * 4));
+        const rr = sm(seg(t, B.rest.key - 0.2, B.rest.key + 0.3)) * (1 - sm(seg(t, B.punch.start, B.punch.start + 0.3)));
+        ring.visible = rr > 0.01; ring.material.opacity = rr; const rs = 1 + 0.05 * Math.sin(t * 7); ring.scale.set(rs, rs, rs);
+        rockLab.material.opacity = sm(seg(t, B.rest.key - 0.2, B.rest.key + 0.2));
+        const ga = sm(seg(t, B.punch.key - 0.2, B.punch.key + 0.3)) * (1 - sm(seg(t, B.cta.start, B.cta.start + 0.4)));
+        goneMat.opacity = 0.28 * ga * (0.8 + 0.2 * Math.sin(t * 8)); gone.visible = ga > 0.01;
+        goneLab.visible = ga > 0.01; goneLab.material.opacity = ga; goneLab.scale.copy(goneLab.userData.base).multiplyScalar(0.6 + 0.4 * eout(ga));
 
-        // Menge der Vorbesteller läuft zum Turm
-        const ca = seg(t, B.grund.start - 0.2, B.grund.start + 0.6);
-        crowd.visible = crowdHead.visible = ca > 0 && t < B.punch.end + 0.5;
-        if (crowd.visible) crowdData.forEach((d, i) => {
-          const app = eout(seg(t, B.grund.start - 0.2 + d[2] * 0.6, B.grund.start + 0.3 + d[2] * 0.6));
-          const walk = Math.min(0.55, (t - B.grund.start) * 0.12);
-          const x = d[0] * (1 - walk * 0.6), z = d[1] * (1 - walk * 0.6), bob = Math.abs(Math.sin(t * d[3] + i)) * 0.04;
-          M2.compose(_c.set(x, bob - (1 - app) * 0.6, z), _q.identity(), _s.setScalar(app)); crowd.setMatrixAt(i, M2);
-          M2.compose(_c.set(x, bob + 0.36 * app - (1 - app) * 0.6, z), _q.identity(), _s.setScalar(app)); crowdHead.setMatrixAt(i, M2);
-        });
-        crowd.instanceMatrix.needsUpdate = true; crowdHead.instanceMatrix.needsUpdate = true;
-        const cl = sm(seg(t, B.grund.key - 0.1, B.grund.key + 0.3)) * (1 - sm(seg(t, B.punch.start, B.punch.start + 0.3)));
-        crowdLab.visible = cl > 0.01; crowdLab.material.opacity = cl;
-
-        // Figur: zockt, schaut hoch zum Turm, staunt
+        // Figur
         hero.userData.body.scale.set(1, 1 + Math.sin(t * 2.2) * 0.02, 1);
-        const lookUp = sm(seg(t, B.hook.key + 0.2, B.hook.key + 0.8)) * (1 - sm(seg(t, B.sekunde.start, B.sekunde.start + 0.5)))
-                     + sm(seg(t, B.live.key - 0.2, B.live.key + 0.3)) * (1 - sm(seg(t, B.live.end, B.live.end + 0.5)));
-        hero.userData.head.rotation.x = -0.55 * Math.min(1, lookUp);
-        hero.rotation.y = lerp(-0.25 + Math.sin(t * 0.8) * 0.06, Math.atan2(0 - hero.position.x, 0 - hero.position.z), Math.min(1, lookUp) * 0.8);
-        hero.userData.pad.rotation.z = Math.sin(t * 9) * 0.05; hero.userData.pad.position.y = 0.95 + Math.abs(Math.sin(t * 6)) * 0.02;
-        const jump = t > B.dreifach.key ? Math.abs(Math.sin((t - B.dreifach.key) * 7)) * 0.22 * (1 - seg(t, B.dreifach.key + 1.4, B.dreifach.key + 1.8)) : 0;
-        hero.position.y = jump;
+        let yaw = -0.3 + Math.sin(t * 0.9) * 0.05;
+        if (look && lookW > 0) yaw = lerp(yaw, Math.atan2(look.x - FX, look.z - FZ), lookW);
+        hero.rotation.y = yaw;
+        const slump = sm(seg(t, B.punch.key - 0.2, B.punch.key + 0.5)) * (1 - sm(seg(t, B.cta.start, B.cta.start + 0.6)));
+        hero.rotation.x = slump * 0.15; hero.userData.head.position.y = 1.72 - slump * 0.08;
+        hero.userData.pad.rotation.z = Math.sin(t * 9) * 0.05;
+        const qa = sm(seg(t, B.hook.key + 0.4, B.hook.key + 0.8)) * (1 - sm(seg(t, B.recap.start + 0.5, B.recap.start + 0.9)));
+        qMark.visible = qa > 0.01; qMark.material.opacity = qa; qMark.position.set(FX + 0.4, 2.55 + Math.sin(t * 3) * 0.06, FZ);
+        qMark.scale.copy(qMark.userData.base).multiplyScalar(0.5 + 0.5 * eout(qa));
 
-        // Teil 2
-        const bq = eout(seg(t, B.cta.start + 0.4, B.cta.start + 1.4));
-        bigQ.visible = bq > 0; bigQ.material.opacity = bq;
-        bigQ.position.y = 9.2 + bq * 0.6 + Math.sin(t * 2.5) * 0.12;
-        bigQ.scale.copy(bigQ.userData.base).multiplyScalar(0.4 + 0.6 * bq);
+        // CTA
+        const ca = eout(seg(t, B.cta.start + 0.1, B.cta.start + 0.8));
+        for (const [L, x, d0] of [[digLab, -1.5, 0], [shopLab, 1.5, 0.25]]) {
+          const a = eout(seg(t, B.cta.start + d0, B.cta.start + d0 + 0.5));
+          L.visible = a > 0.01; L.material.opacity = a; L.position.set(x, 5.2 + Math.sin(t * 2 + x) * 0.08, 0.6); L.scale.copy(L.userData.base).multiplyScalar(0.5 + 0.5 * a);
+        }
+        bigQ.visible = ca > 0.01; bigQ.material.opacity = ca; bigQ.position.set(0, 5.25 + Math.sin(t * 2.5) * 0.1, 0.6); bigQ.scale.copy(bigQ.userData.base).multiplyScalar(0.4 + 0.6 * ca);
 
         composer.render();
       }

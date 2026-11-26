@@ -1,0 +1,632 @@
+[
+{
+"s": "s1",
+"text": "Du",
+"color": "",
+"start": 0.0,
+"end": 0.153
+},
+{
+"s": "s1",
+"text": "kaufst",
+"color": "",
+"start": 0.153,
+"end": 0.733
+},
+{
+"s": "s1",
+"text": "GTA 6",
+"color": "gold",
+"start": 0.733,
+"end": 1.333
+},
+{
+"s": "s1",
+"text": "für",
+"color": "",
+"start": 1.333,
+"end": 1.68
+},
+{
+"s": "s1",
+"text": "80 €.",
+"color": "gold",
+"start": 1.68,
+"end": 2.85
+},
+{
+"s": "s1",
+"text": "Rate",
+"color": "",
+"start": 2.85,
+"end": 3.023
+},
+{
+"s": "s1",
+"text": "mal,",
+"color": "",
+"start": 3.023,
+"end": 3.379
+},
+{
+"s": "s1",
+"text": "wie",
+"color": "",
+"start": 3.379,
+"end": 3.532
+},
+{
+"s": "s1",
+"text": "viel",
+"color": "",
+"start": 3.532,
+"end": 3.787
+},
+{
+"s": "s1",
+"text": "davon",
+"color": "",
+"start": 3.787,
+"end": 4.143
+},
+{
+"s": "s1",
+"text": "bei",
+"color": "",
+"start": 4.143,
+"end": 4.316
+},
+{
+"s": "s1",
+"text": "den",
+"color": "",
+"start": 4.316,
+"end": 4.53
+},
+{
+"s": "s1",
+"text": "MACHERN",
+"color": "gold",
+"start": 4.53,
+"end": 4.927
+},
+{
+"s": "s1",
+"text": "ankommt.",
+"color": "",
+"start": 4.927,
+"end": 5.667
+},
+{
+"s": "s2",
+"text": "In",
+"color": "",
+"start": 5.667,
+"end": 5.744
+},
+{
+"s": "s2",
+"text": "Teil 1:",
+"color": "",
+"start": 5.744,
+"end": 6.381
+},
+{
+"s": "s2",
+"text": "44.000 $",
+"color": "gold",
+"start": 6.381,
+"end": 8.57
+},
+{
+"s": "s2",
+"text": "pro",
+"color": "",
+"start": 8.57,
+"end": 8.81
+},
+{
+"s": "s2",
+"text": "Sekunde.",
+"color": "",
+"start": 8.81,
+"end": 9.511
+},
+{
+"s": "s2",
+"text": "Aber",
+"color": "",
+"start": 9.511,
+"end": 9.723
+},
+{
+"s": "s2",
+"text": "wer",
+"color": "",
+"start": 9.723,
+"end": 10.011
+},
+{
+"s": "s2",
+"text": "kriegt",
+"color": "",
+"start": 10.011,
+"end": 10.367
+},
+{
+"s": "s2",
+"text": "das",
+"color": "",
+"start": 10.367,
+"end": 10.578
+},
+{
+"s": "s2",
+"text": "Geld?",
+"color": "red",
+"start": 10.578,
+"end": 11.426
+},
+{
+"s": "s3",
+"text": "Zuerst",
+"color": "",
+"start": 11.426,
+"end": 11.793
+},
+{
+"s": "s3",
+"text": "der",
+"color": "",
+"start": 11.793,
+"end": 12.016
+},
+{
+"s": "s3",
+"text": "Staat:",
+"color": "red",
+"start": 12.016,
+"end": 12.712
+},
+{
+"s": "s3",
+"text": "19 %",
+"color": "",
+"start": 12.712,
+"end": 13.214
+},
+{
+"s": "s3",
+"text": "Mehrwertsteuer.",
+"color": "",
+"start": 13.214,
+"end": 14.529
+},
+{
+"s": "s3",
+"text": "Fast",
+"color": "",
+"start": 14.529,
+"end": 14.79
+},
+{
+"s": "s3",
+"text": "−13 €.",
+"color": "red",
+"start": 14.79,
+"end": 16.175
+},
+{
+"s": "s4",
+"text": "Dann",
+"color": "",
+"start": 16.175,
+"end": 16.405
+},
+{
+"s": "s4",
+"text": "Sony",
+"color": "red",
+"start": 16.405,
+"end": 16.711
+},
+{
+"s": "s4",
+"text": "oder",
+"color": "",
+"start": 16.711,
+"end": 17.017
+},
+{
+"s": "s4",
+"text": "Microsoft:",
+"color": "red",
+"start": 17.017,
+"end": 18.011
+},
+{
+"s": "s4",
+"text": "30 %",
+"color": "",
+"start": 18.011,
+"end": 18.508
+},
+{
+"s": "s4",
+"text": "für",
+"color": "",
+"start": 18.508,
+"end": 18.728
+},
+{
+"s": "s4",
+"text": "ihren",
+"color": "",
+"start": 18.728,
+"end": 19.12
+},
+{
+"s": "s4",
+"text": "Store.",
+"color": "",
+"start": 19.12,
+"end": 19.847
+},
+{
+"s": "s4",
+"text": "Rund",
+"color": "",
+"start": 19.847,
+"end": 20.067
+},
+{
+"s": "s4",
+"text": "−20 €.",
+"color": "red",
+"start": 20.067,
+"end": 21.355
+},
+{
+"s": "s5",
+"text": "Und",
+"color": "",
+"start": 21.355,
+"end": 21.485
+},
+{
+"s": "s5",
+"text": "jetzt",
+"color": "",
+"start": 21.485,
+"end": 21.807
+},
+{
+"s": "s5",
+"text": "wird's",
+"color": "",
+"start": 21.807,
+"end": 22.067
+},
+{
+"s": "s5",
+"text": "krass:",
+"color": "red",
+"start": 22.067,
+"end": 22.787
+},
+{
+"s": "s6",
+"text": "Dafür",
+"color": "",
+"start": 22.787,
+"end": 23.013
+},
+{
+"s": "s6",
+"text": "haben",
+"color": "",
+"start": 23.013,
+"end": 23.315
+},
+{
+"s": "s6",
+"text": "sie",
+"color": "",
+"start": 23.315,
+"end": 23.494
+},
+{
+"s": "s6",
+"text": "keine",
+"color": "",
+"start": 23.494,
+"end": 23.795
+},
+{
+"s": "s6",
+"text": "EINZIGE",
+"color": "red",
+"start": 23.795,
+"end": 24.229
+},
+{
+"s": "s6",
+"text": "Zeile",
+"color": "",
+"start": 24.229,
+"end": 24.549
+},
+{
+"s": "s6",
+"text": "Code",
+"color": "",
+"start": 24.549,
+"end": 24.785
+},
+{
+"s": "s6",
+"text": "geschrieben.",
+"color": "",
+"start": 24.785,
+"end": 25.969
+},
+{
+"s": "s7",
+"text": "Am",
+"color": "",
+"start": 25.969,
+"end": 26.008
+},
+{
+"s": "s7",
+"text": "ersten",
+"color": "",
+"start": 26.008,
+"end": 26.371
+},
+{
+"s": "s7",
+"text": "Tag",
+"color": "",
+"start": 26.371,
+"end": 26.553
+},
+{
+"s": "s7",
+"text": "waren",
+"color": "",
+"start": 26.553,
+"end": 26.849
+},
+{
+"s": "s7",
+"text": "das",
+"color": "",
+"start": 26.849,
+"end": 27.031
+},
+{
+"s": "s7",
+"text": "rund",
+"color": "",
+"start": 27.031,
+"end": 27.27
+},
+{
+"s": "s7",
+"text": "13.000 $",
+"color": "gold",
+"start": 27.27,
+"end": 28.799
+},
+{
+"s": "s7",
+"text": "–",
+"color": "",
+"start": 28.799,
+"end": 28.876
+},
+{
+"s": "s7",
+"text": "pro",
+"color": "",
+"start": 28.876,
+"end": 29.172
+},
+{
+"s": "s7",
+"text": "Sekunde.",
+"color": "red",
+"start": 29.172,
+"end": 30.391
+},
+{
+"s": "s8",
+"text": "Bei",
+"color": "",
+"start": 30.391,
+"end": 30.53
+},
+{
+"s": "s8",
+"text": "Rockstar",
+"color": "",
+"start": 30.53,
+"end": 31.105
+},
+{
+"s": "s8",
+"text": "landen",
+"color": "",
+"start": 31.105,
+"end": 31.568
+},
+{
+"s": "s8",
+"text": "am",
+"color": "",
+"start": 31.568,
+"end": 31.661
+},
+{
+"s": "s8",
+"text": "Ende",
+"color": "",
+"start": 31.661,
+"end": 31.958
+},
+{
+"s": "s8",
+"text": "rund",
+"color": "",
+"start": 31.958,
+"end": 32.245
+},
+{
+"s": "s8",
+"text": "47 €.",
+"color": "gold",
+"start": 32.245,
+"end": 33.535
+},
+{
+"s": "s9",
+"text": "Über",
+"color": "",
+"start": 33.535,
+"end": 33.819
+},
+{
+"s": "s9",
+"text": "40 %",
+"color": "red",
+"start": 33.819,
+"end": 34.443
+},
+{
+"s": "s9",
+"text": "sind",
+"color": "",
+"start": 34.443,
+"end": 34.802
+},
+{
+"s": "s9",
+"text": "weg,",
+"color": "",
+"start": 34.802,
+"end": 35.303
+},
+{
+"s": "s9",
+"text": "bevor",
+"color": "",
+"start": 35.303,
+"end": 35.578
+},
+{
+"s": "s9",
+"text": "die",
+"color": "",
+"start": 35.578,
+"end": 35.757
+},
+{
+"s": "s9",
+"text": "Macher",
+"color": "",
+"start": 35.757,
+"end": 36.164
+},
+{
+"s": "s9",
+"text": "einen",
+"color": "",
+"start": 36.164,
+"end": 36.438
+},
+{
+"s": "s9",
+"text": "CENT",
+"color": "gold",
+"start": 36.438,
+"end": 36.665
+},
+{
+"s": "s9",
+"text": "sehen.",
+"color": "",
+"start": 36.665,
+"end": 37.507
+},
+{
+"s": "s10",
+"text": "Kaufst",
+"color": "",
+"start": 37.507,
+"end": 37.846
+},
+{
+"s": "s10",
+"text": "du",
+"color": "",
+"start": 37.846,
+"end": 38.006
+},
+{
+"s": "s10",
+"text": "digital",
+"color": "",
+"start": 38.006,
+"end": 38.43
+},
+{
+"s": "s10",
+"text": "oder",
+"color": "",
+"start": 38.43,
+"end": 38.712
+},
+{
+"s": "s10",
+"text": "im",
+"color": "",
+"start": 38.712,
+"end": 38.825
+},
+{
+"s": "s10",
+"text": "Laden?",
+"color": "gold",
+"start": 38.825,
+"end": 39.437
+},
+{
+"s": "s10",
+"text": "Schreib's",
+"color": "",
+"start": 39.437,
+"end": 39.786
+},
+{
+"s": "s10",
+"text": "in",
+"color": "",
+"start": 39.786,
+"end": 39.927
+},
+{
+"s": "s10",
+"text": "die",
+"color": "",
+"start": 39.927,
+"end": 40.021
+},
+{
+"s": "s10",
+"text": "Kommentare.",
+"color": "",
+"start": 40.021,
+"end": 41.871
+}
+]
