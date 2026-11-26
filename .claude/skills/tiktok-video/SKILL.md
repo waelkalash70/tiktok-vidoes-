@@ -311,6 +311,9 @@ plausibel) · 5. Nach Render: ffprobe (1080×1920, Länge), `volumedetect` (mean
   Teil 2 versprochen: „Wer das Geld wirklich bekommt“ (Aufteilung Plattform/Handel/Take-Two – vorher recherchieren).
 - Video 4 „GTA 6 – Wer bekommt das Geld? (Teil 2)“ (`videos/2026-11-26_gta6-teil2/`): **FINAL geliefert** (42,8 s).
   79,99 € → −12,77 € MwSt → −20,17 € Store → 47,05 € Rockstar (−41 %); Live-Zähler Sony/MS 13.160 $/s. CTA = Kommentar-Frage statt Teil 3.
+- Video 5 „Black Friday – 18.000 € pro Sekunde“ (`videos/2026-11-26_black-friday/`): **FINAL geliefert** (38,3 s), Posting
+  26./27.11. Neu: Live-Zähler bleibt als Zusatzzeile („seit du zuschaust“) im HUD, auch wenn die Hauptzahl wechselt.
+- Offen: User meldet, ob GTA 6 Teil 2 / Black Friday viral gehen → Ergebnis ins Logbuch.
 - GitHub: Push auf `waelkalash70/tiktok-vidoes-` funktioniert (seit 2026-11-24). Lösung bei 403 war:
   Claude GitHub App auf das Repo installieren UND auf claude.ai neu verknüpfen
   (`https://claude.ai/customize/connectors?auth_start=github&auth_start_force=1`).
