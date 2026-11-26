@@ -117,6 +117,21 @@ Versprechen. Kontrovers gegenüber Ideen/Systemen/Gewohnheiten – nicht gegenü
 **Zusätzlich:** Die Provokation am Ende als Kommentar-Frage zurückspiegeln („Hättest du die Million genommen?“).
 Re-Hook alle ~8 s bleibt Pflicht (1.7).
 
+### 1.7d Referenz 4: „Never Chase Money“ (583K Likes, vom User als Vorbild gezeigt 2026-11-26)
+Bild: `referenzen/ref4_never_chase_money_lineart.jpg`. Mindset-Clip, 18 s, Querformat, Schwarz-Weiß.
+- **Look:** minimalistische, weiß leuchtende Line-Art auf Schwarz (Strichfiguren, Münz-Icons, Blaupausen-Bemaßung,
+  Netzwerk-Linien, Speed-Lines), sanfter Glow, KEINE Farben, KEINE Wort-für-Wort-Untertitel – nur 1–2 Schlüsselwörter
+  pro Szene als ruhige Versal-Typo („HOW IS IT MADE?“, „THE GOAL“, „VALUE“).
+- **Tempo:** neue Bild-Metapher alle ~1,5–2,5 s, harte Wechsel, jede Szene = ein Gedanke:
+  Figur jagt Münze, die davonläuft → Münzen zerstreuen sich in ein Netzwerk → Münze als technische Blaupause
+  („Wie wird es gemacht?“) → Zähler „THE GOAL“ $0 → $1.000.000 mit Menschenreihe darunter → Eisberg:
+  oben „$1.000.000“, unter Wasser riesig „VALUE“ → Automat mit „$0“.
+- **Hook:** widerspricht dem Wunsch der Zielgruppe („Je mehr du dem Geld hinterherjagst, desto schwerer …“) =
+  kontroverser Hook (1.7b) + Mindset-Lehre statt Zahlen-Fakten.
+- **Übernehmen:** (1) Metaphern-Szenen im 2-s-Takt, (2) Line-Art-Icons im Glow-Stil (passt zu unseren Gitterlinien),
+  (3) Zähler-auf-Ziel mit Menschenreihe, (4) Eisberg-/Blaupausen-Metaphern, (5) Mindset-Hooks gegen den Strom.
+  Eigene Inhalte/Texte – nicht kopieren.
+
 ### 1.7c Zielgruppe junge Leute / „schnell reich“ (User-Wunsch 2026-11-26)
 - User will Geld-Themen mit **viel Dopamin** für junge Zuschauer, die schnell reich werden wollen.
 - Umsetzung: Dopamin im **Bild und Tempo** (explodierende Zahlen, rasende Zähler, Gold-Explosionen, Fake-out-Re-Hooks),
