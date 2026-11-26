@@ -101,6 +101,22 @@ Referenzen:
   Tag 27 = 671.088,64 €; Tag 28 = 1.342.177,28 €), Bitcoin-Pizza 2010 (10.000 BTC – Kurs am Produktionstag prüfen),
   Ratenkauf-Falle (reale DE-Zinssätze belegen), danach Inflation, Milliardäre ohne Gehalt, Brutto-Netto Teil 2.
 
+### 1.7b KONTROVERSER HOOK – Pflicht ab Video 6 (User-Wunsch 2026-11-26)
+Der erste Satz (< 3 s) muss provozieren, polarisieren oder den Zuschauer direkt herausfordern – damit er
+widersprechen, sich rechtfertigen oder sein Wissen prüfen will und dranbleibt.
+**Hook-Formeln (immer mindestens eine):**
+1. **Direkter Vorwurf an „dich“:** „Du wirst gerade abgezockt – und merkst es nicht.“
+2. **Unbequeme Wahrheit / Mehrheitsmeinung kippen:** „Die meisten glauben X. Sie liegen falsch.“
+3. **Provokante Frage mit Entscheidung:** „Würdest du X nehmen – oder Y? Die meisten wählen falsch.“
+4. **Unpopular Opinion:** „Unpopuläre Meinung: Y ist eine Falle.“
+5. **Persönliche Herausforderung:** „Wenn du X machst, verschenkst du jedes Jahr Y €.“
+6. **Schuldfrage / Feindbild (Sache, nicht Person):** „Das Finanzamt freut sich über diesen Fehler.“
+**Leitplanken (verbindlich):** Provokation muss durch belegte Fakten im Video aufgelöst werden (kein Fake-Clickbait).
+Keine Beleidigung von Gruppen, keine Falschaussagen über reale Personen/Firmen, keine Anlage-/Steuerberatung als
+Versprechen. Kontrovers gegenüber Ideen/Systemen/Gewohnheiten – nicht gegenüber Menschen.
+**Zusätzlich:** Die Provokation am Ende als Kommentar-Frage zurückspiegeln („Hättest du die Million genommen?“).
+Re-Hook alle ~8 s bleibt Pflicht (1.7).
+
 ### 1.8 Trend-Recherche 25.11.2026 (Fakten geprüft, vor Produktion Stand erneut prüfen)
 - **GTA 6** (Launch 19.11.2026): laut Take-Two **3,79 Mrd. $ Day-One-Retail-Umsatz** (Firmenschätzung), 32,5 Mio.
   Vorbestellungen. ≈ **43.900 $ pro Sekunde** (3,79 Mrd./86.400). GTA V 2013: ~800 Mio. $ am ersten Tag.
@@ -326,3 +342,4 @@ plausibel) · 5. Nach Render: ffprobe (1080×1920, Länge), `volumedetect` (mean
 | 2026-11-24 | Video 1 „Brutto vs. Netto“ (Entwurf) | „Perfekt, sehr gutes Video – mach weiter solche Arbeit für die nächsten Chats“ | Video 1 = Goldstandard; Erfolgsrezept in 1.6 festgeschrieben; neue Videos als Kopie dieses Projekts starten |
 | 2026-11-25 | Video 2 + Profilbild | „Vergiss nicht, dich zu verbessern, indem du aus all deinen Fehlern lernst“ | Fehler-Logbuch 3a + Abgabe-Checkliste 3b eingeführt; QA-Skript automatisiert die Zahlenprüfung; nach jeder Aufgabe neue Fehler eintragen |
 | 2026-11-26 | Video 3 „GTA 6“ (gepostet) | „Scheint das beste zu sein, geht etwas viral, Thema sehr interessant – gefällt mir richtig richtig gut“ | GTA-Video = neues Top-Vorbild; Viral-Rezept 1.9 (Trend-Jacking + Zahl pro Sekunde + Live-Zähler + Rekord-Vergleich) bei jeder Themenwahl zuerst anwenden |
+| 2026-11-26 | Video 5 „Black Friday“ | „Dieses Video war auch gut“ + Wunsch: am Anfang etwas Kontroverses sagen/fragen, damit Zuschauer länger dranbleiben | Neue Pflicht-Regel 1.7b: kontroverser Hook mit Formeln + Leitplanken; Provokation am Ende als Kommentar-Frage spiegeln |
