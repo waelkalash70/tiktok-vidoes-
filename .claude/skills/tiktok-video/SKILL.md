@@ -357,6 +357,10 @@ plausibel) · 5. Nach Render: ffprobe (1080×1920, Länge), `volumedetect` (mean
   79,99 € → −12,77 € MwSt → −20,17 € Store → 47,05 € Rockstar (−41 %); Live-Zähler Sony/MS 13.160 $/s. CTA = Kommentar-Frage statt Teil 3.
 - Video 5 „Black Friday – 18.000 € pro Sekunde“ (`videos/2026-11-26_black-friday/`): **FINAL geliefert** (38,3 s), Posting
   26./27.11. Neu: Live-Zähler bleibt als Zusatzzeile („seit du zuschaust“) im HUD, auch wenn die Hauptzahl wechselt.
+- Video 7 „Jag nicht dem Geld hinterher“ (`videos/2026-11-27_jag-nicht-dem-geld/`): **FINAL geliefert** (39,1 s).
+  Erstes Video im Referenz-4-Stil: harte Schnitte zwischen 3 Stationen (Verfolgung / Instagram / Eisberg),
+  Schlüsselwort-HUD statt Zahlenzähler, Bild-Metaphern statt 3D-Texten. A/B-Test Mindset vs. Zahlen-Fakten.
+- Video 6 „Cent-Wette“: Skript + Sprechertext fertig, wartet auf ElevenLabs-Datei.
 - Offen: User meldet, ob GTA 6 Teil 2 / Black Friday viral gehen → Ergebnis ins Logbuch.
 - GitHub: Push auf `waelkalash70/tiktok-vidoes-` funktioniert (seit 2026-11-24). Lösung bei 403 war:
   Claude GitHub App auf das Repo installieren UND auf claude.ai neu verknüpfen
