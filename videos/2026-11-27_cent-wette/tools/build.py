@@ -24,17 +24,20 @@ def add(src, start, dur, vol, media_start=None):
     ms = f' data-media-start="{media_start}"' if media_start is not None else ""
     sfx.append(f'      <audio id="sfx{len(sfx)}" src="assets/sfx/{src}" data-start="{round(max(0,start),3)}" data-duration="{dur}"{ms} data-volume="{vol}" data-track-index="4"></audio>')
 K = lambda b: beats[b]["key"]
-add("whoosh-cinematic.mp3", K("hook") - 0.1, 2.0, 0.45)
-add("impact-bass-2.mp3", K("hook") + 1.5, 2.0, 0.45)
-for i in range(3): add("click-soft.mp3", K("sekunde") + 0.2 + i * 1.0, 0.36, 0.55)
-add("sparkle.mp3", K("live"), 1.8, 0.45)
-add("riser.mp3", beats["twist"]["start"] - 1.4, 2.0, 0.3, media_start=1.5)
-add("glitch-1.mp3", K("acht"), 1.2, 0.45)
-add("pop.mp3", K("billiger"), 0.7, 0.5)
-add("pop.mp3", K("uvp") + 0.4, 0.7, 0.5)
-add("impact-bass-1.mp3", K("punch"), 2.0, 0.6)
-add("chime.mp3", K("tipp"), 2.5, 0.35)
-add("whoosh-cinematic.mp3", beats["cta"]["start"], 3.0, 0.4)
+add("impact-bass-2.mp3", K("hook"), 2.0, 0.4)
+add("pop.mp3", K("wette"), 0.7, 0.5)
+add("whoosh-short.mp3", beats["mehrheit"]["start"], 0.57, 0.5)
+add("glitch-1.mp3", K("mehrheit"), 1.2, 0.35)
+add("click-soft.mp3", K("tag10"), 0.36, 0.55)
+add("click-soft.mp3", K("tag20"), 0.36, 0.55)
+add("riser.mp3", beats["twist"]["start"] - 1.2, 2.0, 0.3, media_start=1.5)
+add("whoosh-short.mp3", K("tag27"), 0.57, 0.5)
+add("impact-bass-1.mp3", K("tag28"), 2.0, 0.55)
+add("whoosh-cinematic.mp3", K("tag30") - 0.1, 2.5, 0.5)
+add("sparkle.mp3", K("tag30") + 0.8, 1.8, 0.5)
+add("pop.mp3", K("punch"), 0.7, 0.5)
+add("chime.mp3", K("lehre"), 2.5, 0.35)
+add("whoosh-cinematic.mp3", beats["cta"]["start"], 3.0, 0.35)
 # Überlappende SFX auf eigene Spur verschieben
 ends = {}
 out = []
@@ -51,7 +54,7 @@ idx = idx.replace("__D__", str(T)).replace("__BEATS__", B).replace("__SFX__", "\
 open(f"{root}/index.html", "w").write(idx)
 
 hud = open(f"{root}/tools/hud.tpl.html").read()
-hud = hud.replace("__D__", str(T)).replace("__BEATS__", B).replace("__SRCDUR__", str(round(beats["sekunde"]["end"], 2))).replace("__SRC2START__", str(beats["acht"]["start"])).replace("__SRC2DUR__", str(round(beats["uvp"]["end"] - beats["acht"]["start"], 2)))
+hud = hud.replace("__D__", str(T)).replace("__BEATS__", B).replace("__SRCDUR__", str(round(beats["tag30"]["end"] - 0.2, 2))).replace("__SRC2START__", str(beats["tag30"]["end"])).replace("__SRC2DUR__", str(0.1))
 open(f"{root}/compositions/hud.html", "w").write(hud)
 
 # Untertitel: ein Wort zur Zeit

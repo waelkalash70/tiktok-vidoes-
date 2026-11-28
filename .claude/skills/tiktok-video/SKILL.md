@@ -315,6 +315,7 @@ die Gegenmaßnahme **automatisieren** (Prüfskript, Vorlage, Checkliste) statt s
 | F29 | InstancedMesh-Münzen unsichtbar an neuer Position | Frustum-Culling nutzt alte Bounding-Sphere | Bei InstancedMesh, die über Stationen wandern: `frustumCulled = false`. |
 | F30 | Schilder drehten sich mit Objekt aus dem Bild (Eisberg) | Labels Kind der rotierenden Gruppe | Nur Geometrie rotieren, Schilder in nicht-rotierender Gruppe. |
 | F31 | Text dreifach (3D-Schild + Untertitel + HUD), erneut | F20 bei neuem Szenen-Stil vergessen | Bei Schlüsselwort-HUD (Referenz-4-Stil) KEINE Text-Schilder in 3D – nur Bild-Metaphern (Münzen, Glühbirne, Herzen). |
+| F32 | Zähler zeigte 5,14 € / 9.454 € statt der gesprochenen 5,12 € / 5.242 € (Cent-Wette) | Zähler interpolierte durchgehend zwischen den Schlüsselzeiten | Zähler-Stützpunkte mit HALTEPHASEN: am `key` den genannten Wert erreichen und bis zum Start des nächsten Satzes HALTEN. Snapshot genau 1 s nach jedem gesprochenen Betrag prüfen. |
 
 ### 3b. Checkliste vor jeder Abgabe (aus 3a abgeleitet)
 1. `qa_skript.py` ohne FEHLER · 2. Zahlen nachgerechnet/Quelle geprüft · 3. `check --json`: keine Fehler, kein

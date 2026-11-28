@@ -17,13 +17,13 @@
   </style>
   <div id="root" data-composition-id="hud" data-width="1080" data-height="1920">
     <div id="hud-bar" class="clip" data-start="0" data-duration="__D__" data-track-index="0">
-      <div id="hud-label">BLACK-FRIDAY-UMSATZ</div>
-      <span id="hud-num">10.000.000 €</span>
+      <div id="hud-label">1 MILLION ODER 1 CENT?</div>
+      <span id="hud-num">1.000.000 €</span>
       <span id="hud-delta">&nbsp;</span>
       <span id="hud-live">&nbsp;</span>
     </div>
-    <div id="hud-src" class="hud-src clip" data-start="0.2" data-duration="__SRCDUR__" data-track-index="1">HDE-Prognose · Umfrage IFH Köln</div>
-    <div id="hud-src2" class="hud-src clip" data-start="__SRC2START__" data-duration="__SRC2DUR__" data-track-index="1">idealo-Analyse Black Friday 2025</div>
+    <div id="hud-src" class="hud-src clip" data-start="0.2" data-duration="__SRCDUR__" data-track-index="1">reine Mathematik: 0,01 € × 2^(Tag−1)</div>
+    <div id="hud-src2" class="hud-src clip" data-start="__SRC2START__" data-duration="__SRC2DUR__" data-track-index="1"></div>
   </div>
   <script>
     (function () {
@@ -39,20 +39,33 @@
       const mix = (a, b, x) => { const p = (c) => c.match(/\d+/g).map(Number); const A = p(a), Bc = p(b); return `rgb(${A.map((v, i) => Math.round(v + (Bc[i] - v) * x)).join(",")})`; };
       const BF_RATE = 6.2e9 / (4 * 86400);
       const eurI = (v) => Math.round(v).toLocaleString("de-DE") + " €";
+      const eio2 = (x) => (x < 0.5 ? 4 * x * x * x : 1 - Math.pow(-2 * x + 2, 3) / 2);
+      const CW_val = (d) => 0.01 * Math.pow(2, d - 1);
+      function CW_day(t) {
+        const segs = [[B.tag10.start, 1], [B.tag10.key, 10], [B.tag20.start, 10], [B.tag20.key, 20], [B.tag27.start, 20], [B.tag27.key, 27], [B.tag28.start, 27], [B.tag28.key, 28], [B.tag30.start, 28], [B.tag30.key + 0.9, 30]];
+        if (t <= segs[0][0]) return 1;
+        for (let i = 0; i < segs.length - 1; i++) if (t < segs[i + 1][0]) return segs[i][1] + (segs[i + 1][1] - segs[i][1]) * eio2(seg(t, segs[i][0], segs[i + 1][0]));
+        return 30;
+      }
+      const CW_eur = (v) => v.toLocaleString("de-DE", { minimumFractionDigits: 2, maximumFractionDigits: 2 }) + " €";
       function state(t) {
-        let label = "BLACK-FRIDAY-UMSATZ", text, color = GOLD, pulse = 0, delta = "", dA = 0, dColor = ORANGE, live = "";
-        text = eurI(t < B.hook.key ? 2e8 * t + 1e7 : 3e8 + (6.2e9 - 3e8) * eout(seg(t, B.hook.key, B.hook.key + 1.6)));
-        pulse = Math.sin(seg(t, B.hook.key + 1.5, B.hook.key + 1.9) * Math.PI);
-        if (t >= B.hook.key + 1.6) { delta = "HDE-Prognose 2026"; dA = 1; }
-        if (t >= B.sekunde.start) { label = "PRO SEKUNDE"; text = t < B.sekunde.key ? "? €" : eurI(17940 * eout(seg(t, B.sekunde.key - 0.05, B.sekunde.key + 0.6))); delta = "6,2 Mrd. € ÷ 4 Tage"; dA = seg(t, B.sekunde.key + 0.3, B.sekunde.key + 0.5); pulse = Math.sin(seg(t, B.sekunde.key + 0.5, B.sekunde.key + 0.9) * Math.PI); }
-        if (t >= B.live.start) { label = "SEIT DU ZUSCHAUST"; text = eurI(BF_RATE * t); delta = "ausgegeben"; dA = 1; pulse = Math.sin(seg(t, B.live.key, B.live.key + 0.4) * Math.PI) * 1.2; }
-        if (t >= B.twist.start) live = "seit du zuschaust: " + eurI(BF_RATE * t);
-        if (t >= B.acht.start) { label = "ECHTE ERSPARNIS (Ø)"; text = t < B.acht.key ? "? %" : "−" + Math.round(8 * eout(seg(t, B.acht.key, B.acht.key + 0.5))) + " %"; color = RED; delta = "vs. Oktober · idealo 2025"; dA = seg(t, B.acht.key, B.acht.key + 0.2); dColor = ORANGE; pulse = Math.sin(seg(t, B.acht.key + 0.4, B.acht.key + 0.8) * Math.PI); }
-        if (t >= B.billiger.start) { label = "JEDES 2. PRODUKT"; text = t < B.billiger.key ? "? %" : "52 %"; color = GOLD; delta = "an anderem Novembertag billiger"; dA = seg(t, B.billiger.key, B.billiger.key + 0.2); pulse = Math.sin(seg(t, B.billiger.key, B.billiger.key + 0.4) * Math.PI); }
-        if (t >= B.uvp.start) { label = "STREICHPREIS"; text = t < B.uvp.key ? "? €" : "= UVP"; color = GOLD; delta = "verlangt fast niemand"; dA = seg(t, B.uvp.key + 0.3, B.uvp.key + 0.5); dColor = RED; pulse = Math.sin(seg(t, B.uvp.key, B.uvp.key + 0.4) * Math.PI); }
-        if (t >= B.punch.start) { label = "BEI 100 € EINKAUF"; text = t < B.punch.key ? "? €" : Math.round(8 * eout(seg(t, B.punch.key, B.punch.key + 0.5))) + " €"; color = RED; delta = "gespart (Ø)"; dA = seg(t, B.punch.key + 0.3, B.punch.key + 0.5); dColor = ORANGE; pulse = Math.sin(seg(t, B.punch.key + 0.4, B.punch.key + 0.8) * Math.PI); }
-        if (t >= B.tipp.start) { label = "MEIN TIPP"; text = "VERGLEICHEN"; color = GOLD; delta = "Preis vorher checken"; dA = 1; dColor = ORANGE; pulse = Math.sin(seg(t, B.tipp.key, B.tipp.key + 0.4) * Math.PI); }
-        if (t >= B.cta.start) { label = "UND DU?"; text = "KAUFST DU WAS?"; color = GOLD; delta = "Schreib's in die Kommentare"; dA = 1; pulse = 0; }
+        let label = "1 MILLION ODER 1 CENT?", text = "1.000.000 €", color = GOLD, pulse = 0, delta = "", dA = 0, dColor = ORANGE, live = "";
+        const pz = (k) => Math.sin(seg(t, k, k + 0.4) * Math.PI);
+        pulse = pz(B.hook.key);
+        if (t >= B.wette.start) { label = "ODER 1 CENT – JEDEN TAG"; text = "×2"; pulse = pz(B.wette.key); }
+        if (t >= B.mehrheit.start) { label = "FAST JEDER NIMMT"; text = "DIE MILLION"; color = RED; delta = t >= B.mehrheit.key ? "Fehler." : ""; dA = 1; dColor = RED; pulse = pz(B.mehrheit.key); }
+        if (t >= B.tag10.start) {
+          const d = CW_day(t), v = CW_val(d);
+          label = "TAG " + Math.floor(d + 1e-6); text = CW_eur(v); color = GOLD; delta = ""; dA = 0;
+          if (t >= B.tag10.key && t < B.tag20.start) { delta = "lachhaft"; dA = 1; dColor = RED; }
+          if (t >= B.tag20.key && t < B.twist.start) { delta = "die Million sieht gut aus…"; dA = 1; dColor = ORANGE; }
+          if (t >= B.twist.start && t < B.tag27.start) { label = "ABER JETZT"; text = "WIRD'S VERRÜCKT"; color = RED; pulse = pz(B.twist.start); }
+          if (t >= B.tag28.key) { delta = "MEHR ALS DIE MILLION!"; dA = 1; dColor = ORANGE; color = GOLD; }
+          pulse = Math.max(pulse, pz(B.tag27.key), pz(B.tag28.key), pz(B.tag30.key + 0.8) * 1.4);
+        }
+        if (t >= B.punch.start) { label = "IN DEN LETZTEN 3 TAGEN"; text = t < B.punch.key ? "? %" : (87.5 * eout(seg(t, B.punch.key, B.punch.key + 0.6))).toLocaleString("de-DE", { maximumFractionDigits: 1 }) + " %"; color = GOLD; delta = "vom ganzen Geld"; dA = seg(t, B.punch.key + 0.4, B.punch.key + 0.6); dColor = ORANGE; pulse = pz(B.punch.key + 0.5); }
+        if (t >= B.lehre.start) { label = "REICH WIRD, WER"; text = t < B.lehre.key ? "SCHNELL IST?" : "DURCHHÄLT"; color = t < B.lehre.key ? RED : GOLD; delta = ""; pulse = pz(B.lehre.key); }
+        if (t >= B.cta.start) { label = "EHRLICH:"; text = "MILLION ODER CENT?"; color = GOLD; delta = "Schreib's in die Kommentare"; dA = 1; dColor = ORANGE; pulse = 0; }
         return { label, text, color, pulse, delta, dA, dColor, live };
       }
       const tl = gsap.timeline({ paused: true });

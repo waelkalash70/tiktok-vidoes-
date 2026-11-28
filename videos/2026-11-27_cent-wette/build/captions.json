@@ -1,0 +1,541 @@
+[
+{
+"s": "s1",
+"text": "Du",
+"color": "",
+"start": 0.0,
+"end": 0.086
+},
+{
+"s": "s1",
+"text": "willst",
+"color": "",
+"start": 0.086,
+"end": 0.371
+},
+{
+"s": "s1",
+"text": "schnell",
+"color": "",
+"start": 0.371,
+"end": 0.742
+},
+{
+"s": "s1",
+"text": "reich",
+"color": "",
+"start": 0.742,
+"end": 1.021
+},
+{
+"s": "s1",
+"text": "werden?",
+"color": "gold",
+"start": 1.021,
+"end": 1.568
+},
+{
+"s": "s1",
+"text": "Dann",
+"color": "",
+"start": 1.568,
+"end": 1.791
+},
+{
+"s": "s1",
+"text": "nimm",
+"color": "",
+"start": 1.791,
+"end": 2.032
+},
+{
+"s": "s1",
+"text": "bloß",
+"color": "",
+"start": 2.032,
+"end": 2.255
+},
+{
+"s": "s1",
+"text": "NICHT",
+"color": "red",
+"start": 2.255,
+"end": 2.543
+},
+{
+"s": "s1",
+"text": "die",
+"color": "",
+"start": 2.543,
+"end": 2.719
+},
+{
+"s": "s1",
+"text": "Million.",
+"color": "gold",
+"start": 2.719,
+"end": 3.528
+},
+{
+"s": "s2",
+"text": "1 Mio. €",
+"color": "gold",
+"start": 3.528,
+"end": 4.316
+},
+{
+"s": "s2",
+"text": "sofort",
+"color": "",
+"start": 4.316,
+"end": 4.718
+},
+{
+"s": "s2",
+"text": "–",
+"color": "",
+"start": 4.718,
+"end": 4.876
+},
+{
+"s": "s2",
+"text": "oder",
+"color": "",
+"start": 4.876,
+"end": 5.103
+},
+{
+"s": "s2",
+"text": "1 Cent,",
+"color": "gold",
+"start": 5.103,
+"end": 5.698
+},
+{
+"s": "s2",
+"text": "der",
+"color": "",
+"start": 5.698,
+"end": 5.9
+},
+{
+"s": "s2",
+"text": "sich",
+"color": "",
+"start": 5.9,
+"end": 6.355
+},
+{
+"s": "s2",
+"text": "30 Tage",
+"color": "",
+"start": 6.355,
+"end": 6.819
+},
+{
+"s": "s2",
+"text": "lang",
+"color": "",
+"start": 6.819,
+"end": 7.081
+},
+{
+"s": "s2",
+"text": "jeden",
+"color": "",
+"start": 7.081,
+"end": 7.414
+},
+{
+"s": "s2",
+"text": "Tag",
+"color": "",
+"start": 7.414,
+"end": 7.606
+},
+{
+"s": "s2",
+"text": "verdoppelt.",
+"color": "",
+"start": 7.606,
+"end": 8.616
+},
+{
+"s": "s3",
+"text": "Fast",
+"color": "",
+"start": 8.616,
+"end": 8.913
+},
+{
+"s": "s3",
+"text": "jeder",
+"color": "",
+"start": 8.913,
+"end": 9.268
+},
+{
+"s": "s3",
+"text": "nimmt",
+"color": "",
+"start": 9.268,
+"end": 9.632
+},
+{
+"s": "s3",
+"text": "die",
+"color": "",
+"start": 9.632,
+"end": 9.852
+},
+{
+"s": "s3",
+"text": "Million.",
+"color": "",
+"start": 9.852,
+"end": 10.715
+},
+{
+"s": "s3",
+"text": "Fehler.",
+"color": "red",
+"start": 10.715,
+"end": 12.234
+},
+{
+"s": "s4",
+"text": "Tag 10:",
+"color": "",
+"start": 12.626,
+"end": 13.819
+},
+{
+"s": "s4",
+"text": "5,12 €.",
+"color": "gold",
+"start": 13.819,
+"end": 14.886
+},
+{
+"s": "s4",
+"text": "Lachhaft.",
+"color": "red",
+"start": 14.886,
+"end": 15.618
+},
+{
+"s": "s5",
+"text": "Tag 20:",
+"color": "",
+"start": 16.123,
+"end": 17.188
+},
+{
+"s": "s5",
+"text": "5.242 €.",
+"color": "gold",
+"start": 17.188,
+"end": 20.703
+},
+{
+"s": "s5",
+"text": "Die",
+"color": "",
+"start": 20.703,
+"end": 21.071
+},
+{
+"s": "s5",
+"text": "Million",
+"color": "",
+"start": 21.071,
+"end": 21.508
+},
+{
+"s": "s5",
+"text": "sieht",
+"color": "",
+"start": 21.508,
+"end": 21.954
+},
+{
+"s": "s5",
+"text": "gut",
+"color": "",
+"start": 21.954,
+"end": 22.158
+},
+{
+"s": "s5",
+"text": "aus,",
+"color": "",
+"start": 22.158,
+"end": 22.556
+},
+{
+"s": "s5",
+"text": "oder?",
+"color": "red",
+"start": 22.556,
+"end": 23.725
+},
+{
+"s": "s6",
+"text": "Aber",
+"color": "",
+"start": 23.725,
+"end": 23.793
+},
+{
+"s": "s6",
+"text": "jetzt",
+"color": "",
+"start": 23.793,
+"end": 23.924
+},
+{
+"s": "s6",
+"text": "wird's",
+"color": "",
+"start": 23.924,
+"end": 24.259
+},
+{
+"s": "s6",
+"text": "VERRÜCKT:",
+"color": "red",
+"start": 24.259,
+"end": 25.072
+},
+{
+"s": "s7",
+"text": "Tag 27:",
+"color": "",
+"start": 25.072,
+"end": 26.2
+},
+{
+"s": "s7",
+"text": "671.000 €.",
+"color": "gold",
+"start": 26.2,
+"end": 29.193
+},
+{
+"s": "s8",
+"text": "Tag 28:",
+"color": "",
+"start": 29.193,
+"end": 30.253
+},
+{
+"s": "s8",
+"text": "1,3 Mio.",
+"color": "gold",
+"start": 30.253,
+"end": 32.291
+},
+{
+"s": "s9",
+"text": "Und",
+"color": "",
+"start": 32.291,
+"end": 32.525
+},
+{
+"s": "s9",
+"text": "an",
+"color": "",
+"start": 32.525,
+"end": 32.597
+},
+{
+"s": "s9",
+"text": "Tag 30:",
+"color": "",
+"start": 32.597,
+"end": 33.426
+},
+{
+"s": "s9",
+"text": "über",
+"color": "",
+"start": 33.426,
+"end": 33.93
+},
+{
+"s": "s9",
+"text": "5,3 Mio. €!",
+"color": "gold",
+"start": 33.93,
+"end": 36.557
+},
+{
+"s": "s10",
+"text": "Fast",
+"color": "",
+"start": 36.557,
+"end": 36.84
+},
+{
+"s": "s10",
+"text": "90 %",
+"color": "red",
+"start": 36.84,
+"end": 37.616
+},
+{
+"s": "s10",
+"text": "davon",
+"color": "",
+"start": 37.616,
+"end": 37.929
+},
+{
+"s": "s10",
+"text": "kommen",
+"color": "",
+"start": 37.929,
+"end": 38.307
+},
+{
+"s": "s10",
+"text": "in",
+"color": "",
+"start": 38.307,
+"end": 38.43
+},
+{
+"s": "s10",
+"text": "den",
+"color": "",
+"start": 38.43,
+"end": 38.676
+},
+{
+"s": "s10",
+"text": "LETZTEN",
+"color": "gold",
+"start": 38.676,
+"end": 39.093
+},
+{
+"s": "s10",
+"text": "drei",
+"color": "",
+"start": 39.093,
+"end": 39.329
+},
+{
+"s": "s10",
+"text": "Tagen.",
+"color": "",
+"start": 39.329,
+"end": 39.996
+},
+{
+"s": "s11",
+"text": "Reich",
+"color": "",
+"start": 39.996,
+"end": 40.421
+},
+{
+"s": "s11",
+"text": "wird",
+"color": "",
+"start": 40.421,
+"end": 40.691
+},
+{
+"s": "s11",
+"text": "nicht,",
+"color": "",
+"start": 40.691,
+"end": 41.0
+},
+{
+"s": "s11",
+"text": "wer",
+"color": "",
+"start": 41.0,
+"end": 41.155
+},
+{
+"s": "s11",
+"text": "schnell",
+"color": "",
+"start": 41.155,
+"end": 41.618
+},
+{
+"s": "s11",
+"text": "ist.",
+"color": "red",
+"start": 41.618,
+"end": 41.936
+},
+{
+"s": "s11",
+"text": "Sondern",
+"color": "",
+"start": 41.936,
+"end": 42.39
+},
+{
+"s": "s11",
+"text": "wer",
+"color": "",
+"start": 42.39,
+"end": 42.631
+},
+{
+"s": "s11",
+"text": "durchhält.",
+"color": "gold",
+"start": 42.631,
+"end": 44.013
+},
+{
+"s": "s12",
+"text": "Ehrlich:",
+"color": "",
+"start": 44.463,
+"end": 44.866
+},
+{
+"s": "s12",
+"text": "Hättest",
+"color": "",
+"start": 44.866,
+"end": 45.183
+},
+{
+"s": "s12",
+"text": "du",
+"color": "",
+"start": 45.183,
+"end": 45.27
+},
+{
+"s": "s12",
+"text": "die",
+"color": "",
+"start": 45.27,
+"end": 45.407
+},
+{
+"s": "s12",
+"text": "Million",
+"color": "",
+"start": 45.407,
+"end": 45.73
+},
+{
+"s": "s12",
+"text": "genommen?",
+"color": "gold",
+"start": 45.73,
+"end": 47.464
+}
+]

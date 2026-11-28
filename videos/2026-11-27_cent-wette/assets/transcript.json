@@ -1,0 +1,548 @@
+[
+  {
+    "text": "Uwillst",
+    "start": 0.04,
+    "end": 0.41,
+    "id": "w0"
+  },
+  {
+    "text": "schnell",
+    "start": 0.44,
+    "end": 0.84,
+    "id": "w1"
+  },
+  {
+    "text": "reich",
+    "start": 0.84,
+    "end": 1.14,
+    "id": "w2"
+  },
+  {
+    "text": "werden?",
+    "start": 1.14,
+    "end": 1.72,
+    "id": "w3"
+  },
+  {
+    "text": "Dann",
+    "start": 1.73,
+    "end": 1.97,
+    "id": "w4"
+  },
+  {
+    "text": "nimm",
+    "start": 1.97,
+    "end": 2.19,
+    "id": "w5"
+  },
+  {
+    "text": "bloß",
+    "start": 2.23,
+    "end": 2.47,
+    "id": "w6"
+  },
+  {
+    "text": "nicht",
+    "start": 2.47,
+    "end": 2.63,
+    "id": "w7"
+  },
+  {
+    "text": "die",
+    "start": 2.78,
+    "end": 2.97,
+    "id": "w8"
+  },
+  {
+    "text": "Million.",
+    "start": 2.97,
+    "end": 3.6,
+    "id": "w9"
+  },
+  {
+    "text": "Eine",
+    "start": 3.6,
+    "end": 3.81,
+    "id": "w10"
+  },
+  {
+    "text": "Million",
+    "start": 3.81,
+    "end": 4.19,
+    "id": "w11"
+  },
+  {
+    "text": "Euro",
+    "start": 4.26,
+    "end": 4.5,
+    "id": "w12"
+  },
+  {
+    "text": "sofort",
+    "start": 4.5,
+    "end": 4.96,
+    "id": "w13"
+  },
+  {
+    "text": "oder",
+    "start": 5.14,
+    "end": 5.4,
+    "id": "w14"
+  },
+  {
+    "text": "ein",
+    "start": 5.4,
+    "end": 5.61,
+    "id": "w15"
+  },
+  {
+    "text": "Cent,",
+    "start": 5.68,
+    "end": 6.08,
+    "id": "w16"
+  },
+  {
+    "text": "der",
+    "start": 6.08,
+    "end": 6.31,
+    "id": "w17"
+  },
+  {
+    "text": "sich",
+    "start": 6.31,
+    "end": 6.59,
+    "id": "w18"
+  },
+  {
+    "text": "30",
+    "start": 6.83,
+    "end": 7.06,
+    "id": "w19"
+  },
+  {
+    "text": "Tage",
+    "start": 7.06,
+    "end": 7.36,
+    "id": "w20"
+  },
+  {
+    "text": "lang",
+    "start": 7.36,
+    "end": 7.66,
+    "id": "w21"
+  },
+  {
+    "text": "jeden",
+    "start": 7.66,
+    "end": 8.04,
+    "id": "w22"
+  },
+  {
+    "text": "Tag",
+    "start": 8.04,
+    "end": 8.26,
+    "id": "w23"
+  },
+  {
+    "text": "verdoppelt.",
+    "start": 8.26,
+    "end": 9.23,
+    "id": "w24"
+  },
+  {
+    "text": "Fast",
+    "start": 9.23,
+    "end": 9.51,
+    "id": "w25"
+  },
+  {
+    "text": "jeder",
+    "start": 9.54,
+    "end": 9.91,
+    "id": "w26"
+  },
+  {
+    "text": "nimmt",
+    "start": 9.91,
+    "end": 10.29,
+    "id": "w27"
+  },
+  {
+    "text": "die",
+    "start": 10.29,
+    "end": 10.51,
+    "id": "w28"
+  },
+  {
+    "text": "Million.",
+    "start": 10.52,
+    "end": 11.37,
+    "id": "w29"
+  },
+  {
+    "text": "Fehler",
+    "start": 11.42,
+    "end": 12.38,
+    "id": "w30"
+  },
+  {
+    "text": "Tag",
+    "start": 12.42,
+    "end": 12.78,
+    "id": "w31"
+  },
+  {
+    "text": "10–",
+    "start": 12.78,
+    "end": 13.8,
+    "id": "w32"
+  },
+  {
+    "text": "5,12",
+    "start": 13.8,
+    "end": 16.2,
+    "id": "w33"
+  },
+  {
+    "text": "Euro",
+    "start": 16.2,
+    "end": 16.34,
+    "id": "w34"
+  },
+  {
+    "text": "Lachhaft",
+    "start": 16.34,
+    "end": 16.57,
+    "id": "w35"
+  },
+  {
+    "text": "Tag",
+    "start": 16.66,
+    "end": 17.12,
+    "id": "w36"
+  },
+  {
+    "text": "20–",
+    "start": 17.2,
+    "end": 18.44,
+    "id": "w37"
+  },
+  {
+    "text": "5242",
+    "start": 18.44,
+    "end": 20.62,
+    "id": "w38"
+  },
+  {
+    "text": "Euro",
+    "start": 20.62,
+    "end": 21.38,
+    "id": "w39"
+  },
+  {
+    "text": "Die",
+    "start": 21.38,
+    "end": 21.59,
+    "id": "w40"
+  },
+  {
+    "text": "Million",
+    "start": 21.76,
+    "end": 22.21,
+    "id": "w41"
+  },
+  {
+    "text": "sieht",
+    "start": 22.21,
+    "end": 22.54,
+    "id": "w42"
+  },
+  {
+    "text": "gut",
+    "start": 22.67,
+    "end": 22.88,
+    "id": "w43"
+  },
+  {
+    "text": "aus,",
+    "start": 22.88,
+    "end": 23.27,
+    "id": "w44"
+  },
+  {
+    "text": "oder?",
+    "start": 23.29,
+    "end": 23.9,
+    "id": "w45"
+  },
+  {
+    "text": "Aber",
+    "start": 23.9,
+    "end": 24.01,
+    "id": "w46"
+  },
+  {
+    "text": "jetzt",
+    "start": 24.01,
+    "end": 24.15,
+    "id": "w47"
+  },
+  {
+    "text": "wird's",
+    "start": 24.22,
+    "end": 24.69,
+    "id": "w48"
+  },
+  {
+    "text": "verrückt.",
+    "start": 24.76,
+    "end": 25.67,
+    "id": "w49"
+  },
+  {
+    "text": "Tag",
+    "start": 25.91,
+    "end": 26.07,
+    "id": "w50"
+  },
+  {
+    "text": "27–",
+    "start": 26.07,
+    "end": 26.73,
+    "id": "w51"
+  },
+  {
+    "text": "671.000",
+    "start": 26.73,
+    "end": 28.71,
+    "id": "w52"
+  },
+  {
+    "text": "Euro.",
+    "start": 28.71,
+    "end": 29.41,
+    "id": "w53"
+  },
+  {
+    "text": "Tag",
+    "start": 29.41,
+    "end": 29.68,
+    "id": "w54"
+  },
+  {
+    "text": "28–",
+    "start": 29.68,
+    "end": 30.31,
+    "id": "w55"
+  },
+  {
+    "text": "1,3",
+    "start": 30.31,
+    "end": 31.03,
+    "id": "w56"
+  },
+  {
+    "text": "Millionen.",
+    "start": 31.03,
+    "end": 32.06,
+    "id": "w57"
+  },
+  {
+    "text": "Und",
+    "start": 32.2,
+    "end": 32.46,
+    "id": "w58"
+  },
+  {
+    "text": "an",
+    "start": 32.46,
+    "end": 32.54,
+    "id": "w59"
+  },
+  {
+    "text": "Tag",
+    "start": 32.54,
+    "end": 32.62,
+    "id": "w60"
+  },
+  {
+    "text": "30–",
+    "start": 32.85,
+    "end": 33.46,
+    "id": "w61"
+  },
+  {
+    "text": "über",
+    "start": 33.46,
+    "end": 33.98,
+    "id": "w62"
+  },
+  {
+    "text": "5,3",
+    "start": 34.02,
+    "end": 34.86,
+    "id": "w63"
+  },
+  {
+    "text": "Millionen",
+    "start": 34.86,
+    "end": 35.87,
+    "id": "w64"
+  },
+  {
+    "text": "Euro.",
+    "start": 35.87,
+    "end": 36.46,
+    "id": "w65"
+  },
+  {
+    "text": "Fast",
+    "start": 36.46,
+    "end": 36.61,
+    "id": "w66"
+  },
+  {
+    "text": "90",
+    "start": 36.76,
+    "end": 37.12,
+    "id": "w67"
+  },
+  {
+    "text": "Prozent",
+    "start": 37.12,
+    "end": 37.58,
+    "id": "w68"
+  },
+  {
+    "text": "davon",
+    "start": 37.58,
+    "end": 37.91,
+    "id": "w69"
+  },
+  {
+    "text": "kommen",
+    "start": 37.91,
+    "end": 38.31,
+    "id": "w70"
+  },
+  {
+    "text": "in",
+    "start": 38.31,
+    "end": 38.44,
+    "id": "w71"
+  },
+  {
+    "text": "den",
+    "start": 38.44,
+    "end": 38.61,
+    "id": "w72"
+  },
+  {
+    "text": "letzten",
+    "start": 38.7,
+    "end": 39.14,
+    "id": "w73"
+  },
+  {
+    "text": "drei",
+    "start": 39.14,
+    "end": 39.34,
+    "id": "w74"
+  },
+  {
+    "text": "Tagen.",
+    "start": 39.39,
+    "end": 39.84,
+    "id": "w75"
+  },
+  {
+    "text": "Reich",
+    "start": 39.84,
+    "end": 40.25,
+    "id": "w76"
+  },
+  {
+    "text": "wird",
+    "start": 40.28,
+    "end": 40.56,
+    "id": "w77"
+  },
+  {
+    "text": "nicht",
+    "start": 40.56,
+    "end": 40.83,
+    "id": "w78"
+  },
+  {
+    "text": "wer",
+    "start": 40.88,
+    "end": 41.04,
+    "id": "w79"
+  },
+  {
+    "text": "schnell",
+    "start": 41.04,
+    "end": 41.52,
+    "id": "w80"
+  },
+  {
+    "text": "ist,",
+    "start": 41.52,
+    "end": 41.85,
+    "id": "w81"
+  },
+  {
+    "text": "sondern",
+    "start": 41.85,
+    "end": 42.32,
+    "id": "w82"
+  },
+  {
+    "text": "wer",
+    "start": 42.32,
+    "end": 42.33,
+    "id": "w83"
+  },
+  {
+    "text": "durchhält.",
+    "start": 42.57,
+    "end": 43.38,
+    "id": "w84"
+  },
+  {
+    "text": "Ehrlich,",
+    "start": 43.38,
+    "end": 44.03,
+    "id": "w85"
+  },
+  {
+    "text": "hättest",
+    "start": 44.03,
+    "end": 44.54,
+    "id": "w86"
+  },
+  {
+    "text": "du",
+    "start": 44.54,
+    "end": 44.68,
+    "id": "w87"
+  },
+  {
+    "text": "die",
+    "start": 44.68,
+    "end": 44.9,
+    "id": "w88"
+  },
+  {
+    "text": "Million",
+    "start": 44.9,
+    "end": 45.42,
+    "id": "w89"
+  },
+  {
+    "text": "genommen?",
+    "start": 45.42,
+    "end": 46.28,
+    "id": "w90"
+  }
+]
