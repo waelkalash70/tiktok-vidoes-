@@ -316,6 +316,7 @@ die Gegenmaßnahme **automatisieren** (Prüfskript, Vorlage, Checkliste) statt s
 | F30 | Schilder drehten sich mit Objekt aus dem Bild (Eisberg) | Labels Kind der rotierenden Gruppe | Nur Geometrie rotieren, Schilder in nicht-rotierender Gruppe. |
 | F31 | Text dreifach (3D-Schild + Untertitel + HUD), erneut | F20 bei neuem Szenen-Stil vergessen | Bei Schlüsselwort-HUD (Referenz-4-Stil) KEINE Text-Schilder in 3D – nur Bild-Metaphern (Münzen, Glühbirne, Herzen). |
 | F32 | Zähler zeigte 5,14 € / 9.454 € statt der gesprochenen 5,12 € / 5.242 € (Cent-Wette) | Zähler interpolierte durchgehend zwischen den Schlüsselzeiten | Zähler-Stützpunkte mit HALTEPHASEN: am `key` den genannten Wert erreichen und bis zum Start des nächsten Satzes HALTEN. Snapshot genau 1 s nach jedem gesprochenen Betrag prüfen. |
+| F33 | ElevenLabs-Aufnahme mit 5 Pausen à ~1,1 s → Video 48 s, „Löcher“ (Cent-Wette) | Modell „multilingual v2“ + Satzzeichen/Zeilenumbrüche erzeugen lange Pausen | Jede User-Aufnahme technisch prüfen (Peak, LUFS, `silencedetect` d=0.7) und Pausen > 0,7 s melden; Empfehlung an User: Modell **eleven v4** (Video 3–5, knackiger). Pausen notfalls per ffmpeg auf ~0,4 s kürzen und neu alignen. |
 
 ### 3b. Checkliste vor jeder Abgabe (aus 3a abgeleitet)
 1. `qa_skript.py` ohne FEHLER · 2. Zahlen nachgerechnet/Quelle geprüft · 3. `check --json`: keine Fehler, kein
